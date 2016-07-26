@@ -1,4 +1,25 @@
-/.idea
+
+# Ignore temporary Emacs files
+*~
+
+#Ignore Eclipse directories
+.settings
+.project
+.classpath
+.pydevproject
+.metadata
+.idea
 *.iml
+
 .DS_Store
-target
+
+# Exclude build directory
+target/*
+.
+/target
+
+*.pyc
+
+pom.xml.releaseBackup
+release.properties
+pom.xml.versionsBackup
