@@ -85,7 +85,7 @@ public class CDEXMLInstances2CEDARCDEInstances {
           if (temp) {
             cdeFile = File.createTempFile("DataElement", ".json");
           } else {
-            String jsonFilePath = jsonDirectoryName + String.format("CEDARDataElement%d.json", i);
+            String jsonFilePath = jsonDirectoryName + String.format("CDE_%d.json", i);
             cdeFile = new File(jsonFilePath);
 
             boolean bool;
@@ -98,7 +98,7 @@ public class CDEXMLInstances2CEDARCDEInstances {
           }
 
 
-          System.out.println("Writing DataElement to " + cdeFile.getAbsolutePath());
+          // System.out.println("Writing DataElement to " + cdeFile.getAbsolutePath());
 
           // Serialize the CDE instance
           mapper.writeValue(cdeFile, cedarDataElement);
@@ -109,8 +109,12 @@ public class CDEXMLInstances2CEDARCDEInstances {
         j++;
       }
     }
-
-    System.out.println(String.format("INTS NOT USED: %d", j));
+    for (File print_file : xmlFileList) {
+      System.out.println(print_file.toString());
+    }
+    if (j > 0) {
+      System.out.println(String.format("INTS NOT USED: %d", j));
+    }
 
   }
 
