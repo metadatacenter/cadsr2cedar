@@ -1000,10 +1000,10 @@ public class CDEXMLInstances2CEDARCDEInstances {
     String cadsrRepresentationLongName = cadsrValueDomainRepresentation.getLongName().getContent();
     //System.out.println(cadsrRepresentationLongName);
     LongName_________ cedarRepresentationLongName = new LongName_________();
-    cedarRepresentationLongName.setValue(cadsrRepresentationVersion);
+    cedarRepresentationLongName.setValue(cadsrRepresentationLongName);
     cedarValueDomainRepresentation.setLongName(cedarRepresentationLongName);
 
-
+    convertCADSR2CEDARRepresentationConceptDetails(cedarValueDomainRepresentation, cadsrValueDomainRepresentation);
 
 
     cedarValueDomain.setRepresentation(cedarValueDomainRepresentation);
