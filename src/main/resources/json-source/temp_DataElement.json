@@ -1,5 +1,5 @@
 {
-  "@id": "https://repo.metadatacenter.net/templates/17df4286-f90f-4512-884c-c6a54512047d",
+  "@id": "https://repo.metadatacenter.net/templates/403b0111-6ae6-46b2-bb0f-b420fc45e609",
   "@type": "https://schema.metadatacenter.org/core/Template",
   "@context": {
     "pav": "http://purl.org/pav/",
@@ -23,14 +23,12 @@
       "workflowStatus",
       "contextName",
       "contextVersion",
-      "origin",
       "registrationStatus",
       "dataElementConcept",
       "valueDomain",
       "referenceDocumentsList",
       "classificationsList",
-      "alternateNameList",
-      "dataElementDerivation"
+      "alternateNameList"
     ]
   },
   "properties": {
@@ -103,11 +101,6 @@
             "https://schema.metadatacenter.net/properties/contextVersion"
           ]
         },
-        "origin": {
-          "enum": [
-            "https://schema.metadatacenter.net/properties/origin"
-          ]
-        },
         "registrationStatus": {
           "enum": [
             "https://schema.metadatacenter.net/properties/registrationStatus"
@@ -137,11 +130,6 @@
           "enum": [
             "https://schema.metadatacenter.net/properties/alternateNameList"
           ]
-        },
-        "dataElementDerivation": {
-          "enum": [
-            "https://schema.metadatacenter.net/properties/dataElementDerivation"
-          ]
         }
       },
       "patternProperties": {
@@ -163,14 +151,12 @@
         "workflowStatus",
         "contextName",
         "contextVersion",
-        "origin",
         "registrationStatus",
         "dataElementConcept",
         "valueDomain",
         "referenceDocumentsList",
         "classificationsList",
-        "alternateNameList",
-        "dataElementDerivation"
+        "alternateNameList"
       ],
       "additionalProperties": false
     },
@@ -286,12 +272,6 @@
             "null"
           ]
         },
-        "_valueLabel": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
         "pav:createdOn": {
           "type": [
             "string",
@@ -319,22 +299,18 @@
             "null"
           ],
           "format": "uri"
-        },
-        "_tmp": {}
+        }
       },
       "required": [
         "@value"
       ],
-      "pav:createdOn": "2016-11-25T15:55:48-0800",
+      "pav:createdOn": "2016-11-11T15:37:16-0800",
       "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-      "pav:lastUpdatedOn": "2016-11-25T15:55:48-0800",
+      "pav:lastUpdatedOn": "2016-11-11T15:37:16-0800",
       "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
       "additionalProperties": false,
-      "@id": "https://repo.metadatacenter.net/template-fields/fa891655-9b89-4524-a9b7-fbb81f2c2695",
-      "$schema": "http://json-schema.org/draft-04/schema#",
-      "_tmp": {
-        "domId": "id034551372460775887"
-      }
+      "@id": "https://repo.metadatacenter.net/template-fields/d3310d2b-ecec-4241-ba13-b1d9b52d8ce1",
+      "$schema": "http://json-schema.org/draft-04/schema#"
     },
     "publicID": {
       "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -385,12 +361,6 @@
             "null"
           ]
         },
-        "_valueLabel": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
         "pav:createdOn": {
           "type": [
             "string",
@@ -418,22 +388,18 @@
             "null"
           ],
           "format": "uri"
-        },
-        "_tmp": {}
+        }
       },
       "required": [
         "@value"
       ],
-      "pav:createdOn": "2016-11-25T15:55:48-0800",
+      "pav:createdOn": "2016-11-11T15:37:16-0800",
       "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-      "pav:lastUpdatedOn": "2016-11-25T15:55:48-0800",
+      "pav:lastUpdatedOn": "2016-11-11T15:37:16-0800",
       "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
       "additionalProperties": false,
-      "@id": "https://repo.metadatacenter.net/template-fields/e5d3cb68-723f-47e1-bb77-a8c8802c0c78",
-      "$schema": "http://json-schema.org/draft-04/schema#",
-      "_tmp": {
-        "domId": "id09422340258264306"
-      }
+      "@id": "https://repo.metadatacenter.net/template-fields/6f3c6149-45b3-49b7-9b09-c0788645231b",
+      "$schema": "http://json-schema.org/draft-04/schema#"
     },
     "longName": {
       "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -484,12 +450,6 @@
             "null"
           ]
         },
-        "_valueLabel": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
         "pav:createdOn": {
           "type": [
             "string",
@@ -517,22 +477,18 @@
             "null"
           ],
           "format": "uri"
-        },
-        "_tmp": {}
+        }
       },
       "required": [
         "@value"
       ],
-      "pav:createdOn": "2016-11-25T15:55:48-0800",
+      "pav:createdOn": "2016-11-11T15:37:16-0800",
       "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-      "pav:lastUpdatedOn": "2016-11-25T15:55:48-0800",
+      "pav:lastUpdatedOn": "2016-11-11T15:37:16-0800",
       "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
       "additionalProperties": false,
-      "@id": "https://repo.metadatacenter.net/template-fields/6cad7784-c24b-4c66-9879-f4c54c621b0b",
-      "$schema": "http://json-schema.org/draft-04/schema#",
-      "_tmp": {
-        "domId": "id02593517887933263"
-      }
+      "@id": "https://repo.metadatacenter.net/template-fields/47b1bed6-6672-483c-aa89-cf013ca7843e",
+      "$schema": "http://json-schema.org/draft-04/schema#"
     },
     "preferredName": {
       "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -583,12 +539,6 @@
             "null"
           ]
         },
-        "_valueLabel": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
         "pav:createdOn": {
           "type": [
             "string",
@@ -616,22 +566,18 @@
             "null"
           ],
           "format": "uri"
-        },
-        "_tmp": {}
+        }
       },
       "required": [
         "@value"
       ],
-      "pav:createdOn": "2016-11-25T15:55:48-0800",
+      "pav:createdOn": "2016-11-11T15:37:16-0800",
       "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-      "pav:lastUpdatedOn": "2016-11-25T15:55:48-0800",
+      "pav:lastUpdatedOn": "2016-11-11T15:37:16-0800",
       "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
       "additionalProperties": false,
-      "@id": "https://repo.metadatacenter.net/template-fields/3ea3aba7-f595-4e0e-8646-722126aa8802",
-      "$schema": "http://json-schema.org/draft-04/schema#",
-      "_tmp": {
-        "domId": "id06417908916714834"
-      }
+      "@id": "https://repo.metadatacenter.net/template-fields/ede435bd-f3e4-4ce2-870f-62d7a1bb9d1e",
+      "$schema": "http://json-schema.org/draft-04/schema#"
     },
     "preferredDefinition": {
       "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -682,12 +628,6 @@
             "null"
           ]
         },
-        "_valueLabel": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
         "pav:createdOn": {
           "type": [
             "string",
@@ -715,22 +655,18 @@
             "null"
           ],
           "format": "uri"
-        },
-        "_tmp": {}
+        }
       },
       "required": [
         "@value"
       ],
-      "pav:createdOn": "2016-11-25T15:55:48-0800",
+      "pav:createdOn": "2016-11-11T15:37:16-0800",
       "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-      "pav:lastUpdatedOn": "2016-11-25T15:55:48-0800",
+      "pav:lastUpdatedOn": "2016-11-11T15:37:16-0800",
       "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
       "additionalProperties": false,
-      "@id": "https://repo.metadatacenter.net/template-fields/ecb12213-50b2-42f5-a24c-9e0960d4ebe1",
-      "$schema": "http://json-schema.org/draft-04/schema#",
-      "_tmp": {
-        "domId": "id007406906035805139"
-      }
+      "@id": "https://repo.metadatacenter.net/template-fields/57e92c54-160f-41b7-838a-6e2c1f1721ec",
+      "$schema": "http://json-schema.org/draft-04/schema#"
     },
     "version": {
       "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -781,12 +717,6 @@
             "null"
           ]
         },
-        "_valueLabel": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
         "pav:createdOn": {
           "type": [
             "string",
@@ -814,22 +744,18 @@
             "null"
           ],
           "format": "uri"
-        },
-        "_tmp": {}
+        }
       },
       "required": [
         "@value"
       ],
-      "pav:createdOn": "2016-11-25T15:55:48-0800",
+      "pav:createdOn": "2016-11-11T15:37:16-0800",
       "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-      "pav:lastUpdatedOn": "2016-11-25T15:55:48-0800",
+      "pav:lastUpdatedOn": "2016-11-11T15:37:16-0800",
       "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
       "additionalProperties": false,
-      "@id": "https://repo.metadatacenter.net/template-fields/6691a9ba-c4db-4650-bab7-293d562ba712",
-      "$schema": "http://json-schema.org/draft-04/schema#",
-      "_tmp": {
-        "domId": "id06552778211159316"
-      }
+      "@id": "https://repo.metadatacenter.net/template-fields/eed9b8cf-9195-4776-aef6-c30e40c034df",
+      "$schema": "http://json-schema.org/draft-04/schema#"
     },
     "workflowStatus": {
       "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -880,12 +806,6 @@
             "null"
           ]
         },
-        "_valueLabel": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
         "pav:createdOn": {
           "type": [
             "string",
@@ -913,22 +833,18 @@
             "null"
           ],
           "format": "uri"
-        },
-        "_tmp": {}
+        }
       },
       "required": [
         "@value"
       ],
-      "pav:createdOn": "2016-11-25T15:55:48-0800",
+      "pav:createdOn": "2016-11-11T15:37:16-0800",
       "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-      "pav:lastUpdatedOn": "2016-11-25T15:55:48-0800",
+      "pav:lastUpdatedOn": "2016-11-11T15:37:16-0800",
       "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
       "additionalProperties": false,
-      "@id": "https://repo.metadatacenter.net/template-fields/7813b6ba-90a1-4096-bfab-58296742425e",
-      "$schema": "http://json-schema.org/draft-04/schema#",
-      "_tmp": {
-        "domId": "id035303220198171714"
-      }
+      "@id": "https://repo.metadatacenter.net/template-fields/72f04f1f-468c-49a0-9f7b-2aecaec8ccab",
+      "$schema": "http://json-schema.org/draft-04/schema#"
     },
     "contextName": {
       "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -979,12 +895,6 @@
             "null"
           ]
         },
-        "_valueLabel": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
         "pav:createdOn": {
           "type": [
             "string",
@@ -1012,22 +922,18 @@
             "null"
           ],
           "format": "uri"
-        },
-        "_tmp": {}
+        }
       },
       "required": [
         "@value"
       ],
-      "pav:createdOn": "2016-11-25T15:55:48-0800",
+      "pav:createdOn": "2016-11-11T15:37:16-0800",
       "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-      "pav:lastUpdatedOn": "2016-11-25T15:55:48-0800",
+      "pav:lastUpdatedOn": "2016-11-11T15:37:16-0800",
       "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
       "additionalProperties": false,
-      "@id": "https://repo.metadatacenter.net/template-fields/5298dcf4-df10-4575-acad-cdec26cf33a8",
-      "$schema": "http://json-schema.org/draft-04/schema#",
-      "_tmp": {
-        "domId": "id011677164263103212"
-      }
+      "@id": "https://repo.metadatacenter.net/template-fields/cad1ffb2-5353-4814-b528-ffa8880d53b9",
+      "$schema": "http://json-schema.org/draft-04/schema#"
     },
     "contextVersion": {
       "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -1078,12 +984,6 @@
             "null"
           ]
         },
-        "_valueLabel": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
         "pav:createdOn": {
           "type": [
             "string",
@@ -1111,121 +1011,18 @@
             "null"
           ],
           "format": "uri"
-        },
-        "_tmp": {}
+        }
       },
       "required": [
         "@value"
       ],
-      "pav:createdOn": "2016-11-25T15:55:48-0800",
+      "pav:createdOn": "2016-11-11T15:37:16-0800",
       "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-      "pav:lastUpdatedOn": "2016-11-25T15:55:48-0800",
+      "pav:lastUpdatedOn": "2016-11-11T15:37:16-0800",
       "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
       "additionalProperties": false,
-      "@id": "https://repo.metadatacenter.net/template-fields/b4d77d31-8318-44d9-afce-386c651d02a9",
-      "$schema": "http://json-schema.org/draft-04/schema#",
-      "_tmp": {
-        "domId": "id035160572626837827"
-      }
-    },
-    "origin": {
-      "@type": "https://schema.metadatacenter.org/core/TemplateField",
-      "@context": {
-        "schema": "http://schema.org/",
-        "pav": "http://purl.org/pav/",
-        "oslc": "http://open-services.net/ns/core#"
-      },
-      "type": "object",
-      "title": "Origin field schema",
-      "description": "Origin field schema autogenerated by the CEDAR Template Editor",
-      "_ui": {
-        "title": "Origin",
-        "description": "",
-        "inputType": "textfield"
-      },
-      "_valueConstraints": {
-        "requiredValue": false
-      },
-      "properties": {
-        "@id": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "format": "uri"
-        },
-        "@type": {
-          "oneOf": [
-            {
-              "type": "string",
-              "format": "uri"
-            },
-            {
-              "type": "array",
-              "minItems": 1,
-              "items": {
-                "type": "string",
-                "format": "uri"
-              },
-              "uniqueItems": true
-            }
-          ]
-        },
-        "@value": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "_valueLabel": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "pav:createdOn": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "format": "date-time"
-        },
-        "pav:createdBy": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "format": "uri"
-        },
-        "pav:lastUpdatedOn": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "format": "date-time"
-        },
-        "oslc:modifiedBy": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "format": "uri"
-        },
-        "_tmp": {}
-      },
-      "required": [
-        "@value"
-      ],
-      "pav:createdOn": "2016-11-25T15:55:48-0800",
-      "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-      "pav:lastUpdatedOn": "2016-11-25T15:55:48-0800",
-      "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-      "additionalProperties": false,
-      "@id": "https://repo.metadatacenter.net/template-fields/641cf815-a7d7-4f83-b474-d8e9b048f393",
-      "$schema": "http://json-schema.org/draft-04/schema#",
-      "_tmp": {
-        "domId": "id036872573318539836"
-      }
+      "@id": "https://repo.metadatacenter.net/template-fields/ee0ce432-18d3-4b2d-b4c5-373e351d5faf",
+      "$schema": "http://json-schema.org/draft-04/schema#"
     },
     "registrationStatus": {
       "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -1276,12 +1073,6 @@
             "null"
           ]
         },
-        "_valueLabel": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
         "pav:createdOn": {
           "type": [
             "string",
@@ -1309,22 +1100,18 @@
             "null"
           ],
           "format": "uri"
-        },
-        "_tmp": {}
+        }
       },
       "required": [
         "@value"
       ],
-      "pav:createdOn": "2016-11-25T15:55:48-0800",
+      "pav:createdOn": "2016-11-11T15:37:16-0800",
       "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-      "pav:lastUpdatedOn": "2016-11-25T15:55:48-0800",
+      "pav:lastUpdatedOn": "2016-11-11T15:37:16-0800",
       "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
       "additionalProperties": false,
-      "@id": "https://repo.metadatacenter.net/template-fields/930c0a9d-c1d0-4a2a-96cc-d57069d16521",
-      "$schema": "http://json-schema.org/draft-04/schema#",
-      "_tmp": {
-        "domId": "id07938196635614136"
-      }
+      "@id": "https://repo.metadatacenter.net/template-fields/35cb2a12-e273-4378-9b14-87d2812e48ac",
+      "$schema": "http://json-schema.org/draft-04/schema#"
     },
     "dataElementConcept": {
       "@id": "https://repo.metadatacenter.net/template-elements/e5b1bf1c-5061-478b-a411-7d1f04b2bea3",
@@ -1611,10 +1398,7 @@
           "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
           "additionalProperties": false,
           "@id": "https://repo.metadatacenter.net/template-fields/3cd575dc-dcbc-4fd4-b3fe-7635f9b283f3",
-          "$schema": "http://json-schema.org/draft-04/schema#",
-          "_tmp": {
-            "domId": "id05474710746758982"
-          }
+          "$schema": "http://json-schema.org/draft-04/schema#"
         },
         "preferredName": {
           "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -1706,10 +1490,7 @@
           "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
           "additionalProperties": false,
           "@id": "https://repo.metadatacenter.net/template-fields/f67dfeae-7c51-4034-9c91-469ee4e137e3",
-          "$schema": "http://json-schema.org/draft-04/schema#",
-          "_tmp": {
-            "domId": "id02942700538386822"
-          }
+          "$schema": "http://json-schema.org/draft-04/schema#"
         },
         "preferredDefinition": {
           "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -1801,10 +1582,7 @@
           "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
           "additionalProperties": false,
           "@id": "https://repo.metadatacenter.net/template-fields/6d07edc5-2e8d-4abe-b765-e32d7c9b37a4",
-          "$schema": "http://json-schema.org/draft-04/schema#",
-          "_tmp": {
-            "domId": "id07954372257523186"
-          }
+          "$schema": "http://json-schema.org/draft-04/schema#"
         },
         "longName": {
           "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -1896,10 +1674,7 @@
           "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
           "additionalProperties": false,
           "@id": "https://repo.metadatacenter.net/template-fields/c05befff-2077-4b70-85c2-012197a85c6b",
-          "$schema": "http://json-schema.org/draft-04/schema#",
-          "_tmp": {
-            "domId": "id03613408363566417"
-          }
+          "$schema": "http://json-schema.org/draft-04/schema#"
         },
         "version": {
           "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -1991,10 +1766,7 @@
           "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
           "additionalProperties": false,
           "@id": "https://repo.metadatacenter.net/template-fields/f995d11f-1c89-4ce7-a6b6-da693d0517e9",
-          "$schema": "http://json-schema.org/draft-04/schema#",
-          "_tmp": {
-            "domId": "id015469555883924158"
-          }
+          "$schema": "http://json-schema.org/draft-04/schema#"
         },
         "workflowStatus": {
           "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -2086,10 +1858,7 @@
           "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
           "additionalProperties": false,
           "@id": "https://repo.metadatacenter.net/template-fields/6be68603-7f85-4365-9ad4-0c11f5b19232",
-          "$schema": "http://json-schema.org/draft-04/schema#",
-          "_tmp": {
-            "domId": "id0906311405737789"
-          }
+          "$schema": "http://json-schema.org/draft-04/schema#"
         },
         "contextName": {
           "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -2181,10 +1950,7 @@
           "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
           "additionalProperties": false,
           "@id": "https://repo.metadatacenter.net/template-fields/12ec0001-44ae-4c97-a690-d2aa020b31dd",
-          "$schema": "http://json-schema.org/draft-04/schema#",
-          "_tmp": {
-            "domId": "id016693060173593488"
-          }
+          "$schema": "http://json-schema.org/draft-04/schema#"
         },
         "contextVersion": {
           "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -2276,10 +2042,7 @@
           "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
           "additionalProperties": false,
           "@id": "https://repo.metadatacenter.net/template-fields/f96a0133-06b8-4125-897d-6eb683917696",
-          "$schema": "http://json-schema.org/draft-04/schema#",
-          "_tmp": {
-            "domId": "id09345607232644655"
-          }
+          "$schema": "http://json-schema.org/draft-04/schema#"
         },
         "conceptualDomain": {
           "@id": "https://repo.metadatacenter.net/template-elements/01a5226e-1f85-4341-a0bc-f8e35dba65e1",
@@ -2510,10 +2273,7 @@
               "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
               "additionalProperties": false,
               "@id": "https://repo.metadatacenter.net/template-fields/44a0e0e8-ee57-4ea4-9a8c-cdb5b728c7b4",
-              "$schema": "http://json-schema.org/draft-04/schema#",
-              "_tmp": {
-                "domId": "id03267273003338258"
-              }
+              "$schema": "http://json-schema.org/draft-04/schema#"
             },
             "contextName": {
               "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -2605,10 +2365,7 @@
               "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
               "additionalProperties": false,
               "@id": "https://repo.metadatacenter.net/template-fields/40bacdd7-6c79-4c17-9fb8-c3f43fbec78e",
-              "$schema": "http://json-schema.org/draft-04/schema#",
-              "_tmp": {
-                "domId": "id06378201655502898"
-              }
+              "$schema": "http://json-schema.org/draft-04/schema#"
             },
             "contextVersion": {
               "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -2700,10 +2457,7 @@
               "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
               "additionalProperties": false,
               "@id": "https://repo.metadatacenter.net/template-fields/055c58b1-ba8b-4c87-b7ee-bbaca5392fcb",
-              "$schema": "http://json-schema.org/draft-04/schema#",
-              "_tmp": {
-                "domId": "id031227922290963117"
-              }
+              "$schema": "http://json-schema.org/draft-04/schema#"
             },
             "preferredName": {
               "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -2795,10 +2549,7 @@
               "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
               "additionalProperties": false,
               "@id": "https://repo.metadatacenter.net/template-fields/fbf6018d-7226-4423-b1eb-ee9556533f86",
-              "$schema": "http://json-schema.org/draft-04/schema#",
-              "_tmp": {
-                "domId": "id06418061284313925"
-              }
+              "$schema": "http://json-schema.org/draft-04/schema#"
             },
             "version": {
               "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -2890,10 +2641,7 @@
               "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
               "additionalProperties": false,
               "@id": "https://repo.metadatacenter.net/template-fields/f15f310f-9a6e-4473-8def-008b024e08ae",
-              "$schema": "http://json-schema.org/draft-04/schema#",
-              "_tmp": {
-                "domId": "id06737794770253889"
-              }
+              "$schema": "http://json-schema.org/draft-04/schema#"
             },
             "longName": {
               "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -2985,10 +2733,7 @@
               "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
               "additionalProperties": false,
               "@id": "https://repo.metadatacenter.net/template-fields/8e55bcc1-2782-47e4-ab08-c421fed83f7f",
-              "$schema": "http://json-schema.org/draft-04/schema#",
-              "_tmp": {
-                "domId": "id047356098057738416"
-              }
+              "$schema": "http://json-schema.org/draft-04/schema#"
             },
             "_tmp": {
               "nested": true
@@ -3000,10 +2745,7 @@
           "pav:lastUpdatedOn": "2016-11-11T08:29:17-0800",
           "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
           "additionalProperties": false,
-          "$schema": "http://json-schema.org/draft-04/schema#",
-          "_tmp": {
-            "domId": "id05038807103040679"
-          }
+          "$schema": "http://json-schema.org/draft-04/schema#"
         },
         "objectClass": {
           "@id": "https://repo.metadatacenter.net/template-elements/4fbcff37-4835-4113-a7d9-21671f74234a",
@@ -3241,10 +2983,7 @@
               "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
               "additionalProperties": false,
               "@id": "https://repo.metadatacenter.net/template-fields/4248773e-fcb1-43ae-84b2-9dc8da1119d6",
-              "$schema": "http://json-schema.org/draft-04/schema#",
-              "_tmp": {
-                "domId": "id017021481649158154"
-              }
+              "$schema": "http://json-schema.org/draft-04/schema#"
             },
             "contextName": {
               "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -3336,10 +3075,7 @@
               "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
               "additionalProperties": false,
               "@id": "https://repo.metadatacenter.net/template-fields/bf0e9c69-4a0a-4aac-913a-3599815318ba",
-              "$schema": "http://json-schema.org/draft-04/schema#",
-              "_tmp": {
-                "domId": "id02245910981581294"
-              }
+              "$schema": "http://json-schema.org/draft-04/schema#"
             },
             "contextVersion": {
               "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -3431,10 +3167,7 @@
               "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
               "additionalProperties": false,
               "@id": "https://repo.metadatacenter.net/template-fields/c3629200-e08a-4b56-b852-ec665565e8a1",
-              "$schema": "http://json-schema.org/draft-04/schema#",
-              "_tmp": {
-                "domId": "id09560200783818404"
-              }
+              "$schema": "http://json-schema.org/draft-04/schema#"
             },
             "preferredName": {
               "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -3526,10 +3259,7 @@
               "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
               "additionalProperties": false,
               "@id": "https://repo.metadatacenter.net/template-fields/15946709-c1ab-4521-b829-68ae2e2ea7dd",
-              "$schema": "http://json-schema.org/draft-04/schema#",
-              "_tmp": {
-                "domId": "id033184568321281205"
-              }
+              "$schema": "http://json-schema.org/draft-04/schema#"
             },
             "version": {
               "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -3621,10 +3351,7 @@
               "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
               "additionalProperties": false,
               "@id": "https://repo.metadatacenter.net/template-fields/3c2822b6-5c98-447a-9cfe-84df6e178366",
-              "$schema": "http://json-schema.org/draft-04/schema#",
-              "_tmp": {
-                "domId": "id006549950801258908"
-              }
+              "$schema": "http://json-schema.org/draft-04/schema#"
             },
             "longName": {
               "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -3716,10 +3443,7 @@
               "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
               "additionalProperties": false,
               "@id": "https://repo.metadatacenter.net/template-fields/00fac082-e3ce-4b95-8c92-5057f07ab15c",
-              "$schema": "http://json-schema.org/draft-04/schema#",
-              "_tmp": {
-                "domId": "id001739618088911743"
-              }
+              "$schema": "http://json-schema.org/draft-04/schema#"
             },
             "conceptDetails": {
               "@id": "https://repo.metadatacenter.net/template-elements/43975f00-144c-4088-8380-e464080245d5",
@@ -4728,9 +4452,6 @@
                     "pav:lastUpdatedOn": "2016-11-10T22:01:54-0800",
                     "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
                     "$schema": "http://json-schema.org/draft-04/schema#"
-                  },
-                  "_tmp": {
-                    "domId": "id00942039361478828"
                   }
                 },
                 "_tmp": {
@@ -4743,10 +4464,7 @@
               "pav:lastUpdatedOn": "2016-11-11T08:18:59-0800",
               "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
               "additionalProperties": false,
-              "$schema": "http://json-schema.org/draft-04/schema#",
-              "_tmp": {
-                "domId": "id0020794027318122854"
-              }
+              "$schema": "http://json-schema.org/draft-04/schema#"
             },
             "_tmp": {
               "nested": true
@@ -4758,10 +4476,7 @@
           "pav:lastUpdatedOn": "2016-11-11T08:29:17-0800",
           "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
           "additionalProperties": false,
-          "$schema": "http://json-schema.org/draft-04/schema#",
-          "_tmp": {
-            "domId": "id09941451327357518"
-          }
+          "$schema": "http://json-schema.org/draft-04/schema#"
         },
         "property": {
           "@id": "https://repo.metadatacenter.net/template-elements/27a35691-c63c-464d-8a49-e8a4c3838bf7",
@@ -4999,10 +4714,7 @@
               "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
               "additionalProperties": false,
               "@id": "https://repo.metadatacenter.net/template-fields/c8ccfc02-1f7b-46c0-a18c-12f2d49ead80",
-              "$schema": "http://json-schema.org/draft-04/schema#",
-              "_tmp": {
-                "domId": "id01758209083393989"
-              }
+              "$schema": "http://json-schema.org/draft-04/schema#"
             },
             "contextName": {
               "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -5094,10 +4806,7 @@
               "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
               "additionalProperties": false,
               "@id": "https://repo.metadatacenter.net/template-fields/1ddb417f-bcb9-4992-811e-8c897ff6ac12",
-              "$schema": "http://json-schema.org/draft-04/schema#",
-              "_tmp": {
-                "domId": "id035616305357626454"
-              }
+              "$schema": "http://json-schema.org/draft-04/schema#"
             },
             "contextVersion": {
               "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -5189,10 +4898,7 @@
               "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
               "additionalProperties": false,
               "@id": "https://repo.metadatacenter.net/template-fields/298e55c9-ad7a-40bc-b693-6e15ae61d658",
-              "$schema": "http://json-schema.org/draft-04/schema#",
-              "_tmp": {
-                "domId": "id004573194216904408"
-              }
+              "$schema": "http://json-schema.org/draft-04/schema#"
             },
             "preferredName": {
               "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -5284,10 +4990,7 @@
               "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
               "additionalProperties": false,
               "@id": "https://repo.metadatacenter.net/template-fields/2baeae36-3b6e-4b10-8bac-41bfea118a6c",
-              "$schema": "http://json-schema.org/draft-04/schema#",
-              "_tmp": {
-                "domId": "id00037201287979458098"
-              }
+              "$schema": "http://json-schema.org/draft-04/schema#"
             },
             "version": {
               "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -5379,10 +5082,7 @@
               "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
               "additionalProperties": false,
               "@id": "https://repo.metadatacenter.net/template-fields/cb4166a3-fd57-4c6d-bc40-064e1eccfa24",
-              "$schema": "http://json-schema.org/draft-04/schema#",
-              "_tmp": {
-                "domId": "id06726358286666083"
-              }
+              "$schema": "http://json-schema.org/draft-04/schema#"
             },
             "longName": {
               "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -5474,10 +5174,7 @@
               "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
               "additionalProperties": false,
               "@id": "https://repo.metadatacenter.net/template-fields/cad1b949-7550-46bc-8cb7-754e2630c7d1",
-              "$schema": "http://json-schema.org/draft-04/schema#",
-              "_tmp": {
-                "domId": "id09527693052045858"
-              }
+              "$schema": "http://json-schema.org/draft-04/schema#"
             },
             "conceptDetails": {
               "@id": "https://repo.metadatacenter.net/template-elements/43975f00-144c-4088-8380-e464080245d5",
@@ -6486,9 +6183,6 @@
                     "pav:lastUpdatedOn": "2016-11-10T22:01:54-0800",
                     "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
                     "$schema": "http://json-schema.org/draft-04/schema#"
-                  },
-                  "_tmp": {
-                    "domId": "id0881462320957495"
                   }
                 },
                 "_tmp": {
@@ -6501,10 +6195,7 @@
               "pav:lastUpdatedOn": "2016-11-11T08:20:29-0800",
               "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
               "additionalProperties": false,
-              "$schema": "http://json-schema.org/draft-04/schema#",
-              "_tmp": {
-                "domId": "id04102191757667013"
-              }
+              "$schema": "http://json-schema.org/draft-04/schema#"
             },
             "_tmp": {
               "nested": true
@@ -6516,10 +6207,7 @@
           "pav:lastUpdatedOn": "2016-11-11T08:29:17-0800",
           "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
           "additionalProperties": false,
-          "$schema": "http://json-schema.org/draft-04/schema#",
-          "_tmp": {
-            "domId": "id006652901469641193"
-          }
+          "$schema": "http://json-schema.org/draft-04/schema#"
         },
         "objectClassQualifier": {
           "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -6611,10 +6299,7 @@
           "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
           "additionalProperties": false,
           "@id": "https://repo.metadatacenter.net/template-fields/a708e01f-2fdc-4cc6-8419-5ad7a5665f22",
-          "$schema": "http://json-schema.org/draft-04/schema#",
-          "_tmp": {
-            "domId": "id06300898978376719"
-          }
+          "$schema": "http://json-schema.org/draft-04/schema#"
         },
         "propertyQualifier": {
           "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -6706,10 +6391,7 @@
           "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
           "additionalProperties": false,
           "@id": "https://repo.metadatacenter.net/template-fields/7b7eb0e7-1f12-4040-b320-d34bda92e63d",
-          "$schema": "http://json-schema.org/draft-04/schema#",
-          "_tmp": {
-            "domId": "id024102729701303183"
-          }
+          "$schema": "http://json-schema.org/draft-04/schema#"
         },
         "origin": {
           "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -6801,26 +6483,19 @@
           "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
           "additionalProperties": false,
           "@id": "https://repo.metadatacenter.net/template-fields/b48555cf-3612-40a1-a6a8-cafe6c41bb45",
-          "$schema": "http://json-schema.org/draft-04/schema#",
-          "_tmp": {
-            "domId": "id07704258972276685"
-          }
-        },
-        "_tmp": {}
+          "$schema": "http://json-schema.org/draft-04/schema#"
+        }
       },
       "required": [],
-      "pav:createdOn": "2016-11-25T15:55:48-0800",
+      "pav:createdOn": "2016-11-11T15:37:16-0800",
       "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-      "pav:lastUpdatedOn": "2016-11-25T15:55:48-0800",
+      "pav:lastUpdatedOn": "2016-11-11T15:37:16-0800",
       "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
       "additionalProperties": false,
-      "$schema": "http://json-schema.org/draft-04/schema#",
-      "_tmp": {
-        "domId": "id010747232359063341"
-      }
+      "$schema": "http://json-schema.org/draft-04/schema#"
     },
     "valueDomain": {
-      "@id": "https://repo.metadatacenter.net/template-elements/d6df2e27-e966-4acb-98fb-1b4fd704eaf2",
+      "@id": "https://repo.metadatacenter.net/template-elements/db1a1703-9c28-4299-997b-515bc60e7fe6",
       "@type": "https://schema.metadatacenter.org/core/TemplateElement",
       "@context": {
         "pav": "http://purl.org/pav/",
@@ -6844,7 +6519,7 @@
           "conceptualDomain",
           "datatype",
           "valueDomainType",
-          "unitsOfMeasure",
+          "unitOfMeasure",
           "displayFormat",
           "maximumLength",
           "minimumLength",
@@ -6931,9 +6606,9 @@
                 "https://schema.metadatacenter.net/properties/valueDomainType"
               ]
             },
-            "unitsOfMeasure": {
+            "unitOfMeasure": {
               "enum": [
-                "https://schema.metadatacenter.net/properties/unitsOfMeasure"
+                "https://schema.metadatacenter.net/properties/unitOfMeasure"
               ]
             },
             "displayFormat": {
@@ -7010,7 +6685,7 @@
             "conceptualDomain",
             "datatype",
             "valueDomainType",
-            "unitsOfMeasure",
+            "unitOfMeasure",
             "displayFormat",
             "maximumLength",
             "minimumLength",
@@ -7126,12 +6801,6 @@
                 "null"
               ]
             },
-            "_valueLabel": {
-              "type": [
-                "string",
-                "null"
-              ]
-            },
             "pav:createdOn": {
               "type": [
                 "string",
@@ -7167,16 +6836,13 @@
           "required": [
             "@value"
           ],
-          "pav:createdOn": "2016-11-25T15:45:23-0800",
+          "pav:createdOn": "2016-11-11T10:48:38-0800",
           "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-          "pav:lastUpdatedOn": "2016-11-25T15:45:23-0800",
+          "pav:lastUpdatedOn": "2016-11-11T10:48:38-0800",
           "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
           "additionalProperties": false,
-          "@id": "https://repo.metadatacenter.net/template-fields/055658e4-41fe-49bb-a256-126016f6ad4a",
-          "$schema": "http://json-schema.org/draft-04/schema#",
-          "_tmp": {
-            "domId": "id049580647088502827"
-          }
+          "@id": "https://repo.metadatacenter.net/template-fields/6cdb5639-77f2-4efd-bcf7-d1085697090b",
+          "$schema": "http://json-schema.org/draft-04/schema#"
         },
         "preferredName": {
           "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -7227,12 +6893,6 @@
                 "null"
               ]
             },
-            "_valueLabel": {
-              "type": [
-                "string",
-                "null"
-              ]
-            },
             "pav:createdOn": {
               "type": [
                 "string",
@@ -7268,16 +6928,13 @@
           "required": [
             "@value"
           ],
-          "pav:createdOn": "2016-11-25T15:45:23-0800",
+          "pav:createdOn": "2016-11-11T10:48:38-0800",
           "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-          "pav:lastUpdatedOn": "2016-11-25T15:45:23-0800",
+          "pav:lastUpdatedOn": "2016-11-11T10:48:38-0800",
           "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
           "additionalProperties": false,
-          "@id": "https://repo.metadatacenter.net/template-fields/5875b610-e022-4d13-a23a-60d3d8c1143e",
-          "$schema": "http://json-schema.org/draft-04/schema#",
-          "_tmp": {
-            "domId": "id022956176037753173"
-          }
+          "@id": "https://repo.metadatacenter.net/template-fields/5fe9a61f-e2a0-426d-ae73-1d598ab7d598",
+          "$schema": "http://json-schema.org/draft-04/schema#"
         },
         "preferredDefinition": {
           "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -7328,12 +6985,6 @@
                 "null"
               ]
             },
-            "_valueLabel": {
-              "type": [
-                "string",
-                "null"
-              ]
-            },
             "pav:createdOn": {
               "type": [
                 "string",
@@ -7369,16 +7020,13 @@
           "required": [
             "@value"
           ],
-          "pav:createdOn": "2016-11-25T15:45:23-0800",
+          "pav:createdOn": "2016-11-11T10:48:38-0800",
           "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-          "pav:lastUpdatedOn": "2016-11-25T15:45:23-0800",
+          "pav:lastUpdatedOn": "2016-11-11T10:48:38-0800",
           "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
           "additionalProperties": false,
-          "@id": "https://repo.metadatacenter.net/template-fields/c2089e21-da27-43a0-9b9b-f18843f94306",
-          "$schema": "http://json-schema.org/draft-04/schema#",
-          "_tmp": {
-            "domId": "id011503269086994417"
-          }
+          "@id": "https://repo.metadatacenter.net/template-fields/6e62e159-a631-4d12-a14b-35590125ac8a",
+          "$schema": "http://json-schema.org/draft-04/schema#"
         },
         "longName": {
           "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -7429,12 +7077,6 @@
                 "null"
               ]
             },
-            "_valueLabel": {
-              "type": [
-                "string",
-                "null"
-              ]
-            },
             "pav:createdOn": {
               "type": [
                 "string",
@@ -7470,16 +7112,13 @@
           "required": [
             "@value"
           ],
-          "pav:createdOn": "2016-11-25T15:45:23-0800",
+          "pav:createdOn": "2016-11-11T10:48:38-0800",
           "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-          "pav:lastUpdatedOn": "2016-11-25T15:45:23-0800",
+          "pav:lastUpdatedOn": "2016-11-11T10:48:38-0800",
           "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
           "additionalProperties": false,
-          "@id": "https://repo.metadatacenter.net/template-fields/182ad9ca-3dd3-4ec9-89c8-8f192150cc3f",
-          "$schema": "http://json-schema.org/draft-04/schema#",
-          "_tmp": {
-            "domId": "id028223733781577365"
-          }
+          "@id": "https://repo.metadatacenter.net/template-fields/7b839267-2ce2-4e8c-ba99-a819c50046d0",
+          "$schema": "http://json-schema.org/draft-04/schema#"
         },
         "version": {
           "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -7530,12 +7169,6 @@
                 "null"
               ]
             },
-            "_valueLabel": {
-              "type": [
-                "string",
-                "null"
-              ]
-            },
             "pav:createdOn": {
               "type": [
                 "string",
@@ -7571,16 +7204,13 @@
           "required": [
             "@value"
           ],
-          "pav:createdOn": "2016-11-25T15:45:23-0800",
+          "pav:createdOn": "2016-11-11T10:48:38-0800",
           "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-          "pav:lastUpdatedOn": "2016-11-25T15:45:23-0800",
+          "pav:lastUpdatedOn": "2016-11-11T10:48:38-0800",
           "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
           "additionalProperties": false,
-          "@id": "https://repo.metadatacenter.net/template-fields/5bf9a25a-a4db-462b-a3b9-62ba0265551f",
-          "$schema": "http://json-schema.org/draft-04/schema#",
-          "_tmp": {
-            "domId": "id010083853479216587"
-          }
+          "@id": "https://repo.metadatacenter.net/template-fields/0ff4ff1b-4c78-4a43-b16b-e7efdf0ebfcc",
+          "$schema": "http://json-schema.org/draft-04/schema#"
         },
         "workflowStatus": {
           "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -7631,12 +7261,6 @@
                 "null"
               ]
             },
-            "_valueLabel": {
-              "type": [
-                "string",
-                "null"
-              ]
-            },
             "pav:createdOn": {
               "type": [
                 "string",
@@ -7672,16 +7296,13 @@
           "required": [
             "@value"
           ],
-          "pav:createdOn": "2016-11-25T15:45:23-0800",
+          "pav:createdOn": "2016-11-11T10:48:38-0800",
           "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-          "pav:lastUpdatedOn": "2016-11-25T15:45:23-0800",
+          "pav:lastUpdatedOn": "2016-11-11T10:48:38-0800",
           "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
           "additionalProperties": false,
-          "@id": "https://repo.metadatacenter.net/template-fields/35ade471-c80f-42d8-9b58-612a4160d0b1",
-          "$schema": "http://json-schema.org/draft-04/schema#",
-          "_tmp": {
-            "domId": "id03790425559626509"
-          }
+          "@id": "https://repo.metadatacenter.net/template-fields/f6d0d0a2-590c-45bb-83e8-f71499a79fca",
+          "$schema": "http://json-schema.org/draft-04/schema#"
         },
         "contextName": {
           "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -7732,12 +7353,6 @@
                 "null"
               ]
             },
-            "_valueLabel": {
-              "type": [
-                "string",
-                "null"
-              ]
-            },
             "pav:createdOn": {
               "type": [
                 "string",
@@ -7773,16 +7388,13 @@
           "required": [
             "@value"
           ],
-          "pav:createdOn": "2016-11-25T15:45:23-0800",
+          "pav:createdOn": "2016-11-11T10:48:38-0800",
           "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-          "pav:lastUpdatedOn": "2016-11-25T15:45:23-0800",
+          "pav:lastUpdatedOn": "2016-11-11T10:48:38-0800",
           "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
           "additionalProperties": false,
-          "@id": "https://repo.metadatacenter.net/template-fields/d0939a6b-ae73-45a3-b7f2-c4422ec8243a",
-          "$schema": "http://json-schema.org/draft-04/schema#",
-          "_tmp": {
-            "domId": "id09039811030181084"
-          }
+          "@id": "https://repo.metadatacenter.net/template-fields/daefba10-ce69-45e8-9c58-9a793c408309",
+          "$schema": "http://json-schema.org/draft-04/schema#"
         },
         "contextVersion": {
           "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -7833,12 +7445,6 @@
                 "null"
               ]
             },
-            "_valueLabel": {
-              "type": [
-                "string",
-                "null"
-              ]
-            },
             "pav:createdOn": {
               "type": [
                 "string",
@@ -7874,16 +7480,13 @@
           "required": [
             "@value"
           ],
-          "pav:createdOn": "2016-11-25T15:45:23-0800",
+          "pav:createdOn": "2016-11-11T10:48:38-0800",
           "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-          "pav:lastUpdatedOn": "2016-11-25T15:45:23-0800",
+          "pav:lastUpdatedOn": "2016-11-11T10:48:38-0800",
           "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
           "additionalProperties": false,
-          "@id": "https://repo.metadatacenter.net/template-fields/dbb381e6-e71a-4e25-bc89-6fec43f92c1d",
-          "$schema": "http://json-schema.org/draft-04/schema#",
-          "_tmp": {
-            "domId": "id06008328887187266"
-          }
+          "@id": "https://repo.metadatacenter.net/template-fields/116e42cc-1007-4487-87b7-39064db75701",
+          "$schema": "http://json-schema.org/draft-04/schema#"
         },
         "conceptualDomain": {
           "@id": "https://repo.metadatacenter.net/template-elements/01a5226e-1f85-4341-a0bc-f8e35dba65e1",
@@ -8114,10 +7717,7 @@
               "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
               "additionalProperties": false,
               "@id": "https://repo.metadatacenter.net/template-fields/44a0e0e8-ee57-4ea4-9a8c-cdb5b728c7b4",
-              "$schema": "http://json-schema.org/draft-04/schema#",
-              "_tmp": {
-                "domId": "id0022326661075286358"
-              }
+              "$schema": "http://json-schema.org/draft-04/schema#"
             },
             "contextName": {
               "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -8209,10 +7809,7 @@
               "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
               "additionalProperties": false,
               "@id": "https://repo.metadatacenter.net/template-fields/40bacdd7-6c79-4c17-9fb8-c3f43fbec78e",
-              "$schema": "http://json-schema.org/draft-04/schema#",
-              "_tmp": {
-                "domId": "id015146764010607439"
-              }
+              "$schema": "http://json-schema.org/draft-04/schema#"
             },
             "contextVersion": {
               "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -8304,10 +7901,7 @@
               "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
               "additionalProperties": false,
               "@id": "https://repo.metadatacenter.net/template-fields/055c58b1-ba8b-4c87-b7ee-bbaca5392fcb",
-              "$schema": "http://json-schema.org/draft-04/schema#",
-              "_tmp": {
-                "domId": "id026780309068655517"
-              }
+              "$schema": "http://json-schema.org/draft-04/schema#"
             },
             "preferredName": {
               "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -8399,10 +7993,7 @@
               "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
               "additionalProperties": false,
               "@id": "https://repo.metadatacenter.net/template-fields/fbf6018d-7226-4423-b1eb-ee9556533f86",
-              "$schema": "http://json-schema.org/draft-04/schema#",
-              "_tmp": {
-                "domId": "id035581806092093804"
-              }
+              "$schema": "http://json-schema.org/draft-04/schema#"
             },
             "version": {
               "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -8494,10 +8085,7 @@
               "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
               "additionalProperties": false,
               "@id": "https://repo.metadatacenter.net/template-fields/f15f310f-9a6e-4473-8def-008b024e08ae",
-              "$schema": "http://json-schema.org/draft-04/schema#",
-              "_tmp": {
-                "domId": "id04401755802632268"
-              }
+              "$schema": "http://json-schema.org/draft-04/schema#"
             },
             "longName": {
               "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -8589,25 +8177,19 @@
               "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
               "additionalProperties": false,
               "@id": "https://repo.metadatacenter.net/template-fields/8e55bcc1-2782-47e4-ab08-c421fed83f7f",
-              "$schema": "http://json-schema.org/draft-04/schema#",
-              "_tmp": {
-                "domId": "id01832413525376413"
-              }
+              "$schema": "http://json-schema.org/draft-04/schema#"
             },
             "_tmp": {
               "nested": true
             }
           },
           "required": [],
-          "pav:createdOn": "2016-11-25T15:45:23-0800",
+          "pav:createdOn": "2016-11-11T10:48:38-0800",
           "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-          "pav:lastUpdatedOn": "2016-11-25T15:45:23-0800",
+          "pav:lastUpdatedOn": "2016-11-11T10:48:38-0800",
           "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
           "additionalProperties": false,
-          "$schema": "http://json-schema.org/draft-04/schema#",
-          "_tmp": {
-            "domId": "id026471476688510887"
-          }
+          "$schema": "http://json-schema.org/draft-04/schema#"
         },
         "datatype": {
           "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -8658,12 +8240,6 @@
                 "null"
               ]
             },
-            "_valueLabel": {
-              "type": [
-                "string",
-                "null"
-              ]
-            },
             "pav:createdOn": {
               "type": [
                 "string",
@@ -8699,16 +8275,13 @@
           "required": [
             "@value"
           ],
-          "pav:createdOn": "2016-11-25T15:45:23-0800",
+          "pav:createdOn": "2016-11-11T10:48:38-0800",
           "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-          "pav:lastUpdatedOn": "2016-11-25T15:45:23-0800",
+          "pav:lastUpdatedOn": "2016-11-11T10:48:38-0800",
           "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
           "additionalProperties": false,
-          "@id": "https://repo.metadatacenter.net/template-fields/361d79ad-819a-4b48-b8cb-ab4bba0d505e",
-          "$schema": "http://json-schema.org/draft-04/schema#",
-          "_tmp": {
-            "domId": "id035025970910668547"
-          }
+          "@id": "https://repo.metadatacenter.net/template-fields/dab8719c-37df-4f4b-a1a2-41b8712d6897",
+          "$schema": "http://json-schema.org/draft-04/schema#"
         },
         "valueDomainType": {
           "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -8759,12 +8332,6 @@
                 "null"
               ]
             },
-            "_valueLabel": {
-              "type": [
-                "string",
-                "null"
-              ]
-            },
             "pav:createdOn": {
               "type": [
                 "string",
@@ -8800,18 +8367,15 @@
           "required": [
             "@value"
           ],
-          "pav:createdOn": "2016-11-25T15:45:23-0800",
+          "pav:createdOn": "2016-11-11T10:48:38-0800",
           "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-          "pav:lastUpdatedOn": "2016-11-25T15:45:23-0800",
+          "pav:lastUpdatedOn": "2016-11-11T10:48:38-0800",
           "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
           "additionalProperties": false,
-          "@id": "https://repo.metadatacenter.net/template-fields/be84ffc9-c68b-4a83-bf83-9cf71b72162b",
-          "$schema": "http://json-schema.org/draft-04/schema#",
-          "_tmp": {
-            "domId": "id0670406880016639"
-          }
+          "@id": "https://repo.metadatacenter.net/template-fields/0836ce18-7048-4198-bf2e-b401ed73529e",
+          "$schema": "http://json-schema.org/draft-04/schema#"
         },
-        "unitsOfMeasure": {
+        "unitOfMeasure": {
           "@type": "https://schema.metadatacenter.org/core/TemplateField",
           "@context": {
             "schema": "http://schema.org/",
@@ -8819,10 +8383,10 @@
             "oslc": "http://open-services.net/ns/core#"
           },
           "type": "object",
-          "title": "Units of measure field schema",
-          "description": "Units of measure field schema autogenerated by the CEDAR Template Editor",
+          "title": "Unit of measure field schema",
+          "description": "Unit of measure field schema autogenerated by the CEDAR Template Editor",
           "_ui": {
-            "title": "Units of Measure",
+            "title": "Unit of Measure",
             "description": "",
             "inputType": "textfield"
           },
@@ -8860,12 +8424,6 @@
                 "null"
               ]
             },
-            "_valueLabel": {
-              "type": [
-                "string",
-                "null"
-              ]
-            },
             "pav:createdOn": {
               "type": [
                 "string",
@@ -8901,16 +8459,13 @@
           "required": [
             "@value"
           ],
-          "pav:createdOn": "2016-11-25T15:45:23-0800",
+          "pav:createdOn": "2016-11-11T10:48:38-0800",
           "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-          "pav:lastUpdatedOn": "2016-11-25T15:45:23-0800",
+          "pav:lastUpdatedOn": "2016-11-11T10:48:38-0800",
           "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
           "additionalProperties": false,
-          "@id": "https://repo.metadatacenter.net/template-fields/b5facf98-0113-4d88-ba83-4e8457252a67",
-          "$schema": "http://json-schema.org/draft-04/schema#",
-          "_tmp": {
-            "domId": "id08973602692217033"
-          }
+          "@id": "https://repo.metadatacenter.net/template-fields/6bfa6863-5448-4ad8-9be9-cea00140b709",
+          "$schema": "http://json-schema.org/draft-04/schema#"
         },
         "displayFormat": {
           "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -8961,12 +8516,6 @@
                 "null"
               ]
             },
-            "_valueLabel": {
-              "type": [
-                "string",
-                "null"
-              ]
-            },
             "pav:createdOn": {
               "type": [
                 "string",
@@ -9002,16 +8551,13 @@
           "required": [
             "@value"
           ],
-          "pav:createdOn": "2016-11-25T15:45:23-0800",
+          "pav:createdOn": "2016-11-11T10:48:38-0800",
           "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-          "pav:lastUpdatedOn": "2016-11-25T15:45:23-0800",
+          "pav:lastUpdatedOn": "2016-11-11T10:48:38-0800",
           "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
           "additionalProperties": false,
-          "@id": "https://repo.metadatacenter.net/template-fields/09f24aa0-83eb-4120-b6ce-63fc4be1cb20",
-          "$schema": "http://json-schema.org/draft-04/schema#",
-          "_tmp": {
-            "domId": "id0011942586248209208"
-          }
+          "@id": "https://repo.metadatacenter.net/template-fields/2ccb0205-30b8-40ec-bbea-fba2f2e8297a",
+          "$schema": "http://json-schema.org/draft-04/schema#"
         },
         "maximumLength": {
           "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -9062,12 +8608,6 @@
                 "null"
               ]
             },
-            "_valueLabel": {
-              "type": [
-                "string",
-                "null"
-              ]
-            },
             "pav:createdOn": {
               "type": [
                 "string",
@@ -9103,16 +8643,13 @@
           "required": [
             "@value"
           ],
-          "pav:createdOn": "2016-11-25T15:45:23-0800",
+          "pav:createdOn": "2016-11-11T10:48:38-0800",
           "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-          "pav:lastUpdatedOn": "2016-11-25T15:45:23-0800",
+          "pav:lastUpdatedOn": "2016-11-11T10:48:38-0800",
           "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
           "additionalProperties": false,
-          "@id": "https://repo.metadatacenter.net/template-fields/ad57ed12-6854-4e11-96ff-b8cb697b22eb",
-          "$schema": "http://json-schema.org/draft-04/schema#",
-          "_tmp": {
-            "domId": "id07825115198288823"
-          }
+          "@id": "https://repo.metadatacenter.net/template-fields/02d85315-7711-4ef2-911c-6ac6ca9b36b3",
+          "$schema": "http://json-schema.org/draft-04/schema#"
         },
         "minimumLength": {
           "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -9163,12 +8700,6 @@
                 "null"
               ]
             },
-            "_valueLabel": {
-              "type": [
-                "string",
-                "null"
-              ]
-            },
             "pav:createdOn": {
               "type": [
                 "string",
@@ -9204,16 +8735,13 @@
           "required": [
             "@value"
           ],
-          "pav:createdOn": "2016-11-25T15:45:23-0800",
+          "pav:createdOn": "2016-11-11T10:48:38-0800",
           "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-          "pav:lastUpdatedOn": "2016-11-25T15:45:23-0800",
+          "pav:lastUpdatedOn": "2016-11-11T10:48:38-0800",
           "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
           "additionalProperties": false,
-          "@id": "https://repo.metadatacenter.net/template-fields/b54853b6-a9b1-459c-9a01-05d3cb604c5f",
-          "$schema": "http://json-schema.org/draft-04/schema#",
-          "_tmp": {
-            "domId": "id06483386290252686"
-          }
+          "@id": "https://repo.metadatacenter.net/template-fields/962988a1-8462-411a-9903-7aebe5f2a2ce",
+          "$schema": "http://json-schema.org/draft-04/schema#"
         },
         "decimalPlace": {
           "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -9264,12 +8792,6 @@
                 "null"
               ]
             },
-            "_valueLabel": {
-              "type": [
-                "string",
-                "null"
-              ]
-            },
             "pav:createdOn": {
               "type": [
                 "string",
@@ -9305,16 +8827,13 @@
           "required": [
             "@value"
           ],
-          "pav:createdOn": "2016-11-25T15:45:23-0800",
+          "pav:createdOn": "2016-11-11T10:48:38-0800",
           "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-          "pav:lastUpdatedOn": "2016-11-25T15:45:23-0800",
+          "pav:lastUpdatedOn": "2016-11-11T10:48:38-0800",
           "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
           "additionalProperties": false,
-          "@id": "https://repo.metadatacenter.net/template-fields/f80697c9-074e-4eaf-9a2f-df47a733fbc3",
-          "$schema": "http://json-schema.org/draft-04/schema#",
-          "_tmp": {
-            "domId": "id08789205502572599"
-          }
+          "@id": "https://repo.metadatacenter.net/template-fields/8b348157-10a3-48d4-9f6b-cb1cd24e7963",
+          "$schema": "http://json-schema.org/draft-04/schema#"
         },
         "characterSetName": {
           "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -9365,12 +8884,6 @@
                 "null"
               ]
             },
-            "_valueLabel": {
-              "type": [
-                "string",
-                "null"
-              ]
-            },
             "pav:createdOn": {
               "type": [
                 "string",
@@ -9406,16 +8919,13 @@
           "required": [
             "@value"
           ],
-          "pav:createdOn": "2016-11-25T15:45:23-0800",
+          "pav:createdOn": "2016-11-11T10:48:38-0800",
           "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-          "pav:lastUpdatedOn": "2016-11-25T15:45:23-0800",
+          "pav:lastUpdatedOn": "2016-11-11T10:48:38-0800",
           "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
           "additionalProperties": false,
-          "@id": "https://repo.metadatacenter.net/template-fields/9fa89935-9312-4961-8499-3e4b7d17bf02",
-          "$schema": "http://json-schema.org/draft-04/schema#",
-          "_tmp": {
-            "domId": "id006896030294514555"
-          }
+          "@id": "https://repo.metadatacenter.net/template-fields/ad72abbf-8a57-473f-a689-b0077c8980a8",
+          "$schema": "http://json-schema.org/draft-04/schema#"
         },
         "maximumValue": {
           "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -9466,12 +8976,6 @@
                 "null"
               ]
             },
-            "_valueLabel": {
-              "type": [
-                "string",
-                "null"
-              ]
-            },
             "pav:createdOn": {
               "type": [
                 "string",
@@ -9507,16 +9011,13 @@
           "required": [
             "@value"
           ],
-          "pav:createdOn": "2016-11-25T15:45:23-0800",
+          "pav:createdOn": "2016-11-11T10:48:38-0800",
           "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-          "pav:lastUpdatedOn": "2016-11-25T15:45:23-0800",
+          "pav:lastUpdatedOn": "2016-11-11T10:48:38-0800",
           "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
           "additionalProperties": false,
-          "@id": "https://repo.metadatacenter.net/template-fields/8a606af0-c258-4637-855e-6b8fb0adacdb",
-          "$schema": "http://json-schema.org/draft-04/schema#",
-          "_tmp": {
-            "domId": "id07617464726164327"
-          }
+          "@id": "https://repo.metadatacenter.net/template-fields/0a9b7b3e-fd38-4ddf-9826-849442f8a59c",
+          "$schema": "http://json-schema.org/draft-04/schema#"
         },
         "minimumValue": {
           "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -9567,12 +9068,6 @@
                 "null"
               ]
             },
-            "_valueLabel": {
-              "type": [
-                "string",
-                "null"
-              ]
-            },
             "pav:createdOn": {
               "type": [
                 "string",
@@ -9608,16 +9103,13 @@
           "required": [
             "@value"
           ],
-          "pav:createdOn": "2016-11-25T15:45:23-0800",
+          "pav:createdOn": "2016-11-11T10:48:38-0800",
           "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-          "pav:lastUpdatedOn": "2016-11-25T15:45:23-0800",
+          "pav:lastUpdatedOn": "2016-11-11T10:48:38-0800",
           "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
           "additionalProperties": false,
-          "@id": "https://repo.metadatacenter.net/template-fields/cfa22c33-4503-4216-ac57-401425dab007",
-          "$schema": "http://json-schema.org/draft-04/schema#",
-          "_tmp": {
-            "domId": "id09836131585034573"
-          }
+          "@id": "https://repo.metadatacenter.net/template-fields/b5efd817-4253-4bba-b38e-e020effa0845",
+          "$schema": "http://json-schema.org/draft-04/schema#"
         },
         "origin": {
           "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -9668,12 +9160,6 @@
                 "null"
               ]
             },
-            "_valueLabel": {
-              "type": [
-                "string",
-                "null"
-              ]
-            },
             "pav:createdOn": {
               "type": [
                 "string",
@@ -9709,16 +9195,13 @@
           "required": [
             "@value"
           ],
-          "pav:createdOn": "2016-11-25T15:45:23-0800",
+          "pav:createdOn": "2016-11-11T10:48:38-0800",
           "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-          "pav:lastUpdatedOn": "2016-11-25T15:45:23-0800",
+          "pav:lastUpdatedOn": "2016-11-11T10:48:38-0800",
           "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
           "additionalProperties": false,
-          "@id": "https://repo.metadatacenter.net/template-fields/40108e7a-11d7-41be-8843-67a440794720",
-          "$schema": "http://json-schema.org/draft-04/schema#",
-          "_tmp": {
-            "domId": "id039039584010087824"
-          }
+          "@id": "https://repo.metadatacenter.net/template-fields/b24f654c-4db7-434d-a14a-851448c126a2",
+          "$schema": "http://json-schema.org/draft-04/schema#"
         },
         "representation": {
           "@id": "https://repo.metadatacenter.net/template-elements/9afa07eb-cc15-4002-8c71-ba247c964ec1",
@@ -9956,10 +9439,7 @@
               "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
               "additionalProperties": false,
               "@id": "https://repo.metadatacenter.net/template-fields/01f23006-741a-4491-9aa9-efe12ee2a390",
-              "$schema": "http://json-schema.org/draft-04/schema#",
-              "_tmp": {
-                "domId": "id00002043728798546418"
-              }
+              "$schema": "http://json-schema.org/draft-04/schema#"
             },
             "contextName": {
               "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -10051,10 +9531,7 @@
               "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
               "additionalProperties": false,
               "@id": "https://repo.metadatacenter.net/template-fields/650461d4-d3d3-4e6c-ab4f-958300ed6f34",
-              "$schema": "http://json-schema.org/draft-04/schema#",
-              "_tmp": {
-                "domId": "id0034745904000610395"
-              }
+              "$schema": "http://json-schema.org/draft-04/schema#"
             },
             "contextVersion": {
               "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -10146,10 +9623,7 @@
               "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
               "additionalProperties": false,
               "@id": "https://repo.metadatacenter.net/template-fields/5ecf70db-3913-4eea-9047-5c3f0854a873",
-              "$schema": "http://json-schema.org/draft-04/schema#",
-              "_tmp": {
-                "domId": "id011730979065416047"
-              }
+              "$schema": "http://json-schema.org/draft-04/schema#"
             },
             "preferredName": {
               "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -10241,10 +9715,7 @@
               "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
               "additionalProperties": false,
               "@id": "https://repo.metadatacenter.net/template-fields/a4954986-b267-4214-9263-7dd64dbc8d73",
-              "$schema": "http://json-schema.org/draft-04/schema#",
-              "_tmp": {
-                "domId": "id014494772820261814"
-              }
+              "$schema": "http://json-schema.org/draft-04/schema#"
             },
             "version": {
               "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -10336,10 +9807,7 @@
               "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
               "additionalProperties": false,
               "@id": "https://repo.metadatacenter.net/template-fields/8c8caca0-fa8e-41e0-b7df-6076e7d85e62",
-              "$schema": "http://json-schema.org/draft-04/schema#",
-              "_tmp": {
-                "domId": "id08448695913954869"
-              }
+              "$schema": "http://json-schema.org/draft-04/schema#"
             },
             "longName": {
               "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -10431,10 +9899,7 @@
               "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
               "additionalProperties": false,
               "@id": "https://repo.metadatacenter.net/template-fields/e5e3ae96-92b1-48f6-9a5a-92e30e82f879",
-              "$schema": "http://json-schema.org/draft-04/schema#",
-              "_tmp": {
-                "domId": "id09605696083267423"
-              }
+              "$schema": "http://json-schema.org/draft-04/schema#"
             },
             "conceptDetails": {
               "@id": "https://repo.metadatacenter.net/template-elements/43975f00-144c-4088-8380-e464080245d5",
@@ -11443,9 +10908,6 @@
                     "pav:lastUpdatedOn": "2016-11-10T22:01:54-0800",
                     "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
                     "$schema": "http://json-schema.org/draft-04/schema#"
-                  },
-                  "_tmp": {
-                    "domId": "id07309631265635357"
                   }
                 },
                 "_tmp": {
@@ -11458,25 +10920,19 @@
               "pav:lastUpdatedOn": "2016-11-11T08:30:37-0800",
               "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
               "additionalProperties": false,
-              "$schema": "http://json-schema.org/draft-04/schema#",
-              "_tmp": {
-                "domId": "id007023941872174033"
-              }
+              "$schema": "http://json-schema.org/draft-04/schema#"
             },
             "_tmp": {
               "nested": true
             }
           },
           "required": [],
-          "pav:createdOn": "2016-11-25T15:45:23-0800",
+          "pav:createdOn": "2016-11-11T10:48:38-0800",
           "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-          "pav:lastUpdatedOn": "2016-11-25T15:45:23-0800",
+          "pav:lastUpdatedOn": "2016-11-11T10:48:38-0800",
           "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
           "additionalProperties": false,
-          "$schema": "http://json-schema.org/draft-04/schema#",
-          "_tmp": {
-            "domId": "id022034647277503772"
-          }
+          "$schema": "http://json-schema.org/draft-04/schema#"
         },
         "permissibleValues": {
           "@id": "https://repo.metadatacenter.net/template-elements/f27c7df8-7825-43dc-a175-bacbaf8a1f20",
@@ -12485,9 +11941,6 @@
                 "pav:lastUpdatedOn": "2016-11-11T10:38:16-0800",
                 "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
                 "$schema": "http://json-schema.org/draft-04/schema#"
-              },
-              "_tmp": {
-                "domId": "id09361723867891285"
               }
             },
             "_tmp": {
@@ -12495,18 +11948,15 @@
             }
           },
           "required": [],
-          "pav:createdOn": "2016-11-25T15:45:23-0800",
+          "pav:createdOn": "2016-11-11T10:48:38-0800",
           "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-          "pav:lastUpdatedOn": "2016-11-25T15:45:23-0800",
+          "pav:lastUpdatedOn": "2016-11-11T10:48:38-0800",
           "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
           "additionalProperties": false,
-          "$schema": "http://json-schema.org/draft-04/schema#",
-          "_tmp": {
-            "domId": "id08875279752900294"
-          }
+          "$schema": "http://json-schema.org/draft-04/schema#"
         },
         "valueDomainConcepts": {
-          "@id": "https://repo.metadatacenter.net/template-elements/4ecee3ae-4111-4774-806d-3ed3d5394d24",
+          "@id": "https://repo.metadatacenter.net/template-elements/e85391a4-a3f7-4015-bc61-de8f2e29aa60",
           "@type": "https://schema.metadatacenter.org/core/TemplateElement",
           "@context": {
             "pav": "http://purl.org/pav/",
@@ -12610,7 +12060,7 @@
               "format": "uri"
             },
             "valueDomainConceptsItem": {
-              "@id": "https://repo.metadatacenter.net/template-elements/b550a5a9-845e-4525-b741-b197b99debf3",
+              "@id": "https://repo.metadatacenter.net/template-elements/b7f2b323-5e26-49ec-a068-0293d7556aca",
               "@type": "https://schema.metadatacenter.org/core/TemplateElement",
               "@context": {
                 "pav": "http://purl.org/pav/",
@@ -12629,7 +12079,7 @@
                   "definitionSource",
                   "origin",
                   "eVSSource",
-                  "primaryFlag",
+                  "primaryFlagInd",
                   "displayOrder"
                 ]
               },
@@ -12681,9 +12131,9 @@
                         "https://schema.metadatacenter.net/properties/eVSSource"
                       ]
                     },
-                    "primaryFlag": {
+                    "primaryFlagInd": {
                       "enum": [
-                        "https://schema.metadatacenter.net/properties/primaryFlag"
+                        "https://schema.metadatacenter.net/properties/primaryFlagInd"
                       ]
                     },
                     "displayOrder": {
@@ -12705,7 +12155,7 @@
                     "definitionSource",
                     "origin",
                     "eVSSource",
-                    "primaryFlag",
+                    "primaryFlagInd",
                     "displayOrder"
                   ],
                   "additionalProperties": false
@@ -12811,12 +12261,6 @@
                         "null"
                       ]
                     },
-                    "_valueLabel": {
-                      "type": [
-                        "string",
-                        "null"
-                      ]
-                    },
                     "pav:createdOn": {
                       "type": [
                         "string",
@@ -12852,16 +12296,13 @@
                   "required": [
                     "@value"
                   ],
-                  "pav:createdOn": "2016-11-25T15:41:28-0800",
+                  "pav:createdOn": "2016-11-11T10:46:47-0800",
                   "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-                  "pav:lastUpdatedOn": "2016-11-25T15:41:28-0800",
+                  "pav:lastUpdatedOn": "2016-11-11T10:46:47-0800",
                   "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
                   "additionalProperties": false,
-                  "@id": "https://repo.metadatacenter.net/template-fields/61b7e1ee-e541-401e-beb2-08f050dc34e0",
-                  "$schema": "http://json-schema.org/draft-04/schema#",
-                  "_tmp": {
-                    "domId": "id05180795127847204"
-                  }
+                  "@id": "https://repo.metadatacenter.net/template-fields/57b75480-9924-4f2f-9086-18e4254f80e2",
+                  "$schema": "http://json-schema.org/draft-04/schema#"
                 },
                 "longName": {
                   "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -12912,12 +12353,6 @@
                         "null"
                       ]
                     },
-                    "_valueLabel": {
-                      "type": [
-                        "string",
-                        "null"
-                      ]
-                    },
                     "pav:createdOn": {
                       "type": [
                         "string",
@@ -12953,16 +12388,13 @@
                   "required": [
                     "@value"
                   ],
-                  "pav:createdOn": "2016-11-25T15:41:28-0800",
+                  "pav:createdOn": "2016-11-11T10:46:47-0800",
                   "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-                  "pav:lastUpdatedOn": "2016-11-25T15:41:28-0800",
+                  "pav:lastUpdatedOn": "2016-11-11T10:46:47-0800",
                   "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
                   "additionalProperties": false,
-                  "@id": "https://repo.metadatacenter.net/template-fields/70c83863-f0ec-4851-9aeb-f8e309b319db",
-                  "$schema": "http://json-schema.org/draft-04/schema#",
-                  "_tmp": {
-                    "domId": "id07869594582642696"
-                  }
+                  "@id": "https://repo.metadatacenter.net/template-fields/556e91b4-d734-444e-8f25-01e128c652eb",
+                  "$schema": "http://json-schema.org/draft-04/schema#"
                 },
                 "conceptID": {
                   "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -13013,12 +12445,6 @@
                         "null"
                       ]
                     },
-                    "_valueLabel": {
-                      "type": [
-                        "string",
-                        "null"
-                      ]
-                    },
                     "pav:createdOn": {
                       "type": [
                         "string",
@@ -13054,16 +12480,13 @@
                   "required": [
                     "@value"
                   ],
-                  "pav:createdOn": "2016-11-25T15:41:28-0800",
+                  "pav:createdOn": "2016-11-11T10:46:47-0800",
                   "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-                  "pav:lastUpdatedOn": "2016-11-25T15:41:28-0800",
+                  "pav:lastUpdatedOn": "2016-11-11T10:46:47-0800",
                   "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
                   "additionalProperties": false,
-                  "@id": "https://repo.metadatacenter.net/template-fields/04decd17-3626-49d3-ba6d-dcd003150ea2",
-                  "$schema": "http://json-schema.org/draft-04/schema#",
-                  "_tmp": {
-                    "domId": "id06445390726055993"
-                  }
+                  "@id": "https://repo.metadatacenter.net/template-fields/182455d3-1fce-4a46-b76d-c411be4f3ae1",
+                  "$schema": "http://json-schema.org/draft-04/schema#"
                 },
                 "definitionSource": {
                   "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -13114,12 +12537,6 @@
                         "null"
                       ]
                     },
-                    "_valueLabel": {
-                      "type": [
-                        "string",
-                        "null"
-                      ]
-                    },
                     "pav:createdOn": {
                       "type": [
                         "string",
@@ -13155,16 +12572,13 @@
                   "required": [
                     "@value"
                   ],
-                  "pav:createdOn": "2016-11-25T15:41:28-0800",
+                  "pav:createdOn": "2016-11-11T10:46:47-0800",
                   "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-                  "pav:lastUpdatedOn": "2016-11-25T15:41:28-0800",
+                  "pav:lastUpdatedOn": "2016-11-11T10:46:47-0800",
                   "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
                   "additionalProperties": false,
-                  "@id": "https://repo.metadatacenter.net/template-fields/c47375c9-24a1-442e-8072-c4fbafa4c902",
-                  "$schema": "http://json-schema.org/draft-04/schema#",
-                  "_tmp": {
-                    "domId": "id02136471730534093"
-                  }
+                  "@id": "https://repo.metadatacenter.net/template-fields/c0472b3d-c266-4c9d-a584-f368fc9f96b9",
+                  "$schema": "http://json-schema.org/draft-04/schema#"
                 },
                 "origin": {
                   "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -13215,12 +12629,6 @@
                         "null"
                       ]
                     },
-                    "_valueLabel": {
-                      "type": [
-                        "string",
-                        "null"
-                      ]
-                    },
                     "pav:createdOn": {
                       "type": [
                         "string",
@@ -13256,16 +12664,13 @@
                   "required": [
                     "@value"
                   ],
-                  "pav:createdOn": "2016-11-25T15:41:28-0800",
+                  "pav:createdOn": "2016-11-11T10:46:47-0800",
                   "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-                  "pav:lastUpdatedOn": "2016-11-25T15:41:28-0800",
+                  "pav:lastUpdatedOn": "2016-11-11T10:46:47-0800",
                   "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
                   "additionalProperties": false,
-                  "@id": "https://repo.metadatacenter.net/template-fields/0506ba3d-c179-4640-a7e3-3f4602142405",
-                  "$schema": "http://json-schema.org/draft-04/schema#",
-                  "_tmp": {
-                    "domId": "id021295295658600333"
-                  }
+                  "@id": "https://repo.metadatacenter.net/template-fields/015c9b09-4fc7-4d3d-b674-505e97acab32",
+                  "$schema": "http://json-schema.org/draft-04/schema#"
                 },
                 "eVSSource": {
                   "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -13316,12 +12721,6 @@
                         "null"
                       ]
                     },
-                    "_valueLabel": {
-                      "type": [
-                        "string",
-                        "null"
-                      ]
-                    },
                     "pav:createdOn": {
                       "type": [
                         "string",
@@ -13357,18 +12756,15 @@
                   "required": [
                     "@value"
                   ],
-                  "pav:createdOn": "2016-11-25T15:41:28-0800",
+                  "pav:createdOn": "2016-11-11T10:46:47-0800",
                   "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-                  "pav:lastUpdatedOn": "2016-11-25T15:41:28-0800",
+                  "pav:lastUpdatedOn": "2016-11-11T10:46:47-0800",
                   "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
                   "additionalProperties": false,
-                  "@id": "https://repo.metadatacenter.net/template-fields/185a5c8d-f568-47a6-ba84-0e1dc62e8ee4",
-                  "$schema": "http://json-schema.org/draft-04/schema#",
-                  "_tmp": {
-                    "domId": "id03210797524205773"
-                  }
+                  "@id": "https://repo.metadatacenter.net/template-fields/69e4dbc9-436a-45de-ad88-9b7fcf812d98",
+                  "$schema": "http://json-schema.org/draft-04/schema#"
                 },
-                "primaryFlag": {
+                "primaryFlagInd": {
                   "@type": "https://schema.metadatacenter.org/core/TemplateField",
                   "@context": {
                     "schema": "http://schema.org/",
@@ -13376,10 +12772,10 @@
                     "oslc": "http://open-services.net/ns/core#"
                   },
                   "type": "object",
-                  "title": "Primary flag field schema",
-                  "description": "Primary flag field schema autogenerated by the CEDAR Template Editor",
+                  "title": "Primary flag ind field schema",
+                  "description": "Primary flag ind field schema autogenerated by the CEDAR Template Editor",
                   "_ui": {
-                    "title": "Primary Flag",
+                    "title": "Primary Flag Ind",
                     "description": "",
                     "inputType": "textfield"
                   },
@@ -13417,12 +12813,6 @@
                         "null"
                       ]
                     },
-                    "_valueLabel": {
-                      "type": [
-                        "string",
-                        "null"
-                      ]
-                    },
                     "pav:createdOn": {
                       "type": [
                         "string",
@@ -13458,16 +12848,13 @@
                   "required": [
                     "@value"
                   ],
-                  "pav:createdOn": "2016-11-25T15:41:28-0800",
+                  "pav:createdOn": "2016-11-11T10:46:47-0800",
                   "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-                  "pav:lastUpdatedOn": "2016-11-25T15:41:28-0800",
+                  "pav:lastUpdatedOn": "2016-11-11T10:46:47-0800",
                   "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
                   "additionalProperties": false,
-                  "@id": "https://repo.metadatacenter.net/template-fields/6472bd2e-7a83-4578-80bd-5c5fa3ac87e6",
-                  "$schema": "http://json-schema.org/draft-04/schema#",
-                  "_tmp": {
-                    "domId": "id0004225489164014329"
-                  }
+                  "@id": "https://repo.metadatacenter.net/template-fields/43e8d329-9142-4cf4-80c7-c5ecc1e7d54a",
+                  "$schema": "http://json-schema.org/draft-04/schema#"
                 },
                 "displayOrder": {
                   "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -13518,12 +12905,6 @@
                         "null"
                       ]
                     },
-                    "_valueLabel": {
-                      "type": [
-                        "string",
-                        "null"
-                      ]
-                    },
                     "pav:createdOn": {
                       "type": [
                         "string",
@@ -13559,62 +12940,49 @@
                   "required": [
                     "@value"
                   ],
-                  "pav:createdOn": "2016-11-25T15:41:28-0800",
+                  "pav:createdOn": "2016-11-11T10:46:47-0800",
                   "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-                  "pav:lastUpdatedOn": "2016-11-25T15:41:28-0800",
+                  "pav:lastUpdatedOn": "2016-11-11T10:46:47-0800",
                   "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
                   "additionalProperties": false,
-                  "@id": "https://repo.metadatacenter.net/template-fields/6ba8d16e-4032-403b-8150-cdb95a36c8e5",
-                  "$schema": "http://json-schema.org/draft-04/schema#",
-                  "_tmp": {
-                    "domId": "id044160965062389623"
-                  }
+                  "@id": "https://repo.metadatacenter.net/template-fields/4e28e6f7-05cf-43b8-a502-5260d3d41ae4",
+                  "$schema": "http://json-schema.org/draft-04/schema#"
                 },
                 "_tmp": {
                   "nested": true
                 }
               },
               "required": [],
-              "pav:createdOn": "2016-11-25T15:42:08-0800",
+              "pav:createdOn": "2016-11-11T10:47:19-0800",
               "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-              "pav:lastUpdatedOn": "2016-11-25T15:42:08-0800",
+              "pav:lastUpdatedOn": "2016-11-11T10:47:19-0800",
               "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
               "additionalProperties": false,
-              "$schema": "http://json-schema.org/draft-04/schema#",
-              "_tmp": {
-                "domId": "id03964484140072908"
-              }
+              "$schema": "http://json-schema.org/draft-04/schema#"
             },
             "_tmp": {
               "nested": true
             }
           },
           "required": [],
-          "pav:createdOn": "2016-11-25T15:45:23-0800",
+          "pav:createdOn": "2016-11-11T10:48:38-0800",
           "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-          "pav:lastUpdatedOn": "2016-11-25T15:45:23-0800",
+          "pav:lastUpdatedOn": "2016-11-11T10:48:38-0800",
           "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
           "additionalProperties": false,
-          "$schema": "http://json-schema.org/draft-04/schema#",
-          "_tmp": {
-            "domId": "id09459848222915701"
-          }
-        },
-        "_tmp": {}
+          "$schema": "http://json-schema.org/draft-04/schema#"
+        }
       },
       "required": [],
-      "pav:createdOn": "2016-11-25T15:55:48-0800",
+      "pav:createdOn": "2016-11-11T15:37:16-0800",
       "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-      "pav:lastUpdatedOn": "2016-11-25T15:55:48-0800",
+      "pav:lastUpdatedOn": "2016-11-11T15:37:16-0800",
       "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
       "additionalProperties": false,
-      "$schema": "http://json-schema.org/draft-04/schema#",
-      "_tmp": {
-        "domId": "id06298873264715983"
-      }
+      "$schema": "http://json-schema.org/draft-04/schema#"
     },
     "referenceDocumentsList": {
-      "@id": "https://repo.metadatacenter.net/template-elements/f14bfa30-bc28-4255-925e-58f312f86ff0",
+      "@id": "https://repo.metadatacenter.net/template-elements/5d41cb20-d83d-48d7-9ddb-abdda9ffc6a3",
       "@type": "https://schema.metadatacenter.org/core/TemplateElement",
       "@context": {
         "pav": "http://purl.org/pav/",
@@ -13718,7 +13086,7 @@
           "format": "uri"
         },
         "referenceDocumentsListItem": {
-          "@id": "https://repo.metadatacenter.net/template-elements/18edee07-99da-4a7a-a01f-ea83ecf3f94e",
+          "@id": "https://repo.metadatacenter.net/template-elements/04a3d162-90ca-4a06-bd5d-0fb66a564869",
           "@type": "https://schema.metadatacenter.org/core/TemplateElement",
           "@context": {
             "pav": "http://purl.org/pav/",
@@ -13735,7 +13103,6 @@
               "organizationName",
               "documentType",
               "documentText",
-              "uRL",
               "language",
               "displayOrder"
             ]
@@ -13778,11 +13145,6 @@
                     "https://schema.metadatacenter.net/properties/documentText"
                   ]
                 },
-                "uRL": {
-                  "enum": [
-                    "https://schema.metadatacenter.net/properties/uRL"
-                  ]
-                },
                 "language": {
                   "enum": [
                     "https://schema.metadatacenter.net/properties/language"
@@ -13805,7 +13167,6 @@
                 "organizationName",
                 "documentType",
                 "documentText",
-                "uRL",
                 "language",
                 "displayOrder"
               ],
@@ -13912,12 +13273,6 @@
                     "null"
                   ]
                 },
-                "_valueLabel": {
-                  "type": [
-                    "string",
-                    "null"
-                  ]
-                },
                 "pav:createdOn": {
                   "type": [
                     "string",
@@ -13953,16 +13308,13 @@
               "required": [
                 "@value"
               ],
-              "pav:createdOn": "2016-11-25T15:51:58-0800",
+              "pav:createdOn": "2016-11-11T10:55:51-0800",
               "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-              "pav:lastUpdatedOn": "2016-11-25T15:51:58-0800",
+              "pav:lastUpdatedOn": "2016-11-11T10:55:51-0800",
               "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
               "additionalProperties": false,
-              "@id": "https://repo.metadatacenter.net/template-fields/d50888cc-ccf7-42cf-b188-dd559432104a",
-              "$schema": "http://json-schema.org/draft-04/schema#",
-              "_tmp": {
-                "domId": "id08598086220004051"
-              }
+              "@id": "https://repo.metadatacenter.net/template-fields/78b9bccc-76ec-451d-853c-e00582bc4905",
+              "$schema": "http://json-schema.org/draft-04/schema#"
             },
             "organizationName": {
               "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -14013,12 +13365,6 @@
                     "null"
                   ]
                 },
-                "_valueLabel": {
-                  "type": [
-                    "string",
-                    "null"
-                  ]
-                },
                 "pav:createdOn": {
                   "type": [
                     "string",
@@ -14054,16 +13400,13 @@
               "required": [
                 "@value"
               ],
-              "pav:createdOn": "2016-11-25T15:51:58-0800",
+              "pav:createdOn": "2016-11-11T10:55:51-0800",
               "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-              "pav:lastUpdatedOn": "2016-11-25T15:51:58-0800",
+              "pav:lastUpdatedOn": "2016-11-11T10:55:51-0800",
               "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
               "additionalProperties": false,
-              "@id": "https://repo.metadatacenter.net/template-fields/daf9ab72-2b22-42ba-bd52-b1d65fef7d7c",
-              "$schema": "http://json-schema.org/draft-04/schema#",
-              "_tmp": {
-                "domId": "id07211594396733203"
-              }
+              "@id": "https://repo.metadatacenter.net/template-fields/ae20097f-b277-480a-9bed-b54a1f99877d",
+              "$schema": "http://json-schema.org/draft-04/schema#"
             },
             "documentType": {
               "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -14114,12 +13457,6 @@
                     "null"
                   ]
                 },
-                "_valueLabel": {
-                  "type": [
-                    "string",
-                    "null"
-                  ]
-                },
                 "pav:createdOn": {
                   "type": [
                     "string",
@@ -14155,16 +13492,13 @@
               "required": [
                 "@value"
               ],
-              "pav:createdOn": "2016-11-25T15:51:58-0800",
+              "pav:createdOn": "2016-11-11T10:55:51-0800",
               "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-              "pav:lastUpdatedOn": "2016-11-25T15:51:58-0800",
+              "pav:lastUpdatedOn": "2016-11-11T10:55:51-0800",
               "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
               "additionalProperties": false,
-              "@id": "https://repo.metadatacenter.net/template-fields/83a375c8-a966-44b9-8233-d17ba6af9d53",
-              "$schema": "http://json-schema.org/draft-04/schema#",
-              "_tmp": {
-                "domId": "id034151071225595664"
-              }
+              "@id": "https://repo.metadatacenter.net/template-fields/bb426120-590e-4ff2-a915-e595b11858f0",
+              "$schema": "http://json-schema.org/draft-04/schema#"
             },
             "documentText": {
               "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -14215,12 +13549,6 @@
                     "null"
                   ]
                 },
-                "_valueLabel": {
-                  "type": [
-                    "string",
-                    "null"
-                  ]
-                },
                 "pav:createdOn": {
                   "type": [
                     "string",
@@ -14256,117 +13584,13 @@
               "required": [
                 "@value"
               ],
-              "pav:createdOn": "2016-11-25T15:51:58-0800",
+              "pav:createdOn": "2016-11-11T10:55:51-0800",
               "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-              "pav:lastUpdatedOn": "2016-11-25T15:51:58-0800",
+              "pav:lastUpdatedOn": "2016-11-11T10:55:51-0800",
               "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
               "additionalProperties": false,
-              "@id": "https://repo.metadatacenter.net/template-fields/cb1304d0-57b4-4066-aa1f-ba08024e8fb2",
-              "$schema": "http://json-schema.org/draft-04/schema#",
-              "_tmp": {
-                "domId": "id05679193939590366"
-              }
-            },
-            "uRL": {
-              "@type": "https://schema.metadatacenter.org/core/TemplateField",
-              "@context": {
-                "schema": "http://schema.org/",
-                "pav": "http://purl.org/pav/",
-                "oslc": "http://open-services.net/ns/core#"
-              },
-              "type": "object",
-              "title": "Url field schema",
-              "description": "Url field schema autogenerated by the CEDAR Template Editor",
-              "_ui": {
-                "title": "URL",
-                "description": "",
-                "inputType": "textfield"
-              },
-              "_valueConstraints": {
-                "requiredValue": false
-              },
-              "properties": {
-                "@id": {
-                  "type": [
-                    "string",
-                    "null"
-                  ],
-                  "format": "uri"
-                },
-                "@type": {
-                  "oneOf": [
-                    {
-                      "type": "string",
-                      "format": "uri"
-                    },
-                    {
-                      "type": "array",
-                      "minItems": 1,
-                      "items": {
-                        "type": "string",
-                        "format": "uri"
-                      },
-                      "uniqueItems": true
-                    }
-                  ]
-                },
-                "@value": {
-                  "type": [
-                    "string",
-                    "null"
-                  ]
-                },
-                "_valueLabel": {
-                  "type": [
-                    "string",
-                    "null"
-                  ]
-                },
-                "pav:createdOn": {
-                  "type": [
-                    "string",
-                    "null"
-                  ],
-                  "format": "date-time"
-                },
-                "pav:createdBy": {
-                  "type": [
-                    "string",
-                    "null"
-                  ],
-                  "format": "uri"
-                },
-                "pav:lastUpdatedOn": {
-                  "type": [
-                    "string",
-                    "null"
-                  ],
-                  "format": "date-time"
-                },
-                "oslc:modifiedBy": {
-                  "type": [
-                    "string",
-                    "null"
-                  ],
-                  "format": "uri"
-                },
-                "_tmp": {
-                  "nested": true
-                }
-              },
-              "required": [
-                "@value"
-              ],
-              "pav:createdOn": "2016-11-25T15:51:58-0800",
-              "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-              "pav:lastUpdatedOn": "2016-11-25T15:51:58-0800",
-              "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-              "additionalProperties": false,
-              "@id": "https://repo.metadatacenter.net/template-fields/b7032927-7549-4511-8b74-9f1582c4c403",
-              "$schema": "http://json-schema.org/draft-04/schema#",
-              "_tmp": {
-                "domId": "id042774449855264507"
-              }
+              "@id": "https://repo.metadatacenter.net/template-fields/953651ff-2477-476a-b799-c4b83352ddc9",
+              "$schema": "http://json-schema.org/draft-04/schema#"
             },
             "language": {
               "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -14417,12 +13641,6 @@
                     "null"
                   ]
                 },
-                "_valueLabel": {
-                  "type": [
-                    "string",
-                    "null"
-                  ]
-                },
                 "pav:createdOn": {
                   "type": [
                     "string",
@@ -14458,16 +13676,13 @@
               "required": [
                 "@value"
               ],
-              "pav:createdOn": "2016-11-25T15:51:58-0800",
+              "pav:createdOn": "2016-11-11T10:55:51-0800",
               "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-              "pav:lastUpdatedOn": "2016-11-25T15:51:58-0800",
+              "pav:lastUpdatedOn": "2016-11-11T10:55:51-0800",
               "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
               "additionalProperties": false,
-              "@id": "https://repo.metadatacenter.net/template-fields/5083eb98-7c98-408c-8d60-0b805a3f68a2",
-              "$schema": "http://json-schema.org/draft-04/schema#",
-              "_tmp": {
-                "domId": "id06432043636271363"
-              }
+              "@id": "https://repo.metadatacenter.net/template-fields/e02aad2e-d8cb-4bd8-bb0d-74faa762cfea",
+              "$schema": "http://json-schema.org/draft-04/schema#"
             },
             "displayOrder": {
               "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -14518,12 +13733,6 @@
                     "null"
                   ]
                 },
-                "_valueLabel": {
-                  "type": [
-                    "string",
-                    "null"
-                  ]
-                },
                 "pav:createdOn": {
                   "type": [
                     "string",
@@ -14559,47 +13768,37 @@
               "required": [
                 "@value"
               ],
-              "pav:createdOn": "2016-11-25T15:51:58-0800",
+              "pav:createdOn": "2016-11-11T10:55:51-0800",
               "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-              "pav:lastUpdatedOn": "2016-11-25T15:51:58-0800",
+              "pav:lastUpdatedOn": "2016-11-11T10:55:51-0800",
               "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
               "additionalProperties": false,
-              "@id": "https://repo.metadatacenter.net/template-fields/1eb79913-8e16-4003-a836-c3c265e4198e",
-              "$schema": "http://json-schema.org/draft-04/schema#",
-              "_tmp": {
-                "domId": "id022422933450112792"
-              }
+              "@id": "https://repo.metadatacenter.net/template-fields/4db6b68b-801a-4792-ba29-7c173ff10267",
+              "$schema": "http://json-schema.org/draft-04/schema#"
             },
             "_tmp": {
               "nested": true
             }
           },
           "required": [],
-          "pav:createdOn": "2016-11-25T15:52:55-0800",
+          "pav:createdOn": "2016-11-11T10:57:05-0800",
           "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-          "pav:lastUpdatedOn": "2016-11-25T15:52:55-0800",
+          "pav:lastUpdatedOn": "2016-11-11T10:57:05-0800",
           "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
           "additionalProperties": false,
-          "$schema": "http://json-schema.org/draft-04/schema#",
-          "_tmp": {
-            "domId": "id004438269846908649"
-          }
-        },
-        "_tmp": {}
+          "$schema": "http://json-schema.org/draft-04/schema#"
+        }
       },
       "required": [],
-      "pav:createdOn": "2016-11-25T15:55:48-0800",
+      "pav:createdOn": "2016-11-11T15:37:16-0800",
       "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-      "pav:lastUpdatedOn": "2016-11-25T15:55:48-0800",
+      "pav:lastUpdatedOn": "2016-11-11T15:37:16-0800",
       "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
       "additionalProperties": false,
-      "$schema": "http://json-schema.org/draft-04/schema#",
-      "_tmp": {
-        "domId": "id07181574965882827"
-      }
+      "$schema": "http://json-schema.org/draft-04/schema#"
     },
     "classificationsList": {
-      "@id": "https://repo.metadatacenter.net/template-elements/adc54558-f689-492d-8e53-6c80ec82cbff",
+      "@id": "https://repo.metadatacenter.net/template-elements/417d6a25-712c-4e22-bebd-e68b7b0be741",
       "@type": "https://schema.metadatacenter.org/core/TemplateElement",
       "@context": {
         "pav": "http://purl.org/pav/",
@@ -14612,7 +13811,7 @@
         "title": "Classifications List",
         "description": "Description",
         "order": [
-          "classificationsListItem"
+          "classificationListItem"
         ]
       },
       "properties": {
@@ -14633,9 +13832,9 @@
                 "http://open-services.net/ns/core#"
               ]
             },
-            "classificationsListItem": {
+            "classificationListItem": {
               "enum": [
-                "https://schema.metadatacenter.net/properties/classificationsListItem"
+                "https://schema.metadatacenter.net/properties/classificationListItem"
               ]
             }
           },
@@ -14646,7 +13845,7 @@
             }
           },
           "required": [
-            "classificationsListItem"
+            "classificationListItem"
           ],
           "additionalProperties": false
         },
@@ -14702,7 +13901,7 @@
           ],
           "format": "uri"
         },
-        "classificationsListItem": {
+        "classificationListItem": {
           "@id": "https://repo.metadatacenter.net/template-elements/16a873f8-a115-4463-9b1b-2459934d88e9",
           "@type": "https://schema.metadatacenter.org/core/TemplateElement",
           "@context": {
@@ -14710,10 +13909,10 @@
             "oslc": "http://open-services.net/ns/core#"
           },
           "type": "object",
-          "title": "Classifications list item element schema",
-          "description": "Classifications list item element schema autogenerated by the CEDAR Template Editor",
+          "title": "Classification list item element schema",
+          "description": "Classification list item element schema autogenerated by the CEDAR Template Editor",
           "_ui": {
-            "title": "Classifications List Item",
+            "title": "Classification List Item",
             "description": "Description",
             "order": [
               "classificationScheme",
@@ -15056,10 +14255,7 @@
                   "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
                   "additionalProperties": false,
                   "@id": "https://repo.metadatacenter.net/template-fields/8d6baf53-8ba1-4d9d-8af6-44e4297b98c6",
-                  "$schema": "http://json-schema.org/draft-04/schema#",
-                  "_tmp": {
-                    "domId": "id039179364824339613"
-                  }
+                  "$schema": "http://json-schema.org/draft-04/schema#"
                 },
                 "contextName": {
                   "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -15151,10 +14347,7 @@
                   "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
                   "additionalProperties": false,
                   "@id": "https://repo.metadatacenter.net/template-fields/a2ed1d21-0e58-48e8-99d5-d7c4965dfb51",
-                  "$schema": "http://json-schema.org/draft-04/schema#",
-                  "_tmp": {
-                    "domId": "id013229465632213655"
-                  }
+                  "$schema": "http://json-schema.org/draft-04/schema#"
                 },
                 "contextVersion": {
                   "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -15246,10 +14439,7 @@
                   "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
                   "additionalProperties": false,
                   "@id": "https://repo.metadatacenter.net/template-fields/84417050-36c2-41c7-9269-ff525c625517",
-                  "$schema": "http://json-schema.org/draft-04/schema#",
-                  "_tmp": {
-                    "domId": "id03965688447883913"
-                  }
+                  "$schema": "http://json-schema.org/draft-04/schema#"
                 },
                 "preferredName": {
                   "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -15341,10 +14531,7 @@
                   "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
                   "additionalProperties": false,
                   "@id": "https://repo.metadatacenter.net/template-fields/cceb7395-0df6-4787-a040-375051904bfe",
-                  "$schema": "http://json-schema.org/draft-04/schema#",
-                  "_tmp": {
-                    "domId": "id013815687526213427"
-                  }
+                  "$schema": "http://json-schema.org/draft-04/schema#"
                 },
                 "version": {
                   "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -15436,25 +14623,19 @@
                   "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
                   "additionalProperties": false,
                   "@id": "https://repo.metadatacenter.net/template-fields/66c88cd4-636f-4379-b82c-72550c629d7c",
-                  "$schema": "http://json-schema.org/draft-04/schema#",
-                  "_tmp": {
-                    "domId": "id09316909369480475"
-                  }
+                  "$schema": "http://json-schema.org/draft-04/schema#"
                 },
                 "_tmp": {
                   "nested": true
                 }
               },
               "required": [],
-              "pav:createdOn": "2016-11-25T15:27:21-0800",
+              "pav:createdOn": "2016-11-11T11:05:20-0800",
               "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-              "pav:lastUpdatedOn": "2016-11-25T15:27:21-0800",
+              "pav:lastUpdatedOn": "2016-11-11T11:05:20-0800",
               "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
               "additionalProperties": false,
-              "$schema": "http://json-schema.org/draft-04/schema#",
-              "_tmp": {
-                "domId": "id09689370710008285"
-              }
+              "$schema": "http://json-schema.org/draft-04/schema#"
             },
             "classificationSchemeItemName": {
               "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -15540,16 +14721,13 @@
               "required": [
                 "@value"
               ],
-              "pav:createdOn": "2016-11-25T15:27:21-0800",
+              "pav:createdOn": "2016-11-11T11:05:20-0800",
               "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-              "pav:lastUpdatedOn": "2016-11-25T15:27:21-0800",
+              "pav:lastUpdatedOn": "2016-11-11T11:05:20-0800",
               "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
               "additionalProperties": false,
               "@id": "https://repo.metadatacenter.net/template-fields/6f76261a-c1e6-41a2-8ef6-bd2890606884",
-              "$schema": "http://json-schema.org/draft-04/schema#",
-              "_tmp": {
-                "domId": "id016983083864044435"
-              }
+              "$schema": "http://json-schema.org/draft-04/schema#"
             },
             "classificationSchemeItemType": {
               "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -15635,16 +14813,13 @@
               "required": [
                 "@value"
               ],
-              "pav:createdOn": "2016-11-25T15:27:21-0800",
+              "pav:createdOn": "2016-11-11T11:05:20-0800",
               "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-              "pav:lastUpdatedOn": "2016-11-25T15:27:21-0800",
+              "pav:lastUpdatedOn": "2016-11-11T11:05:20-0800",
               "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
               "additionalProperties": false,
               "@id": "https://repo.metadatacenter.net/template-fields/6c029eb8-cfbf-4dff-b44e-8990d3ab2057",
-              "$schema": "http://json-schema.org/draft-04/schema#",
-              "_tmp": {
-                "domId": "id003181526850332528"
-              }
+              "$schema": "http://json-schema.org/draft-04/schema#"
             },
             "cSIPublicID": {
               "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -15730,16 +14905,13 @@
               "required": [
                 "@value"
               ],
-              "pav:createdOn": "2016-11-25T15:27:21-0800",
+              "pav:createdOn": "2016-11-11T11:05:20-0800",
               "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-              "pav:lastUpdatedOn": "2016-11-25T15:27:21-0800",
+              "pav:lastUpdatedOn": "2016-11-11T11:05:20-0800",
               "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
               "additionalProperties": false,
               "@id": "https://repo.metadatacenter.net/template-fields/bacc84a1-9c22-4e4b-9e01-93a3f19c0f10",
-              "$schema": "http://json-schema.org/draft-04/schema#",
-              "_tmp": {
-                "domId": "id047362010337394267"
-              }
+              "$schema": "http://json-schema.org/draft-04/schema#"
             },
             "cSIVersion": {
               "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -15825,44 +14997,34 @@
               "required": [
                 "@value"
               ],
-              "pav:createdOn": "2016-11-25T15:27:21-0800",
+              "pav:createdOn": "2016-11-11T11:05:20-0800",
               "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-              "pav:lastUpdatedOn": "2016-11-25T15:27:21-0800",
+              "pav:lastUpdatedOn": "2016-11-11T11:05:20-0800",
               "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
               "additionalProperties": false,
               "@id": "https://repo.metadatacenter.net/template-fields/e4695f95-d114-4ae1-9e73-302147aa9a43",
-              "$schema": "http://json-schema.org/draft-04/schema#",
-              "_tmp": {
-                "domId": "id07724927244426798"
-              }
+              "$schema": "http://json-schema.org/draft-04/schema#"
             },
             "_tmp": {
               "nested": true
             }
           },
           "required": [],
-          "pav:createdOn": "2016-11-25T15:28:28-0800",
+          "pav:createdOn": "2016-11-11T11:07:09-0800",
           "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-          "pav:lastUpdatedOn": "2016-11-25T15:28:28-0800",
+          "pav:lastUpdatedOn": "2016-11-11T11:07:09-0800",
           "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
           "additionalProperties": false,
-          "$schema": "http://json-schema.org/draft-04/schema#",
-          "_tmp": {
-            "domId": "id09202335384757228"
-          }
-        },
-        "_tmp": {}
+          "$schema": "http://json-schema.org/draft-04/schema#"
+        }
       },
       "required": [],
-      "pav:createdOn": "2016-11-25T15:55:48-0800",
+      "pav:createdOn": "2016-11-11T15:37:16-0800",
       "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-      "pav:lastUpdatedOn": "2016-11-25T15:55:48-0800",
+      "pav:lastUpdatedOn": "2016-11-11T15:37:16-0800",
       "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
       "additionalProperties": false,
-      "$schema": "http://json-schema.org/draft-04/schema#",
-      "_tmp": {
-        "domId": "id045365370784794634"
-      }
+      "$schema": "http://json-schema.org/draft-04/schema#"
     },
     "alternateNameList": {
       "@id": "https://repo.metadatacenter.net/template-elements/13dff2b6-38e3-4db4-9737-8795e248e401",
@@ -16190,10 +15352,7 @@
               "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
               "additionalProperties": false,
               "@id": "https://repo.metadatacenter.net/template-fields/7d075eb0-557a-40f1-b3f6-f45d90a99468",
-              "$schema": "http://json-schema.org/draft-04/schema#",
-              "_tmp": {
-                "domId": "id034997667175698544"
-              }
+              "$schema": "http://json-schema.org/draft-04/schema#"
             },
             "contextVersion": {
               "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -16285,10 +15444,7 @@
               "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
               "additionalProperties": false,
               "@id": "https://repo.metadatacenter.net/template-fields/e6a0ac5c-45c1-4092-b01d-cfc69163e906",
-              "$schema": "http://json-schema.org/draft-04/schema#",
-              "_tmp": {
-                "domId": "id03200822798039955"
-              }
+              "$schema": "http://json-schema.org/draft-04/schema#"
             },
             "alternateName": {
               "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -16380,10 +15536,7 @@
               "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
               "additionalProperties": false,
               "@id": "https://repo.metadatacenter.net/template-fields/85c4dde0-ef13-4dc2-b137-06d84721e897",
-              "$schema": "http://json-schema.org/draft-04/schema#",
-              "_tmp": {
-                "domId": "id0775893418804829"
-              }
+              "$schema": "http://json-schema.org/draft-04/schema#"
             },
             "alternateNameType": {
               "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -16475,10 +15628,7 @@
               "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
               "additionalProperties": false,
               "@id": "https://repo.metadatacenter.net/template-fields/bc390719-ba3f-48cc-a772-29a769ab34a7",
-              "$schema": "http://json-schema.org/draft-04/schema#",
-              "_tmp": {
-                "domId": "id09079120224556108"
-              }
+              "$schema": "http://json-schema.org/draft-04/schema#"
             },
             "language": {
               "@type": "https://schema.metadatacenter.org/core/TemplateField",
@@ -16570,10 +15720,7 @@
               "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
               "additionalProperties": false,
               "@id": "https://repo.metadatacenter.net/template-fields/bb0f7629-654c-47b6-98cf-72bf537acfd7",
-              "$schema": "http://json-schema.org/draft-04/schema#",
-              "_tmp": {
-                "domId": "id06151747090429234"
-              }
+              "$schema": "http://json-schema.org/draft-04/schema#"
             },
             "_tmp": {
               "nested": true
@@ -16585,1775 +15732,16 @@
           "pav:lastUpdatedOn": "2016-11-11T15:26:28-0800",
           "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
           "additionalProperties": false,
-          "$schema": "http://json-schema.org/draft-04/schema#",
-          "_tmp": {
-            "domId": "id0783434230615319"
-          }
-        },
-        "_tmp": {}
+          "$schema": "http://json-schema.org/draft-04/schema#"
+        }
       },
       "required": [],
-      "pav:createdOn": "2016-11-25T15:55:48-0800",
+      "pav:createdOn": "2016-11-11T15:37:16-0800",
       "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-      "pav:lastUpdatedOn": "2016-11-25T15:55:48-0800",
+      "pav:lastUpdatedOn": "2016-11-11T15:37:16-0800",
       "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
       "additionalProperties": false,
-      "$schema": "http://json-schema.org/draft-04/schema#",
-      "_tmp": {
-        "domId": "id0899819416162833"
-      }
-    },
-    "dataElementDerivation": {
-      "@id": "https://repo.metadatacenter.net/template-elements/f73fad30-d3b2-4159-9342-996b625dcc92",
-      "@type": "https://schema.metadatacenter.org/core/TemplateElement",
-      "@context": {
-        "pav": "http://purl.org/pav/",
-        "oslc": "http://open-services.net/ns/core#"
-      },
-      "type": "object",
-      "title": "Data element derivation element schema",
-      "description": "Data element derivation element schema autogenerated by the CEDAR Template Editor",
-      "_ui": {
-        "title": "Data Element Derivation",
-        "description": "Description",
-        "order": [
-          "derivationType",
-          "derivationTypeDescription",
-          "methods",
-          "rule",
-          "concatenationCharacter",
-          "componentDataElementsList"
-        ]
-      },
-      "properties": {
-        "@context": {
-          "type": "object",
-          "properties": {
-            "pav": {
-              "type": "string",
-              "format": "uri",
-              "enum": [
-                "http://purl.org/pav/"
-              ]
-            },
-            "oslc": {
-              "type": "string",
-              "format": "uri",
-              "enum": [
-                "http://open-services.net/ns/core#"
-              ]
-            },
-            "derivationType": {
-              "enum": [
-                "https://schema.metadatacenter.net/properties/derivationType"
-              ]
-            },
-            "derivationTypeDescription": {
-              "enum": [
-                "https://schema.metadatacenter.net/properties/derivationTypeDescription"
-              ]
-            },
-            "methods": {
-              "enum": [
-                "https://schema.metadatacenter.net/properties/methods"
-              ]
-            },
-            "rule": {
-              "enum": [
-                "https://schema.metadatacenter.net/properties/rule"
-              ]
-            },
-            "concatenationCharacter": {
-              "enum": [
-                "https://schema.metadatacenter.net/properties/concatenationCharacter"
-              ]
-            },
-            "componentDataElementsList": {
-              "enum": [
-                "https://schema.metadatacenter.net/properties/componentDataElementsList"
-              ]
-            }
-          },
-          "patternProperties": {
-            "^(?!pav)(?!schema)(?!oslc)[a-zA-Z][a-zA-Z0-9]*$": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
-          "required": [
-            "derivationType",
-            "derivationTypeDescription",
-            "methods",
-            "rule",
-            "concatenationCharacter",
-            "componentDataElementsList"
-          ],
-          "additionalProperties": false
-        },
-        "@id": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "format": "uri"
-        },
-        "@type": {
-          "oneOf": [
-            {
-              "type": "string",
-              "format": "uri"
-            },
-            {
-              "type": "array",
-              "minItems": 1,
-              "items": {
-                "type": "string",
-                "format": "uri"
-              },
-              "uniqueItems": true
-            }
-          ]
-        },
-        "pav:createdOn": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "format": "date-time"
-        },
-        "pav:createdBy": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "format": "uri"
-        },
-        "pav:lastUpdatedOn": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "format": "date-time"
-        },
-        "oslc:modifiedBy": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "format": "uri"
-        },
-        "derivationType": {
-          "@type": "https://schema.metadatacenter.org/core/TemplateField",
-          "@context": {
-            "schema": "http://schema.org/",
-            "pav": "http://purl.org/pav/",
-            "oslc": "http://open-services.net/ns/core#"
-          },
-          "type": "object",
-          "title": "Derivation type field schema",
-          "description": "Derivation type field schema autogenerated by the CEDAR Template Editor",
-          "_ui": {
-            "title": "Derivation Type",
-            "description": "",
-            "inputType": "textfield"
-          },
-          "_valueConstraints": {
-            "requiredValue": false
-          },
-          "properties": {
-            "@id": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "format": "uri"
-            },
-            "@type": {
-              "oneOf": [
-                {
-                  "type": "string",
-                  "format": "uri"
-                },
-                {
-                  "type": "array",
-                  "minItems": 1,
-                  "items": {
-                    "type": "string",
-                    "format": "uri"
-                  },
-                  "uniqueItems": true
-                }
-              ]
-            },
-            "@value": {
-              "type": [
-                "string",
-                "null"
-              ]
-            },
-            "_valueLabel": {
-              "type": [
-                "string",
-                "null"
-              ]
-            },
-            "pav:createdOn": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "format": "date-time"
-            },
-            "pav:createdBy": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "format": "uri"
-            },
-            "pav:lastUpdatedOn": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "format": "date-time"
-            },
-            "oslc:modifiedBy": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "format": "uri"
-            },
-            "_tmp": {
-              "nested": true
-            }
-          },
-          "required": [
-            "@value"
-          ],
-          "pav:createdOn": "2016-11-25T09:02:12-0800",
-          "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-          "pav:lastUpdatedOn": "2016-11-25T09:02:12-0800",
-          "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-          "additionalProperties": false,
-          "@id": "https://repo.metadatacenter.net/template-fields/4bacc930-1719-45a3-8197-ab9614b055e0",
-          "$schema": "http://json-schema.org/draft-04/schema#",
-          "_tmp": {
-            "domId": "id0374526569692174"
-          }
-        },
-        "derivationTypeDescription": {
-          "@type": "https://schema.metadatacenter.org/core/TemplateField",
-          "@context": {
-            "schema": "http://schema.org/",
-            "pav": "http://purl.org/pav/",
-            "oslc": "http://open-services.net/ns/core#"
-          },
-          "type": "object",
-          "title": "Derivation type description field schema",
-          "description": "Derivation type description field schema autogenerated by the CEDAR Template Editor",
-          "_ui": {
-            "title": "Derivation Type Description",
-            "description": "",
-            "inputType": "textfield"
-          },
-          "_valueConstraints": {
-            "requiredValue": false
-          },
-          "properties": {
-            "@id": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "format": "uri"
-            },
-            "@type": {
-              "oneOf": [
-                {
-                  "type": "string",
-                  "format": "uri"
-                },
-                {
-                  "type": "array",
-                  "minItems": 1,
-                  "items": {
-                    "type": "string",
-                    "format": "uri"
-                  },
-                  "uniqueItems": true
-                }
-              ]
-            },
-            "@value": {
-              "type": [
-                "string",
-                "null"
-              ]
-            },
-            "_valueLabel": {
-              "type": [
-                "string",
-                "null"
-              ]
-            },
-            "pav:createdOn": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "format": "date-time"
-            },
-            "pav:createdBy": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "format": "uri"
-            },
-            "pav:lastUpdatedOn": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "format": "date-time"
-            },
-            "oslc:modifiedBy": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "format": "uri"
-            },
-            "_tmp": {
-              "nested": true
-            }
-          },
-          "required": [
-            "@value"
-          ],
-          "pav:createdOn": "2016-11-25T09:02:12-0800",
-          "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-          "pav:lastUpdatedOn": "2016-11-25T09:02:12-0800",
-          "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-          "additionalProperties": false,
-          "@id": "https://repo.metadatacenter.net/template-fields/d72bb82a-742c-4953-afd1-6d73ceb88d64",
-          "$schema": "http://json-schema.org/draft-04/schema#",
-          "_tmp": {
-            "domId": "id070563310196362"
-          }
-        },
-        "methods": {
-          "@type": "https://schema.metadatacenter.org/core/TemplateField",
-          "@context": {
-            "schema": "http://schema.org/",
-            "pav": "http://purl.org/pav/",
-            "oslc": "http://open-services.net/ns/core#"
-          },
-          "type": "object",
-          "title": "Methods field schema",
-          "description": "Methods field schema autogenerated by the CEDAR Template Editor",
-          "_ui": {
-            "title": "Methods",
-            "description": "",
-            "inputType": "textfield"
-          },
-          "_valueConstraints": {
-            "requiredValue": false
-          },
-          "properties": {
-            "@id": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "format": "uri"
-            },
-            "@type": {
-              "oneOf": [
-                {
-                  "type": "string",
-                  "format": "uri"
-                },
-                {
-                  "type": "array",
-                  "minItems": 1,
-                  "items": {
-                    "type": "string",
-                    "format": "uri"
-                  },
-                  "uniqueItems": true
-                }
-              ]
-            },
-            "@value": {
-              "type": [
-                "string",
-                "null"
-              ]
-            },
-            "_valueLabel": {
-              "type": [
-                "string",
-                "null"
-              ]
-            },
-            "pav:createdOn": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "format": "date-time"
-            },
-            "pav:createdBy": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "format": "uri"
-            },
-            "pav:lastUpdatedOn": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "format": "date-time"
-            },
-            "oslc:modifiedBy": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "format": "uri"
-            },
-            "_tmp": {
-              "nested": true
-            }
-          },
-          "required": [
-            "@value"
-          ],
-          "pav:createdOn": "2016-11-25T09:02:12-0800",
-          "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-          "pav:lastUpdatedOn": "2016-11-25T09:02:12-0800",
-          "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-          "additionalProperties": false,
-          "@id": "https://repo.metadatacenter.net/template-fields/19bba01a-091a-4163-90e9-dfef1b71551d",
-          "$schema": "http://json-schema.org/draft-04/schema#",
-          "_tmp": {
-            "domId": "id06352786650507514"
-          }
-        },
-        "rule": {
-          "@type": "https://schema.metadatacenter.org/core/TemplateField",
-          "@context": {
-            "schema": "http://schema.org/",
-            "pav": "http://purl.org/pav/",
-            "oslc": "http://open-services.net/ns/core#"
-          },
-          "type": "object",
-          "title": "Rule field schema",
-          "description": "Rule field schema autogenerated by the CEDAR Template Editor",
-          "_ui": {
-            "title": "Rule",
-            "description": "",
-            "inputType": "textfield"
-          },
-          "_valueConstraints": {
-            "requiredValue": false
-          },
-          "properties": {
-            "@id": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "format": "uri"
-            },
-            "@type": {
-              "oneOf": [
-                {
-                  "type": "string",
-                  "format": "uri"
-                },
-                {
-                  "type": "array",
-                  "minItems": 1,
-                  "items": {
-                    "type": "string",
-                    "format": "uri"
-                  },
-                  "uniqueItems": true
-                }
-              ]
-            },
-            "@value": {
-              "type": [
-                "string",
-                "null"
-              ]
-            },
-            "_valueLabel": {
-              "type": [
-                "string",
-                "null"
-              ]
-            },
-            "pav:createdOn": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "format": "date-time"
-            },
-            "pav:createdBy": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "format": "uri"
-            },
-            "pav:lastUpdatedOn": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "format": "date-time"
-            },
-            "oslc:modifiedBy": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "format": "uri"
-            },
-            "_tmp": {
-              "nested": true
-            }
-          },
-          "required": [
-            "@value"
-          ],
-          "pav:createdOn": "2016-11-25T09:02:12-0800",
-          "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-          "pav:lastUpdatedOn": "2016-11-25T09:02:12-0800",
-          "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-          "additionalProperties": false,
-          "@id": "https://repo.metadatacenter.net/template-fields/40571ac1-b800-4ff5-a429-c05ea3588afa",
-          "$schema": "http://json-schema.org/draft-04/schema#",
-          "_tmp": {
-            "domId": "id05765377155396161"
-          }
-        },
-        "concatenationCharacter": {
-          "@type": "https://schema.metadatacenter.org/core/TemplateField",
-          "@context": {
-            "schema": "http://schema.org/",
-            "pav": "http://purl.org/pav/",
-            "oslc": "http://open-services.net/ns/core#"
-          },
-          "type": "object",
-          "title": "Concatenation character field schema",
-          "description": "Concatenation character field schema autogenerated by the CEDAR Template Editor",
-          "_ui": {
-            "title": "Concatenation Character",
-            "description": "",
-            "inputType": "textfield"
-          },
-          "_valueConstraints": {
-            "requiredValue": false
-          },
-          "properties": {
-            "@id": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "format": "uri"
-            },
-            "@type": {
-              "oneOf": [
-                {
-                  "type": "string",
-                  "format": "uri"
-                },
-                {
-                  "type": "array",
-                  "minItems": 1,
-                  "items": {
-                    "type": "string",
-                    "format": "uri"
-                  },
-                  "uniqueItems": true
-                }
-              ]
-            },
-            "@value": {
-              "type": [
-                "string",
-                "null"
-              ]
-            },
-            "_valueLabel": {
-              "type": [
-                "string",
-                "null"
-              ]
-            },
-            "pav:createdOn": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "format": "date-time"
-            },
-            "pav:createdBy": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "format": "uri"
-            },
-            "pav:lastUpdatedOn": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "format": "date-time"
-            },
-            "oslc:modifiedBy": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "format": "uri"
-            },
-            "_tmp": {
-              "nested": true
-            }
-          },
-          "required": [
-            "@value"
-          ],
-          "pav:createdOn": "2016-11-25T09:02:12-0800",
-          "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-          "pav:lastUpdatedOn": "2016-11-25T09:02:12-0800",
-          "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-          "additionalProperties": false,
-          "@id": "https://repo.metadatacenter.net/template-fields/1f0bde27-93aa-4dac-adb0-e2bfd2a2e1e4",
-          "$schema": "http://json-schema.org/draft-04/schema#",
-          "_tmp": {
-            "domId": "id08619616115304116"
-          }
-        },
-        "componentDataElementsList": {
-          "@id": "https://repo.metadatacenter.net/template-elements/12dff301-9100-427a-b7a1-d1bb118a2006",
-          "@type": "https://schema.metadatacenter.org/core/TemplateElement",
-          "@context": {
-            "pav": "http://purl.org/pav/",
-            "oslc": "http://open-services.net/ns/core#"
-          },
-          "type": "object",
-          "title": "Component data elements list element schema",
-          "description": "Component data elements list element schema autogenerated by the CEDAR Template Editor",
-          "_ui": {
-            "title": "Component Data Elements List",
-            "description": "Description",
-            "order": [
-              "componentDataElementsListItem"
-            ]
-          },
-          "properties": {
-            "@context": {
-              "type": "object",
-              "properties": {
-                "pav": {
-                  "type": "string",
-                  "format": "uri",
-                  "enum": [
-                    "http://purl.org/pav/"
-                  ]
-                },
-                "oslc": {
-                  "type": "string",
-                  "format": "uri",
-                  "enum": [
-                    "http://open-services.net/ns/core#"
-                  ]
-                },
-                "componentDataElementsListItem": {
-                  "enum": [
-                    "https://schema.metadatacenter.net/properties/componentDataElementsListItem"
-                  ]
-                }
-              },
-              "patternProperties": {
-                "^(?!pav)(?!schema)(?!oslc)[a-zA-Z][a-zA-Z0-9]*$": {
-                  "type": "string",
-                  "format": "uri"
-                }
-              },
-              "required": [
-                "componentDataElementsListItem"
-              ],
-              "additionalProperties": false
-            },
-            "@id": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "format": "uri"
-            },
-            "@type": {
-              "oneOf": [
-                {
-                  "type": "string",
-                  "format": "uri"
-                },
-                {
-                  "type": "array",
-                  "minItems": 1,
-                  "items": {
-                    "type": "string",
-                    "format": "uri"
-                  },
-                  "uniqueItems": true
-                }
-              ]
-            },
-            "pav:createdOn": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "format": "date-time"
-            },
-            "pav:createdBy": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "format": "uri"
-            },
-            "pav:lastUpdatedOn": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "format": "date-time"
-            },
-            "oslc:modifiedBy": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "format": "uri"
-            },
-            "componentDataElementsListItem": {
-              "@id": "https://repo.metadatacenter.net/template-elements/92faee0e-7773-4f14-9918-03398010c54d",
-              "@type": "https://schema.metadatacenter.org/core/TemplateElement",
-              "@context": {
-                "pav": "http://purl.org/pav/",
-                "oslc": "http://open-services.net/ns/core#"
-              },
-              "type": "object",
-              "title": "Component data elements list item element schema",
-              "description": "Component data elements list item element schema autogenerated by the CEDAR Template Editor",
-              "_ui": {
-                "title": "Component Data Elements List Item",
-                "description": "Description",
-                "order": [
-                  "publicID",
-                  "longName",
-                  "preferredName",
-                  "preferredDefinition",
-                  "version",
-                  "workflowStatus",
-                  "contextName",
-                  "displayOrder"
-                ]
-              },
-              "properties": {
-                "@context": {
-                  "type": "object",
-                  "properties": {
-                    "pav": {
-                      "type": "string",
-                      "format": "uri",
-                      "enum": [
-                        "http://purl.org/pav/"
-                      ]
-                    },
-                    "oslc": {
-                      "type": "string",
-                      "format": "uri",
-                      "enum": [
-                        "http://open-services.net/ns/core#"
-                      ]
-                    },
-                    "publicID": {
-                      "enum": [
-                        "https://schema.metadatacenter.net/properties/publicID"
-                      ]
-                    },
-                    "longName": {
-                      "enum": [
-                        "https://schema.metadatacenter.net/properties/longName"
-                      ]
-                    },
-                    "preferredName": {
-                      "enum": [
-                        "https://schema.metadatacenter.net/properties/preferredName"
-                      ]
-                    },
-                    "preferredDefinition": {
-                      "enum": [
-                        "https://schema.metadatacenter.net/properties/preferredDefinition"
-                      ]
-                    },
-                    "version": {
-                      "enum": [
-                        "https://schema.metadatacenter.net/properties/version"
-                      ]
-                    },
-                    "workflowStatus": {
-                      "enum": [
-                        "https://schema.metadatacenter.net/properties/workflowStatus"
-                      ]
-                    },
-                    "contextName": {
-                      "enum": [
-                        "https://schema.metadatacenter.net/properties/contextName"
-                      ]
-                    },
-                    "displayOrder": {
-                      "enum": [
-                        "https://schema.metadatacenter.net/properties/displayOrder"
-                      ]
-                    }
-                  },
-                  "patternProperties": {
-                    "^(?!pav)(?!schema)(?!oslc)[a-zA-Z][a-zA-Z0-9]*$": {
-                      "type": "string",
-                      "format": "uri"
-                    }
-                  },
-                  "required": [
-                    "publicID",
-                    "longName",
-                    "preferredName",
-                    "preferredDefinition",
-                    "version",
-                    "workflowStatus",
-                    "contextName",
-                    "displayOrder"
-                  ],
-                  "additionalProperties": false
-                },
-                "@id": {
-                  "type": [
-                    "string",
-                    "null"
-                  ],
-                  "format": "uri"
-                },
-                "@type": {
-                  "oneOf": [
-                    {
-                      "type": "string",
-                      "format": "uri"
-                    },
-                    {
-                      "type": "array",
-                      "minItems": 1,
-                      "items": {
-                        "type": "string",
-                        "format": "uri"
-                      },
-                      "uniqueItems": true
-                    }
-                  ]
-                },
-                "pav:createdOn": {
-                  "type": [
-                    "string",
-                    "null"
-                  ],
-                  "format": "date-time"
-                },
-                "pav:createdBy": {
-                  "type": [
-                    "string",
-                    "null"
-                  ],
-                  "format": "uri"
-                },
-                "pav:lastUpdatedOn": {
-                  "type": [
-                    "string",
-                    "null"
-                  ],
-                  "format": "date-time"
-                },
-                "oslc:modifiedBy": {
-                  "type": [
-                    "string",
-                    "null"
-                  ],
-                  "format": "uri"
-                },
-                "publicID": {
-                  "@type": "https://schema.metadatacenter.org/core/TemplateField",
-                  "@context": {
-                    "schema": "http://schema.org/",
-                    "pav": "http://purl.org/pav/",
-                    "oslc": "http://open-services.net/ns/core#"
-                  },
-                  "type": "object",
-                  "title": "Public id field schema",
-                  "description": "Public id field schema autogenerated by the CEDAR Template Editor",
-                  "_ui": {
-                    "title": "Public ID",
-                    "description": "",
-                    "inputType": "textfield"
-                  },
-                  "_valueConstraints": {
-                    "requiredValue": false
-                  },
-                  "properties": {
-                    "@id": {
-                      "type": [
-                        "string",
-                        "null"
-                      ],
-                      "format": "uri"
-                    },
-                    "@type": {
-                      "oneOf": [
-                        {
-                          "type": "string",
-                          "format": "uri"
-                        },
-                        {
-                          "type": "array",
-                          "minItems": 1,
-                          "items": {
-                            "type": "string",
-                            "format": "uri"
-                          },
-                          "uniqueItems": true
-                        }
-                      ]
-                    },
-                    "@value": {
-                      "type": [
-                        "string",
-                        "null"
-                      ]
-                    },
-                    "_valueLabel": {
-                      "type": [
-                        "string",
-                        "null"
-                      ]
-                    },
-                    "pav:createdOn": {
-                      "type": [
-                        "string",
-                        "null"
-                      ],
-                      "format": "date-time"
-                    },
-                    "pav:createdBy": {
-                      "type": [
-                        "string",
-                        "null"
-                      ],
-                      "format": "uri"
-                    },
-                    "pav:lastUpdatedOn": {
-                      "type": [
-                        "string",
-                        "null"
-                      ],
-                      "format": "date-time"
-                    },
-                    "oslc:modifiedBy": {
-                      "type": [
-                        "string",
-                        "null"
-                      ],
-                      "format": "uri"
-                    },
-                    "_tmp": {
-                      "nested": true
-                    }
-                  },
-                  "required": [
-                    "@value"
-                  ],
-                  "pav:createdOn": "2016-11-25T08:58:50-0800",
-                  "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-                  "pav:lastUpdatedOn": "2016-11-25T08:58:50-0800",
-                  "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-                  "additionalProperties": false,
-                  "@id": "https://repo.metadatacenter.net/template-fields/7080c852-25f3-4428-8e9d-fbcd0731e2ff",
-                  "$schema": "http://json-schema.org/draft-04/schema#",
-                  "_tmp": {
-                    "domId": "id033712144505217556"
-                  }
-                },
-                "longName": {
-                  "@type": "https://schema.metadatacenter.org/core/TemplateField",
-                  "@context": {
-                    "schema": "http://schema.org/",
-                    "pav": "http://purl.org/pav/",
-                    "oslc": "http://open-services.net/ns/core#"
-                  },
-                  "type": "object",
-                  "title": "Long name field schema",
-                  "description": "Long name field schema autogenerated by the CEDAR Template Editor",
-                  "_ui": {
-                    "title": "Long Name",
-                    "description": "",
-                    "inputType": "textfield"
-                  },
-                  "_valueConstraints": {
-                    "requiredValue": false
-                  },
-                  "properties": {
-                    "@id": {
-                      "type": [
-                        "string",
-                        "null"
-                      ],
-                      "format": "uri"
-                    },
-                    "@type": {
-                      "oneOf": [
-                        {
-                          "type": "string",
-                          "format": "uri"
-                        },
-                        {
-                          "type": "array",
-                          "minItems": 1,
-                          "items": {
-                            "type": "string",
-                            "format": "uri"
-                          },
-                          "uniqueItems": true
-                        }
-                      ]
-                    },
-                    "@value": {
-                      "type": [
-                        "string",
-                        "null"
-                      ]
-                    },
-                    "_valueLabel": {
-                      "type": [
-                        "string",
-                        "null"
-                      ]
-                    },
-                    "pav:createdOn": {
-                      "type": [
-                        "string",
-                        "null"
-                      ],
-                      "format": "date-time"
-                    },
-                    "pav:createdBy": {
-                      "type": [
-                        "string",
-                        "null"
-                      ],
-                      "format": "uri"
-                    },
-                    "pav:lastUpdatedOn": {
-                      "type": [
-                        "string",
-                        "null"
-                      ],
-                      "format": "date-time"
-                    },
-                    "oslc:modifiedBy": {
-                      "type": [
-                        "string",
-                        "null"
-                      ],
-                      "format": "uri"
-                    },
-                    "_tmp": {
-                      "nested": true
-                    }
-                  },
-                  "required": [
-                    "@value"
-                  ],
-                  "pav:createdOn": "2016-11-25T08:58:50-0800",
-                  "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-                  "pav:lastUpdatedOn": "2016-11-25T08:58:50-0800",
-                  "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-                  "additionalProperties": false,
-                  "@id": "https://repo.metadatacenter.net/template-fields/e02808a8-89bc-4e73-b844-5678b0240014",
-                  "$schema": "http://json-schema.org/draft-04/schema#",
-                  "_tmp": {
-                    "domId": "id05473427261835713"
-                  }
-                },
-                "preferredName": {
-                  "@type": "https://schema.metadatacenter.org/core/TemplateField",
-                  "@context": {
-                    "schema": "http://schema.org/",
-                    "pav": "http://purl.org/pav/",
-                    "oslc": "http://open-services.net/ns/core#"
-                  },
-                  "type": "object",
-                  "title": "Preferred name field schema",
-                  "description": "Preferred name field schema autogenerated by the CEDAR Template Editor",
-                  "_ui": {
-                    "title": "Preferred Name",
-                    "description": "",
-                    "inputType": "textfield"
-                  },
-                  "_valueConstraints": {
-                    "requiredValue": false
-                  },
-                  "properties": {
-                    "@id": {
-                      "type": [
-                        "string",
-                        "null"
-                      ],
-                      "format": "uri"
-                    },
-                    "@type": {
-                      "oneOf": [
-                        {
-                          "type": "string",
-                          "format": "uri"
-                        },
-                        {
-                          "type": "array",
-                          "minItems": 1,
-                          "items": {
-                            "type": "string",
-                            "format": "uri"
-                          },
-                          "uniqueItems": true
-                        }
-                      ]
-                    },
-                    "@value": {
-                      "type": [
-                        "string",
-                        "null"
-                      ]
-                    },
-                    "_valueLabel": {
-                      "type": [
-                        "string",
-                        "null"
-                      ]
-                    },
-                    "pav:createdOn": {
-                      "type": [
-                        "string",
-                        "null"
-                      ],
-                      "format": "date-time"
-                    },
-                    "pav:createdBy": {
-                      "type": [
-                        "string",
-                        "null"
-                      ],
-                      "format": "uri"
-                    },
-                    "pav:lastUpdatedOn": {
-                      "type": [
-                        "string",
-                        "null"
-                      ],
-                      "format": "date-time"
-                    },
-                    "oslc:modifiedBy": {
-                      "type": [
-                        "string",
-                        "null"
-                      ],
-                      "format": "uri"
-                    },
-                    "_tmp": {
-                      "nested": true
-                    }
-                  },
-                  "required": [
-                    "@value"
-                  ],
-                  "pav:createdOn": "2016-11-25T08:58:50-0800",
-                  "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-                  "pav:lastUpdatedOn": "2016-11-25T08:58:50-0800",
-                  "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-                  "additionalProperties": false,
-                  "@id": "https://repo.metadatacenter.net/template-fields/7e1a92b6-b024-406b-a33d-dfe755ef579d",
-                  "$schema": "http://json-schema.org/draft-04/schema#",
-                  "_tmp": {
-                    "domId": "id012970257690895948"
-                  }
-                },
-                "preferredDefinition": {
-                  "@type": "https://schema.metadatacenter.org/core/TemplateField",
-                  "@context": {
-                    "schema": "http://schema.org/",
-                    "pav": "http://purl.org/pav/",
-                    "oslc": "http://open-services.net/ns/core#"
-                  },
-                  "type": "object",
-                  "title": "Preferred definition field schema",
-                  "description": "Preferred definition field schema autogenerated by the CEDAR Template Editor",
-                  "_ui": {
-                    "title": "Preferred Definition",
-                    "description": "",
-                    "inputType": "textfield"
-                  },
-                  "_valueConstraints": {
-                    "requiredValue": false
-                  },
-                  "properties": {
-                    "@id": {
-                      "type": [
-                        "string",
-                        "null"
-                      ],
-                      "format": "uri"
-                    },
-                    "@type": {
-                      "oneOf": [
-                        {
-                          "type": "string",
-                          "format": "uri"
-                        },
-                        {
-                          "type": "array",
-                          "minItems": 1,
-                          "items": {
-                            "type": "string",
-                            "format": "uri"
-                          },
-                          "uniqueItems": true
-                        }
-                      ]
-                    },
-                    "@value": {
-                      "type": [
-                        "string",
-                        "null"
-                      ]
-                    },
-                    "_valueLabel": {
-                      "type": [
-                        "string",
-                        "null"
-                      ]
-                    },
-                    "pav:createdOn": {
-                      "type": [
-                        "string",
-                        "null"
-                      ],
-                      "format": "date-time"
-                    },
-                    "pav:createdBy": {
-                      "type": [
-                        "string",
-                        "null"
-                      ],
-                      "format": "uri"
-                    },
-                    "pav:lastUpdatedOn": {
-                      "type": [
-                        "string",
-                        "null"
-                      ],
-                      "format": "date-time"
-                    },
-                    "oslc:modifiedBy": {
-                      "type": [
-                        "string",
-                        "null"
-                      ],
-                      "format": "uri"
-                    },
-                    "_tmp": {
-                      "nested": true
-                    }
-                  },
-                  "required": [
-                    "@value"
-                  ],
-                  "pav:createdOn": "2016-11-25T08:58:50-0800",
-                  "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-                  "pav:lastUpdatedOn": "2016-11-25T08:58:50-0800",
-                  "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-                  "additionalProperties": false,
-                  "@id": "https://repo.metadatacenter.net/template-fields/1e0467df-4254-4f67-a69c-812d7958fc11",
-                  "$schema": "http://json-schema.org/draft-04/schema#",
-                  "_tmp": {
-                    "domId": "id0027037687442651892"
-                  }
-                },
-                "version": {
-                  "@type": "https://schema.metadatacenter.org/core/TemplateField",
-                  "@context": {
-                    "schema": "http://schema.org/",
-                    "pav": "http://purl.org/pav/",
-                    "oslc": "http://open-services.net/ns/core#"
-                  },
-                  "type": "object",
-                  "title": "Version field schema",
-                  "description": "Version field schema autogenerated by the CEDAR Template Editor",
-                  "_ui": {
-                    "title": "Version",
-                    "description": "",
-                    "inputType": "textfield"
-                  },
-                  "_valueConstraints": {
-                    "requiredValue": false
-                  },
-                  "properties": {
-                    "@id": {
-                      "type": [
-                        "string",
-                        "null"
-                      ],
-                      "format": "uri"
-                    },
-                    "@type": {
-                      "oneOf": [
-                        {
-                          "type": "string",
-                          "format": "uri"
-                        },
-                        {
-                          "type": "array",
-                          "minItems": 1,
-                          "items": {
-                            "type": "string",
-                            "format": "uri"
-                          },
-                          "uniqueItems": true
-                        }
-                      ]
-                    },
-                    "@value": {
-                      "type": [
-                        "string",
-                        "null"
-                      ]
-                    },
-                    "_valueLabel": {
-                      "type": [
-                        "string",
-                        "null"
-                      ]
-                    },
-                    "pav:createdOn": {
-                      "type": [
-                        "string",
-                        "null"
-                      ],
-                      "format": "date-time"
-                    },
-                    "pav:createdBy": {
-                      "type": [
-                        "string",
-                        "null"
-                      ],
-                      "format": "uri"
-                    },
-                    "pav:lastUpdatedOn": {
-                      "type": [
-                        "string",
-                        "null"
-                      ],
-                      "format": "date-time"
-                    },
-                    "oslc:modifiedBy": {
-                      "type": [
-                        "string",
-                        "null"
-                      ],
-                      "format": "uri"
-                    },
-                    "_tmp": {
-                      "nested": true
-                    }
-                  },
-                  "required": [
-                    "@value"
-                  ],
-                  "pav:createdOn": "2016-11-25T08:58:50-0800",
-                  "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-                  "pav:lastUpdatedOn": "2016-11-25T08:58:50-0800",
-                  "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-                  "additionalProperties": false,
-                  "@id": "https://repo.metadatacenter.net/template-fields/f5a4b6d0-2477-41d9-a8bb-5880db65c154",
-                  "$schema": "http://json-schema.org/draft-04/schema#",
-                  "_tmp": {
-                    "domId": "id09207603947329506"
-                  }
-                },
-                "workflowStatus": {
-                  "@type": "https://schema.metadatacenter.org/core/TemplateField",
-                  "@context": {
-                    "schema": "http://schema.org/",
-                    "pav": "http://purl.org/pav/",
-                    "oslc": "http://open-services.net/ns/core#"
-                  },
-                  "type": "object",
-                  "title": "Workflow status field schema",
-                  "description": "Workflow status field schema autogenerated by the CEDAR Template Editor",
-                  "_ui": {
-                    "title": "Workflow Status",
-                    "description": "",
-                    "inputType": "textfield"
-                  },
-                  "_valueConstraints": {
-                    "requiredValue": false
-                  },
-                  "properties": {
-                    "@id": {
-                      "type": [
-                        "string",
-                        "null"
-                      ],
-                      "format": "uri"
-                    },
-                    "@type": {
-                      "oneOf": [
-                        {
-                          "type": "string",
-                          "format": "uri"
-                        },
-                        {
-                          "type": "array",
-                          "minItems": 1,
-                          "items": {
-                            "type": "string",
-                            "format": "uri"
-                          },
-                          "uniqueItems": true
-                        }
-                      ]
-                    },
-                    "@value": {
-                      "type": [
-                        "string",
-                        "null"
-                      ]
-                    },
-                    "_valueLabel": {
-                      "type": [
-                        "string",
-                        "null"
-                      ]
-                    },
-                    "pav:createdOn": {
-                      "type": [
-                        "string",
-                        "null"
-                      ],
-                      "format": "date-time"
-                    },
-                    "pav:createdBy": {
-                      "type": [
-                        "string",
-                        "null"
-                      ],
-                      "format": "uri"
-                    },
-                    "pav:lastUpdatedOn": {
-                      "type": [
-                        "string",
-                        "null"
-                      ],
-                      "format": "date-time"
-                    },
-                    "oslc:modifiedBy": {
-                      "type": [
-                        "string",
-                        "null"
-                      ],
-                      "format": "uri"
-                    },
-                    "_tmp": {
-                      "nested": true
-                    }
-                  },
-                  "required": [
-                    "@value"
-                  ],
-                  "pav:createdOn": "2016-11-25T08:58:50-0800",
-                  "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-                  "pav:lastUpdatedOn": "2016-11-25T08:58:50-0800",
-                  "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-                  "additionalProperties": false,
-                  "@id": "https://repo.metadatacenter.net/template-fields/24d9e6e1-9bb7-4df7-9677-74ddabc7516f",
-                  "$schema": "http://json-schema.org/draft-04/schema#",
-                  "_tmp": {
-                    "domId": "id009411105294660627"
-                  }
-                },
-                "contextName": {
-                  "@type": "https://schema.metadatacenter.org/core/TemplateField",
-                  "@context": {
-                    "schema": "http://schema.org/",
-                    "pav": "http://purl.org/pav/",
-                    "oslc": "http://open-services.net/ns/core#"
-                  },
-                  "type": "object",
-                  "title": "Context name field schema",
-                  "description": "Context name field schema autogenerated by the CEDAR Template Editor",
-                  "_ui": {
-                    "title": "Context Name",
-                    "description": "",
-                    "inputType": "textfield"
-                  },
-                  "_valueConstraints": {
-                    "requiredValue": false
-                  },
-                  "properties": {
-                    "@id": {
-                      "type": [
-                        "string",
-                        "null"
-                      ],
-                      "format": "uri"
-                    },
-                    "@type": {
-                      "oneOf": [
-                        {
-                          "type": "string",
-                          "format": "uri"
-                        },
-                        {
-                          "type": "array",
-                          "minItems": 1,
-                          "items": {
-                            "type": "string",
-                            "format": "uri"
-                          },
-                          "uniqueItems": true
-                        }
-                      ]
-                    },
-                    "@value": {
-                      "type": [
-                        "string",
-                        "null"
-                      ]
-                    },
-                    "_valueLabel": {
-                      "type": [
-                        "string",
-                        "null"
-                      ]
-                    },
-                    "pav:createdOn": {
-                      "type": [
-                        "string",
-                        "null"
-                      ],
-                      "format": "date-time"
-                    },
-                    "pav:createdBy": {
-                      "type": [
-                        "string",
-                        "null"
-                      ],
-                      "format": "uri"
-                    },
-                    "pav:lastUpdatedOn": {
-                      "type": [
-                        "string",
-                        "null"
-                      ],
-                      "format": "date-time"
-                    },
-                    "oslc:modifiedBy": {
-                      "type": [
-                        "string",
-                        "null"
-                      ],
-                      "format": "uri"
-                    },
-                    "_tmp": {
-                      "nested": true
-                    }
-                  },
-                  "required": [
-                    "@value"
-                  ],
-                  "pav:createdOn": "2016-11-25T08:58:50-0800",
-                  "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-                  "pav:lastUpdatedOn": "2016-11-25T08:58:50-0800",
-                  "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-                  "additionalProperties": false,
-                  "@id": "https://repo.metadatacenter.net/template-fields/299faee1-3c12-448c-94e2-14c0504b0080",
-                  "$schema": "http://json-schema.org/draft-04/schema#",
-                  "_tmp": {
-                    "domId": "id07559976087473872"
-                  }
-                },
-                "displayOrder": {
-                  "@type": "https://schema.metadatacenter.org/core/TemplateField",
-                  "@context": {
-                    "schema": "http://schema.org/",
-                    "pav": "http://purl.org/pav/",
-                    "oslc": "http://open-services.net/ns/core#"
-                  },
-                  "type": "object",
-                  "title": "Display order field schema",
-                  "description": "Display order field schema autogenerated by the CEDAR Template Editor",
-                  "_ui": {
-                    "title": "Display Order",
-                    "description": "",
-                    "inputType": "textfield"
-                  },
-                  "_valueConstraints": {
-                    "requiredValue": false
-                  },
-                  "properties": {
-                    "@id": {
-                      "type": [
-                        "string",
-                        "null"
-                      ],
-                      "format": "uri"
-                    },
-                    "@type": {
-                      "oneOf": [
-                        {
-                          "type": "string",
-                          "format": "uri"
-                        },
-                        {
-                          "type": "array",
-                          "minItems": 1,
-                          "items": {
-                            "type": "string",
-                            "format": "uri"
-                          },
-                          "uniqueItems": true
-                        }
-                      ]
-                    },
-                    "@value": {
-                      "type": [
-                        "string",
-                        "null"
-                      ]
-                    },
-                    "_valueLabel": {
-                      "type": [
-                        "string",
-                        "null"
-                      ]
-                    },
-                    "pav:createdOn": {
-                      "type": [
-                        "string",
-                        "null"
-                      ],
-                      "format": "date-time"
-                    },
-                    "pav:createdBy": {
-                      "type": [
-                        "string",
-                        "null"
-                      ],
-                      "format": "uri"
-                    },
-                    "pav:lastUpdatedOn": {
-                      "type": [
-                        "string",
-                        "null"
-                      ],
-                      "format": "date-time"
-                    },
-                    "oslc:modifiedBy": {
-                      "type": [
-                        "string",
-                        "null"
-                      ],
-                      "format": "uri"
-                    },
-                    "_tmp": {
-                      "nested": true
-                    }
-                  },
-                  "required": [
-                    "@value"
-                  ],
-                  "pav:createdOn": "2016-11-25T08:58:50-0800",
-                  "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-                  "pav:lastUpdatedOn": "2016-11-25T08:58:50-0800",
-                  "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-                  "additionalProperties": false,
-                  "@id": "https://repo.metadatacenter.net/template-fields/370afed0-ce39-4724-8339-4b106794e347",
-                  "$schema": "http://json-schema.org/draft-04/schema#",
-                  "_tmp": {
-                    "domId": "id0020962071842258068"
-                  }
-                },
-                "_tmp": {
-                  "nested": true
-                }
-              },
-              "required": [],
-              "pav:createdOn": "2016-11-25T08:59:32-0800",
-              "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-              "pav:lastUpdatedOn": "2016-11-25T08:59:32-0800",
-              "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-              "additionalProperties": false,
-              "$schema": "http://json-schema.org/draft-04/schema#",
-              "_tmp": {
-                "domId": "id03703148498057043"
-              }
-            },
-            "_tmp": {
-              "nested": true
-            }
-          },
-          "required": [],
-          "pav:createdOn": "2016-11-25T09:02:12-0800",
-          "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-          "pav:lastUpdatedOn": "2016-11-25T09:02:12-0800",
-          "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-          "additionalProperties": false,
-          "$schema": "http://json-schema.org/draft-04/schema#",
-          "_tmp": {
-            "domId": "id013209091480948354"
-          }
-        },
-        "_tmp": {}
-      },
-      "required": [],
-      "pav:createdOn": "2016-11-25T15:55:48-0800",
-      "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-      "pav:lastUpdatedOn": "2016-11-25T15:55:48-0800",
-      "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-      "additionalProperties": false,
-      "$schema": "http://json-schema.org/draft-04/schema#",
-      "_tmp": {
-        "domId": "id043747273655170504"
-      }
+      "$schema": "http://json-schema.org/draft-04/schema#"
     }
   },
   "required": [
@@ -18366,13 +15754,10 @@
     "pav:lastUpdatedOn",
     "oslc:modifiedBy"
   ],
-  "pav:createdOn": "2016-11-25T15:48:16-0800",
+  "pav:createdOn": "2016-11-11T15:37:16-0800",
   "pav:createdBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
-  "pav:lastUpdatedOn": "2016-11-25T15:55:48-0800",
+  "pav:lastUpdatedOn": "2016-11-11T15:37:16-0800",
   "oslc:modifiedBy": "https://repo.metadatacenter.net/users/5ebef22f-ccbb-49f1-b5ec-a3b429240025",
   "additionalProperties": false,
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "_tmp": {
-    "domId": "id027131741052521563"
-  }
+  "$schema": "http://json-schema.org/draft-04/schema#"
 }

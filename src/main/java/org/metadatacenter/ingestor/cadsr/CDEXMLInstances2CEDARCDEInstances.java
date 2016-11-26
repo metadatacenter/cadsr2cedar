@@ -141,7 +141,7 @@ public class CDEXMLInstances2CEDARCDEInstances {
     convertCADSR2CEDARAlternateNames(cedarDataElement, cadsrDataElement);
     convertCADSR2CEDARDataElementDerivation(cedarDataElement, cadsrDataElement);
 
-    cedarDataElement.setTemplateId(templateID);
+    cedarDataElement.setId(templateID);
 
     return cedarDataElement;
   }
@@ -1000,7 +1000,7 @@ public class CDEXMLInstances2CEDARCDEInstances {
     String cadsrRepresentationLongName = cadsrValueDomainRepresentation.getLongName().getContent();
     //System.out.println(cadsrRepresentationLongName);
     LongName_________ cedarRepresentationLongName = new LongName_________();
-    cedarRepresentationLongName.setValue(cadsrRepresentationVersion);
+    cedarRepresentationLongName.setValue(cadsrRepresentationLongName);
     cedarValueDomainRepresentation.setLongName(cedarRepresentationLongName);
 
 
@@ -1135,9 +1135,9 @@ public class CDEXMLInstances2CEDARCDEInstances {
         // permissible values item pv begin date
         String cadsrPermissibleValuesItemPVBeginDate = val.getPVBEGINDATE().getContent();
         //System.out.println(cadsrPermissibleValuesItemPVBeginDate);
-        PVBeginData cedarPermissibleValuesItemPVBeginDate = new PVBeginData();
+        PVBeginDate cedarPermissibleValuesItemPVBeginDate = new PVBeginDate();
         cedarPermissibleValuesItemPVBeginDate.setValue(cadsrPermissibleValuesItemPVBeginDate);
-        cedarPermissibleValuesItem.setPVBeginData(cedarPermissibleValuesItemPVBeginDate);
+        cedarPermissibleValuesItem.setPVBeginDate(cedarPermissibleValuesItemPVBeginDate);
         //TODO note error: pv begin "data"
 
         String cadsrPermissibleValuesItemPVEndDate = val.getPVENDDATE().getContent();
@@ -1182,7 +1182,7 @@ public class CDEXMLInstances2CEDARCDEInstances {
     // URI id = URI.create("https://example.com/Dummy");
     //cedarValueDomainConcepts.setId(id);
 
-    List<ValueDomainConceptsItem> cedarValueDomainConceptsList = new ArrayList<ValueDomainConceptsItem>();
+    List<ValueDomainConceptsItem> cedarValueDomainConceptsList = new ArrayList<>();
     if (!valueDomainConceptsITEMList.isEmpty()) {
       for (ValueDomainConceptsITEM val : valueDomainConceptsITEMList) {
 
