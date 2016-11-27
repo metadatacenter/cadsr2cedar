@@ -1182,7 +1182,7 @@ public class CDEXMLInstances2CEDARCDEInstances {
     // URI id = URI.create("https://example.com/Dummy");
     //cedarValueDomainConcepts.setId(id);
 
-    List<ValueDomainConceptsItem> cedarValueDomainConceptsList = new ArrayList<>();
+    List<ValueDomainConceptsItem> cedarValueDomainConceptsList = new ArrayList<ValueDomainConceptsItem>();
     if (!valueDomainConceptsITEMList.isEmpty()) {
       for (ValueDomainConceptsITEM val : valueDomainConceptsITEMList) {
 
