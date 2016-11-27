@@ -1003,7 +1003,7 @@ public class CDEXMLInstances2CEDARCDEInstances {
     cedarRepresentationLongName.setValue(cadsrRepresentationLongName);
     cedarValueDomainRepresentation.setLongName(cedarRepresentationLongName);
 
-
+    convertCADSR2CEDARRepresentationConceptDetails(cedarValueDomainRepresentation, cadsrValueDomainRepresentation);
 
 
     cedarValueDomain.setRepresentation(cedarValueDomainRepresentation);
