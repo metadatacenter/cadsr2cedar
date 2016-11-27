@@ -654,7 +654,7 @@ public class CDEXMLInstances2CEDARCDEInstances {
     String cadsrObjectClassQualifier = cadsrDATAELEMENTCONCEPT.getObjectClassQualifier().getContent();
     org.metadatacenter.ingestor.cedar.ObjectClassQualifier cedarObjectClassQualifier = new org.metadatacenter.ingestor.cedar.ObjectClassQualifier();
 
-    if (cadsrObjectClassQualifier.isEmpty()) {
+    if (cadsrObjectClassQualifier.equals("")) {
       cadsrObjectClassQualifier = cadsrDATAELEMENTCONCEPT.getObjectClassQualifier().getNULL();
       if (cadsrObjectClassQualifier.equals("TRUE")) {
         cadsrObjectClassQualifier = "NULL";
@@ -670,7 +670,7 @@ public class CDEXMLInstances2CEDARCDEInstances {
     String cadsrPropertyQualifier = cadsrDATAELEMENTCONCEPT.getPropertyQualifier().getContent();
     org.metadatacenter.ingestor.cedar.PropertyQualifier cedarPropertyQualifier = new org.metadatacenter.ingestor.cedar.PropertyQualifier();
 
-    if (cadsrPropertyQualifier.isEmpty()) {
+    if (cadsrPropertyQualifier.equals("")) { //TODO does this work instead of ".isEmpty()"?
       cadsrPropertyQualifier = cadsrDATAELEMENTCONCEPT.getPropertyQualifier().getNULL();
       if (cadsrPropertyQualifier.equals("TRUE")) {
         cadsrPropertyQualifier = "NULL";
@@ -686,7 +686,7 @@ public class CDEXMLInstances2CEDARCDEInstances {
     String cadsrDECOrigin = cadsrDATAELEMENTCONCEPT.getOrigin().getContent();
     org.metadatacenter.ingestor.cedar.Origin___ cedarDECOrigin = new org.metadatacenter.ingestor.cedar.Origin___();
 
-    if (cadsrDECOrigin.isEmpty()) {
+    if (cadsrDECOrigin.equals("")) {
       cadsrDECOrigin = cadsrDATAELEMENTCONCEPT.getOrigin().getNULL();
       if (cadsrDECOrigin.equals("TRUE")) {
         cadsrDECOrigin = "NULL";
@@ -784,7 +784,7 @@ public class CDEXMLInstances2CEDARCDEInstances {
     //unit of measure
     String cadsrValueDomainUnitsOfMeasure = cadsrVALUEDOMAIN.getUnitOfMeasure().getContent();
     org.metadatacenter.ingestor.cedar.UnitsOfMeasure cedarValueDomainUnitsOfMeasure = new org.metadatacenter.ingestor.cedar.UnitsOfMeasure();
-    if (cadsrValueDomainUnitsOfMeasure.isEmpty()) {
+    if (cadsrValueDomainUnitsOfMeasure.equals("")) {
       cadsrValueDomainUnitsOfMeasure = cadsrVALUEDOMAIN.getUnitOfMeasure().getNULL();
       if (cadsrValueDomainUnitsOfMeasure.equals("TRUE")) {
         cadsrValueDomainUnitsOfMeasure = "NULL";
@@ -797,7 +797,7 @@ public class CDEXMLInstances2CEDARCDEInstances {
     //display format
     String cadsrValueDomainDisplayFormat = cadsrVALUEDOMAIN.getDisplayFormat().getContent();
     org.metadatacenter.ingestor.cedar.DisplayFormat cedarValueDomainDisplayFormat = new org.metadatacenter.ingestor.cedar.DisplayFormat();
-    if (cadsrValueDomainDisplayFormat.isEmpty()) {
+    if (cadsrValueDomainDisplayFormat.equals("")) {
       cadsrValueDomainDisplayFormat = cadsrVALUEDOMAIN.getDisplayFormat().getNULL();
       if (cadsrValueDomainDisplayFormat.equals("TRUE")) {
         cadsrValueDomainDisplayFormat = "NULL";
@@ -824,7 +824,7 @@ public class CDEXMLInstances2CEDARCDEInstances {
     //decimal place
     String cadsrValueDomainDecimalPlace = cadsrVALUEDOMAIN.getDecimalPlace().getContent();
     org.metadatacenter.ingestor.cedar.DecimalPlace cedarValueDomainDecimalPlace = new org.metadatacenter.ingestor.cedar.DecimalPlace();
-    if (cadsrValueDomainDecimalPlace.isEmpty()) {
+    if (cadsrValueDomainDecimalPlace.equals("")) {
       cadsrValueDomainDecimalPlace = cadsrVALUEDOMAIN.getDecimalPlace().getNULL();
       if (cadsrValueDomainDecimalPlace.equals("TRUE")) {
         cadsrValueDomainDecimalPlace = "NULL";
@@ -837,7 +837,7 @@ public class CDEXMLInstances2CEDARCDEInstances {
     //character set name
     String cadsrValueDomainCharacterSetName = cadsrVALUEDOMAIN.getCharacterSetName().getContent();
     org.metadatacenter.ingestor.cedar.CharacterSetName cedarValueDomainCharacterSetName = new org.metadatacenter.ingestor.cedar.CharacterSetName();
-    if (cadsrValueDomainCharacterSetName.isEmpty()) {
+    if (cadsrValueDomainCharacterSetName.equals("")) {
       cadsrValueDomainCharacterSetName = cadsrVALUEDOMAIN.getCharacterSetName().getNULL();
       if (cadsrValueDomainCharacterSetName.equals("TRUE")) {
         cadsrValueDomainCharacterSetName = "NULL";
@@ -850,7 +850,7 @@ public class CDEXMLInstances2CEDARCDEInstances {
     //max value
     String cadsrValueDomainMaximumValue = cadsrVALUEDOMAIN.getMaximumValue().getContent();
     org.metadatacenter.ingestor.cedar.MaximumValue cedarValueDomainMaximumValue = new org.metadatacenter.ingestor.cedar.MaximumValue();
-    if (cadsrValueDomainMaximumValue.isEmpty()) {
+    if (cadsrValueDomainMaximumValue.equals("")) {
       cadsrValueDomainMaximumValue = cadsrVALUEDOMAIN.getMaximumValue().getNULL();
       if (cadsrValueDomainMaximumValue.equals("TRUE")) {
         cadsrValueDomainMaximumValue = "NULL";
@@ -863,7 +863,7 @@ public class CDEXMLInstances2CEDARCDEInstances {
     //min value
     String cadsrValueDomainMinimumValue = cadsrVALUEDOMAIN.getMinimumValue().getContent();
     org.metadatacenter.ingestor.cedar.MinimumValue cedarValueDomainMinimumValue = new org.metadatacenter.ingestor.cedar.MinimumValue();
-    if (cadsrValueDomainMinimumValue.isEmpty()) {
+    if (cadsrValueDomainMinimumValue.equals("")) {
       cadsrValueDomainMinimumValue = cadsrVALUEDOMAIN.getMinimumValue().getNULL();
       if (cadsrValueDomainMinimumValue.equals("TRUE")) {
         cadsrValueDomainMinimumValue = "NULL";
@@ -876,7 +876,7 @@ public class CDEXMLInstances2CEDARCDEInstances {
     //origin
     String cadsrValueDomainOrigin = cadsrVALUEDOMAIN.getOrigin().getContent();
     org.metadatacenter.ingestor.cedar.Origin____ cedarValueDomainOrigin = new org.metadatacenter.ingestor.cedar.Origin____();
-    if (cadsrValueDomainOrigin.isEmpty()) {
+    if (cadsrValueDomainOrigin.equals("")) {
       cadsrValueDomainOrigin = cadsrVALUEDOMAIN.getOrigin().getNULL();
       if (cadsrValueDomainOrigin.equals("TRUE")) {
         cadsrValueDomainOrigin = "NULL";
@@ -1138,11 +1138,10 @@ public class CDEXMLInstances2CEDARCDEInstances {
         PVBeginDate cedarPermissibleValuesItemPVBeginDate = new PVBeginDate();
         cedarPermissibleValuesItemPVBeginDate.setValue(cadsrPermissibleValuesItemPVBeginDate);
         cedarPermissibleValuesItem.setPVBeginDate(cedarPermissibleValuesItemPVBeginDate);
-        //TODO note error: pv begin "data"
 
         String cadsrPermissibleValuesItemPVEndDate = val.getPVENDDATE().getContent();
         PVEndDate cedarPermissibleValuesItemPVEndDate = new PVEndDate();
-        if (cadsrPermissibleValuesItemPVEndDate.isEmpty()) {
+        if (cadsrPermissibleValuesItemPVEndDate.equals("")) {
           cadsrPermissibleValuesItemPVEndDate = val.getPVENDDATE().getNULL();
           if (cadsrPermissibleValuesItemPVEndDate.equals("TRUE")) {
             cadsrPermissibleValuesItemPVEndDate = "NULL";
@@ -1282,7 +1281,7 @@ public class CDEXMLInstances2CEDARCDEInstances {
 
         //reference document item organization name
         String cadsrReferenceDocumentsItemOrganizationName = val.getOrganizationName().getContent();
-        if (cadsrReferenceDocumentsItemOrganizationName.isEmpty()) {
+        if (cadsrReferenceDocumentsItemOrganizationName.equals("")) {
           cadsrReferenceDocumentsItemOrganizationName = val.getOrganizationName().getNULL();
           if (cadsrReferenceDocumentsItemOrganizationName.equals("TRUE")) {
             cadsrReferenceDocumentsItemOrganizationName = "NULL";
@@ -1302,7 +1301,7 @@ public class CDEXMLInstances2CEDARCDEInstances {
 
         //reference document item document text
         String cadsrReferenceDocumentsItemDocumentText = val.getDocumentText().getContent();
-        if (cadsrReferenceDocumentsItemDocumentText.isEmpty()) {
+        if (cadsrReferenceDocumentsItemDocumentText.equals("")) {
           cadsrReferenceDocumentsItemDocumentText = val.getDocumentText().getNULL();
           if (cadsrReferenceDocumentsItemDocumentText.equals("TRUE")) {
             cadsrReferenceDocumentsItemDocumentText = "NULL";
@@ -1315,7 +1314,7 @@ public class CDEXMLInstances2CEDARCDEInstances {
 
         //reference document item url
         String cadsrReferenceDocumentsItemURL = val.getURL().getContent();
-        if (cadsrReferenceDocumentsItemURL.isEmpty()) {
+        if (cadsrReferenceDocumentsItemURL.equals("")) {
           cadsrReferenceDocumentsItemURL = val.getURL().getNULL();
           if (cadsrReferenceDocumentsItemURL.equals("TRUE")) {
             cadsrReferenceDocumentsItemURL = "NULL";
@@ -1335,7 +1334,7 @@ public class CDEXMLInstances2CEDARCDEInstances {
 
         //reference document item display order
         String cadsrReferenceDocumentsItemDisplayOrder = val.getDisplayOrder().getContent();
-        if (cadsrReferenceDocumentsItemDisplayOrder.isEmpty()) {
+        if (cadsrReferenceDocumentsItemDisplayOrder.equals("")) {
           cadsrReferenceDocumentsItemDisplayOrder = val.getDisplayOrder().getNULL();
           if (cadsrReferenceDocumentsItemDisplayOrder.equals("TRUE")) {
             cadsrReferenceDocumentsItemDisplayOrder = "NULL";
@@ -1533,7 +1532,7 @@ public class CDEXMLInstances2CEDARCDEInstances {
 
     //derivation type
     String cadsrDataElementDerivationType = cadsrDATAELEMENTDERIVATION.getDerivationType().getContent();
-    if (cadsrDataElementDerivationType.isEmpty()) {
+    if (cadsrDataElementDerivationType.equals("")) {
       cadsrDataElementDerivationType = cadsrDATAELEMENTDERIVATION.getDerivationType().getNULL();
       if (cadsrDataElementDerivationType.equals("TRUE")) {
         cadsrDataElementDerivationType = "NULL";
@@ -1547,7 +1546,7 @@ public class CDEXMLInstances2CEDARCDEInstances {
 
     //derivation type description
     String cadsrDataElementDerivationTypeDescription = cadsrDATAELEMENTDERIVATION.getDerivationTypeDescription().getContent();
-    if (cadsrDataElementDerivationTypeDescription.isEmpty()) {
+    if (cadsrDataElementDerivationTypeDescription.equals("")) {
       cadsrDataElementDerivationTypeDescription = cadsrDATAELEMENTDERIVATION.getDerivationTypeDescription().getNULL();
       if (cadsrDataElementDerivationTypeDescription.equals("TRUE")) {
         cadsrDataElementDerivationTypeDescription = "NULL";
@@ -1561,7 +1560,7 @@ public class CDEXMLInstances2CEDARCDEInstances {
 
     //methods
     String cadsrDataElementDerivationMethods = cadsrDATAELEMENTDERIVATION.getMethods().getContent();
-    if (cadsrDataElementDerivationMethods.isEmpty()) {
+    if (cadsrDataElementDerivationMethods.equals("")) {
       cadsrDataElementDerivationMethods = cadsrDATAELEMENTDERIVATION.getMethods().getNULL();
       if (cadsrDataElementDerivationMethods.equals("TRUE")) {
         cadsrDataElementDerivationMethods = "NULL";
@@ -1574,7 +1573,7 @@ public class CDEXMLInstances2CEDARCDEInstances {
 
     //rule
     String cadsrDataElementDerivationRule = cadsrDATAELEMENTDERIVATION.getRule().getContent();
-    if (cadsrDataElementDerivationRule.isEmpty()) {
+    if (cadsrDataElementDerivationRule.equals("")) {
       cadsrDataElementDerivationRule = cadsrDATAELEMENTDERIVATION.getRule().getNULL();
       if (cadsrDataElementDerivationRule.equals("TRUE")) {
         cadsrDataElementDerivationRule = "NULL";
@@ -1587,7 +1586,7 @@ public class CDEXMLInstances2CEDARCDEInstances {
 
     //concatenation character
     String cadsrDataElementDerivationConcatenationCharacter = cadsrDATAELEMENTDERIVATION.getConcatenationCharacter().getContent();
-    if (cadsrDataElementDerivationConcatenationCharacter.isEmpty()) {
+    if (cadsrDataElementDerivationConcatenationCharacter.equals("")) {
       cadsrDataElementDerivationConcatenationCharacter = cadsrDATAELEMENTDERIVATION.getConcatenationCharacter().getNULL();
       if (cadsrDataElementDerivationConcatenationCharacter.equals("TRUE")) {
         cadsrDataElementDerivationConcatenationCharacter = "NULL";
@@ -1614,15 +1613,16 @@ public class CDEXMLInstances2CEDARCDEInstances {
     //cedarComponentDataElements.setId(id);
 
     List<ComponentDataElementsListItem> cedarComponentDataElementsList = new ArrayList<ComponentDataElementsListItem>();
-    String componenentDataElementsListNULLval = null;
+    String componentDataElementsListNULLval = null;
     if (cadsrComponenentDataElementsList.isEmpty()) {
-      componenentDataElementsListNULLval = cadsrDATAELEMENTDERIVATION.getComponentDataElementsList().getNULL();
-      if (componenentDataElementsListNULLval==null) {
-        componenentDataElementsListNULLval = "NULL";
-      } else if (componenentDataElementsListNULLval.equals("TRUE")) {
-        componenentDataElementsListNULLval = "NULL";
+      componentDataElementsListNULLval = cadsrDATAELEMENTDERIVATION.getComponentDataElementsList().getNULL();
+      if (componentDataElementsListNULLval==null) {
+        componentDataElementsListNULLval = "NULL";
+      } else if (componentDataElementsListNULLval.equals("TRUE")) {
+        componentDataElementsListNULLval = "NULL";
       }
       //System.out.println(componenentDataElementsListNULLval);
+      //cedarComponentDataElements.setComponentDataElementsListItem(componentDataElementsListNULLval); //TODO figure out
     } else {
       for (ComponentDataElementsListITEM val : cadsrComponenentDataElementsList) {
 
