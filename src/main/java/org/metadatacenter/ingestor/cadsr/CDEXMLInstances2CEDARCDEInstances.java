@@ -189,6 +189,10 @@ public class CDEXMLInstances2CEDARCDEInstances {
     cedarPreferredDefinition.setValue(cadsrPreferredDefinition);
     cedarDataElement.setPreferredDefinition(cedarPreferredDefinition);
 
+    //set Schema Name (and description)
+    cedarDataElement.setSchemaName(cadsrPublicID+" : "+cadsrLongName);
+    cedarDataElement.setSchemaDescription(cadsrPreferredDefinition);
+
     //DE Version
     String cadsrVersion = cadsrDataElement.getVERSION().getContent();
     //System.out.println(cadsrVersion);
