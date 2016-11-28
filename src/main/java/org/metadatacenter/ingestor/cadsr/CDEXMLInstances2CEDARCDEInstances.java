@@ -130,7 +130,8 @@ public class CDEXMLInstances2CEDARCDEInstances {
 
     // URI id = URI.create("https://example.com/Dummy");
     //cedarDataElement.setId(id);
-    URI templateID = URI.create("https://repo.metadatacenter.net/templates/d2539f1a-d4f2-4e71-8038-ba4ea8cf2877");
+    URI templateID = URI.create("https://repo.metadatacenter.net/templates/4373d376-c567-40c9-8349-dfa152908aac");
+    //URI templateID = URI.create("https://repo.metadatacenter.net/templates/d2539f1a-d4f2-4e71-8038-ba4ea8cf2877");
 
 
     convertCADSR2CEDARDataElementAttributes(cedarDataElement, cadsrDataElement);
@@ -1181,7 +1182,7 @@ public class CDEXMLInstances2CEDARCDEInstances {
     // URI id = URI.create("https://example.com/Dummy");
     //cedarValueDomainConcepts.setId(id);
 
-    List<ValueDomainConceptsItem> cedarValueDomainConceptsList = new ArrayList<ValueDomainConceptsItem>();
+    List<ValueDomainConceptsItem> cedarValueDomainConceptsList = new ArrayList<>();
     if (!valueDomainConceptsITEMList.isEmpty()) {
       for (ValueDomainConceptsITEM val : valueDomainConceptsITEMList) {
 
