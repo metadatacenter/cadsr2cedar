@@ -130,6 +130,7 @@ public class CDEXMLInstances2CEDARCDEInstances {
 
     // URI id = URI.create("https://example.com/Dummy");
     //cedarDataElement.setId(id);
+
     URI templateID = URI.create("https://repo.metadatacenter.net/templates/4373d376-c567-40c9-8349-dfa152908aac");
     //URI templateID = URI.create("https://repo.metadatacenter.net/templates/d2539f1a-d4f2-4e71-8038-ba4ea8cf2877");
 
@@ -142,7 +143,7 @@ public class CDEXMLInstances2CEDARCDEInstances {
     convertCADSR2CEDARAlternateNames(cedarDataElement, cadsrDataElement);
     convertCADSR2CEDARDataElementDerivation(cedarDataElement, cadsrDataElement);
 
-    cedarDataElement.setId(templateID);
+    cedarDataElement.setSchemaIsBasedOn(templateID);
 
     return cedarDataElement;
   }
@@ -223,6 +224,12 @@ public class CDEXMLInstances2CEDARCDEInstances {
 
     //DE Origin
     String cadsrOrigin = cadsrDataElement.getORIGIN().getContent();
+    if (cadsrOrigin.equals("")) {
+      cadsrOrigin = cadsrDataElement.getORIGIN().getNULL();
+      if (cadsrOrigin.equals("TRUE")) {
+        cadsrOrigin = "NULL";
+      }
+    }
     //System.out.println(cadsrOrigin);
     org.metadatacenter.ingestor.cedar.Origin cedarOrigin = new org.metadatacenter.ingestor.cedar.Origin();
     cedarOrigin.setValue(cadsrOrigin);
@@ -814,6 +821,9 @@ public class CDEXMLInstances2CEDARCDEInstances {
 
     //value domain maximum length
     String cadsrValueDomainMaximumLength = cadsrVALUEDOMAIN.getMaximumLength().getContent();
+    if (cadsrValueDomainMaximumLength.equals("") && cadsrVALUEDOMAIN.getMaximumLength().getNULL().equals("TRUE")) {
+      cadsrValueDomainMaximumLength = "NULL";
+    }
     //System.out.println(cadsrValueDomainMaximumLength);
     org.metadatacenter.ingestor.cedar.MaximumLength cedarValueDomainMaximumLength = new org.metadatacenter.ingestor.cedar.MaximumLength();
     cedarValueDomainMaximumLength.setValue(cadsrValueDomainMaximumLength);
@@ -821,6 +831,12 @@ public class CDEXMLInstances2CEDARCDEInstances {
 
     //value domain minimum length
     String cadsrValueDomainMinimumLength = cadsrVALUEDOMAIN.getMinimumLength().getContent();
+    if (cadsrValueDomainMinimumLength.equals("")) {
+      cadsrValueDomainMinimumLength = cadsrVALUEDOMAIN.getMinimumLength().getNULL();
+      if (cadsrValueDomainMinimumLength.equals("TRUE")) {
+        cadsrValueDomainMinimumLength = "NULL";
+      }
+    }
     //System.out.println(cadsrValueDomainMinimumLength);
     org.metadatacenter.ingestor.cedar.MinimumLength cedarValueDomainMinimumLength = new org.metadatacenter.ingestor.cedar.MinimumLength();
     cedarValueDomainMinimumLength.setValue(cadsrValueDomainMinimumLength);
@@ -1058,6 +1074,9 @@ public class CDEXMLInstances2CEDARCDEInstances {
 
         //representation concept details origin
         String cadsrRepresentationConceptDetailsItemOrigin = val.getORIGIN().getContent();
+        if (cadsrRepresentationConceptDetailsItemOrigin.equals("") && val.getORIGIN().getNULL().equals("TRUE")) {
+          cadsrRepresentationConceptDetailsItemOrigin = "NULL";
+        }
         //System.out.println(cadsrRepresentationConceptDetailsItemOrigin);
         Origin_____ cedarRepresentationConceptDetailsItemOrigin = new Origin_____();
         cedarRepresentationConceptDetailsItemOrigin.setValue(cadsrRepresentationConceptDetailsItemOrigin);
@@ -1140,6 +1159,12 @@ public class CDEXMLInstances2CEDARCDEInstances {
         // permissible values item pv begin date
         String cadsrPermissibleValuesItemPVBeginDate = val.getPVBEGINDATE().getContent();
         //System.out.println(cadsrPermissibleValuesItemPVBeginDate);
+        if (cadsrPermissibleValuesItemPVBeginDate.equals("")) {
+          cadsrPermissibleValuesItemPVBeginDate = val.getPVBEGINDATE().getNULL();
+          if (cadsrPermissibleValuesItemPVBeginDate.equals("TRUE")) {
+            cadsrPermissibleValuesItemPVBeginDate = "NULL";
+          }
+        }
         PVBeginDate cedarPermissibleValuesItemPVBeginDate = new PVBeginDate();
         cedarPermissibleValuesItemPVBeginDate.setValue(cadsrPermissibleValuesItemPVBeginDate);
         cedarPermissibleValuesItem.setPVBeginDate(cedarPermissibleValuesItemPVBeginDate);
@@ -1225,6 +1250,9 @@ public class CDEXMLInstances2CEDARCDEInstances {
 
         //value domain concepts origin
         String cadsrValueDomainConceptsItemOrigin = val.getORIGIN().getContent();
+        if (cadsrValueDomainConceptsItemOrigin.equals("") && val.getORIGIN().getNULL().equals("TRUE")) {
+          cadsrValueDomainConceptsItemOrigin = "NULL";
+        }
         //System.out.println(cadsrValueDomainConceptsItemOrigin);
         Origin______ cedarValueDomainConceptsItemOrigin = new Origin______();
         cedarValueDomainConceptsItemOrigin.setValue(cadsrValueDomainConceptsItemOrigin);
