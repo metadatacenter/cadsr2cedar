@@ -9,7 +9,11 @@
   
   <groupId>org.metadatacenter</groupId>
   <artifactId>cadsr2cedar</artifactId>
+<<<<<<< HEAD
   <version>0.8.6</version>
+=======
+  <version>0.9.1</version>
+>>>>>>> release-0.9.1
   <packaging>jar</packaging>
   <name>Project that generates CEDAR CDE template instances from caDSR XML-encoded DataElement instances</name>
 
