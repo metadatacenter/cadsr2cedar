@@ -1,6 +1,9 @@
 caDSR to CEDAR Convertor
 ========================
 
+NOTE: Java 8 must be used to build this project since the JAXB2 plugin is not compatible with Java 9.
+On OS X the following command to switch: ```export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)```
+
 This project converts XML-encoded [caDSR](https://wiki.nci.nih.gov/display/caDSR/caDSR+Wiki) [11179-based](http://metadata-standards.org/11179/)
 common data elements (CDEs) to instances of a JSON-encoded CEDAR template that represents those elements.
 
