@@ -1,0 +1,254 @@
+<DataElement num="45097">
+  <PUBLICID>2626966</PUBLICID>
+  <LONGNAME>Fluorescence in situ Hybridization Cytogenetic Analysis Cell Assessment Percentage Value</LONGNAME>
+  <PREFERREDNAME>FISH_CYTAN_C_ASS_VAL</PREFERREDNAME>
+  <PREFERREDDEFINITION>the value in percentage as related to assessment of the cells in a physical mapping approach that uses fluorescent tags to detect hybridization of probes within metaphase chromosomes or less condensed somatic interphase chromatin (FISH) used for analysis of chromosomal and subchromosomal properties and structures, such as those to diagnose, classify, screen for, or manage genetic diseases and abnormalities for the arrangement of chromosomes in the equatorial plane of the central spindle to form the monaster.</PREFERREDDEFINITION>
+  <VERSION>1</VERSION>
+  <WORKFLOWSTATUS>APPRVD FOR TRIAL USE</WORKFLOWSTATUS>
+  <CONTEXTNAME>NHLBI</CONTEXTNAME>
+  <CONTEXTVERSION>1</CONTEXTVERSION>
+  <ORIGIN NULL="TRUE"/>
+  <REGISTRATIONSTATUS NULL="TRUE"/>
+  <DATAELEMENTCONCEPT>
+    <PublicId>2626368</PublicId>
+    <PreferredName>FISH_CYTOANA_C_ASS</PreferredName>
+    <PreferredDefinition>information related to assessment of the cells in a physical mapping approach that uses fluorescent tags to detect hybridization of probes within metaphase chromosomes or less condensed somatic interphase chromatin (FISH) used for analysis of chromosomal and subchromosomal properties and structures, such as those to diagnose, classify, screen for, or manage genetic diseases and abnormalities for the arrangement of chromosomes in the equatorial plane of the central spindle to form the monaster.</PreferredDefinition>
+    <LongName>Fluorescence in situ Hybridization Cytogenetic Analysis Cell Assessment</LongName>
+    <Version>1</Version>
+    <WorkflowStatus>RELEASED</WorkflowStatus>
+    <ContextName>NHLBI</ContextName>
+    <ContextVersion>1</ContextVersion>
+    <ConceptualDomain>
+      <PublicId>2008551</PublicId>
+      <ContextName>CTEP</ContextName>
+      <ContextVersion>2.31</ContextVersion>
+      <PreferredName>ASSESS</PreferredName>
+      <Version>1</Version>
+      <LongName>Assessments</LongName>
+    </ConceptualDomain>
+    <ObjectClass>
+      <PublicId>2626363</PublicId>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>C17563:C18280</PreferredName>
+      <Version>1</Version>
+      <LongName>Fluorescence in situ Hybridization Cytogenetic Analysis</LongName>
+      <ConceptDetails>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C17563</PREFERRED_NAME>
+          <LONG_NAME>Fluorescence in Situ Hybridization</LONG_NAME>
+          <CON_ID>2221360</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>No</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>1</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C18280</PREFERRED_NAME>
+          <LONG_NAME>Cytogenetic Analysis</LONG_NAME>
+          <CON_ID>2528326</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>Yes</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>0</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+      </ConceptDetails>
+    </ObjectClass>
+    <Property>
+      <PublicId>2626366</PublicId>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>C12508:C25217</PreferredName>
+      <Version>1</Version>
+      <LongName>Cell Assessed</LongName>
+      <ConceptDetails>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C12508</PREFERRED_NAME>
+          <LONG_NAME>Cell</LONG_NAME>
+          <CON_ID>2202900</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>No</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>1</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C25217</PREFERRED_NAME>
+          <LONG_NAME>Assessment</LONG_NAME>
+          <CON_ID>2202457</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>Yes</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>0</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+      </ConceptDetails>
+    </Property>
+    <ObjectClassQualifier NULL="TRUE"/>
+    <PropertyQualifier NULL="TRUE"/>
+    <Origin NULL="TRUE"/>
+  </DATAELEMENTCONCEPT>
+  <VALUEDOMAIN>
+    <PublicId>2180234</PublicId>
+    <PreferredName>LAB_PTG_VAL</PreferredName>
+    <PreferredDefinition>the value as a percentage of 100.</PreferredDefinition>
+    <LongName>Lab Percentage Value</LongName>
+    <Version>1</Version>
+    <WorkflowStatus>RELEASED</WorkflowStatus>
+    <ContextName>CTEP</ContextName>
+    <ContextVersion>2.31</ContextVersion>
+    <ConceptualDomain>
+      <PublicId>2008541</PublicId>
+      <ContextName>CTEP</ContextName>
+      <ContextVersion>2.31</ContextVersion>
+      <PreferredName>NUMS</PreferredName>
+      <Version>1</Version>
+      <LongName>Numbers</LongName>
+    </ConceptualDomain>
+    <Datatype>NUMBER</Datatype>
+    <ValueDomainType>NonEnumerated</ValueDomainType>
+    <UnitOfMeasure>%</UnitOfMeasure>
+    <DisplayFormat NULL="TRUE"/>
+    <MaximumLength>3</MaximumLength>
+    <MinimumLength NULL="TRUE"/>
+    <DecimalPlace NULL="TRUE"/>
+    <CharacterSetName NULL="TRUE"/>
+    <MaximumValue NULL="TRUE"/>
+    <MinimumValue NULL="TRUE"/>
+    <Origin NULL="TRUE"/>
+    <Representation>
+      <PublicId>2208119</PublicId>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>C25613:C25712</PreferredName>
+      <Version>1</Version>
+      <LongName>Percentage Value</LongName>
+      <ConceptDetails>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C25613</PREFERRED_NAME>
+          <LONG_NAME>Percentage</LONG_NAME>
+          <CON_ID>2203724</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>No</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>1</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C25712</PREFERRED_NAME>
+          <LONG_NAME>Value</LONG_NAME>
+          <CON_ID>2203990</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>Yes</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>0</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+      </ConceptDetails>
+    </Representation>
+    <PermissibleValues/>
+    <ValueDomainConcepts/>
+  </VALUEDOMAIN>
+  <REFERENCEDOCUMENTSLIST>
+    <REFERENCEDOCUMENTSLIST_ITEM>
+      <Name>Percent positive</Name>
+      <OrganizationName NULL="TRUE"/>
+      <DocumentType>Preferred Question Text</DocumentType>
+      <DocumentText>Percent positive</DocumentText>
+      <URL NULL="TRUE"/>
+      <Language>ENGLISH</Language>
+      <DisplayOrder NULL="TRUE"/>
+    </REFERENCEDOCUMENTSLIST_ITEM>
+  </REFERENCEDOCUMENTSLIST>
+  <CLASSIFICATIONSLIST>
+    <CLASSIFICATIONSLIST_ITEM>
+      <ClassificationScheme>
+        <PublicId>2670694</PublicId>
+        <ContextName>NHLBI</ContextName>
+        <ContextVersion>1</ContextVersion>
+        <PreferredName>Disease Relapse</PreferredName>
+        <Version>1</Version>
+      </ClassificationScheme>
+      <ClassificationSchemeItemName>Acute Leukemia Relapse</ClassificationSchemeItemName>
+      <ClassificationSchemeItemType>CATEGORY_TYPE</ClassificationSchemeItemType>
+      <CsiPublicId>2812922</CsiPublicId>
+      <CsiVersion>1</CsiVersion>
+    </CLASSIFICATIONSLIST_ITEM>
+    <CLASSIFICATIONSLIST_ITEM>
+      <ClassificationScheme>
+        <PublicId>2670694</PublicId>
+        <ContextName>NHLBI</ContextName>
+        <ContextVersion>1</ContextVersion>
+        <PreferredName>Disease Relapse</PreferredName>
+        <Version>1</Version>
+      </ClassificationScheme>
+      <ClassificationSchemeItemName>Myelodysplastic Syndrome (MDS) Relapse</ClassificationSchemeItemName>
+      <ClassificationSchemeItemType>CATEGORY_TYPE</ClassificationSchemeItemType>
+      <CsiPublicId>2812927</CsiPublicId>
+      <CsiVersion>1</CsiVersion>
+    </CLASSIFICATIONSLIST_ITEM>
+    <CLASSIFICATIONSLIST_ITEM>
+      <ClassificationScheme>
+        <PublicId>2670694</PublicId>
+        <ContextName>NHLBI</ContextName>
+        <ContextVersion>1</ContextVersion>
+        <PreferredName>Disease Relapse</PreferredName>
+        <Version>1</Version>
+      </ClassificationScheme>
+      <ClassificationSchemeItemName>Lymphoma Relapse</ClassificationSchemeItemName>
+      <ClassificationSchemeItemType>CATEGORY_TYPE</ClassificationSchemeItemType>
+      <CsiPublicId>2812926</CsiPublicId>
+      <CsiVersion>1</CsiVersion>
+    </CLASSIFICATIONSLIST_ITEM>
+    <CLASSIFICATIONSLIST_ITEM>
+      <ClassificationScheme>
+        <PublicId>2670694</PublicId>
+        <ContextName>NHLBI</ContextName>
+        <ContextVersion>1</ContextVersion>
+        <PreferredName>Disease Relapse</PreferredName>
+        <Version>1</Version>
+      </ClassificationScheme>
+      <ClassificationSchemeItemName>Chronic Myelogenous Leukemia Relapse</ClassificationSchemeItemName>
+      <ClassificationSchemeItemType>CATEGORY_TYPE</ClassificationSchemeItemType>
+      <CsiPublicId>2812924</CsiPublicId>
+      <CsiVersion>1</CsiVersion>
+    </CLASSIFICATIONSLIST_ITEM>
+    <CLASSIFICATIONSLIST_ITEM>
+      <ClassificationScheme>
+        <PublicId>2670694</PublicId>
+        <ContextName>NHLBI</ContextName>
+        <ContextVersion>1</ContextVersion>
+        <PreferredName>Disease Relapse</PreferredName>
+        <Version>1</Version>
+      </ClassificationScheme>
+      <ClassificationSchemeItemName>Fanconi Anemia Relapse</ClassificationSchemeItemName>
+      <ClassificationSchemeItemType>CATEGORY_TYPE</ClassificationSchemeItemType>
+      <CsiPublicId>2812925</CsiPublicId>
+      <CsiVersion>1</CsiVersion>
+    </CLASSIFICATIONSLIST_ITEM>
+    <CLASSIFICATIONSLIST_ITEM>
+      <ClassificationScheme>
+        <PublicId>2670694</PublicId>
+        <ContextName>NHLBI</ContextName>
+        <ContextVersion>1</ContextVersion>
+        <PreferredName>Disease Relapse</PreferredName>
+        <Version>1</Version>
+      </ClassificationScheme>
+      <ClassificationSchemeItemName>Solid Tumor Relapse</ClassificationSchemeItemName>
+      <ClassificationSchemeItemType>CATEGORY_TYPE</ClassificationSchemeItemType>
+      <CsiPublicId>2812928</CsiPublicId>
+      <CsiVersion>1</CsiVersion>
+    </CLASSIFICATIONSLIST_ITEM>
+  </CLASSIFICATIONSLIST>
+  <ALTERNATENAMELIST/>
+  <DATAELEMENTDERIVATION>
+    <DerivationType NULL="TRUE"/>
+    <DerivationTypeDescription NULL="TRUE"/>
+    <Methods NULL="TRUE"/>
+    <Rule NULL="TRUE"/>
+    <ConcatenationCharacter NULL="TRUE"/>
+    <ComponentDataElementsList NULL="TRUE"/>
+  </DATAELEMENTDERIVATION>
+</DataElement>

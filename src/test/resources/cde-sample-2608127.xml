@@ -1,0 +1,187 @@
+<DataElement num="5241">
+  <PUBLICID>2608127</PUBLICID>
+  <LONGNAME>Histopathologic Grade Grading System Name java.lang.String</LONGNAME>
+  <PREFERREDNAME>2607752v1.0:2178533v1.0</PREFERREDNAME>
+  <PREFERREDDEFINITION>The degree of abnormality of cancer cells, a measure of differentiation, the extent to which cancer cells are similar in appearance and function to healthy cells of the same tissue type. The degree of differentiation often relates to the clinical behavior_A morphologic classification system of malignant tumors, usually relating to disease progression and clinical outcome.  It is based upon the presence or absence of several morphologic parameters, including tumor cell necrosis, cytologic atypia, nuclear pleomorphism and mitotic figures, the architectural infiltrating patterns, and the degree of tumor cell differentiation.  Malignant tumors usually are graded I-III.:The words or language units by which a thing is known._Generic value domain for a java datatype that is a class that represents character strings.</PREFERREDDEFINITION>
+  <VERSION>1</VERSION>
+  <WORKFLOWSTATUS>RELEASED</WORKFLOWSTATUS>
+  <CONTEXTNAME>NCIP</CONTEXTNAME>
+  <CONTEXTVERSION>1</CONTEXTVERSION>
+  <ORIGIN NULL="TRUE"/>
+  <REGISTRATIONSTATUS NULL="TRUE"/>
+  <DATAELEMENTCONCEPT>
+    <PublicId>2607752</PublicId>
+    <PreferredName>2431271v1.0:2607546v1.0</PreferredName>
+    <PreferredDefinition>The degree of abnormality of cancer cells, a measure of differentiation, the extent to which cancer cells are similar in appearance and function to healthy cells of the same tissue type. The degree of differentiation often relates to the clinical behavior_A morphologic classification system of malignant tumors, usually relating to disease progression and clinical outcome.  It is based upon the presence or absence of several morphologic parameters, including tumor cell necrosis, cytologic atypia, nuclear pleomorphism and mitotic figures, the architectural infiltrating patterns, and the degree of tumor cell differentiation.  Malignant tumors usually are graded I-III.:The words or language units by which a thing is known.</PreferredDefinition>
+    <LongName>Histopathologic Grade Grading System Name</LongName>
+    <Version>1</Version>
+    <WorkflowStatus>RELEASED</WorkflowStatus>
+    <ContextName>NCIP</ContextName>
+    <ContextVersion>1</ContextVersion>
+    <ConceptualDomain>
+      <PublicId>2222502</PublicId>
+      <ContextName>caCORE</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>UML DEFAULT CD</PreferredName>
+      <Version>1</Version>
+      <LongName>UML DEFAULT CD</LongName>
+    </ConceptualDomain>
+    <ObjectClass>
+      <PublicId>2431271</PublicId>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>C18000</PreferredName>
+      <Version>1</Version>
+      <LongName>Histopathologic Grade</LongName>
+      <ConceptDetails>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C18000</PREFERRED_NAME>
+          <LONG_NAME>Histologic Grade</LONG_NAME>
+          <CON_ID>2203821</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>Yes</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>0</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+      </ConceptDetails>
+    </ObjectClass>
+    <Property>
+      <PublicId>2607546</PublicId>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>C48224:C42614</PreferredName>
+      <Version>1</Version>
+      <LongName>Grading System Name</LongName>
+      <ConceptDetails>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C48224</PREFERRED_NAME>
+          <LONG_NAME>Tumor Grading System</LONG_NAME>
+          <CON_ID>2431168</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>No</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>1</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C42614</PREFERRED_NAME>
+          <LONG_NAME>Name</LONG_NAME>
+          <CON_ID>2222821</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>Yes</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>0</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+      </ConceptDetails>
+    </Property>
+    <ObjectClassQualifier NULL="TRUE"/>
+    <PropertyQualifier NULL="TRUE"/>
+    <Origin NULL="TRUE"/>
+  </DATAELEMENTCONCEPT>
+  <VALUEDOMAIN>
+    <PublicId>2178533</PublicId>
+    <PreferredName>java.lang.String</PreferredName>
+    <PreferredDefinition>Generic value domain for a java datatype that is a class that represents character strings.</PreferredDefinition>
+    <LongName>java.lang.String</LongName>
+    <Version>1</Version>
+    <WorkflowStatus>RELEASED</WorkflowStatus>
+    <ContextName>caCORE</ContextName>
+    <ContextVersion>1</ContextVersion>
+    <ConceptualDomain>
+      <PublicId>2178532</PublicId>
+      <ContextName>caCORE</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>BIOINFORMATICS</PreferredName>
+      <Version>1</Version>
+      <LongName>Bioinformatics</LongName>
+    </ConceptualDomain>
+    <Datatype>java.lang.String</Datatype>
+    <ValueDomainType>NonEnumerated</ValueDomainType>
+    <UnitOfMeasure NULL="TRUE"/>
+    <DisplayFormat NULL="TRUE"/>
+    <MaximumLength NULL="TRUE"/>
+    <MinimumLength NULL="TRUE"/>
+    <DecimalPlace NULL="TRUE"/>
+    <CharacterSetName NULL="TRUE"/>
+    <MaximumValue NULL="TRUE"/>
+    <MinimumValue NULL="TRUE"/>
+    <Origin NULL="TRUE"/>
+    <Representation>
+      <PublicId>2234203</PublicId>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>C25704</PreferredName>
+      <Version>1</Version>
+      <LongName>Text</LongName>
+      <ConceptDetails>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C25704</PREFERRED_NAME>
+          <LONG_NAME>Text</LONG_NAME>
+          <CON_ID>2203863</CON_ID>
+          <DEFINITION_SOURCE>NCI </DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>Yes</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>0</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+      </ConceptDetails>
+    </Representation>
+    <PermissibleValues/>
+    <ValueDomainConcepts/>
+  </VALUEDOMAIN>
+  <REFERENCEDOCUMENTSLIST/>
+  <CLASSIFICATIONSLIST>
+    <CLASSIFICATIONSLIST_ITEM>
+      <ClassificationScheme>
+        <PublicId>2611677</PublicId>
+        <ContextName>NCIP</ContextName>
+        <ContextVersion>1</ContextVersion>
+        <PreferredName>CTOM</PreferredName>
+        <Version>1</Version>
+      </ClassificationScheme>
+      <ClassificationSchemeItemName>gov.nih.nci.ctom.domain</ClassificationSchemeItemName>
+      <ClassificationSchemeItemType>UML_PACKAGE_NAME</ClassificationSchemeItemType>
+      <CsiPublicId>2812626</CsiPublicId>
+      <CsiVersion>1</CsiVersion>
+    </CLASSIFICATIONSLIST_ITEM>
+    <CLASSIFICATIONSLIST_ITEM>
+      <ClassificationScheme>
+        <PublicId>2724612</PublicId>
+        <ContextName>NCIP</ContextName>
+        <ContextVersion>1</ContextVersion>
+        <PreferredName>CTODS</PreferredName>
+        <Version>0.53</Version>
+      </ClassificationScheme>
+      <ClassificationSchemeItemName>gov.nih.nci.ctom.domain</ClassificationSchemeItemName>
+      <ClassificationSchemeItemType>UML_PACKAGE_NAME</ClassificationSchemeItemType>
+      <CsiPublicId>2812626</CsiPublicId>
+      <CsiVersion>1</CsiVersion>
+    </CLASSIFICATIONSLIST_ITEM>
+  </CLASSIFICATIONSLIST>
+  <ALTERNATENAMELIST>
+    <ALTERNATENAMELIST_ITEM>
+      <ContextName>TEST</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <AlternateName>gov.nih.nci.ctom.domain.HistopathologyGrade.gradeCodeSystem</AlternateName>
+      <AlternateNameType>UML Qualified Attr</AlternateNameType>
+      <Language>ENGLISH</Language>
+    </ALTERNATENAMELIST_ITEM>
+    <ALTERNATENAMELIST_ITEM>
+      <ContextName>TEST</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <AlternateName>HistopathologyGrade:gradeCodeSystem</AlternateName>
+      <AlternateNameType>UML Class:UML Attr</AlternateNameType>
+      <Language>ENGLISH</Language>
+    </ALTERNATENAMELIST_ITEM>
+  </ALTERNATENAMELIST>
+  <DATAELEMENTDERIVATION>
+    <DerivationType NULL="TRUE"/>
+    <DerivationTypeDescription NULL="TRUE"/>
+    <Methods NULL="TRUE"/>
+    <Rule NULL="TRUE"/>
+    <ConcatenationCharacter NULL="TRUE"/>
+    <ComponentDataElementsList NULL="TRUE"/>
+  </DATAELEMENTDERIVATION>
+</DataElement>

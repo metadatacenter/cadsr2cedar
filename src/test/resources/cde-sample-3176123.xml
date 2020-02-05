@@ -1,0 +1,316 @@
+<DataElement num="31752">
+  <PUBLICID>3176123</PUBLICID>
+  <LONGNAME>Performed Study Activity Repetition Number ISO21090.INT.POS.v1.0</LONGNAME>
+  <PREFERREDNAME>3174968v1.0:2848082v1.0</PREFERREDNAME>
+  <PREFERREDDEFINITION>An integer that identfies the particular occurrence of a repeating activity. The first repetition is defined as '1'. EXAMPLE(S): A PlannedActivity might have a repeatQuantity of 4 which would result in 4 ScheduledActivity and PerformedActivity with repetitionNumbers of 1, 2, 3, and 4 respectively.</PREFERREDDEFINITION>
+  <VERSION>1</VERSION>
+  <WORKFLOWSTATUS>RELEASED</WORKFLOWSTATUS>
+  <CONTEXTNAME>NCIP</CONTEXTNAME>
+  <CONTEXTVERSION>1</CONTEXTVERSION>
+  <ORIGIN NULL="TRUE"/>
+  <REGISTRATIONSTATUS NULL="TRUE"/>
+  <DATAELEMENTCONCEPT>
+    <PublicId>3174968</PublicId>
+    <PreferredName>2867719v1.0:3174579v1.0</PreferredName>
+    <PreferredDefinition>Executed and carried through to completion.:A detailed examination, analysis, or critical inspection of a subject designed to discover facts about it.:An action taken in pursuit of an objective; the state of being active._An integer that identifies the particular occurrence of a repeating activity or entity.</PreferredDefinition>
+    <LongName>Performed Study Activity Repetition Number</LongName>
+    <Version>1</Version>
+    <WorkflowStatus>RELEASED</WorkflowStatus>
+    <ContextName>NCIP</ContextName>
+    <ContextVersion>1</ContextVersion>
+    <ConceptualDomain>
+      <PublicId>2222502</PublicId>
+      <ContextName>caCORE</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>UML DEFAULT CD</PreferredName>
+      <Version>1</Version>
+      <LongName>UML DEFAULT CD</LongName>
+    </ConceptualDomain>
+    <ObjectClass>
+      <PublicId>2867719</PublicId>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>C38000:C63536:C43431</PreferredName>
+      <Version>1</Version>
+      <LongName>Performed Study Activity</LongName>
+      <ConceptDetails>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C38000</PREFERRED_NAME>
+          <LONG_NAME>Performed</LONG_NAME>
+          <CON_ID>2203950</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>No</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>2</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C63536</PREFERRED_NAME>
+          <LONG_NAME>Study</LONG_NAME>
+          <CON_ID>2553063</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>No</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>1</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C43431</PREFERRED_NAME>
+          <LONG_NAME>Activity</LONG_NAME>
+          <CON_ID>2222740</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>Yes</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>0</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+      </ConceptDetails>
+    </ObjectClass>
+    <Property>
+      <PublicId>3174579</PublicId>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>C93651</PreferredName>
+      <Version>1</Version>
+      <LongName>Repetition Number</LongName>
+      <ConceptDetails>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C93651</PREFERRED_NAME>
+          <LONG_NAME>Repetition Number</LONG_NAME>
+          <CON_ID>3162373</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>Yes</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>0</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+      </ConceptDetails>
+    </Property>
+    <ObjectClassQualifier NULL="TRUE"/>
+    <PropertyQualifier NULL="TRUE"/>
+    <Origin NULL="TRUE"/>
+  </DATAELEMENTCONCEPT>
+  <VALUEDOMAIN>
+    <PublicId>2848082</PublicId>
+    <PreferredName>2848082v1.0</PreferredName>
+    <PreferredDefinition>Constrains INT to a value of greater than 0.</PreferredDefinition>
+    <LongName>ISO21090.INT.POS.v1.0</LongName>
+    <Version>1</Version>
+    <WorkflowStatus>RELEASED</WorkflowStatus>
+    <ContextName>NCIP</ContextName>
+    <ContextVersion>1</ContextVersion>
+    <ConceptualDomain>
+      <PublicId>2846956</PublicId>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>ISO21090 DATA TYPES</PreferredName>
+      <Version>1</Version>
+      <LongName>ISO21090 Data Types</LongName>
+    </ConceptualDomain>
+    <Datatype>ISO21090INTPOSv1.0</Datatype>
+    <ValueDomainType>NonEnumerated</ValueDomainType>
+    <UnitOfMeasure NULL="TRUE"/>
+    <DisplayFormat NULL="TRUE"/>
+    <MaximumLength NULL="TRUE"/>
+    <MinimumLength NULL="TRUE"/>
+    <DecimalPlace NULL="TRUE"/>
+    <CharacterSetName NULL="TRUE"/>
+    <MaximumValue NULL="TRUE"/>
+    <MinimumValue NULL="TRUE"/>
+    <Origin>ISO:International Organization for Standardization</Origin>
+    <Representation>
+      <PublicId>2433737</PublicId>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>C45255</PreferredName>
+      <Version>1</Version>
+      <LongName>Integer</LongName>
+      <ConceptDetails>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C45255</PREFERRED_NAME>
+          <LONG_NAME>Integer</LONG_NAME>
+          <CON_ID>2433736</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>Yes</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>0</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+      </ConceptDetails>
+    </Representation>
+    <PermissibleValues/>
+    <ValueDomainConcepts/>
+  </VALUEDOMAIN>
+  <REFERENCEDOCUMENTSLIST/>
+  <CLASSIFICATIONSLIST>
+    <CLASSIFICATIONSLIST_ITEM>
+      <ClassificationScheme>
+        <PublicId>2714898</PublicId>
+        <ContextName>NCIP</ContextName>
+        <ContextVersion>1</ContextVersion>
+        <PreferredName>BRIDG 3.0.2</PreferredName>
+        <Version>3.02</Version>
+      </ClassificationScheme>
+      <ClassificationSchemeItemName>gov.nih.nci.BRIDG.domain</ClassificationSchemeItemName>
+      <ClassificationSchemeItemType>UML_PACKAGE_NAME</ClassificationSchemeItemType>
+      <CsiPublicId>2867548</CsiPublicId>
+      <CsiVersion>1</CsiVersion>
+    </CLASSIFICATIONSLIST_ITEM>
+    <CLASSIFICATIONSLIST_ITEM>
+      <ClassificationScheme>
+        <PublicId>3757111</PublicId>
+        <ContextName>NCIP</ContextName>
+        <ContextVersion>1</ContextVersion>
+        <PreferredName>BRIDG 3.2</PreferredName>
+        <Version>3.2</Version>
+      </ClassificationScheme>
+      <ClassificationSchemeItemName>gov.nih.nci.BRIDG.domain.StudyConductSubDomain</ClassificationSchemeItemName>
+      <ClassificationSchemeItemType>UML_PACKAGE_NAME</ClassificationSchemeItemType>
+      <CsiPublicId>3757156</CsiPublicId>
+      <CsiVersion>1</CsiVersion>
+    </CLASSIFICATIONSLIST_ITEM>
+  </CLASSIFICATIONSLIST>
+  <ALTERNATENAMELIST>
+    <ALTERNATENAMELIST_ITEM>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <AlternateName>gov.nih.nci.BRIDG.domain.PerformedActivity.repetitionNumber</AlternateName>
+      <AlternateNameType>UML Qualified Attr</AlternateNameType>
+      <Language>ENGLISH</Language>
+    </ALTERNATENAMELIST_ITEM>
+    <ALTERNATENAMELIST_ITEM>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <AlternateName>PerformedActivity:repetitionNumber</AlternateName>
+      <AlternateNameType>UML Class:UML Attr</AlternateNameType>
+      <Language>ENGLISH</Language>
+    </ALTERNATENAMELIST_ITEM>
+    <ALTERNATENAMELIST_ITEM>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <AlternateName>gov.nih.nci.BRIDG.domain.StudyConductSubDomain.PerformedActivity.repetitionNumber</AlternateName>
+      <AlternateNameType>UML Qualified Attr</AlternateNameType>
+      <Language>ENGLISH</Language>
+    </ALTERNATENAMELIST_ITEM>
+    <ALTERNATENAMELIST_ITEM>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <AlternateName>CDE 2763975:Therapies.What is the number of systemic/intrathecal therapy cycles administered?</AlternateName>
+      <AlternateNameType>Map:HCTv1.0</AlternateNameType>
+      <Language>ENGLISH</Language>
+    </ALTERNATENAMELIST_ITEM>
+    <ALTERNATENAMELIST_ITEM>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <AlternateName>CDE 2744948v1.0: Treatment Cycle Number</AlternateName>
+      <AlternateNameType>Map:NCI CRF Standard</AlternateNameType>
+      <Language>ENGLISH</Language>
+    </ALTERNATENAMELIST_ITEM>
+    <ALTERNATENAMELIST_ITEM>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <AlternateName>TreatmentInformation.totalCourses</AlternateName>
+      <AlternateNameType>Map:caAERSv2.2</AlternateNameType>
+      <Language>ENGLISH</Language>
+    </ALTERNATENAMELIST_ITEM>
+    <ALTERNATENAMELIST_ITEM>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <AlternateName>CDE 2072v4.1: Treatment Current Course Number</AlternateName>
+      <AlternateNameType>Map:NCI CRF Standard</AlternateNameType>
+      <Language>ENGLISH</Language>
+    </ALTERNATENAMELIST_ITEM>
+    <ALTERNATENAMELIST_ITEM>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <AlternateName>CDE 62676v3.0: Prior Chemotherapy Regimen Number</AlternateName>
+      <AlternateNameType>Map:NCI CRF Standard</AlternateNameType>
+      <Language>ENGLISH</Language>
+    </ALTERNATENAMELIST_ITEM>
+    <ALTERNATENAMELIST_ITEM>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <AlternateName>PerformedActivity.repetitionNumber</AlternateName>
+      <AlternateNameType>Map:LSDAMv2.2.3Plus</AlternateNameType>
+      <Language>ENGLISH</Language>
+    </ALTERNATENAMELIST_ITEM>
+    <ALTERNATENAMELIST_ITEM>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <AlternateName>CDE 2732184v1.0: Protocol Course Number Count</AlternateName>
+      <AlternateNameType>Map:NCI CRF Standard</AlternateNameType>
+      <Language>ENGLISH</Language>
+    </ALTERNATENAMELIST_ITEM>
+    <ALTERNATENAMELIST_ITEM>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <AlternateName>Pro_CM.pro_measure_seq</AlternateName>
+      <AlternateNameType>Map:PCORNetv4.0</AlternateNameType>
+      <Language>ENGLISH</Language>
+    </ALTERNATENAMELIST_ITEM>
+    <ALTERNATENAMELIST_ITEM>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <AlternateName>CDE 62590v3.0: Agent Course Count</AlternateName>
+      <AlternateNameType>Map:NCI CRF Standard</AlternateNameType>
+      <Language>ENGLISH</Language>
+    </ALTERNATENAMELIST_ITEM>
+    <ALTERNATENAMELIST_ITEM>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <AlternateName>CourseDate.number</AlternateName>
+      <AlternateNameType>Map:caAERSv2.2</AlternateNameType>
+      <Language>ENGLISH</Language>
+    </ALTERNATENAMELIST_ITEM>
+    <ALTERNATENAMELIST_ITEM>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <AlternateName>CDE 3060732:Therapies.What is the reason for the number of cycles missing value?</AlternateName>
+      <AlternateNameType>Map:HCTv1.0</AlternateNameType>
+      <Language>ENGLISH</Language>
+    </ALTERNATENAMELIST_ITEM>
+    <ALTERNATENAMELIST_ITEM>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <AlternateName>PerformedActivity.repetitionNumber</AlternateName>
+      <AlternateNameType>Map:CTRv1.0</AlternateNameType>
+      <Language>ENGLISH</Language>
+    </ALTERNATENAMELIST_ITEM>
+    <ALTERNATENAMELIST_ITEM>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <AlternateName>CDE 3060718:Therapies.What was the number of cycles for the therapeutic procedure?</AlternateName>
+      <AlternateNameType>Map:HCTv1.0</AlternateNameType>
+      <Language>ENGLISH</Language>
+    </ALTERNATENAMELIST_ITEM>
+    <ALTERNATENAMELIST_ITEM>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <AlternateName>AdverseEventReportingPeriod.cycleNumber</AlternateName>
+      <AlternateNameType>Map:caAERSv2.2</AlternateNameType>
+      <Language>ENGLISH</Language>
+    </ALTERNATENAMELIST_ITEM>
+    <ALTERNATENAMELIST_ITEM>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <AlternateName>PerformedActivity.repetitionNumber</AlternateName>
+      <AlternateNameType>Map:CDMHv1.0</AlternateNameType>
+      <Language>ENGLISH</Language>
+    </ALTERNATENAMELIST_ITEM>
+    <ALTERNATENAMELIST_ITEM>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <AlternateName>CDE 2954036:Therapy Doses.Specify the number of days of radiation therapy</AlternateName>
+      <AlternateNameType>Map:HCTv1.0</AlternateNameType>
+      <Language>ENGLISH</Language>
+    </ALTERNATENAMELIST_ITEM>
+  </ALTERNATENAMELIST>
+  <DATAELEMENTDERIVATION>
+    <DerivationType NULL="TRUE"/>
+    <DerivationTypeDescription NULL="TRUE"/>
+    <Methods NULL="TRUE"/>
+    <Rule NULL="TRUE"/>
+    <ConcatenationCharacter NULL="TRUE"/>
+    <ComponentDataElementsList NULL="TRUE"/>
+  </DATAELEMENTDERIVATION>
+</DataElement>

@@ -1,0 +1,194 @@
+<DataElement num="5358">
+  <PUBLICID>2513777</PUBLICID>
+  <LONGNAME>Fluid Specimen Milliliter Available Quantity java.lang.Double</LONGNAME>
+  <PREFERREDNAME>2513511v1.0:2200948v1.0</PREFERREDNAME>
+  <PREFERREDDEFINITION>A continuous amorphous substance that tends to flow and to conform to the outline of its container (i.e., a liquid or a gas).  Also used as an adjective to describe something with properties like that of a fluid.:A sample or part of a thing, or of several things, taken to demonstrate or to determine the character of the whole, e.g. a substance, or portion of material obtained for use in testing, examination, or study; particularly, a preparation of tissue or bodily fluid taken for examination or diagnosis._A metric unit of volume equal to one thousandth of a liter, or approximately to 0.061 023 7 cubic inch.:Obtainable or accessible and ready for use or service.:A measurable amount of a substance._Generic value domain for a primitive java datatype that is a Double-precision floating point number (64-bit IEEE 7540).</PREFERREDDEFINITION>
+  <VERSION>1</VERSION>
+  <WORKFLOWSTATUS>RELEASED</WORKFLOWSTATUS>
+  <CONTEXTNAME>NCIP</CONTEXTNAME>
+  <CONTEXTVERSION>1</CONTEXTVERSION>
+  <ORIGIN NULL="TRUE"/>
+  <REGISTRATIONSTATUS>Qualified</REGISTRATIONSTATUS>
+  <DATAELEMENTCONCEPT>
+    <PublicId>2513511</PublicId>
+    <PreferredName>2513376v1.0:2513331v1.0</PreferredName>
+    <PreferredDefinition>A continuous amorphous substance that tends to flow and to conform to the outline of its container (i.e., a liquid or a gas).  Also used as an adjective to describe something with properties like that of a fluid.:A sample or part of a thing, or of several things, taken to demonstrate or to determine the character of the whole, e.g. a substance, or portion of material obtained for use in testing, examination, or study; particularly, a preparation of tissue or bodily fluid taken for examination or diagnosis._A metric unit of volume equal to one thousandth of a liter, or approximately to 0.061 023 7 cubic inch.:Obtainable or accessible and ready for use or service.:A measurable amount of a substance.</PreferredDefinition>
+    <LongName>Fluid Specimen Milliliter Available Quantity</LongName>
+    <Version>1</Version>
+    <WorkflowStatus>RELEASED</WorkflowStatus>
+    <ContextName>NCIP</ContextName>
+    <ContextVersion>1</ContextVersion>
+    <ConceptualDomain>
+      <PublicId>2222502</PublicId>
+      <ContextName>caCORE</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>UML DEFAULT CD</PreferredName>
+      <Version>1</Version>
+      <LongName>UML DEFAULT CD</LongName>
+    </ConceptualDomain>
+    <ObjectClass>
+      <PublicId>2513376</PublicId>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>C25278:C19157</PreferredName>
+      <Version>1</Version>
+      <LongName>Fluid Specimen</LongName>
+      <ConceptDetails>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C25278</PREFERRED_NAME>
+          <LONG_NAME>Fluid</LONG_NAME>
+          <CON_ID>2202644</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>No</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>1</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C19157</PREFERRED_NAME>
+          <LONG_NAME>Specimen</LONG_NAME>
+          <CON_ID>2202566</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>Yes</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>0</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+      </ConceptDetails>
+    </ObjectClass>
+    <Property>
+      <PublicId>2513331</PublicId>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>C28254:C25429:C25256</PreferredName>
+      <Version>1</Version>
+      <LongName>Milliliter Available Quantity</LongName>
+      <ConceptDetails>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C28254</PREFERRED_NAME>
+          <LONG_NAME>Milliliter</LONG_NAME>
+          <CON_ID>2204829</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>No</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>2</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C25429</PREFERRED_NAME>
+          <LONG_NAME>Availability</LONG_NAME>
+          <CON_ID>2204038</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>No</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>1</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C25256</PREFERRED_NAME>
+          <LONG_NAME>Quantity</LONG_NAME>
+          <CON_ID>2202797</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>Yes</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>0</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+      </ConceptDetails>
+    </Property>
+    <ObjectClassQualifier NULL="TRUE"/>
+    <PropertyQualifier NULL="TRUE"/>
+    <Origin NULL="TRUE"/>
+  </DATAELEMENTCONCEPT>
+  <VALUEDOMAIN>
+    <PublicId>2200948</PublicId>
+    <PreferredName>java.lang.Double</PreferredName>
+    <PreferredDefinition>Generic value domain for a primitive java datatype that is a Double-precision floating point number (64-bit IEEE 7540).</PreferredDefinition>
+    <LongName>java.lang.Double</LongName>
+    <Version>1</Version>
+    <WorkflowStatus>RELEASED</WorkflowStatus>
+    <ContextName>NCIP</ContextName>
+    <ContextVersion>1</ContextVersion>
+    <ConceptualDomain>
+      <PublicId>2178532</PublicId>
+      <ContextName>caCORE</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>BIOINFORMATICS</PreferredName>
+      <Version>1</Version>
+      <LongName>Bioinformatics</LongName>
+    </ConceptualDomain>
+    <Datatype>java.lang.Double</Datatype>
+    <ValueDomainType>NonEnumerated</ValueDomainType>
+    <UnitOfMeasure NULL="TRUE"/>
+    <DisplayFormat NULL="TRUE"/>
+    <MaximumLength NULL="TRUE"/>
+    <MinimumLength NULL="TRUE"/>
+    <DecimalPlace NULL="TRUE"/>
+    <CharacterSetName NULL="TRUE"/>
+    <MaximumValue NULL="TRUE"/>
+    <MinimumValue NULL="TRUE"/>
+    <Origin NULL="TRUE"/>
+    <Representation>
+      <PublicId>2233101</PublicId>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>C25337</PreferredName>
+      <Version>1</Version>
+      <LongName>Number</LongName>
+      <ConceptDetails>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C25337</PREFERRED_NAME>
+          <LONG_NAME>Number</LONG_NAME>
+          <CON_ID>2202701</CON_ID>
+          <DEFINITION_SOURCE>NCI </DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>Yes</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>0</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+      </ConceptDetails>
+    </Representation>
+    <PermissibleValues/>
+    <ValueDomainConcepts/>
+  </VALUEDOMAIN>
+  <REFERENCEDOCUMENTSLIST/>
+  <CLASSIFICATIONSLIST>
+    <CLASSIFICATIONSLIST_ITEM>
+      <ClassificationScheme>
+        <PublicId>2513254</PublicId>
+        <ContextName>NCIP</ContextName>
+        <ContextVersion>1</ContextVersion>
+        <PreferredName>caTISSUE Core</PreferredName>
+        <Version>1</Version>
+      </ClassificationScheme>
+      <ClassificationSchemeItemName>edu.wustl.catissuecore.domainobject</ClassificationSchemeItemName>
+      <ClassificationSchemeItemType>UML_PACKAGE_NAME</ClassificationSchemeItemType>
+      <CsiPublicId>2812267</CsiPublicId>
+      <CsiVersion>1</CsiVersion>
+    </CLASSIFICATIONSLIST_ITEM>
+  </CLASSIFICATIONSLIST>
+  <ALTERNATENAMELIST>
+    <ALTERNATENAMELIST_ITEM>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <AlternateName>edu.wustl.catissuecore.domainobject.FluidSpecimen.availableQuantityInMilliliter</AlternateName>
+      <AlternateNameType>UML Qualified Attr</AlternateNameType>
+      <Language NULL="TRUE"/>
+    </ALTERNATENAMELIST_ITEM>
+    <ALTERNATENAMELIST_ITEM>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <AlternateName>FluidSpecimen:availableQuantityInMilliliter</AlternateName>
+      <AlternateNameType>UML Class:UML Attr</AlternateNameType>
+      <Language NULL="TRUE"/>
+    </ALTERNATENAMELIST_ITEM>
+  </ALTERNATENAMELIST>
+  <DATAELEMENTDERIVATION>
+    <DerivationType NULL="TRUE"/>
+    <DerivationTypeDescription NULL="TRUE"/>
+    <Methods NULL="TRUE"/>
+    <Rule NULL="TRUE"/>
+    <ConcatenationCharacter NULL="TRUE"/>
+    <ComponentDataElementsList NULL="TRUE"/>
+  </DATAELEMENTDERIVATION>
+</DataElement>

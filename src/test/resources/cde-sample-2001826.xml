@@ -1,0 +1,215 @@
+<DataElement num="2">
+  <PUBLICID>2001826</PUBLICID>
+  <LONGNAME>Recurrent Ipsilateral Breast Neoplasm Diagnosis Date</LONGNAME>
+  <PREFERREDNAME>RCR_IPSI_BR_NE_DX_DT</PREFERREDNAME>
+  <PREFERREDDEFINITION>Date of invasive or non-invasive recurrance in the ispilateral breast</PREFERREDDEFINITION>
+  <VERSION>3</VERSION>
+  <WORKFLOWSTATUS>RELEASED</WORKFLOWSTATUS>
+  <CONTEXTNAME>CTEP</CONTEXTNAME>
+  <CONTEXTVERSION>2.31</CONTEXTVERSION>
+  <ORIGIN>NSABP CRF:National Surgical Adjuvant Breast and Bowel Project Case Report Form</ORIGIN>
+  <REGISTRATIONSTATUS>Qualified</REGISTRATIONSTATUS>
+  <DATAELEMENTCONCEPT>
+    <PublicId>2011437</PublicId>
+    <PreferredName>RCR_IPSIL_BRST_NE_DX</PreferredName>
+    <PreferredDefinition>information related to diagnosis (investigation, analysis and recognition of the presence and nature of disease, condition, or injury from expressed signs and symptoms) of a recurrent ipsilateral (the same side of body) breast neoplasm.</PreferredDefinition>
+    <LongName>Recurrent Ipsilateral Breast Neoplasm Diagnosis</LongName>
+    <Version>3</Version>
+    <WorkflowStatus>RELEASED</WorkflowStatus>
+    <ContextName>CTEP</ContextName>
+    <ContextVersion>2.31</ContextVersion>
+    <ConceptualDomain>
+      <PublicId>2008537</PublicId>
+      <ContextName>CTEP</ContextName>
+      <ContextVersion>2.31</ContextVersion>
+      <PreferredName>DX</PreferredName>
+      <Version>1</Version>
+      <LongName>Diagnosis</LongName>
+    </ConceptualDomain>
+    <ObjectClass>
+      <PublicId>2433589</PublicId>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>C14173:C25308:C12971:C3262</PreferredName>
+      <Version>1</Version>
+      <LongName>Recurrent Ipsilateral Breast Neoplasm</LongName>
+      <ConceptDetails>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C14173</PREFERRED_NAME>
+          <LONG_NAME>Recurrent</LONG_NAME>
+          <CON_ID>2204863</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>No</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>3</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C25308</PREFERRED_NAME>
+          <LONG_NAME>Ipsilateral</LONG_NAME>
+          <CON_ID>2206283</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>No</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>2</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C12971</PREFERRED_NAME>
+          <LONG_NAME>Breast</LONG_NAME>
+          <CON_ID>2202571</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>No</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>1</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C3262</PREFERRED_NAME>
+          <LONG_NAME>Neoplasm</LONG_NAME>
+          <CON_ID>2202518</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>Yes</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>0</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+      </ConceptDetails>
+    </ObjectClass>
+    <Property>
+      <PublicId>2239981</PublicId>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>C15220</PreferredName>
+      <Version>1</Version>
+      <LongName>Diagnosis</LongName>
+      <ConceptDetails>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C15220</PREFERRED_NAME>
+          <LONG_NAME>Diagnosis</LONG_NAME>
+          <CON_ID>2202734</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>Yes</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>0</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+      </ConceptDetails>
+    </Property>
+    <ObjectClassQualifier NULL="TRUE"/>
+    <PropertyQualifier NULL="TRUE"/>
+    <Origin NULL="TRUE"/>
+  </DATAELEMENTCONCEPT>
+  <VALUEDOMAIN>
+    <PublicId>2018550</PublicId>
+    <PreferredName>DT</PreferredName>
+    <PreferredDefinition>The date on which an observation was made or an event occurred.</PreferredDefinition>
+    <LongName>Date</LongName>
+    <Version>1</Version>
+    <WorkflowStatus>RELEASED</WorkflowStatus>
+    <ContextName>NCI Standards</ContextName>
+    <ContextVersion>1</ContextVersion>
+    <ConceptualDomain>
+      <PublicId>2008561</PublicId>
+      <ContextName>CTEP</ContextName>
+      <ContextVersion>2.31</ContextVersion>
+      <PreferredName>OCURS</PreferredName>
+      <Version>1</Version>
+      <LongName>Occurrences</LongName>
+    </ConceptualDomain>
+    <Datatype>DATE</Datatype>
+    <ValueDomainType>NonEnumerated</ValueDomainType>
+    <UnitOfMeasure NULL="TRUE"/>
+    <DisplayFormat>MM/DD/YYYY</DisplayFormat>
+    <MaximumLength>8</MaximumLength>
+    <MinimumLength NULL="TRUE"/>
+    <DecimalPlace NULL="TRUE"/>
+    <CharacterSetName NULL="TRUE"/>
+    <MaximumValue NULL="TRUE"/>
+    <MinimumValue NULL="TRUE"/>
+    <Origin NULL="TRUE"/>
+    <Representation>
+      <PublicId>2233081</PublicId>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>C25164</PreferredName>
+      <Version>1</Version>
+      <LongName>Date</LongName>
+      <ConceptDetails>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C25164</PREFERRED_NAME>
+          <LONG_NAME>Date</LONG_NAME>
+          <CON_ID>2202880</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>Yes</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>0</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+      </ConceptDetails>
+    </Representation>
+    <PermissibleValues/>
+    <ValueDomainConcepts/>
+  </VALUEDOMAIN>
+  <REFERENCEDOCUMENTSLIST>
+    <REFERENCEDOCUMENTSLIST_ITEM>
+      <Name>CRF Text</Name>
+      <OrganizationName NULL="TRUE"/>
+      <DocumentType>Alternate Question Text</DocumentType>
+      <DocumentText>Date of first ipsilateral breast tumor recurrence</DocumentText>
+      <URL NULL="TRUE"/>
+      <Language>ENGLISH</Language>
+      <DisplayOrder NULL="TRUE"/>
+    </REFERENCEDOCUMENTSLIST_ITEM>
+    <REFERENCEDOCUMENTSLIST_ITEM>
+      <Name>CRF Text</Name>
+      <OrganizationName NULL="TRUE"/>
+      <DocumentType>Preferred Question Text</DocumentType>
+      <DocumentText>Date of IBTR</DocumentText>
+      <URL NULL="TRUE"/>
+      <Language>ENGLISH</Language>
+      <DisplayOrder NULL="TRUE"/>
+    </REFERENCEDOCUMENTSLIST_ITEM>
+    <REFERENCEDOCUMENTSLIST_ITEM>
+      <Name>AECC Text</Name>
+      <OrganizationName NULL="TRUE"/>
+      <DocumentType>Alternate Question Text</DocumentType>
+      <DocumentText>Ipsilateral breast tumor recurrence date</DocumentText>
+      <URL NULL="TRUE"/>
+      <Language>ENGLISH</Language>
+      <DisplayOrder NULL="TRUE"/>
+    </REFERENCEDOCUMENTSLIST_ITEM>
+  </REFERENCEDOCUMENTSLIST>
+  <CLASSIFICATIONSLIST>
+    <CLASSIFICATIONSLIST_ITEM>
+      <ClassificationScheme>
+        <PublicId>2008587</PublicId>
+        <ContextName>CTEP</ContextName>
+        <ContextVersion>2.31</ContextVersion>
+        <PreferredName>DISEASE</PreferredName>
+        <Version>2</Version>
+      </ClassificationScheme>
+      <ClassificationSchemeItemName>Breast</ClassificationSchemeItemName>
+      <ClassificationSchemeItemType>DISEASE_TYPE</ClassificationSchemeItemType>
+      <CsiPublicId>2811831</CsiPublicId>
+      <CsiVersion>1</CsiVersion>
+    </CLASSIFICATIONSLIST_ITEM>
+  </CLASSIFICATIONSLIST>
+  <ALTERNATENAMELIST>
+    <ALTERNATENAMELIST_ITEM>
+      <ContextName>AECC</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <AlternateName>AECC</AlternateName>
+      <AlternateNameType>USED_BY</AlternateNameType>
+      <Language>ENGLISH</Language>
+    </ALTERNATENAMELIST_ITEM>
+  </ALTERNATENAMELIST>
+  <DATAELEMENTDERIVATION>
+    <DerivationType NULL="TRUE"/>
+    <DerivationTypeDescription NULL="TRUE"/>
+    <Methods NULL="TRUE"/>
+    <Rule NULL="TRUE"/>
+    <ConcatenationCharacter NULL="TRUE"/>
+    <ComponentDataElementsList NULL="TRUE"/>
+  </DATAELEMENTDERIVATION>
+</DataElement>

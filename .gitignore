@@ -18,6 +18,8 @@ target/*
 .
 /target
 
+logs/
+
 *.pyc
 
 pom.xml.releaseBackup

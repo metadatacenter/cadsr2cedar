@@ -1,0 +1,177 @@
+<DataElement num="33834">
+  <PUBLICID>2611972</PUBLICID>
+  <LONGNAME>Single Nucleotide Polymorphism Obsolete java.lang.Boolean</LONGNAME>
+  <PREFERREDNAME>2611883v1.0:2178538v1.0</PREFERREDNAME>
+  <PREFERREDDEFINITION>A variation of a single nucleotide at a specific location of the genome due to base substitution, present at an appreciable frequency between individuals of a single interbreeding population._No longer in use or valid; old._Generic value domain for a primitive java datatype that is a Boolean value (true or false).</PREFERREDDEFINITION>
+  <VERSION>1</VERSION>
+  <WORKFLOWSTATUS>DRAFT NEW</WORKFLOWSTATUS>
+  <CONTEXTNAME>NCIP</CONTEXTNAME>
+  <CONTEXTVERSION>1</CONTEXTVERSION>
+  <ORIGIN NULL="TRUE"/>
+  <REGISTRATIONSTATUS NULL="TRUE"/>
+  <DATAELEMENTCONCEPT>
+    <PublicId>2611883</PublicId>
+    <PreferredName>2514028v1.0:2611749v1.0</PreferredName>
+    <PreferredDefinition>A variation of a single nucleotide at a specific location of the genome due to base substitution, present at an appreciable frequency between individuals of a single interbreeding population._No longer in use or valid; old.</PreferredDefinition>
+    <LongName>Single Nucleotide Polymorphism Obsolete</LongName>
+    <Version>1</Version>
+    <WorkflowStatus>DRAFT NEW</WorkflowStatus>
+    <ContextName>NCIP</ContextName>
+    <ContextVersion>1</ContextVersion>
+    <ConceptualDomain>
+      <PublicId>2222502</PublicId>
+      <ContextName>caCORE</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>UML DEFAULT CD</PreferredName>
+      <Version>1</Version>
+      <LongName>UML DEFAULT CD</LongName>
+    </ConceptualDomain>
+    <ObjectClass>
+      <PublicId>2514028</PublicId>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>C18279</PreferredName>
+      <Version>1</Version>
+      <LongName>Single Nucleotide Polymorphism</LongName>
+      <ConceptDetails>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C18279</PREFERRED_NAME>
+          <LONG_NAME>Single Nucleotide Polymorphism</LONG_NAME>
+          <CON_ID>2433334</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>Yes</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>0</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+      </ConceptDetails>
+    </ObjectClass>
+    <Property>
+      <PublicId>2611749</PublicId>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>C63553</PreferredName>
+      <Version>1</Version>
+      <LongName>Obsolete</LongName>
+      <ConceptDetails>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C63553</PREFERRED_NAME>
+          <LONG_NAME>Obsolete</LONG_NAME>
+          <CON_ID>2611729</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>Yes</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>0</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+      </ConceptDetails>
+    </Property>
+    <ObjectClassQualifier NULL="TRUE"/>
+    <PropertyQualifier NULL="TRUE"/>
+    <Origin NULL="TRUE"/>
+  </DATAELEMENTCONCEPT>
+  <VALUEDOMAIN>
+    <PublicId>2178538</PublicId>
+    <PreferredName>java.lang.Boolean</PreferredName>
+    <PreferredDefinition>Generic value domain for a primitive java datatype that is a Boolean value (true or false).</PreferredDefinition>
+    <LongName>java.lang.Boolean</LongName>
+    <Version>1</Version>
+    <WorkflowStatus>RELEASED</WorkflowStatus>
+    <ContextName>caCORE</ContextName>
+    <ContextVersion>1</ContextVersion>
+    <ConceptualDomain>
+      <PublicId>2178532</PublicId>
+      <ContextName>caCORE</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>BIOINFORMATICS</PreferredName>
+      <Version>1</Version>
+      <LongName>Bioinformatics</LongName>
+    </ConceptualDomain>
+    <Datatype>java.lang.Boolean</Datatype>
+    <ValueDomainType>NonEnumerated</ValueDomainType>
+    <UnitOfMeasure NULL="TRUE"/>
+    <DisplayFormat NULL="TRUE"/>
+    <MaximumLength NULL="TRUE"/>
+    <MinimumLength NULL="TRUE"/>
+    <DecimalPlace NULL="TRUE"/>
+    <CharacterSetName NULL="TRUE"/>
+    <MaximumValue NULL="TRUE"/>
+    <MinimumValue NULL="TRUE"/>
+    <Origin NULL="TRUE"/>
+    <Representation>
+      <PublicId>2320047</PublicId>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>C25180</PreferredName>
+      <Version>1</Version>
+      <LongName>Indicator</LongName>
+      <ConceptDetails>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C25180</PREFERRED_NAME>
+          <LONG_NAME>Indicator</LONG_NAME>
+          <CON_ID>2202683</CON_ID>
+          <DEFINITION_SOURCE>Source =&gt; Name: NCI, </DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>Yes</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>0</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+      </ConceptDetails>
+    </Representation>
+    <PermissibleValues/>
+    <ValueDomainConcepts/>
+  </VALUEDOMAIN>
+  <REFERENCEDOCUMENTSLIST/>
+  <CLASSIFICATIONSLIST>
+    <CLASSIFICATIONSLIST_ITEM>
+      <ClassificationScheme>
+        <PublicId>2611721</PublicId>
+        <ContextName>NCIP</ContextName>
+        <ContextVersion>1</ContextVersion>
+        <PreferredName>CGWB</PreferredName>
+        <Version>1</Version>
+      </ClassificationScheme>
+      <ClassificationSchemeItemName>gov.nih.nci.cgwb.domain</ClassificationSchemeItemName>
+      <ClassificationSchemeItemType>UML_PACKAGE_NAME</ClassificationSchemeItemType>
+      <CsiPublicId>2812759</CsiPublicId>
+      <CsiVersion>1</CsiVersion>
+    </CLASSIFICATIONSLIST_ITEM>
+    <CLASSIFICATIONSLIST_ITEM>
+      <ClassificationScheme>
+        <PublicId>2611721</PublicId>
+        <ContextName>NCIP</ContextName>
+        <ContextVersion>1</ContextVersion>
+        <PreferredName>CGWB</PreferredName>
+        <Version>2</Version>
+      </ClassificationScheme>
+      <ClassificationSchemeItemName>gov.nih.nci.cgwb.domain</ClassificationSchemeItemName>
+      <ClassificationSchemeItemType>UML_PACKAGE_NAME</ClassificationSchemeItemType>
+      <CsiPublicId>2812759</CsiPublicId>
+      <CsiVersion>1</CsiVersion>
+    </CLASSIFICATIONSLIST_ITEM>
+  </CLASSIFICATIONSLIST>
+  <ALTERNATENAMELIST>
+    <ALTERNATENAMELIST_ITEM>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <AlternateName>SNP:obsolete</AlternateName>
+      <AlternateNameType>UML Class:UML Attr</AlternateNameType>
+      <Language>ENGLISH</Language>
+    </ALTERNATENAMELIST_ITEM>
+    <ALTERNATENAMELIST_ITEM>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <AlternateName>gov.nih.nci.cgwb.domain.SNP.obsolete</AlternateName>
+      <AlternateNameType>UML Qualified Attr</AlternateNameType>
+      <Language>ENGLISH</Language>
+    </ALTERNATENAMELIST_ITEM>
+  </ALTERNATENAMELIST>
+  <DATAELEMENTDERIVATION>
+    <DerivationType NULL="TRUE"/>
+    <DerivationTypeDescription NULL="TRUE"/>
+    <Methods NULL="TRUE"/>
+    <Rule NULL="TRUE"/>
+    <ConcatenationCharacter NULL="TRUE"/>
+    <ComponentDataElementsList NULL="TRUE"/>
+  </DATAELEMENTDERIVATION>
+</DataElement>

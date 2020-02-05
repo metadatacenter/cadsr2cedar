@@ -1,0 +1,430 @@
+<DataElement num="4">
+  <PUBLICID>2001831</PUBLICID>
+  <LONGNAME>Fracture Bone Not Report Assessment Site</LONGNAME>
+  <PREFERREDNAME>FX_BO_N_REP_ASS_SITE</PREFERREDNAME>
+  <PREFERREDDEFINITION>the anatomic site of a bone fracture that was not previously reported.</PREFERREDDEFINITION>
+  <VERSION>3</VERSION>
+  <WORKFLOWSTATUS>RELEASED</WORKFLOWSTATUS>
+  <CONTEXTNAME>CTEP</CONTEXTNAME>
+  <CONTEXTVERSION>2.31</CONTEXTVERSION>
+  <ORIGIN NULL="TRUE"/>
+  <REGISTRATIONSTATUS>Qualified</REGISTRATIONSTATUS>
+  <DATAELEMENTCONCEPT>
+    <PublicId>2011443</PublicId>
+    <PreferredName>FX_BONE_N_REP_ASSESS</PreferredName>
+    <PreferredDefinition>information related to a bone fracture having not been reported.</PreferredDefinition>
+    <LongName>Fracture Bone Not Report Assessment</LongName>
+    <Version>3</Version>
+    <WorkflowStatus>RELEASED</WorkflowStatus>
+    <ContextName>CTEP</ContextName>
+    <ContextVersion>2.31</ContextVersion>
+    <ConceptualDomain>
+      <PublicId>2008571</PublicId>
+      <ContextName>CTEP</ContextName>
+      <ContextVersion>2.31</ContextVersion>
+      <PreferredName>CHR_O_ASS_DZ_AND_EXP</PreferredName>
+      <Version>1</Version>
+      <LongName>Chronic or Associated Diseases and Exposures</LongName>
+    </ConceptualDomain>
+    <ObjectClass>
+      <PublicId>2231061</PublicId>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>C3046:C12366</PreferredName>
+      <Version>1</Version>
+      <LongName>Fracture Bone</LongName>
+      <ConceptDetails>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C3046</PREFERRED_NAME>
+          <LONG_NAME>Fracture</LONG_NAME>
+          <CON_ID>2203813</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>No</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>1</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C12366</PREFERRED_NAME>
+          <LONG_NAME>Bone</LONG_NAME>
+          <CON_ID>2202686</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>Yes</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>0</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+      </ConceptDetails>
+    </ObjectClass>
+    <Property>
+      <PublicId>2231062</PublicId>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>C25594:C25375:C20989</PreferredName>
+      <Version>1</Version>
+      <LongName>Not Report Assessment</LongName>
+      <ConceptDetails>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C25594</PREFERRED_NAME>
+          <LONG_NAME>Negation</LONG_NAME>
+          <CON_ID>2204956</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>No</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>2</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C25375</PREFERRED_NAME>
+          <LONG_NAME>Report</LONG_NAME>
+          <CON_ID>2202481</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>No</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>1</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C20989</PREFERRED_NAME>
+          <LONG_NAME>Physical Examination</LONG_NAME>
+          <CON_ID>2202921</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>Yes</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>0</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+      </ConceptDetails>
+    </Property>
+    <ObjectClassQualifier NULL="TRUE"/>
+    <PropertyQualifier NULL="TRUE"/>
+    <Origin NULL="TRUE"/>
+  </DATAELEMENTCONCEPT>
+  <VALUEDOMAIN>
+    <PublicId>2185793</PublicId>
+    <PreferredName>BONE_FX_SITE</PreferredName>
+    <PreferredDefinition>the site of a bone fracture.</PreferredDefinition>
+    <LongName>Bone Fracture Site</LongName>
+    <Version>1</Version>
+    <WorkflowStatus>RELEASED</WorkflowStatus>
+    <ContextName>CTEP</ContextName>
+    <ContextVersion>2.31</ContextVersion>
+    <ConceptualDomain>
+      <PublicId>2008517</PublicId>
+      <ContextName>CTEP</ContextName>
+      <ContextVersion>2.31</ContextVersion>
+      <PreferredName>AE</PreferredName>
+      <Version>1</Version>
+      <LongName>Adverse Events</LongName>
+    </ConceptualDomain>
+    <Datatype>CHARACTER</Datatype>
+    <ValueDomainType>Enumerated</ValueDomainType>
+    <UnitOfMeasure NULL="TRUE"/>
+    <DisplayFormat NULL="TRUE"/>
+    <MaximumLength>35</MaximumLength>
+    <MinimumLength NULL="TRUE"/>
+    <DecimalPlace NULL="TRUE"/>
+    <CharacterSetName NULL="TRUE"/>
+    <MaximumValue NULL="TRUE"/>
+    <MinimumValue NULL="TRUE"/>
+    <Origin NULL="TRUE"/>
+    <Representation>
+      <PublicId>2519596</PublicId>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>C13717</PreferredName>
+      <Version>1</Version>
+      <LongName>Anatomic Site</LongName>
+      <ConceptDetails>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C13717</PREFERRED_NAME>
+          <LONG_NAME>Anatomic Site</LONG_NAME>
+          <CON_ID>2202400</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>Yes</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>0</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+      </ConceptDetails>
+    </Representation>
+    <PermissibleValues>
+      <PermissibleValues_ITEM>
+        <VALIDVALUE>Ulna</VALIDVALUE>
+        <VALUEMEANING>Ulna</VALUEMEANING>
+        <MEANINGDESCRIPTION>One of the bones that comprise the forearm. The largest aspect articulates with the humerus at the elbow joint and the smallest portion of the ulna articulates with the carpal bones in the wrist.</MEANINGDESCRIPTION>
+        <MEANINGCONCEPTS>C12809</MEANINGCONCEPTS>
+        <PVBEGINDATE>6/16/2010 0:0:0</PVBEGINDATE>
+        <PVENDDATE NULL="TRUE"/>
+        <VMPUBLICID>2957623</VMPUBLICID>
+        <VMVERSION>1</VMVERSION>
+        <VMALTERNATEDEFINITIONS NULL="TRUE"/>
+      </PermissibleValues_ITEM>
+      <PermissibleValues_ITEM>
+        <VALIDVALUE>Radius</VALIDVALUE>
+        <VALUEMEANING>Radius</VALUEMEANING>
+        <MEANINGDESCRIPTION>Radius</MEANINGDESCRIPTION>
+        <MEANINGCONCEPTS NULL="TRUE"/>
+        <PVBEGINDATE>6/16/2010 0:0:0</PVBEGINDATE>
+        <PVENDDATE NULL="TRUE"/>
+        <VMPUBLICID>3110374</VMPUBLICID>
+        <VMVERSION>1</VMVERSION>
+        <VMALTERNATEDEFINITIONS NULL="TRUE"/>
+      </PermissibleValues_ITEM>
+      <PermissibleValues_ITEM>
+        <VALIDVALUE>Other</VALIDVALUE>
+        <VALUEMEANING>Other</VALUEMEANING>
+        <MEANINGDESCRIPTION>Different than the one(s) previously specified or mentioned.</MEANINGDESCRIPTION>
+        <MEANINGCONCEPTS>C17649</MEANINGCONCEPTS>
+        <PVBEGINDATE>2/11/2002 15:18:46</PVBEGINDATE>
+        <PVENDDATE NULL="TRUE"/>
+        <VMPUBLICID>2559653</VMPUBLICID>
+        <VMVERSION>1</VMVERSION>
+        <VMALTERNATEDEFINITIONS>Distance units not specified in MAGE.</VMALTERNATEDEFINITIONS>
+      </PermissibleValues_ITEM>
+      <PermissibleValues_ITEM>
+        <VALIDVALUE>Other</VALIDVALUE>
+        <VALUEMEANING>Other</VALUEMEANING>
+        <MEANINGDESCRIPTION>Different than the one(s) previously specified or mentioned.</MEANINGDESCRIPTION>
+        <MEANINGCONCEPTS>C17649</MEANINGCONCEPTS>
+        <PVBEGINDATE>2/11/2002 15:18:46</PVBEGINDATE>
+        <PVENDDATE NULL="TRUE"/>
+        <VMPUBLICID>2559653</VMPUBLICID>
+        <VMVERSION>1</VMVERSION>
+        <VMALTERNATEDEFINITIONS>Other</VMALTERNATEDEFINITIONS>
+      </PermissibleValues_ITEM>
+      <PermissibleValues_ITEM>
+        <VALIDVALUE>Other</VALIDVALUE>
+        <VALUEMEANING>Other</VALUEMEANING>
+        <MEANINGDESCRIPTION>Different than the one(s) previously specified or mentioned.</MEANINGDESCRIPTION>
+        <MEANINGCONCEPTS>C17649</MEANINGCONCEPTS>
+        <PVBEGINDATE>2/11/2002 15:18:46</PVBEGINDATE>
+        <PVENDDATE NULL="TRUE"/>
+        <VMPUBLICID>2559653</VMPUBLICID>
+        <VMVERSION>1</VMVERSION>
+        <VMALTERNATEDEFINITIONS>Different than the one(s) previously specified or mentioned.</VMALTERNATEDEFINITIONS>
+      </PermissibleValues_ITEM>
+      <PermissibleValues_ITEM>
+        <VALIDVALUE>Pelvis</VALIDVALUE>
+        <VALUEMEANING>Pelvis</VALUEMEANING>
+        <MEANINGDESCRIPTION>The bony, basin-shaped structure formed by the hipbones and the base of the backbone supporting the lower limbs in humans.</MEANINGDESCRIPTION>
+        <MEANINGCONCEPTS>C12767</MEANINGCONCEPTS>
+        <PVBEGINDATE>2/11/2002 15:18:47</PVBEGINDATE>
+        <PVENDDATE NULL="TRUE"/>
+        <VMPUBLICID>2570571</VMPUBLICID>
+        <VMVERSION>1</VMVERSION>
+        <VMALTERNATEDEFINITIONS>Pelvis</VMALTERNATEDEFINITIONS>
+      </PermissibleValues_ITEM>
+      <PermissibleValues_ITEM>
+        <VALIDVALUE>Hip</VALIDVALUE>
+        <VALUEMEANING>Hip</VALUEMEANING>
+        <MEANINGDESCRIPTION>The lateral prominence of the pelvis from the waist to the thigh.</MEANINGDESCRIPTION>
+        <MEANINGCONCEPTS>C64193</MEANINGCONCEPTS>
+        <PVBEGINDATE>5/8/2002 0:0:0</PVBEGINDATE>
+        <PVENDDATE NULL="TRUE"/>
+        <VMPUBLICID>2561119</VMPUBLICID>
+        <VMVERSION>1</VMVERSION>
+        <VMALTERNATEDEFINITIONS NULL="TRUE"/>
+      </PermissibleValues_ITEM>
+      <PermissibleValues_ITEM>
+        <VALIDVALUE>Wrist</VALIDVALUE>
+        <VALUEMEANING>Wrist</VALUEMEANING>
+        <MEANINGDESCRIPTION>A joint between the distal end of the radius and the proximal row of carpal bones. (NCI)</MEANINGDESCRIPTION>
+        <MEANINGCONCEPTS>C33894</MEANINGCONCEPTS>
+        <PVBEGINDATE>5/8/2002 0:0:0</PVBEGINDATE>
+        <PVENDDATE NULL="TRUE"/>
+        <VMPUBLICID>2561120</VMPUBLICID>
+        <VMVERSION>1</VMVERSION>
+        <VMALTERNATEDEFINITIONS>WRIST</VMALTERNATEDEFINITIONS>
+      </PermissibleValues_ITEM>
+      <PermissibleValues_ITEM>
+        <VALIDVALUE>Spine</VALIDVALUE>
+        <VALUEMEANING>Spine, Whole</VALUEMEANING>
+        <MEANINGDESCRIPTION>Whole; including all components without exception; being one unit or constituting the full amount or extent or duration; complete.: The elongated, approximately cylindrical part of the central nervous system of vertebrates that lies in the vertebral canal and from which the spinal nerves emerge.|On-line Medical Dictionary</MEANINGDESCRIPTION>
+        <MEANINGCONCEPTS>C25326,C12464</MEANINGCONCEPTS>
+        <PVBEGINDATE>8/14/2003 17:55:17</PVBEGINDATE>
+        <PVENDDATE NULL="TRUE"/>
+        <VMPUBLICID>2566762</VMPUBLICID>
+        <VMVERSION>1</VMVERSION>
+        <VMALTERNATEDEFINITIONS>The complete elongated, approximately cylindrical part of the central nervous system of vertebrates that lies in the vertebral canal and from which the spinal nerves emerge.</VMALTERNATEDEFINITIONS>
+      </PermissibleValues_ITEM>
+      <PermissibleValues_ITEM>
+        <VALIDVALUE>None</VALIDVALUE>
+        <VALUEMEANING>None at all</VALUEMEANING>
+        <MEANINGDESCRIPTION>No person or thing, nobody, not any.</MEANINGDESCRIPTION>
+        <MEANINGCONCEPTS>C41132</MEANINGCONCEPTS>
+        <PVBEGINDATE>3/26/2004 14:49:16</PVBEGINDATE>
+        <PVENDDATE NULL="TRUE"/>
+        <VMPUBLICID>2574138</VMPUBLICID>
+        <VMVERSION>1</VMVERSION>
+        <VMALTERNATEDEFINITIONS>Date tumor-free patient was last seen</VMALTERNATEDEFINITIONS>
+      </PermissibleValues_ITEM>
+      <PermissibleValues_ITEM>
+        <VALIDVALUE>Clavicle</VALIDVALUE>
+        <VALUEMEANING>Clavicle</VALUEMEANING>
+        <MEANINGDESCRIPTION>A bone of the upper extremity that articulates with the acromion process of the scapula on one end and the sternum on the other.</MEANINGDESCRIPTION>
+        <MEANINGCONCEPTS>C12695</MEANINGCONCEPTS>
+        <PVBEGINDATE>3/31/2004 8:37:48</PVBEGINDATE>
+        <PVENDDATE NULL="TRUE"/>
+        <VMPUBLICID>2568927</VMPUBLICID>
+        <VMVERSION>1</VMVERSION>
+        <VMALTERNATEDEFINITIONS NULL="TRUE"/>
+      </PermissibleValues_ITEM>
+      <PermissibleValues_ITEM>
+        <VALIDVALUE>Humerus</VALIDVALUE>
+        <VALUEMEANING>Humerus</VALUEMEANING>
+        <MEANINGDESCRIPTION>No value exists.</MEANINGDESCRIPTION>
+        <MEANINGCONCEPTS>C12731</MEANINGCONCEPTS>
+        <PVBEGINDATE>3/31/2004 8:37:48</PVBEGINDATE>
+        <PVENDDATE NULL="TRUE"/>
+        <VMPUBLICID>2568928</VMPUBLICID>
+        <VMVERSION>1</VMVERSION>
+        <VMALTERNATEDEFINITIONS NULL="TRUE"/>
+      </PermissibleValues_ITEM>
+      <PermissibleValues_ITEM>
+        <VALIDVALUE>Femur</VALIDVALUE>
+        <VALUEMEANING>Femur</VALUEMEANING>
+        <MEANINGDESCRIPTION>The longest and largest bone of the skeleton, it is situated between the hip and the knee.</MEANINGDESCRIPTION>
+        <MEANINGCONCEPTS>C12717</MEANINGCONCEPTS>
+        <PVBEGINDATE>3/31/2004 8:40:1</PVBEGINDATE>
+        <PVENDDATE NULL="TRUE"/>
+        <VMPUBLICID>2568931</VMPUBLICID>
+        <VMVERSION>1</VMVERSION>
+        <VMALTERNATEDEFINITIONS NULL="TRUE"/>
+      </PermissibleValues_ITEM>
+      <PermissibleValues_ITEM>
+        <VALIDVALUE>Tibia</VALIDVALUE>
+        <VALUEMEANING>Tibia</VALUEMEANING>
+        <MEANINGDESCRIPTION>The second longest bone of the skeleton. It is located on the medial side of the lower leg, articulating with the FIBULA laterally, the TALUS distally, and the FEMUR proximally.</MEANINGDESCRIPTION>
+        <MEANINGCONCEPTS>C12800</MEANINGCONCEPTS>
+        <PVBEGINDATE>3/31/2004 8:40:1</PVBEGINDATE>
+        <PVENDDATE NULL="TRUE"/>
+        <VMPUBLICID>2568932</VMPUBLICID>
+        <VMVERSION>1</VMVERSION>
+        <VMALTERNATEDEFINITIONS NULL="TRUE"/>
+      </PermissibleValues_ITEM>
+      <PermissibleValues_ITEM>
+        <VALIDVALUE>Arm</VALIDVALUE>
+        <VALUEMEANING>Arm</VALUEMEANING>
+        <MEANINGDESCRIPTION>Technically the part of the superior limb between the shoulder and the elbow but commonly used to refer to the whole superior limb.</MEANINGDESCRIPTION>
+        <MEANINGCONCEPTS>C32141</MEANINGCONCEPTS>
+        <PVBEGINDATE>7/8/2004 13:52:33</PVBEGINDATE>
+        <PVENDDATE NULL="TRUE"/>
+        <VMPUBLICID>2580705</VMPUBLICID>
+        <VMVERSION>1</VMVERSION>
+        <VMALTERNATEDEFINITIONS>Proximal Upper Extremity (between elbow and shoulder)</VMALTERNATEDEFINITIONS>
+      </PermissibleValues_ITEM>
+      <PermissibleValues_ITEM>
+        <VALIDVALUE>Leg</VALIDVALUE>
+        <VALUEMEANING>Leg</VALUEMEANING>
+        <MEANINGDESCRIPTION>Commonly used to refer to the whole lower limb but technically only the part between the knee and ankle.</MEANINGDESCRIPTION>
+        <MEANINGCONCEPTS>C32974</MEANINGCONCEPTS>
+        <PVBEGINDATE>7/8/2004 13:53:50</PVBEGINDATE>
+        <PVENDDATE NULL="TRUE"/>
+        <VMPUBLICID>2571023</VMPUBLICID>
+        <VMVERSION>1</VMVERSION>
+        <VMALTERNATEDEFINITIONS NULL="TRUE"/>
+      </PermissibleValues_ITEM>
+      <PermissibleValues_ITEM>
+        <VALIDVALUE>Ankle</VALIDVALUE>
+        <VALUEMEANING>Ankle</VALUEMEANING>
+        <MEANINGDESCRIPTION>A gliding joint between the distal ends of the tibia and fibula and the proximal end of the talus.</MEANINGDESCRIPTION>
+        <MEANINGCONCEPTS>C32078</MEANINGCONCEPTS>
+        <PVBEGINDATE>7/8/2004 13:53:50</PVBEGINDATE>
+        <PVENDDATE NULL="TRUE"/>
+        <VMPUBLICID>2571024</VMPUBLICID>
+        <VMVERSION>1</VMVERSION>
+        <VMALTERNATEDEFINITIONS NULL="TRUE"/>
+      </PermissibleValues_ITEM>
+      <PermissibleValues_ITEM>
+        <VALIDVALUE>Rib</VALIDVALUE>
+        <VALUEMEANING>Rib</VALUEMEANING>
+        <MEANINGDESCRIPTION>No value exists.</MEANINGDESCRIPTION>
+        <MEANINGCONCEPTS>C12782</MEANINGCONCEPTS>
+        <PVBEGINDATE>7/20/2004 0:0:0</PVBEGINDATE>
+        <PVENDDATE NULL="TRUE"/>
+        <VMPUBLICID>2571149</VMPUBLICID>
+        <VMVERSION>1</VMVERSION>
+        <VMALTERNATEDEFINITIONS NULL="TRUE"/>
+      </PermissibleValues_ITEM>
+      <PermissibleValues_ITEM>
+        <VALIDVALUE>Lumbar spine</VALIDVALUE>
+        <VALUEMEANING>Lumbar spine</VALUEMEANING>
+        <MEANINGDESCRIPTION>Those vertebrae between the ribs and the pelvis, L1-L5 in man.</MEANINGDESCRIPTION>
+        <MEANINGCONCEPTS>C69314</MEANINGCONCEPTS>
+        <PVBEGINDATE>7/14/2005 0:0:0</PVBEGINDATE>
+        <PVENDDATE NULL="TRUE"/>
+        <VMPUBLICID>2575624</VMPUBLICID>
+        <VMVERSION>1</VMVERSION>
+        <VMALTERNATEDEFINITIONS NULL="TRUE"/>
+      </PermissibleValues_ITEM>
+      <PermissibleValues_ITEM>
+        <VALIDVALUE>Thoracic spine</VALIDVALUE>
+        <VALUEMEANING>Thoracic spine</VALUEMEANING>
+        <MEANINGDESCRIPTION>Those vertebrae of the thoracic region, T1-T12 in man.</MEANINGDESCRIPTION>
+        <MEANINGCONCEPTS>C69315</MEANINGCONCEPTS>
+        <PVBEGINDATE>7/14/2005 0:0:0</PVBEGINDATE>
+        <PVENDDATE NULL="TRUE"/>
+        <VMPUBLICID>2575644</VMPUBLICID>
+        <VMVERSION>1</VMVERSION>
+        <VMALTERNATEDEFINITIONS NULL="TRUE"/>
+      </PermissibleValues_ITEM>
+      <PermissibleValues_ITEM>
+        <VALIDVALUE>Cervical spine</VALIDVALUE>
+        <VALUEMEANING>Cervical spine</VALUEMEANING>
+        <MEANINGDESCRIPTION>Those vertebrae immediately behind (caudal to) the skull, C1-C7 in man.</MEANINGDESCRIPTION>
+        <MEANINGCONCEPTS>C69313</MEANINGCONCEPTS>
+        <PVBEGINDATE>7/14/2005 0:0:0</PVBEGINDATE>
+        <PVENDDATE NULL="TRUE"/>
+        <VMPUBLICID>2575611</VMPUBLICID>
+        <VMVERSION>1</VMVERSION>
+        <VMALTERNATEDEFINITIONS NULL="TRUE"/>
+      </PermissibleValues_ITEM>
+    </PermissibleValues>
+    <ValueDomainConcepts/>
+  </VALUEDOMAIN>
+  <REFERENCEDOCUMENTSLIST>
+    <REFERENCEDOCUMENTSLIST_ITEM>
+      <Name>CRF Text</Name>
+      <OrganizationName NULL="TRUE"/>
+      <DocumentType>Preferred Question Text</DocumentType>
+      <DocumentText>Fracture Not Previously Reported?</DocumentText>
+      <URL NULL="TRUE"/>
+      <Language>ENGLISH</Language>
+      <DisplayOrder NULL="TRUE"/>
+    </REFERENCEDOCUMENTSLIST_ITEM>
+    <REFERENCEDOCUMENTSLIST_ITEM>
+      <Name>CRF Text</Name>
+      <OrganizationName NULL="TRUE"/>
+      <DocumentType>Alternate Question Text</DocumentType>
+      <DocumentText>Fracture Not Previously Reported?</DocumentText>
+      <URL NULL="TRUE"/>
+      <Language>ENGLISH</Language>
+      <DisplayOrder NULL="TRUE"/>
+    </REFERENCEDOCUMENTSLIST_ITEM>
+  </REFERENCEDOCUMENTSLIST>
+  <CLASSIFICATIONSLIST>
+    <CLASSIFICATIONSLIST_ITEM>
+      <ClassificationScheme>
+        <PublicId>2008587</PublicId>
+        <ContextName>CTEP</ContextName>
+        <ContextVersion>2.31</ContextVersion>
+        <PreferredName>DISEASE</PreferredName>
+        <Version>2</Version>
+      </ClassificationScheme>
+      <ClassificationSchemeItemName>Breast</ClassificationSchemeItemName>
+      <ClassificationSchemeItemType>DISEASE_TYPE</ClassificationSchemeItemType>
+      <CsiPublicId>2811831</CsiPublicId>
+      <CsiVersion>1</CsiVersion>
+    </CLASSIFICATIONSLIST_ITEM>
+  </CLASSIFICATIONSLIST>
+  <ALTERNATENAMELIST/>
+  <DATAELEMENTDERIVATION>
+    <DerivationType NULL="TRUE"/>
+    <DerivationTypeDescription NULL="TRUE"/>
+    <Methods NULL="TRUE"/>
+    <Rule NULL="TRUE"/>
+    <ConcatenationCharacter NULL="TRUE"/>
+    <ComponentDataElementsList NULL="TRUE"/>
+  </DATAELEMENTDERIVATION>
+</DataElement>

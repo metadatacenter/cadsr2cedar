@@ -1,0 +1,205 @@
+<DataElement num="17">
+  <PUBLICID>2002061</PUBLICID>
+  <LONGNAME>Patient Adverse Event Assessment Age Year Count</LONGNAME>
+  <PREFERREDNAME>PT_AE_ASS_AGE_YR_CT</PREFERREDNAME>
+  <PREFERREDDEFINITION>the age of the patient as of the last birthday prior to the adverse event.</PREFERREDDEFINITION>
+  <VERSION>3</VERSION>
+  <WORKFLOWSTATUS>RELEASED</WORKFLOWSTATUS>
+  <CONTEXTNAME>CTEP</CONTEXTNAME>
+  <CONTEXTVERSION>2.31</CONTEXTVERSION>
+  <ORIGIN>NSABP CRF:National Surgical Adjuvant Breast and Bowel Project Case Report Form</ORIGIN>
+  <REGISTRATIONSTATUS>Qualified</REGISTRATIONSTATUS>
+  <DATAELEMENTCONCEPT>
+    <PublicId>2200822</PublicId>
+    <PreferredName>PT_AE_ASSESS</PreferredName>
+    <PreferredDefinition>information related to the patient's assessment of any unfavorable and unintended sign
+      (including an abnormal laboratory finding), symptom, syndrome, or disease, temporally associated with the use of a
+      medical product or procedure, regardless of whether or not it is considered related to the product or procedure
+      (attribution of unrelated, unlikely, possible, probable, or definite).
+    </PreferredDefinition>
+    <LongName>Patient Adverse Event Assessment Patient</LongName>
+    <Version>1</Version>
+    <WorkflowStatus>RELEASED</WorkflowStatus>
+    <ContextName>CTEP</ContextName>
+    <ContextVersion>2.31</ContextVersion>
+    <ConceptualDomain>
+      <PublicId>2008553</PublicId>
+      <ContextName>CTEP</ContextName>
+      <ContextVersion>2.31</ContextVersion>
+      <PreferredName>QOL</PreferredName>
+      <Version>1</Version>
+      <LongName>Quality of Life</LongName>
+    </ConceptualDomain>
+    <ObjectClass>
+      <PublicId>2233604</PublicId>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>C16960</PreferredName>
+      <Version>1</Version>
+      <LongName>Patient</LongName>
+      <ConceptDetails>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C16960</PREFERRED_NAME>
+          <LONG_NAME>Patient</LONG_NAME>
+          <CON_ID>2202778</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>Yes</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>0</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+      </ConceptDetails>
+    </ObjectClass>
+    <Property>
+      <PublicId>2553586</PublicId>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>C41331:C20989</PreferredName>
+      <Version>1</Version>
+      <LongName>Adverse Event Assessment</LongName>
+      <ConceptDetails>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C41331</PREFERRED_NAME>
+          <LONG_NAME>Adverse Event</LONG_NAME>
+          <CON_ID>2202353</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>No</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>1</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C20989</PREFERRED_NAME>
+          <LONG_NAME>Physical Examination</LONG_NAME>
+          <CON_ID>2202921</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>Yes</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>0</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+      </ConceptDetails>
+    </Property>
+    <ObjectClassQualifier NULL="TRUE"/>
+    <PropertyQualifier>Adverse Event</PropertyQualifier>
+    <Origin NULL="TRUE"/>
+  </DATAELEMENTCONCEPT>
+  <VALUEDOMAIN>
+    <PublicId>2185961</PublicId>
+    <PreferredName>AGE_YR_CT</PreferredName>
+    <PreferredDefinition>the age in years.</PreferredDefinition>
+    <LongName>Age Year Count</LongName>
+    <Version>1</Version>
+    <WorkflowStatus>RELEASED</WorkflowStatus>
+    <ContextName>CTEP</ContextName>
+    <ContextVersion>2.31</ContextVersion>
+    <ConceptualDomain>
+      <PublicId>2008551</PublicId>
+      <ContextName>CTEP</ContextName>
+      <ContextVersion>2.31</ContextVersion>
+      <PreferredName>ASSESS</PreferredName>
+      <Version>1</Version>
+      <LongName>Assessments</LongName>
+    </ConceptualDomain>
+    <Datatype>NUMBER</Datatype>
+    <ValueDomainType>NonEnumerated</ValueDomainType>
+    <UnitOfMeasure NULL="TRUE"/>
+    <DisplayFormat NULL="TRUE"/>
+    <MaximumLength>3</MaximumLength>
+    <MinimumLength NULL="TRUE"/>
+    <DecimalPlace NULL="TRUE"/>
+    <CharacterSetName NULL="TRUE"/>
+    <MaximumValue NULL="TRUE"/>
+    <MinimumValue NULL="TRUE"/>
+    <Origin NULL="TRUE"/>
+    <Representation>
+      <PublicId>2524762</PublicId>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>C29848:C25463</PreferredName>
+      <Version>1</Version>
+      <LongName>Year Count</LongName>
+      <ConceptDetails>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C29848</PREFERRED_NAME>
+          <LONG_NAME>Year</LONG_NAME>
+          <CON_ID>2203986</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>No</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>1</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C25463</PREFERRED_NAME>
+          <LONG_NAME>Count</LONG_NAME>
+          <CON_ID>2202368</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>Yes</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>0</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+      </ConceptDetails>
+    </Representation>
+    <PermissibleValues/>
+    <ValueDomainConcepts/>
+  </VALUEDOMAIN>
+  <REFERENCEDOCUMENTSLIST>
+    <REFERENCEDOCUMENTSLIST_ITEM>
+      <Name>CRF Text</Name>
+      <OrganizationName NULL="TRUE"/>
+      <DocumentType>Preferred Question Text</DocumentType>
+      <DocumentText>Patient's Age at Time of AE</DocumentText>
+      <URL NULL="TRUE"/>
+      <Language>ENGLISH</Language>
+      <DisplayOrder NULL="TRUE"/>
+    </REFERENCEDOCUMENTSLIST_ITEM>
+    <REFERENCEDOCUMENTSLIST_ITEM>
+      <Name>CRF Text</Name>
+      <OrganizationName NULL="TRUE"/>
+      <DocumentType>Alternate Question Text</DocumentType>
+      <DocumentText>Patient's Age at Time of AE</DocumentText>
+      <URL NULL="TRUE"/>
+      <Language>ENGLISH</Language>
+      <DisplayOrder NULL="TRUE"/>
+    </REFERENCEDOCUMENTSLIST_ITEM>
+  </REFERENCEDOCUMENTSLIST>
+  <CLASSIFICATIONSLIST>
+    <CLASSIFICATIONSLIST_ITEM>
+      <ClassificationScheme>
+        <PublicId>2008589</PublicId>
+        <ContextName>CTEP</ContextName>
+        <ContextVersion>2.31</ContextVersion>
+        <PreferredName>CATEGORY</PreferredName>
+        <Version>2</Version>
+      </ClassificationScheme>
+      <ClassificationSchemeItemName>Adverse Events</ClassificationSchemeItemName>
+      <ClassificationSchemeItemType>CATEGORY_TYPE</ClassificationSchemeItemType>
+      <CsiPublicId>2811951</CsiPublicId>
+      <CsiVersion>1</CsiVersion>
+    </CLASSIFICATIONSLIST_ITEM>
+    <CLASSIFICATIONSLIST_ITEM>
+      <ClassificationScheme>
+        <PublicId>2008587</PublicId>
+        <ContextName>CTEP</ContextName>
+        <ContextVersion>2.31</ContextVersion>
+        <PreferredName>DISEASE</PreferredName>
+        <Version>2</Version>
+      </ClassificationScheme>
+      <ClassificationSchemeItemName>Breast</ClassificationSchemeItemName>
+      <ClassificationSchemeItemType>DISEASE_TYPE</ClassificationSchemeItemType>
+      <CsiPublicId>2811831</CsiPublicId>
+      <CsiVersion>1</CsiVersion>
+    </CLASSIFICATIONSLIST_ITEM>
+  </CLASSIFICATIONSLIST>
+  <ALTERNATENAMELIST/>
+  <DATAELEMENTDERIVATION>
+    <DerivationType NULL="TRUE"/>
+    <DerivationTypeDescription NULL="TRUE"/>
+    <Methods NULL="TRUE"/>
+    <Rule NULL="TRUE"/>
+    <ConcatenationCharacter NULL="TRUE"/>
+    <ComponentDataElementsList NULL="TRUE"/>
+  </DATAELEMENTDERIVATION>
+</DataElement>

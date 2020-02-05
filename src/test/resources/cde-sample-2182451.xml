@@ -1,0 +1,307 @@
+<DataElement num="2260">
+  <PUBLICID>2182451</PUBLICID>
+  <LONGNAME>Protocol Long Title Text</LONGNAME>
+  <PREFERREDNAME>PROT_LONG_TLE_TXT</PREFERREDNAME>
+  <PREFERREDDEFINITION>Descriptive text used to represent the long title or name of a protocol. [Manually-curated]</PREFERREDDEFINITION>
+  <VERSION>1</VERSION>
+  <WORKFLOWSTATUS>RELEASED</WORKFLOWSTATUS>
+  <CONTEXTNAME>CCR</CONTEXTNAME>
+  <CONTEXTVERSION>1</CONTEXTVERSION>
+  <ORIGIN NULL="TRUE"/>
+  <REGISTRATIONSTATUS>Qualified</REGISTRATIONSTATUS>
+  <DATAELEMENTCONCEPT>
+    <PublicId>2010353</PublicId>
+    <PreferredName>PROT_TITLE</PreferredName>
+    <PreferredDefinition>the complete name of the clinical protocol.</PreferredDefinition>
+    <LongName>Protocol Title</LongName>
+    <Version>2.31</Version>
+    <WorkflowStatus>RELEASED</WorkflowStatus>
+    <ContextName>CTEP</ContextName>
+    <ContextVersion>2.31</ContextVersion>
+    <ConceptualDomain>
+      <PublicId>2008529</PublicId>
+      <ContextName>CTEP</ContextName>
+      <ContextVersion>2.31</ContextVersion>
+      <PreferredName>RSCH_PROT</PreferredName>
+      <Version>1</Version>
+      <LongName>Research Protocols</LongName>
+    </ConceptualDomain>
+    <ObjectClass>
+      <PublicId>2223331</PublicId>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>C25320</PreferredName>
+      <Version>1</Version>
+      <LongName>Protocol</LongName>
+      <ConceptDetails>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C25320</PREFERRED_NAME>
+          <LONG_NAME>Clinical Study Protocol</LONG_NAME>
+          <CON_ID>2202702</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>Yes</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>0</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+      </ConceptDetails>
+    </ObjectClass>
+    <Property>
+      <PublicId>2223286</PublicId>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>C42774</PreferredName>
+      <Version>1</Version>
+      <LongName>Title</LongName>
+      <ConceptDetails>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C42774</PREFERRED_NAME>
+          <LONG_NAME>Title</LONG_NAME>
+          <CON_ID>2223215</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>Yes</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>0</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+      </ConceptDetails>
+    </Property>
+    <ObjectClassQualifier NULL="TRUE"/>
+    <PropertyQualifier NULL="TRUE"/>
+    <Origin NULL="TRUE"/>
+  </DATAELEMENTCONCEPT>
+  <VALUEDOMAIN>
+    <PublicId>2182449</PublicId>
+    <PreferredName>PROT_DESC_TXT</PreferredName>
+    <PreferredDefinition>Descriptive text used to define the long title or precis of a protocol.</PreferredDefinition>
+    <LongName>Protocol Description Text</LongName>
+    <Version>1</Version>
+    <WorkflowStatus>RELEASED</WorkflowStatus>
+    <ContextName>CIP</ContextName>
+    <ContextVersion>2.31</ContextVersion>
+    <ConceptualDomain>
+      <PublicId>2008528</PublicId>
+      <ContextName>CTEP</ContextName>
+      <ContextVersion>2.31</ContextVersion>
+      <PreferredName>PROT_ADM</PreferredName>
+      <Version>1</Version>
+      <LongName>Protocol Administration</LongName>
+    </ConceptualDomain>
+    <Datatype>CHARACTER</Datatype>
+    <ValueDomainType>NonEnumerated</ValueDomainType>
+    <UnitOfMeasure NULL="TRUE"/>
+    <DisplayFormat NULL="TRUE"/>
+    <MaximumLength>255</MaximumLength>
+    <MinimumLength NULL="TRUE"/>
+    <DecimalPlace NULL="TRUE"/>
+    <CharacterSetName NULL="TRUE"/>
+    <MaximumValue NULL="TRUE"/>
+    <MinimumValue NULL="TRUE"/>
+    <Origin NULL="TRUE"/>
+    <Representation>
+      <PublicId>2675112</PublicId>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>C42651:C25704</PreferredName>
+      <Version>1</Version>
+      <LongName>Protocol Text</LongName>
+      <ConceptDetails>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C42651</PREFERRED_NAME>
+          <LONG_NAME>Protocol</LONG_NAME>
+          <CON_ID>2211236</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>No</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>1</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C25704</PREFERRED_NAME>
+          <LONG_NAME>Text</LONG_NAME>
+          <CON_ID>2203863</CON_ID>
+          <DEFINITION_SOURCE>NCI </DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>Yes</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>0</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+      </ConceptDetails>
+    </Representation>
+    <PermissibleValues/>
+    <ValueDomainConcepts/>
+  </VALUEDOMAIN>
+  <REFERENCEDOCUMENTSLIST>
+    <REFERENCEDOCUMENTSLIST_ITEM>
+      <Name>Protocol Long Title</Name>
+      <OrganizationName NULL="TRUE"/>
+      <DocumentType>Preferred Question Text</DocumentType>
+      <DocumentText>Protocol Long Title</DocumentText>
+      <URL NULL="TRUE"/>
+      <Language>ENGLISH</Language>
+      <DisplayOrder NULL="TRUE"/>
+    </REFERENCEDOCUMENTSLIST_ITEM>
+    <REFERENCEDOCUMENTSLIST_ITEM>
+      <Name>Clinical Trial Protocol Name</Name>
+      <OrganizationName NULL="TRUE"/>
+      <DocumentType>Alternate Question Text</DocumentType>
+      <DocumentText>Clinical Trial Protocol Name</DocumentText>
+      <URL NULL="TRUE"/>
+      <Language>ENGLISH</Language>
+      <DisplayOrder NULL="TRUE"/>
+    </REFERENCEDOCUMENTSLIST_ITEM>
+  </REFERENCEDOCUMENTSLIST>
+  <CLASSIFICATIONSLIST>
+    <CLASSIFICATIONSLIST_ITEM>
+      <ClassificationScheme>
+        <PublicId>2857181</PublicId>
+        <ContextName>CIP</ContextName>
+        <ContextVersion>2.31</ContextVersion>
+        <PreferredName>NCIA Projects</PreferredName>
+        <Version>1</Version>
+      </ClassificationScheme>
+      <ClassificationSchemeItemName>Rider Project</ClassificationSchemeItemName>
+      <ClassificationSchemeItemType>CATEGORY_TYPE</ClassificationSchemeItemType>
+      <CsiPublicId>2812022</CsiPublicId>
+      <CsiVersion>1</CsiVersion>
+    </CLASSIFICATIONSLIST_ITEM>
+    <CLASSIFICATIONSLIST_ITEM>
+      <ClassificationScheme>
+        <PublicId>2555333</PublicId>
+        <ContextName>NCIP</ContextName>
+        <ContextVersion>1</ContextVersion>
+        <PreferredName>Clinical Trials Lab Model</PreferredName>
+        <Version>0.5</Version>
+      </ClassificationScheme>
+      <ClassificationSchemeItemName>Lab Hub Model</ClassificationSchemeItemName>
+      <ClassificationSchemeItemType>UML_PACKAGE_ALIAS</ClassificationSchemeItemType>
+      <CsiPublicId>2812532</CsiPublicId>
+      <CsiVersion>1</CsiVersion>
+    </CLASSIFICATIONSLIST_ITEM>
+    <CLASSIFICATIONSLIST_ITEM>
+      <ClassificationScheme>
+        <PublicId>2555333</PublicId>
+        <ContextName>NCIP</ContextName>
+        <ContextVersion>1</ContextVersion>
+        <PreferredName>Clinical Trials Lab Model</PreferredName>
+        <Version>0.5</Version>
+      </ClassificationScheme>
+      <ClassificationSchemeItemName>gov.nih.nci.labhub.domain</ClassificationSchemeItemName>
+      <ClassificationSchemeItemType>UML_PACKAGE_NAME</ClassificationSchemeItemType>
+      <CsiPublicId>2812533</CsiPublicId>
+      <CsiVersion>1</CsiVersion>
+    </CLASSIFICATIONSLIST_ITEM>
+    <CLASSIFICATIONSLIST_ITEM>
+      <ClassificationScheme>
+        <PublicId>2614828</PublicId>
+        <ContextName>NCIP</ContextName>
+        <ContextVersion>1</ContextVersion>
+        <PreferredName>NCIA Collection</PreferredName>
+        <Version>1</Version>
+      </ClassificationScheme>
+      <ClassificationSchemeItemName>RIDER</ClassificationSchemeItemName>
+      <ClassificationSchemeItemType>CATEGORY_TYPE</ClassificationSchemeItemType>
+      <CsiPublicId>2812771</CsiPublicId>
+      <CsiVersion>1</CsiVersion>
+    </CLASSIFICATIONSLIST_ITEM>
+    <CLASSIFICATIONSLIST_ITEM>
+      <ClassificationScheme>
+        <PublicId>2183535</PublicId>
+        <ContextName>NCIP</ContextName>
+        <ContextVersion>1</ContextVersion>
+        <PreferredName>Clinical Trial Mgmt Systems</PreferredName>
+        <Version>1</Version>
+      </ClassificationScheme>
+      <ClassificationSchemeItemName>caCTUS</ClassificationSchemeItemName>
+      <ClassificationSchemeItemType>CATEGORY_TYPE</ClassificationSchemeItemType>
+      <CsiPublicId>2812942</CsiPublicId>
+      <CsiVersion>1</CsiVersion>
+    </CLASSIFICATIONSLIST_ITEM>
+    <CLASSIFICATIONSLIST_ITEM>
+      <ClassificationScheme>
+        <PublicId>2724612</PublicId>
+        <ContextName>NCIP</ContextName>
+        <ContextVersion>1</ContextVersion>
+        <PreferredName>CTODS</PreferredName>
+        <Version>0.53</Version>
+      </ClassificationScheme>
+      <ClassificationSchemeItemName>gov.nih.nci.ctom.domain</ClassificationSchemeItemName>
+      <ClassificationSchemeItemType>UML_PACKAGE_NAME</ClassificationSchemeItemType>
+      <CsiPublicId>2812626</CsiPublicId>
+      <CsiVersion>1</CsiVersion>
+    </CLASSIFICATIONSLIST_ITEM>
+  </CLASSIFICATIONSLIST>
+  <ALTERNATENAMELIST>
+    <ALTERNATENAMELIST_ITEM>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <AlternateName>caBIG</AlternateName>
+      <AlternateNameType>USED_BY</AlternateNameType>
+      <Language>ENGLISH</Language>
+    </ALTERNATENAMELIST_ITEM>
+    <ALTERNATENAMELIST_ITEM>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <AlternateName>gov.nih.nci.labhub.domain.Study.name</AlternateName>
+      <AlternateNameType>UML Qualified Attr</AlternateNameType>
+      <Language NULL="TRUE"/>
+    </ALTERNATENAMELIST_ITEM>
+    <ALTERNATENAMELIST_ITEM>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <AlternateName>Study:name</AlternateName>
+      <AlternateNameType>UML Class:UML Attr</AlternateNameType>
+      <Language NULL="TRUE"/>
+    </ALTERNATENAMELIST_ITEM>
+    <ALTERNATENAMELIST_ITEM>
+      <ContextName>CIP</ContextName>
+      <ContextVersion>2.31</ContextVersion>
+      <AlternateName>(0012,0021)</AlternateName>
+      <AlternateNameType>DICOM_TAG</AlternateNameType>
+      <Language>ENGLISH</Language>
+    </ALTERNATENAMELIST_ITEM>
+    <ALTERNATENAMELIST_ITEM>
+      <ContextName>SPOREs</ContextName>
+      <ContextVersion>2.31</ContextVersion>
+      <AlternateName>SPOREs</AlternateName>
+      <AlternateNameType>USED_BY</AlternateNameType>
+      <Language>ENGLISH</Language>
+    </ALTERNATENAMELIST_ITEM>
+    <ALTERNATENAMELIST_ITEM>
+      <ContextName>CCR</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <AlternateName>ENGLISH</AlternateName>
+      <AlternateNameType>CONTEXT NAME</AlternateNameType>
+      <Language>ENGLISH</Language>
+    </ALTERNATENAMELIST_ITEM>
+    <ALTERNATENAMELIST_ITEM>
+      <ContextName>CIP</ContextName>
+      <ContextVersion>2.31</ContextVersion>
+      <AlternateName>PROT_LONG_TLE_TXT</AlternateName>
+      <AlternateNameType>USED_BY</AlternateNameType>
+      <Language>ENGLISH</Language>
+    </ALTERNATENAMELIST_ITEM>
+    <ALTERNATENAMELIST_ITEM>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <AlternateName>gov.nih.nci.ctom.domain.Protocol.longTitleText</AlternateName>
+      <AlternateNameType>UML Qualified Attr</AlternateNameType>
+      <Language>ENGLISH</Language>
+    </ALTERNATENAMELIST_ITEM>
+    <ALTERNATENAMELIST_ITEM>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <AlternateName>Protocol:longTitleText</AlternateName>
+      <AlternateNameType>UML Class:UML Attr</AlternateNameType>
+      <Language>ENGLISH</Language>
+    </ALTERNATENAMELIST_ITEM>
+  </ALTERNATENAMELIST>
+  <DATAELEMENTDERIVATION>
+    <DerivationType NULL="TRUE"/>
+    <DerivationTypeDescription NULL="TRUE"/>
+    <Methods NULL="TRUE"/>
+    <Rule NULL="TRUE"/>
+    <ConcatenationCharacter NULL="TRUE"/>
+    <ComponentDataElementsList NULL="TRUE"/>
+  </DATAELEMENTDERIVATION>
+</DataElement>

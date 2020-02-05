@@ -1,0 +1,255 @@
+<DataElement num="45104">
+  <PUBLICID>2953241</PUBLICID>
+  <LONGNAME>Hematopoietic Cell Transplantation Recipient Research Data Shared Consent Date</LONGNAME>
+  <PREFERREDNAME>2532654v2.0:2532012v2.0</PREFERREDNAME>
+  <PREFERREDDEFINITION>Primitive blood cells derived from embryonic mesenchyme capable of differentiating into any of the blood cell line progenitor cells (erythroblasts, young granulocytic series cells, megakaryocytes, etc.)_The grafting of tissues from one individual to another or place to place within a single individual._A person who gets something._A part of a thing, or of several things, taken to demonstrate or to determine the character of the whole, e.g. a substance, or portion of material obtained for use in testing, examination, or study; particularly, a preparation of tissue or bodily fluid taken for examination or diagnosis._Systematic investigation into a subject in order to discover facts, establish or revise a theory, or develop a plan of action based on the facts discovered._A collection or single item of factual information, derived from measurement or research, from which conclusions may be drawn._Have in common; held or experienced in common._Permission to do something._The particular day, month and year an event has happened or will happen.</PREFERREDDEFINITION>
+  <VERSION>2</VERSION>
+  <WORKFLOWSTATUS>DRAFT MOD</WORKFLOWSTATUS>
+  <CONTEXTNAME>NHLBI</CONTEXTNAME>
+  <CONTEXTVERSION>1</CONTEXTVERSION>
+  <ORIGIN>NMDP:National Marrow Donor Program</ORIGIN>
+  <REGISTRATIONSTATUS NULL="TRUE"/>
+  <DATAELEMENTCONCEPT>
+    <PublicId>2532654</PublicId>
+    <PreferredName>2531883v1.0:2532652v1.0</PreferredName>
+    <PreferredDefinition>Primitive blood cells derived from embryonic mesenchyme capable of differentiating into any of the blood cell line progenitor cells (erythroblasts, young granulocytic series cells, megakaryocytes, etc.)_The grafting of tissues from one individual to another or place to place within a single individual._A person who gets something._A part of a thing, or of several things, taken to demonstrate or to determine the character of the whole, e.g. a substance, or portion of material obtained for use in testing, examination, or study; particularly, a preparation of tissue or bodily fluid taken for examination or diagnosis._Systematic investigation into a subject in order to discover facts, establish or revise a theory, or develop a plan of action based on the facts discovered._A collection or single item of factual information, derived from measurement or research, from which conclusions may be drawn._Have in common; held or experienced in common._Permission to do something.</PreferredDefinition>
+    <LongName>Hematopoietic Cell Transplantation Recipient Research Data Shared Consent</LongName>
+    <Version>2</Version>
+    <WorkflowStatus>RELEASED</WorkflowStatus>
+    <ContextName>NHLBI</ContextName>
+    <ContextVersion>1</ContextVersion>
+    <ConceptualDomain>
+      <PublicId>2008530</PublicId>
+      <ContextName>CTEP</ContextName>
+      <ContextVersion>2.31</ContextVersion>
+      <PreferredName>PT_CONSENT</PreferredName>
+      <Version>1</Version>
+      <LongName>Patient Consent</LongName>
+    </ConceptualDomain>
+    <ObjectClass>
+      <PublicId>2531883</PublicId>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>C12551:C15342</PreferredName>
+      <Version>1</Version>
+      <LongName>Hematopoietic Stem Cell Transplantation</LongName>
+      <ConceptDetails>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C12551</PREFERRED_NAME>
+          <LONG_NAME>Hematopoietic Stem Cell</LONG_NAME>
+          <CON_ID>2486421</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>No</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>1</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C15342</PREFERRED_NAME>
+          <LONG_NAME>Transplantation</LONG_NAME>
+          <CON_ID>2205403</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>Yes</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>0</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+      </ConceptDetails>
+    </ObjectClass>
+    <Property>
+      <PublicId>2532652</PublicId>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>2532652v1.0</PreferredName>
+      <Version>1</Version>
+      <LongName>Recipient Research Data Shared Consent</LongName>
+      <ConceptDetails>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C53268</PREFERRED_NAME>
+          <LONG_NAME>Recipient</LONG_NAME>
+          <CON_ID>2512693</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>No</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>4</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C15319</PREFERRED_NAME>
+          <LONG_NAME>Research</LONG_NAME>
+          <CON_ID>2202802</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>No</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>3</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C25474</PREFERRED_NAME>
+          <LONG_NAME>Data</LONG_NAME>
+          <CON_ID>2202724</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>No</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>2</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C38019</PREFERRED_NAME>
+          <LONG_NAME>Shared</LONG_NAME>
+          <CON_ID>2532651</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>No</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>1</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C25460</PREFERRED_NAME>
+          <LONG_NAME>Consent</LONG_NAME>
+          <CON_ID>2203590</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>Yes</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>0</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+      </ConceptDetails>
+    </Property>
+    <ObjectClassQualifier NULL="TRUE"/>
+    <PropertyQualifier NULL="TRUE"/>
+    <Origin>NMDP:National Marrow Donor Program</Origin>
+  </DATAELEMENTCONCEPT>
+  <VALUEDOMAIN>
+    <PublicId>2532012</PublicId>
+    <PreferredName>DATE</PreferredName>
+    <PreferredDefinition>The particular day, month and year an event has happened or will happen.</PreferredDefinition>
+    <LongName>Date</LongName>
+    <Version>2</Version>
+    <WorkflowStatus>RELEASED</WorkflowStatus>
+    <ContextName>NHLBI</ContextName>
+    <ContextVersion>1</ContextVersion>
+    <ConceptualDomain>
+      <PublicId>2008561</PublicId>
+      <ContextName>CTEP</ContextName>
+      <ContextVersion>2.31</ContextVersion>
+      <PreferredName>OCURS</PreferredName>
+      <Version>1</Version>
+      <LongName>Occurrences</LongName>
+    </ConceptualDomain>
+    <Datatype>DATE</Datatype>
+    <ValueDomainType>NonEnumerated</ValueDomainType>
+    <UnitOfMeasure NULL="TRUE"/>
+    <DisplayFormat>YYYY-MM-DD</DisplayFormat>
+    <MaximumLength>10</MaximumLength>
+    <MinimumLength NULL="TRUE"/>
+    <DecimalPlace NULL="TRUE"/>
+    <CharacterSetName NULL="TRUE"/>
+    <MaximumValue NULL="TRUE"/>
+    <MinimumValue NULL="TRUE"/>
+    <Origin>NMDP:National Marrow Donor Program</Origin>
+    <Representation>
+      <PublicId>2233081</PublicId>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>C25164</PreferredName>
+      <Version>1</Version>
+      <LongName>Date</LongName>
+      <ConceptDetails>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C25164</PREFERRED_NAME>
+          <LONG_NAME>Date</LONG_NAME>
+          <CON_ID>2202880</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>Yes</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>0</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+      </ConceptDetails>
+    </Representation>
+    <PermissibleValues/>
+    <ValueDomainConcepts/>
+  </VALUEDOMAIN>
+  <REFERENCEDOCUMENTSLIST>
+    <REFERENCEDOCUMENTSLIST_ITEM>
+      <Name>Date of consent to submit res</Name>
+      <OrganizationName NULL="TRUE"/>
+      <DocumentType>Preferred Question Text</DocumentType>
+      <DocumentText>Date of consent to submit research data:</DocumentText>
+      <URL NULL="TRUE"/>
+      <Language>ENGLISH</Language>
+      <DisplayOrder NULL="TRUE"/>
+    </REFERENCEDOCUMENTSLIST_ITEM>
+    <REFERENCEDOCUMENTSLIST_ITEM>
+      <Name>Date form was signed:</Name>
+      <OrganizationName NULL="TRUE"/>
+      <DocumentType>Alternate Question Text</DocumentType>
+      <DocumentText>Date form was signed:</DocumentText>
+      <URL NULL="TRUE"/>
+      <Language>ENGLISH</Language>
+      <DisplayOrder NULL="TRUE"/>
+    </REFERENCEDOCUMENTSLIST_ITEM>
+    <REFERENCEDOCUMENTSLIST_ITEM>
+      <Name>BRIDG mapping for CDE:2953241</Name>
+      <OrganizationName NULL="TRUE"/>
+      <DocumentType>BRIDG Mapping Path</DocumentType>
+      <DocumentText>PerformedStudySubjectMilestone.dateRange WHERE PerformedStudySubjectMilestone &gt; DefinedStudySubjectMilestone.nameCode = &quot;Obtain informed consent to submit research data&quot;</DocumentText>
+      <URL NULL="TRUE"/>
+      <Language>ENGLISH</Language>
+      <DisplayOrder NULL="TRUE"/>
+    </REFERENCEDOCUMENTSLIST_ITEM>
+  </REFERENCEDOCUMENTSLIST>
+  <CLASSIFICATIONSLIST>
+    <CLASSIFICATIONSLIST_ITEM>
+      <ClassificationScheme>
+        <PublicId>2695319</PublicId>
+        <ContextName>NHLBI</ContextName>
+        <ContextVersion>1</ContextVersion>
+        <PreferredName>NMDP: CDEs to review</PreferredName>
+        <Version>1</Version>
+      </ClassificationScheme>
+      <ClassificationSchemeItemName>2000r1: Recipient Baseline Data</ClassificationSchemeItemName>
+      <ClassificationSchemeItemType>Case Report Form</ClassificationSchemeItemType>
+      <CsiPublicId>2964872</CsiPublicId>
+      <CsiVersion>1</CsiVersion>
+    </CLASSIFICATIONSLIST_ITEM>
+    <CLASSIFICATIONSLIST_ITEM>
+      <ClassificationScheme>
+        <PublicId>3553940</PublicId>
+        <ContextName>NHLBI</ContextName>
+        <ContextVersion>1</ContextVersion>
+        <PreferredName>BRIDG</PreferredName>
+        <Version>1</Version>
+      </ClassificationScheme>
+      <ClassificationSchemeItemName>Version 3.2</ClassificationSchemeItemName>
+      <ClassificationSchemeItemType>GROUP_TYPE</ClassificationSchemeItemType>
+      <CsiPublicId>4133055</CsiPublicId>
+      <CsiVersion>1</CsiVersion>
+    </CLASSIFICATIONSLIST_ITEM>
+  </CLASSIFICATIONSLIST>
+  <ALTERNATENAMELIST>
+    <ALTERNATENAMELIST_ITEM>
+      <ContextName>NHLBI</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <AlternateName>Hematopoietic Stem Cell Transplantation Recipient Research Data Shared Consent Date</AlternateName>
+      <AlternateNameType>System-Generated</AlternateNameType>
+      <Language>ENGLISH</Language>
+    </ALTERNATENAMELIST_ITEM>
+    <ALTERNATENAMELIST_ITEM>
+      <ContextName>NHLBI</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <AlternateName>PerformedStudySubjectMilestone:dateRange</AlternateName>
+      <AlternateNameType>HCT_BRIDG</AlternateNameType>
+      <Language>ENGLISH</Language>
+    </ALTERNATENAMELIST_ITEM>
+  </ALTERNATENAMELIST>
+  <DATAELEMENTDERIVATION>
+    <DerivationType NULL="TRUE"/>
+    <DerivationTypeDescription NULL="TRUE"/>
+    <Methods NULL="TRUE"/>
+    <Rule NULL="TRUE"/>
+    <ConcatenationCharacter NULL="TRUE"/>
+    <ComponentDataElementsList NULL="TRUE"/>
+  </DATAELEMENTDERIVATION>
+</DataElement>

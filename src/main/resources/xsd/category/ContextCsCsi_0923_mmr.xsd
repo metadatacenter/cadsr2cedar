@@ -1,0 +1,64 @@
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Classifications">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="Context"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Context">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="1" ref="PreferredName"/>
+        <xs:element maxOccurs="1" ref="Version"/>
+        <xs:element maxOccurs="unbounded" ref="ClassificationScheme"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ClassificationScheme">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="1" ref="PublicId"/>
+        <xs:element maxOccurs="1" ref="PreferredName"/>
+        <xs:element maxOccurs="1" ref="LongName"/>
+        <xs:element maxOccurs="1" ref="Version"/>
+        <xs:element maxOccurs="unbounded" ref="CSI"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PublicId" type="xs:integer"/>
+  <xs:element name="PreferredName" type="xs:string"/>
+  <xs:element name="LongName" type="xs:string"/>
+  <xs:element name="Version" type="xs:decimal"/>
+  <xs:element name="CSI">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="CSILevel"/>
+        <xs:element ref="ClassificationSchemeItemName"/>
+        <xs:element ref="ClassificationSchemeItemType"/>
+        <xs:element ref="PublicId"/>
+        <xs:element ref="Version"/>
+        <xs:element ref="CSI_IDSEQ"/>
+        <xs:element maxOccurs="1" minOccurs="0" ref="ParentChildIdseq"/>
+        <xs:element maxOccurs="1" minOccurs="0" ref="ParentPublicID"/>
+        <xs:element maxOccurs="1" minOccurs="0" ref="ParentVersion"/>
+        <xs:element ref="AnyChildCSI"/>
+        <xs:element maxOccurs="unbounded" minOccurs="0" ref="CSI"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CSILevel" type="xs:integer"/>
+  <xs:element name="ClassificationSchemeItemName" type="xs:string"/>
+  <xs:element name="ClassificationSchemeItemType" type="xs:string"/>
+  <xs:element name="CSI_IDSEQ" type="xs:string"/>
+  <xs:element name="ParentChildIdseq" type="xs:string"/>
+  <xs:element name="ParentPublicID" type="xs:integer"/>
+  <xs:element name="ParentVersion" type="xs:decimal"/>
+  <xs:simpleType name="hasCsiChildren">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="TRUE"/>
+      <xs:enumeration value="FALSE"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AnyChildCSI" type="hasCsiChildren"/>
+</xs:schema>

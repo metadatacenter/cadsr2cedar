@@ -1,0 +1,234 @@
+<DataElement num="40091">
+  <PUBLICID>3177059</PUBLICID>
+  <LONGNAME>Animal Biological Entity Or Sex Gender Code ISO21090.CD.v1.0</LONGNAME>
+  <PREFERREDNAME>3175556v1.0:2803170v1.0</PREFERREDNAME>
+  <PREFERREDDEFINITION>A non-human living organism that has membranous cell walls, requires oxygen and organic foods, and is capable of voluntary movement, as distinguished from a plant or mineral. EXAMPLE(S): dog, cat, mouse A coded value specifying the physical or societal properties by which male is distinguished from female. NOTE(S): For humans, identification of sex is usually based upon self-report and may come from a form, questionnaire, interview, etc.</PREFERREDDEFINITION>
+  <VERSION>1</VERSION>
+  <WORKFLOWSTATUS>RELEASED</WORKFLOWSTATUS>
+  <CONTEXTNAME>NCIP</CONTEXTNAME>
+  <CONTEXTVERSION>1</CONTEXTVERSION>
+  <ORIGIN NULL="TRUE"/>
+  <REGISTRATIONSTATUS NULL="TRUE"/>
+  <DATAELEMENTCONCEPT>
+    <PublicId>3175556</PublicId>
+    <PreferredName>2867615v1.0:3174519v1.0</PreferredName>
+    <PreferredDefinition>A living organism that has membranous cell walls, requires oxygen and organic foods, and is capable of voluntary movement, as distinguished from a plant or mineral.:Pertaining to biology or to life and living things.:An independently existing thing (living or nonliving)._An article used to connect words, phrases, or clauses representing alternatives; used to connect alternative terms for the same thing; used in correlation; used to correct or rephrase what was previously said; otherwise.:The assemblage of physical properties or qualities by which male is distinguished from female; the physical difference between male and female; the distinguishing peculiarity of male or female.:The assemblage of properties that distinguish people on the basis of their societal roles.:A symbol or combination of symbols which is given an arbitrary meaning within a systematized collection of concepts used for data representation.</PreferredDefinition>
+    <LongName>Animal Biological Entity Or Sex Gender Code</LongName>
+    <Version>1</Version>
+    <WorkflowStatus>RELEASED</WorkflowStatus>
+    <ContextName>NCIP</ContextName>
+    <ContextVersion>1</ContextVersion>
+    <ConceptualDomain>
+      <PublicId>2222502</PublicId>
+      <ContextName>caCORE</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>UML DEFAULT CD</PreferredName>
+      <Version>1</Version>
+      <LongName>UML DEFAULT CD</LongName>
+    </ConceptualDomain>
+    <ObjectClass>
+      <PublicId>2867615</PublicId>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>C14182:C28226:C51070</PreferredName>
+      <Version>1</Version>
+      <LongName>Animal Biological Entity</LongName>
+      <ConceptDetails>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C14182</PREFERRED_NAME>
+          <LONG_NAME>Animal</LONG_NAME>
+          <CON_ID>2210812</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>No</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>2</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C28226</PREFERRED_NAME>
+          <LONG_NAME>Biological</LONG_NAME>
+          <CON_ID>2206378</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>No</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>1</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C51070</PREFERRED_NAME>
+          <LONG_NAME>Entity</LONG_NAME>
+          <CON_ID>2452881</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>Yes</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>0</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+      </ConceptDetails>
+    </ObjectClass>
+    <Property>
+      <PublicId>3174519</PublicId>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>C37998:C28421:C17357:C25162</PreferredName>
+      <Version>1</Version>
+      <LongName>Or Sex Gender Code</LongName>
+      <ConceptDetails>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C37998</PREFERRED_NAME>
+          <LONG_NAME>Or</LONG_NAME>
+          <CON_ID>2233137</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>No</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>3</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C28421</PREFERRED_NAME>
+          <LONG_NAME>Sex</LONG_NAME>
+          <CON_ID>2403944</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>No</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>2</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C17357</PREFERRED_NAME>
+          <LONG_NAME>Gender</LONG_NAME>
+          <CON_ID>2202402</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>No</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>1</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C25162</PREFERRED_NAME>
+          <LONG_NAME>Code</LONG_NAME>
+          <CON_ID>2203865</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>Yes</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>0</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+      </ConceptDetails>
+    </Property>
+    <ObjectClassQualifier NULL="TRUE"/>
+    <PropertyQualifier NULL="TRUE"/>
+    <Origin NULL="TRUE"/>
+  </DATAELEMENTCONCEPT>
+  <VALUEDOMAIN>
+    <PublicId>2803170</PublicId>
+    <PreferredName>2803170v1.0</PreferredName>
+    <PreferredDefinition>Reference concept defined by a referenced code system.</PreferredDefinition>
+    <LongName>ISO21090.CD.v1.0</LongName>
+    <Version>1</Version>
+    <WorkflowStatus>RELEASED</WorkflowStatus>
+    <ContextName>NCIP</ContextName>
+    <ContextVersion>1</ContextVersion>
+    <ConceptualDomain>
+      <PublicId>2846956</PublicId>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>ISO21090 DATA TYPES</PreferredName>
+      <Version>1</Version>
+      <LongName>ISO21090 Data Types</LongName>
+    </ConceptualDomain>
+    <Datatype>ISO21090CDv1.0</Datatype>
+    <ValueDomainType>NonEnumerated</ValueDomainType>
+    <UnitOfMeasure NULL="TRUE"/>
+    <DisplayFormat NULL="TRUE"/>
+    <MaximumLength NULL="TRUE"/>
+    <MinimumLength NULL="TRUE"/>
+    <DecimalPlace NULL="TRUE"/>
+    <CharacterSetName NULL="TRUE"/>
+    <MaximumValue NULL="TRUE"/>
+    <MinimumValue NULL="TRUE"/>
+    <Origin>ISO:International Organization for Standardization</Origin>
+    <Representation>
+      <PublicId>2261841</PublicId>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>C25162</PreferredName>
+      <Version>1</Version>
+      <LongName>Code</LongName>
+      <ConceptDetails>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C25162</PREFERRED_NAME>
+          <LONG_NAME>Code</LONG_NAME>
+          <CON_ID>2203865</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>Yes</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>0</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+      </ConceptDetails>
+    </Representation>
+    <PermissibleValues/>
+    <ValueDomainConcepts/>
+  </VALUEDOMAIN>
+  <REFERENCEDOCUMENTSLIST/>
+  <CLASSIFICATIONSLIST>
+    <CLASSIFICATIONSLIST_ITEM>
+      <ClassificationScheme>
+        <PublicId>2714898</PublicId>
+        <ContextName>NCIP</ContextName>
+        <ContextVersion>1</ContextVersion>
+        <PreferredName>BRIDG 3.0.2</PreferredName>
+        <Version>3.02</Version>
+      </ClassificationScheme>
+      <ClassificationSchemeItemName>gov.nih.nci.BRIDG.domain</ClassificationSchemeItemName>
+      <ClassificationSchemeItemType>UML_PACKAGE_NAME</ClassificationSchemeItemType>
+      <CsiPublicId>2867548</CsiPublicId>
+      <CsiVersion>1</CsiVersion>
+    </CLASSIFICATIONSLIST_ITEM>
+    <CLASSIFICATIONSLIST_ITEM>
+      <ClassificationScheme>
+        <PublicId>3757111</PublicId>
+        <ContextName>NCIP</ContextName>
+        <ContextVersion>1</ContextVersion>
+        <PreferredName>BRIDG 3.2</PreferredName>
+        <Version>3.2</Version>
+      </ClassificationScheme>
+      <ClassificationSchemeItemName>gov.nih.nci.BRIDG.domain.CommonSubDomain</ClassificationSchemeItemName>
+      <ClassificationSchemeItemType>UML_PACKAGE_NAME</ClassificationSchemeItemType>
+      <CsiPublicId>3757153</CsiPublicId>
+      <CsiVersion>1</CsiVersion>
+    </CLASSIFICATIONSLIST_ITEM>
+  </CLASSIFICATIONSLIST>
+  <ALTERNATENAMELIST>
+    <ALTERNATENAMELIST_ITEM>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <AlternateName>gov.nih.nci.BRIDG.domain.Animal.administrativeGenderCode</AlternateName>
+      <AlternateNameType>UML Qualified Attr</AlternateNameType>
+      <Language>ENGLISH</Language>
+    </ALTERNATENAMELIST_ITEM>
+    <ALTERNATENAMELIST_ITEM>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <AlternateName>Animal:administrativeGenderCode</AlternateName>
+      <AlternateNameType>UML Class:UML Attr</AlternateNameType>
+      <Language>ENGLISH</Language>
+    </ALTERNATENAMELIST_ITEM>
+    <ALTERNATENAMELIST_ITEM>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <AlternateName>gov.nih.nci.BRIDG.domain.CommonSubDomain.Animal.administrativeGenderCode</AlternateName>
+      <AlternateNameType>UML Qualified Attr</AlternateNameType>
+      <Language>ENGLISH</Language>
+    </ALTERNATENAMELIST_ITEM>
+  </ALTERNATENAMELIST>
+  <DATAELEMENTDERIVATION>
+    <DerivationType NULL="TRUE"/>
+    <DerivationTypeDescription NULL="TRUE"/>
+    <Methods NULL="TRUE"/>
+    <Rule NULL="TRUE"/>
+    <ConcatenationCharacter NULL="TRUE"/>
+    <ComponentDataElementsList NULL="TRUE"/>
+  </DATAELEMENTDERIVATION>
+</DataElement>

@@ -1,0 +1,256 @@
+<DataElement num="33522">
+  <PUBLICID>2968037</PUBLICID>
+  <LONGNAME>Administered Component Concept Derivation Rule Metadata Primary NCI Thesaurus Concept Flag True False Boolean Value Code</LONGNAME>
+  <PREFERREDNAME>2967556v1.0:2321242v1.1</PREFERREDNAME>
+  <PREFERREDDEFINITION>The concept for an administered component.:The logical, mathematical, and/or other operations specifying derivation. The rule may range from a simple operation such as subtraction to a very complex set of derivations.:Data about data; information that describes another set of data._Occurring first in time or sequence; original; of greatest rank or importance or value.:A concept is the basic unit of information contained in the Thesaurus. They describe sets of individuals in a given domain. A concept has a name, belongs to a Namespace and exists in relation to other concepts. The vertical relationships consist of &quot;isa&quot;:An indicator that can be set or unset in order to signal whether a particular condition is true._The type of an expression with two possible values, &quot;true&quot; and &quot;false&quot;. Also, a variable of Boolean type or a function with Boolean arguments or result. The most common Boolean functions are AND, OR and NOT. (http://foldoc.doc.ic.ac.uk/foldoc/foldoc.cgi?Boolean)_A numerical quantity measured or assigned or computed._A system, often of numbered categories, for representation of data.</PREFERREDDEFINITION>
+  <VERSION>1</VERSION>
+  <WORKFLOWSTATUS>RELEASED</WORKFLOWSTATUS>
+  <CONTEXTNAME>NCIP</CONTEXTNAME>
+  <CONTEXTVERSION>1</CONTEXTVERSION>
+  <ORIGIN NULL="TRUE"/>
+  <REGISTRATIONSTATUS NULL="TRUE"/>
+  <DATAELEMENTCONCEPT>
+    <PublicId>2967556</PublicId>
+    <PreferredName>2967439v1.0:2539520v1.0</PreferredName>
+    <PreferredDefinition>The concept for an administered component.:The logical, mathematical, and/or other operations specifying derivation. The rule may range from a simple operation such as subtraction to a very complex set of derivations.:Data about data; information that describes another set of data._Occurring first in time or sequence; original; of greatest rank or importance or value.:A concept is the basic unit of information contained in the Thesaurus. They describe sets of individuals in a given domain. A concept has a name, belongs to a Namespace and exists in relation to other concepts. The vertical relationships consist of &quot;isa&quot;:An indicator that can be set or unset in order to signal whether a particular condition is true.</PreferredDefinition>
+    <LongName>Administered Component Concept Derivation Rule Metadata Primary NCI Thesaurus Concept Flag</LongName>
+    <Version>1</Version>
+    <WorkflowStatus>RELEASED</WorkflowStatus>
+    <ContextName>NCIP</ContextName>
+    <ContextVersion>1</ContextVersion>
+    <ConceptualDomain>
+      <PublicId>2222502</PublicId>
+      <ContextName>caCORE</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>UML DEFAULT CD</PreferredName>
+      <Version>1</Version>
+      <LongName>UML DEFAULT CD</LongName>
+    </ConceptualDomain>
+    <ObjectClass>
+      <PublicId>2967439</PublicId>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>C42642:C42861:C52095</PreferredName>
+      <Version>1</Version>
+      <LongName>Administered Component Concept Derivation Rule Metadata</LongName>
+      <ConceptDetails>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C42642</PREFERRED_NAME>
+          <LONG_NAME>Administered Component Concept</LONG_NAME>
+          <CON_ID>2967388</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>No</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>2</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C42861</PREFERRED_NAME>
+          <LONG_NAME>Derivation Rule</LONG_NAME>
+          <CON_ID>2231586</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>No</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>1</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C52095</PREFERRED_NAME>
+          <LONG_NAME>Metadata</LONG_NAME>
+          <CON_ID>2521487</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>Yes</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>0</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+      </ConceptDetails>
+    </ObjectClass>
+    <Property>
+      <PublicId>2539520</PublicId>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>C25251:C43821:C43578</PreferredName>
+      <Version>1</Version>
+      <LongName>Primary NCI Thesaurus Concept Flag</LongName>
+      <ConceptDetails>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C25251</PREFERRED_NAME>
+          <LONG_NAME>Primary</LONG_NAME>
+          <CON_ID>2203705</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>No</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>2</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C43821</PREFERRED_NAME>
+          <LONG_NAME>NCI Thesaurus Concept</LONG_NAME>
+          <CON_ID>2231595</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>No</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>1</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C43578</PREFERRED_NAME>
+          <LONG_NAME>Flag</LONG_NAME>
+          <CON_ID>2223213</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>Yes</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>0</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+      </ConceptDetails>
+    </Property>
+    <ObjectClassQualifier NULL="TRUE"/>
+    <PropertyQualifier NULL="TRUE"/>
+    <Origin NULL="TRUE"/>
+  </DATAELEMENTCONCEPT>
+  <VALUEDOMAIN>
+    <PublicId>2321242</PublicId>
+    <PreferredName>T_F_BOOL_VAL_CD</PreferredName>
+    <PreferredDefinition>The type of an expression with two possible values, &quot;true&quot; and &quot;false&quot;. Also, a variable of Boolean type or a function with Boolean arguments or result. The most common Boolean functions are AND, OR and NOT. (http://foldoc.doc.ic.ac.uk/foldoc/foldoc.cgi?Boolean)_A numerical quantity measured or assigned or computed._A system, often of numbered categories, for representation of data.</PreferredDefinition>
+    <LongName>True False Boolean Value Code</LongName>
+    <Version>1.1</Version>
+    <WorkflowStatus>RELEASED</WorkflowStatus>
+    <ContextName>caCORE</ContextName>
+    <ContextVersion>1</ContextVersion>
+    <ConceptualDomain>
+      <PublicId>2178532</PublicId>
+      <ContextName>caCORE</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>BIOINFORMATICS</PreferredName>
+      <Version>1</Version>
+      <LongName>Bioinformatics</LongName>
+    </ConceptualDomain>
+    <Datatype>BOOLEAN</Datatype>
+    <ValueDomainType>Enumerated</ValueDomainType>
+    <UnitOfMeasure NULL="TRUE"/>
+    <DisplayFormat NULL="TRUE"/>
+    <MaximumLength>1</MaximumLength>
+    <MinimumLength NULL="TRUE"/>
+    <DecimalPlace NULL="TRUE"/>
+    <CharacterSetName NULL="TRUE"/>
+    <MaximumValue NULL="TRUE"/>
+    <MinimumValue NULL="TRUE"/>
+    <Origin NULL="TRUE"/>
+    <Representation>
+      <PublicId>2669029</PublicId>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>C45254:C25712:C25162</PreferredName>
+      <Version>1</Version>
+      <LongName>Boolean Value Code</LongName>
+      <ConceptDetails>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C45254</PREFERRED_NAME>
+          <LONG_NAME>Boolean</LONG_NAME>
+          <CON_ID>2229262</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>No</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>2</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C25712</PREFERRED_NAME>
+          <LONG_NAME>Value</LONG_NAME>
+          <CON_ID>2203990</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>No</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>1</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C25162</PREFERRED_NAME>
+          <LONG_NAME>Code</LONG_NAME>
+          <CON_ID>2203865</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>Yes</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>0</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+      </ConceptDetails>
+    </Representation>
+    <PermissibleValues>
+      <PermissibleValues_ITEM>
+        <VALIDVALUE>1</VALIDVALUE>
+        <VALUEMEANING>True</VALUEMEANING>
+        <MEANINGDESCRIPTION>Conforming to fact or reality or definitive criteria.</MEANINGDESCRIPTION>
+        <MEANINGCONCEPTS>C68850</MEANINGCONCEPTS>
+        <MEANINGCONCEPTORIGIN>NCI Thesaurus</MEANINGCONCEPTORIGIN>
+        <MEANINGCONCEPTDISPLAYORDER>0</MEANINGCONCEPTDISPLAYORDER>
+        <PVBEGINDATE>2005-04-11</PVBEGINDATE>
+        <PVENDDATE NULL="TRUE"/>
+        <VMPUBLICID>2574502</VMPUBLICID>
+        <VMVERSION>1</VMVERSION>
+      </PermissibleValues_ITEM>
+      <PermissibleValues_ITEM>
+        <VALIDVALUE>0</VALIDVALUE>
+        <VALUEMEANING>False</VALUEMEANING>
+        <MEANINGDESCRIPTION>Not in accordance with the fact or reality or definitive criteria.</MEANINGDESCRIPTION>
+        <MEANINGCONCEPTS>C68851</MEANINGCONCEPTS>
+        <MEANINGCONCEPTORIGIN>NCI Thesaurus</MEANINGCONCEPTORIGIN>
+        <MEANINGCONCEPTDISPLAYORDER>0</MEANINGCONCEPTDISPLAYORDER>
+        <PVBEGINDATE>2005-04-11</PVBEGINDATE>
+        <PVENDDATE NULL="TRUE"/>
+        <VMPUBLICID>2574501</VMPUBLICID>
+        <VMVERSION>1</VMVERSION>
+      </PermissibleValues_ITEM>
+    </PermissibleValues>
+    <ValueDomainConcepts/>
+  </VALUEDOMAIN>
+  <REFERENCEDOCUMENTSLIST/>
+  <CLASSIFICATIONSLIST>
+    <CLASSIFICATIONSLIST_ITEM>
+      <ClassificationScheme>
+        <PublicId>2967376</PublicId>
+        <ContextName>NCIP</ContextName>
+        <ContextVersion>1</ContextVersion>
+        <PreferredName>caDSR</PreferredName>
+        <Version>4</Version>
+      </ClassificationScheme>
+      <ClassificationSchemeItemName>gov.nih.nci.cadsr.umlproject.domain</ClassificationSchemeItemName>
+      <ClassificationSchemeItemType>UML_PACKAGE_NAME</ClassificationSchemeItemType>
+      <CsiPublicId>2812241</CsiPublicId>
+      <CsiVersion>1</CsiVersion>
+    </CLASSIFICATIONSLIST_ITEM>
+  </CLASSIFICATIONSLIST>
+  <ALTERNATENAMELIST>
+    <ALTERNATENAMELIST_ITEM>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <AlternateName>SemanticMetadata:isPrimaryConcept</AlternateName>
+      <AlternateNameType>UML Class:UML Attr</AlternateNameType>
+      <Language>ENGLISH</Language>
+    </ALTERNATENAMELIST_ITEM>
+    <ALTERNATENAMELIST_ITEM>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <AlternateName>gov.nih.nci.cadsr.umlproject.domain.SemanticMetadata.isPrimaryConcept</AlternateName>
+      <AlternateNameType>UML Qualified Attr</AlternateNameType>
+      <Language>ENGLISH</Language>
+    </ALTERNATENAMELIST_ITEM>
+    <ALTERNATENAMELIST_ITEM>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <AlternateName>@isPrimaryConcept</AlternateName>
+      <AlternateNameType>GME_XMLLocReference</AlternateNameType>
+      <Language>ENGLISH</Language>
+    </ALTERNATENAMELIST_ITEM>
+  </ALTERNATENAMELIST>
+  <DATAELEMENTDERIVATION>
+    <DerivationType NULL="TRUE"/>
+    <DerivationTypeDescription NULL="TRUE"/>
+    <Methods NULL="TRUE"/>
+    <Rule NULL="TRUE"/>
+    <ConcatenationCharacter NULL="TRUE"/>
+    <ComponentDataElementsList NULL="TRUE"/>
+  </DATAELEMENTDERIVATION>
+</DataElement>

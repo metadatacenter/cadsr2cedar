@@ -1,0 +1,182 @@
+<DataElement num="45118">
+  <PUBLICID>5286461</PUBLICID>
+  <LONGNAME>Medical Research Council Breathlessness Score Have to Stop for Breath After Walking About 100 Yards on the Level Indicator</LONGNAME>
+  <PREFERREDNAME>MRC_GRADE4_IND</PREFERREDNAME>
+  <PREFERREDDEFINITION>A person's stated observation of whether or not they have to stop for breath after walking about 100 yds. (or after a few minutes) on the level.</PREFERREDDEFINITION>
+  <VERSION>1</VERSION>
+  <WORKFLOWSTATUS>DRAFT NEW</WORKFLOWSTATUS>
+  <CONTEXTNAME>Alliance</CONTEXTNAME>
+  <CONTEXTVERSION>1</CONTEXTVERSION>
+  <ORIGIN>MRCBS:Medical Research Council Breathlessness Scale, Medical Research Council, 1959.</ORIGIN>
+  <REGISTRATIONSTATUS NULL="TRUE"/>
+  <DATAELEMENTCONCEPT>
+    <PublicId>5286449</PublicId>
+    <PreferredName>5286433v1.0:5286447v1.0</PreferredName>
+    <PreferredDefinition>A self-administered questionnaire designed to rate an individual's respiratory disability from none to almost complete incapacity._A question about whether an individual has or had to stop for breath after walking about 100 yards, or after a few minutes, on level ground.</PreferredDefinition>
+    <LongName>Medical Research Council Breathlessness Score Have to Stop for Breath After Walking About 100 Yards on Level Ground</LongName>
+    <Version>1</Version>
+    <WorkflowStatus>DRAFT NEW</WorkflowStatus>
+    <ContextName>Alliance</ContextName>
+    <ContextVersion>1</ContextVersion>
+    <ConceptualDomain>
+      <PublicId>2524082</PublicId>
+      <ContextName>CCR</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>MEASURE/INSTRUMENT TESTING</PreferredName>
+      <Version>1</Version>
+      <LongName>Person Measure/Instrument Testing</LongName>
+    </ConceptualDomain>
+    <ObjectClass>
+      <PublicId>5286433</PublicId>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>C127143</PreferredName>
+      <Version>1</Version>
+      <LongName>Medical Research Council Breathlessness Score</LongName>
+      <ConceptDetails>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C127143</PREFERRED_NAME>
+          <LONG_NAME>Medical Research Council Breathlessness Score</LONG_NAME>
+          <CON_ID>5284471</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>Yes</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>0</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+      </ConceptDetails>
+    </ObjectClass>
+    <Property>
+      <PublicId>5286447</PublicId>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>C127148</PreferredName>
+      <Version>1</Version>
+      <LongName>Have to Stop for Breath After Walking About 100 Yards on Level Ground</LongName>
+      <ConceptDetails>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C127148</PREFERRED_NAME>
+          <LONG_NAME>Have to Stop for Breath After Walking About 100 Yards on Level Ground</LONG_NAME>
+          <CON_ID>5284476</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>Yes</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>0</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+      </ConceptDetails>
+    </Property>
+    <ObjectClassQualifier NULL="TRUE"/>
+    <PropertyQualifier NULL="TRUE"/>
+    <Origin>MRCBS:Medical Research Council Breathlessness Scale, Medical Research Council, 1959.</Origin>
+  </DATAELEMENTCONCEPT>
+  <VALUEDOMAIN>
+    <PublicId>3506068</PublicId>
+    <PreferredName>YES_NO_IND</PreferredName>
+    <PreferredDefinition>The preferred Value Domain to indicate a question with permissible values of yes/no.</PreferredDefinition>
+    <LongName>Yes No Indicator</LongName>
+    <Version>1</Version>
+    <WorkflowStatus>RELEASED</WorkflowStatus>
+    <ContextName>NCI Standards</ContextName>
+    <ContextVersion>1</ContextVersion>
+    <ConceptualDomain>
+      <PublicId>3502157</PublicId>
+      <ContextName>CTEP</ContextName>
+      <ContextVersion>2.31</ContextVersion>
+      <PreferredName>YES_NO_IND_VD</PreferredName>
+      <Version>1</Version>
+      <LongName>Yes No Indicator Value Domains</LongName>
+    </ConceptualDomain>
+    <Datatype>CHARACTER</Datatype>
+    <ValueDomainType>Enumerated</ValueDomainType>
+    <UnitOfMeasure NULL="TRUE"/>
+    <DisplayFormat NULL="TRUE"/>
+    <MaximumLength>3</MaximumLength>
+    <MinimumLength>2</MinimumLength>
+    <DecimalPlace NULL="TRUE"/>
+    <CharacterSetName NULL="TRUE"/>
+    <MaximumValue NULL="TRUE"/>
+    <MinimumValue NULL="TRUE"/>
+    <Origin NULL="TRUE"/>
+    <Representation>
+      <PublicId>2421125</PublicId>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>C38147</PreferredName>
+      <Version>1</Version>
+      <LongName>Ind-2</LongName>
+      <ConceptDetails>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C38147</PREFERRED_NAME>
+          <LONG_NAME>Yes or No Response</LONG_NAME>
+          <CON_ID>2204645</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>Yes</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>0</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+      </ConceptDetails>
+    </Representation>
+    <PermissibleValues>
+      <PermissibleValues_ITEM>
+        <VALIDVALUE>No</VALIDVALUE>
+        <VALUEMEANING>No</VALUEMEANING>
+        <MEANINGDESCRIPTION>The non-affirmative response to a question.</MEANINGDESCRIPTION>
+        <MEANINGCONCEPTS>C49487</MEANINGCONCEPTS>
+        <PVBEGINDATE>3/16/2011 0:0:0</PVBEGINDATE>
+        <PVENDDATE NULL="TRUE"/>
+        <VMPUBLICID>3197154</VMPUBLICID>
+        <VMVERSION>1</VMVERSION>
+        <VMALTERNATEDEFINITIONS NULL="TRUE"/>
+      </PermissibleValues_ITEM>
+      <PermissibleValues_ITEM>
+        <VALIDVALUE>Yes</VALIDVALUE>
+        <VALUEMEANING>Yes</VALUEMEANING>
+        <MEANINGDESCRIPTION>The affirmative response to a question.</MEANINGDESCRIPTION>
+        <MEANINGCONCEPTS>C49488</MEANINGCONCEPTS>
+        <PVBEGINDATE>6/23/2011 0:0:0</PVBEGINDATE>
+        <PVENDDATE NULL="TRUE"/>
+        <VMPUBLICID>3197153</VMPUBLICID>
+        <VMVERSION>1</VMVERSION>
+        <VMALTERNATEDEFINITIONS NULL="TRUE"/>
+      </PermissibleValues_ITEM>
+    </PermissibleValues>
+    <ValueDomainConcepts/>
+  </VALUEDOMAIN>
+  <REFERENCEDOCUMENTSLIST>
+    <REFERENCEDOCUMENTSLIST_ITEM>
+      <Name>(If yes) Do you have to stop</Name>
+      <OrganizationName NULL="TRUE"/>
+      <DocumentType>Preferred Question Text</DocumentType>
+      <DocumentText>(If yes) Do you have to stop for breath after walking about 100 yds. (or after a few minutes) on the level?</DocumentText>
+      <URL NULL="TRUE"/>
+      <Language>ENGLISH</Language>
+      <DisplayOrder NULL="TRUE"/>
+    </REFERENCEDOCUMENTSLIST_ITEM>
+  </REFERENCEDOCUMENTSLIST>
+  <CLASSIFICATIONSLIST>
+    <CLASSIFICATIONSLIST_ITEM>
+      <ClassificationScheme>
+        <PublicId>5286431</PublicId>
+        <ContextName>NCIP</ContextName>
+        <ContextVersion>1</ContextVersion>
+        <PreferredName>MRCBS</PreferredName>
+        <Version>1</Version>
+      </ClassificationScheme>
+      <ClassificationSchemeItemName>MRCBS</ClassificationSchemeItemName>
+      <ClassificationSchemeItemType>GROUP_TYPE</ClassificationSchemeItemType>
+      <CsiPublicId>5286432</CsiPublicId>
+      <CsiVersion>1</CsiVersion>
+    </CLASSIFICATIONSLIST_ITEM>
+  </CLASSIFICATIONSLIST>
+  <ALTERNATENAMELIST/>
+  <DATAELEMENTDERIVATION>
+    <DerivationType NULL="TRUE"/>
+    <DerivationTypeDescription NULL="TRUE"/>
+    <Methods NULL="TRUE"/>
+    <Rule NULL="TRUE"/>
+    <ConcatenationCharacter NULL="TRUE"/>
+    <ComponentDataElementsList NULL="TRUE"/>
+  </DATAELEMENTDERIVATION>
+</DataElement>

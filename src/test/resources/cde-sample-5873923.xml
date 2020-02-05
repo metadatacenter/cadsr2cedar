@@ -1,0 +1,225 @@
+<DataElement num="20072">
+  <PUBLICID>5873923</PUBLICID>
+  <LONGNAME>Memorial Symptom Assessment Scale (MSAS) 7-12 Yesterday or Today Feel Like Going to Vomit Indicator</LONGNAME>
+  <PREFERREDNAME>MSAS7_12_VOMIT_IND</PREFERREDNAME>
+  <PREFERREDDEFINITION>Person's stated observation of whether or not they felt like they were going to vomit (or going to throw up) yesterday or today, using a coded yes or no response.</PREFERREDDEFINITION>
+  <VERSION>1</VERSION>
+  <WORKFLOWSTATUS>RELEASED</WORKFLOWSTATUS>
+  <CONTEXTNAME>NCI Standards</CONTEXTNAME>
+  <CONTEXTVERSION>1</CONTEXTVERSION>
+  <ORIGIN>MSAS 7-10: Memorial Symptom Assessment Scale (7-10). J. Collins, et al. Journal of Pain and Symptom Management. 2002 Jan; 23(1): 10-16</ORIGIN>
+  <REGISTRATIONSTATUS>Standard</REGISTRATIONSTATUS>
+  <DATAELEMENTCONCEPT>
+    <PublicId>5873826</PublicId>
+    <PreferredName>5873754v1.0:5873824v1.0</PreferredName>
+    <PreferredDefinition>A patient-rated questionnaire designed to evaluate the prevalence, characteristics, and distress to young children with cancer aged 7-12. This 8-question instrument was adapted from a previously-validated adult version._The time period consisting of the current day and the preceding day._A question about whether an individual feels or felt like they were going to vomit or throw up.</PreferredDefinition>
+    <LongName>Memorial Symptom Assessment Scale (MSAS) 7-12 Yesterday or Today Feel Like Going to Vomit</LongName>
+    <Version>1</Version>
+    <WorkflowStatus>RELEASED</WorkflowStatus>
+    <ContextName>NCI Standards</ContextName>
+    <ContextVersion>1</ContextVersion>
+    <ConceptualDomain>
+      <PublicId>2524082</PublicId>
+      <ContextName>CCR</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>MEASURE/INSTRUMENT TESTING</PreferredName>
+      <Version>1</Version>
+      <LongName>Person Measure/Instrument Testing</LongName>
+    </ConceptualDomain>
+    <ObjectClass>
+      <PublicId>5873754</PublicId>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>C136319</PreferredName>
+      <Version>1</Version>
+      <LongName>Memorial Symptom Assessment Scale (MSAS) 7-12</LongName>
+      <ConceptDetails>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C136319</PREFERRED_NAME>
+          <LONG_NAME>Memorial Symptom Assessment Scale (MSAS) 7-12</LONG_NAME>
+          <CON_ID>5872235</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>Yes</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>0</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+      </ConceptDetails>
+    </ObjectClass>
+    <Property>
+      <PublicId>5873824</PublicId>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>C136321:C136368</PreferredName>
+      <Version>1</Version>
+      <LongName>Yesterday or Today Feel Like Going to Vomit</LongName>
+      <ConceptDetails>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C136321</PREFERRED_NAME>
+          <LONG_NAME>Yesterday or Today</LONG_NAME>
+          <CON_ID>5872236</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>No</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>1</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C136368</PREFERRED_NAME>
+          <LONG_NAME>Feel Like Going to Vomit</LONG_NAME>
+          <CON_ID>5872271</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>Yes</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>0</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+      </ConceptDetails>
+    </Property>
+    <ObjectClassQualifier NULL="TRUE"/>
+    <PropertyQualifier NULL="TRUE"/>
+    <Origin>MSAS 7-10: Memorial Symptom Assessment Scale (7-10). J. Collins, et al. Journal of Pain and Symptom Management. 2002 Jan; 23(1): 10-16</Origin>
+  </DATAELEMENTCONCEPT>
+  <VALUEDOMAIN>
+    <PublicId>3506068</PublicId>
+    <PreferredName>YES_NO_IND</PreferredName>
+    <PreferredDefinition>The preferred Value Domain to indicate a question with permissible values of yes/no.</PreferredDefinition>
+    <LongName>Yes No Indicator</LongName>
+    <Version>1</Version>
+    <WorkflowStatus>RELEASED</WorkflowStatus>
+    <ContextName>NCI Standards</ContextName>
+    <ContextVersion>1</ContextVersion>
+    <ConceptualDomain>
+      <PublicId>3502157</PublicId>
+      <ContextName>CTEP</ContextName>
+      <ContextVersion>2.31</ContextVersion>
+      <PreferredName>YES_NO_IND_VD</PreferredName>
+      <Version>1</Version>
+      <LongName>Yes No Indicator Value Domains</LongName>
+    </ConceptualDomain>
+    <Datatype>CHARACTER</Datatype>
+    <ValueDomainType>Enumerated</ValueDomainType>
+    <UnitOfMeasure NULL="TRUE"/>
+    <DisplayFormat NULL="TRUE"/>
+    <MaximumLength>3</MaximumLength>
+    <MinimumLength>2</MinimumLength>
+    <DecimalPlace NULL="TRUE"/>
+    <CharacterSetName NULL="TRUE"/>
+    <MaximumValue NULL="TRUE"/>
+    <MinimumValue NULL="TRUE"/>
+    <Origin NULL="TRUE"/>
+    <Representation>
+      <PublicId>2421125</PublicId>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>C38147</PreferredName>
+      <Version>1</Version>
+      <LongName>Ind-2</LongName>
+      <ConceptDetails>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C38147</PREFERRED_NAME>
+          <LONG_NAME>Yes or No Response</LONG_NAME>
+          <CON_ID>2204645</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>Yes</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>0</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+      </ConceptDetails>
+    </Representation>
+    <PermissibleValues>
+      <PermissibleValues_ITEM>
+        <VALIDVALUE>No</VALIDVALUE>
+        <VALUEMEANING>No</VALUEMEANING>
+        <MEANINGDESCRIPTION>The non-affirmative response to a question.</MEANINGDESCRIPTION>
+        <MEANINGCONCEPTS>C49487</MEANINGCONCEPTS>
+        <MEANINGCONCEPTORIGIN>NCI Thesaurus</MEANINGCONCEPTORIGIN>
+        <MEANINGCONCEPTDISPLAYORDER>0</MEANINGCONCEPTDISPLAYORDER>
+        <PVBEGINDATE>2012-06-27</PVBEGINDATE>
+        <PVENDDATE NULL="TRUE"/>
+        <VMPUBLICID>3197154</VMPUBLICID>
+        <VMVERSION>1</VMVERSION>
+      </PermissibleValues_ITEM>
+      <PermissibleValues_ITEM>
+        <VALIDVALUE>Yes</VALIDVALUE>
+        <VALUEMEANING>Yes</VALUEMEANING>
+        <MEANINGDESCRIPTION>The affirmative response to a question.</MEANINGDESCRIPTION>
+        <MEANINGCONCEPTS>C49488</MEANINGCONCEPTS>
+        <MEANINGCONCEPTORIGIN>NCI Thesaurus</MEANINGCONCEPTORIGIN>
+        <MEANINGCONCEPTDISPLAYORDER>0</MEANINGCONCEPTDISPLAYORDER>
+        <PVBEGINDATE>2012-06-27</PVBEGINDATE>
+        <PVENDDATE NULL="TRUE"/>
+        <VMPUBLICID>3197153</VMPUBLICID>
+        <VMVERSION>1</VMVERSION>
+      </PermissibleValues_ITEM>
+    </PermissibleValues>
+    <ValueDomainConcepts/>
+  </VALUEDOMAIN>
+  <REFERENCEDOCUMENTSLIST>
+    <REFERENCEDOCUMENTSLIST_ITEM>
+      <Name>Did you feel like you were go</Name>
+      <OrganizationName NULL="TRUE"/>
+      <DocumentType>Preferred Question Text</DocumentType>
+      <DocumentText>Did you feel like you were going to vomit (or going to throw up) yesterday or today?</DocumentText>
+      <URL NULL="TRUE"/>
+      <Language>ENGLISH</Language>
+      <DisplayOrder NULL="TRUE"/>
+    </REFERENCEDOCUMENTSLIST_ITEM>
+    <REFERENCEDOCUMENTSLIST_ITEM>
+      <Name>MSAS 7-12</Name>
+      <OrganizationName NULL="TRUE"/>
+      <DocumentType>Measure Sequence Number</DocumentType>
+      <DocumentText>Question #24 of 30</DocumentText>
+      <URL NULL="TRUE"/>
+      <Language>ENGLISH</Language>
+      <DisplayOrder NULL="TRUE"/>
+    </REFERENCEDOCUMENTSLIST_ITEM>
+    <REFERENCEDOCUMENTSLIST_ITEM>
+      <Name>Using PRO/HRQoL Measures</Name>
+      <OrganizationName NULL="TRUE"/>
+      <DocumentType>Outcome Measure Implementation</DocumentType>
+      <DocumentText>This data element is part of a full set of items that comprise a PRO/HRQoL measure. The full set must be used without any changes to the questions or value set in order to retain the validity and reliability associated with the measure. The URL citation is provided so that caDSR users can obtain materials related to instructions for administering and/or scoring the measure. Changes may not be made to these documents. Where an investigator wants to use single Patient Reported Outcome items that are integrated into a study, DCP review is required prior to inclusion of the item on a case report form.</DocumentText>
+      <URL NULL="TRUE"/>
+      <Language>ENGLISH</Language>
+      <DisplayOrder NULL="TRUE"/>
+    </REFERENCEDOCUMENTSLIST_ITEM>
+  </REFERENCEDOCUMENTSLIST>
+  <CLASSIFICATIONSLIST>
+    <CLASSIFICATIONSLIST_ITEM>
+      <ClassificationScheme>
+        <PublicId>5675693</PublicId>
+        <ContextName>NCI Standards</ContextName>
+        <ContextVersion>1</ContextVersion>
+        <PreferredName>PRO HRQoL</PreferredName>
+        <Version>1</Version>
+      </ClassificationScheme>
+      <ClassificationSchemeItemName>MSAS</ClassificationSchemeItemName>
+      <ClassificationSchemeItemType>GROUP_TYPE</ClassificationSchemeItemType>
+      <CsiPublicId>5840828</CsiPublicId>
+      <CsiVersion>1</CsiVersion>
+    </CLASSIFICATIONSLIST_ITEM>
+    <CLASSIFICATIONSLIST_ITEM>
+      <ClassificationScheme>
+        <PublicId>5675693</PublicId>
+        <ContextName>NCI Standards</ContextName>
+        <ContextVersion>1</ContextVersion>
+        <PreferredName>PRO HRQoL</PreferredName>
+        <Version>1</Version>
+      </ClassificationScheme>
+      <ClassificationSchemeItemName>MSAS 7-12 (Memorial Symptom Assessment Scale 7-12)</ClassificationSchemeItemName>
+      <ClassificationSchemeItemType>CATEGORY_TYPE</ClassificationSchemeItemType>
+      <CsiPublicId>5840839</CsiPublicId>
+      <CsiVersion>1</CsiVersion>
+    </CLASSIFICATIONSLIST_ITEM>
+  </CLASSIFICATIONSLIST>
+  <ALTERNATENAMELIST/>
+  <DATAELEMENTDERIVATION>
+    <DerivationType NULL="TRUE"/>
+    <DerivationTypeDescription NULL="TRUE"/>
+    <Methods NULL="TRUE"/>
+    <Rule NULL="TRUE"/>
+    <ConcatenationCharacter NULL="TRUE"/>
+    <ComponentDataElementsList NULL="TRUE"/>
+  </DATAELEMENTDERIVATION>
+</DataElement>

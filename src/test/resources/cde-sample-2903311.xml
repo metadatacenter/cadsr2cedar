@@ -1,0 +1,336 @@
+<DataElement num="58610">
+  <PUBLICID>2903311</PUBLICID>
+  <LONGNAME>Image X-Ray Tube Current 12 Byte Milli Ampere Number</LONGNAME>
+  <PREFERREDNAME>2639970v1.0:2903307v1.0</PREFERREDNAME>
+  <PREFERREDDEFINITION>A 12 byte number which captures the peak accelerating voltage applied in an X-ray tube between the cathode and anode of an image with a sensing device.</PREFERREDDEFINITION>
+  <VERSION>1</VERSION>
+  <WORKFLOWSTATUS>RELEASED</WORKFLOWSTATUS>
+  <CONTEXTNAME>NCIP</CONTEXTNAME>
+  <CONTEXTVERSION>1</CONTEXTVERSION>
+  <ORIGIN>DICOM:Digital Imaging and Communications in Medicine</ORIGIN>
+  <REGISTRATIONSTATUS NULL="TRUE"/>
+  <DATAELEMENTCONCEPT>
+    <PublicId>2639970</PublicId>
+    <PreferredName>2423453v1.0:2639968v1.0</PreferredName>
+    <PreferredDefinition>The peak accelerating voltage applied in an X-ray tube between the cathode and anodeof an imaging event whether physical or electronic.</PreferredDefinition>
+    <LongName>Image X-Ray Tube Current</LongName>
+    <Version>1</Version>
+    <WorkflowStatus>RELEASED</WorkflowStatus>
+    <ContextName>NCIP</ContextName>
+    <ContextVersion>1</ContextVersion>
+    <ConceptualDomain>
+      <PublicId>2233241</PublicId>
+      <ContextName>CIP</ContextName>
+      <ContextVersion>2.31</ContextVersion>
+      <PreferredName>MEDICAL IMAGING</PreferredName>
+      <Version>1</Version>
+      <LongName>Medical Imaging</LongName>
+    </ConceptualDomain>
+    <ObjectClass>
+      <PublicId>2423453</PublicId>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>C48179</PreferredName>
+      <Version>1</Version>
+      <LongName>Image</LongName>
+      <ConceptDetails>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C48179</PREFERRED_NAME>
+          <LONG_NAME>Image</LONG_NAME>
+          <CON_ID>2422618</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>Yes</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>0</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+      </ConceptDetails>
+    </ObjectClass>
+    <Property>
+      <PublicId>2639968</PublicId>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>C48435:C25471</PreferredName>
+      <Version>1</Version>
+      <LongName>X-Ray Tube Current</LongName>
+      <ConceptDetails>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C48435</PREFERRED_NAME>
+          <LONG_NAME>X-Ray Tube</LONG_NAME>
+          <CON_ID>2553614</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>No</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>1</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C25471</PREFERRED_NAME>
+          <LONG_NAME>Current</LONG_NAME>
+          <CON_ID>2202334</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>Yes</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>0</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+      </ConceptDetails>
+    </Property>
+    <ObjectClassQualifier NULL="TRUE"/>
+    <PropertyQualifier NULL="TRUE"/>
+    <Origin>DICOM:Digital Imaging and Communications in Medicine</Origin>
+  </DATAELEMENTCONCEPT>
+  <VALUEDOMAIN>
+    <PublicId>2903307</PublicId>
+    <PreferredName>12_BYTE_MILLIAMP_NUM</PreferredName>
+    <PreferredDefinition>12 byte milliamperes number.</PreferredDefinition>
+    <LongName>Integer::12 Byte Milli Ampere Number</LongName>
+    <Version>1</Version>
+    <WorkflowStatus>RELEASED</WorkflowStatus>
+    <ContextName>NCIP</ContextName>
+    <ContextVersion>1</ContextVersion>
+    <ConceptualDomain>
+      <PublicId>2233241</PublicId>
+      <ContextName>CIP</ContextName>
+      <ContextVersion>2.31</ContextVersion>
+      <PreferredName>MEDICAL IMAGING</PreferredName>
+      <Version>1</Version>
+      <LongName>Medical Imaging</LongName>
+    </ConceptualDomain>
+    <Datatype>java.lang.Byte</Datatype>
+    <ValueDomainType>NonEnumerated</ValueDomainType>
+    <UnitOfMeasure NULL="TRUE"/>
+    <DisplayFormat NULL="TRUE"/>
+    <MaximumLength>12</MaximumLength>
+    <MinimumLength NULL="TRUE"/>
+    <DecimalPlace>0</DecimalPlace>
+    <CharacterSetName NULL="TRUE"/>
+    <MaximumValue NULL="TRUE"/>
+    <MinimumValue NULL="TRUE"/>
+    <Origin>DICOM:Digital Imaging and Communications in Medicine</Origin>
+    <Representation>
+      <PublicId>2903309</PublicId>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>C48437:C42536:C45255::12:C4804</PreferredName>
+      <Version>1</Version>
+      <LongName>Milli Ampere Integer::12 Byte Number</LongName>
+      <ConceptDetails>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C48437</PREFERRED_NAME>
+          <LONG_NAME>Milli</LONG_NAME>
+          <CON_ID>2903308</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>No</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>4</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C42536</PREFERRED_NAME>
+          <LONG_NAME>Ampere</LONG_NAME>
+          <CON_ID>2553615</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>No</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>3</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C45255</PREFERRED_NAME>
+          <LONG_NAME>Integer</LONG_NAME>
+          <CON_ID>2433736</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>No</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>2</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C48047</PREFERRED_NAME>
+          <LONG_NAME>Byte</LONG_NAME>
+          <CON_ID>2556188</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>No</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>1</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C25337</PREFERRED_NAME>
+          <LONG_NAME>Number</LONG_NAME>
+          <CON_ID>2202701</CON_ID>
+          <DEFINITION_SOURCE>NCI </DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>Yes</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>0</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+      </ConceptDetails>
+    </Representation>
+    <PermissibleValues/>
+    <ValueDomainConcepts/>
+  </VALUEDOMAIN>
+  <REFERENCEDOCUMENTSLIST>
+    <REFERENCEDOCUMENTSLIST_ITEM>
+      <Name>X-ray Tube Current</Name>
+      <OrganizationName NULL="TRUE"/>
+      <DocumentType>Preferred Question Text</DocumentType>
+      <DocumentText>X-ray Tube Current</DocumentText>
+      <URL NULL="TRUE"/>
+      <Language>ENGLISH</Language>
+      <DisplayOrder NULL="TRUE"/>
+    </REFERENCEDOCUMENTSLIST_ITEM>
+  </REFERENCEDOCUMENTSLIST>
+  <CLASSIFICATIONSLIST>
+    <CLASSIFICATIONSLIST_ITEM>
+      <ClassificationScheme>
+        <PublicId>2183535</PublicId>
+        <ContextName>NCIP</ContextName>
+        <ContextVersion>1</ContextVersion>
+        <PreferredName>Clinical Trial Mgmt Systems</PreferredName>
+        <Version>1</Version>
+      </ClassificationScheme>
+      <ClassificationSchemeItemName>CTMS C3D Adopter Sites</ClassificationSchemeItemName>
+      <ClassificationSchemeItemType>GROUP_TYPE</ClassificationSchemeItemType>
+      <CsiPublicId>2812625</CsiPublicId>
+      <CsiVersion>1</CsiVersion>
+    </CLASSIFICATIONSLIST_ITEM>
+    <CLASSIFICATIONSLIST_ITEM>
+      <ClassificationScheme>
+        <PublicId>2614826</PublicId>
+        <ContextName>NCIP</ContextName>
+        <ContextVersion>1</ContextVersion>
+        <PreferredName>DICOM</PreferredName>
+        <Version>1</Version>
+      </ClassificationScheme>
+      <ClassificationSchemeItemName>DICOM Tag CDEs</ClassificationSchemeItemName>
+      <ClassificationSchemeItemType>CATEGORY_TYPE</ClassificationSchemeItemType>
+      <CsiPublicId>2812790</CsiPublicId>
+      <CsiVersion>1</CsiVersion>
+    </CLASSIFICATIONSLIST_ITEM>
+    <CLASSIFICATIONSLIST_ITEM>
+      <ClassificationScheme>
+        <PublicId>2693115</PublicId>
+        <ContextName>NCIP</ContextName>
+        <ContextVersion>1</ContextVersion>
+        <PreferredName>NCIA_Model</PreferredName>
+        <Version>3</Version>
+      </ClassificationScheme>
+      <ClassificationSchemeItemName>Silver Review Modified CDEs</ClassificationSchemeItemName>
+      <ClassificationSchemeItemType>GROUP_TYPE</ClassificationSchemeItemType>
+      <CsiPublicId>2838921</CsiPublicId>
+      <CsiVersion>1</CsiVersion>
+    </CLASSIFICATIONSLIST_ITEM>
+    <CLASSIFICATIONSLIST_ITEM>
+      <ClassificationScheme>
+        <PublicId>2944977</PublicId>
+        <ContextName>NCIP</ContextName>
+        <ContextVersion>1</ContextVersion>
+        <PreferredName>NBIA</PreferredName>
+        <Version>5</Version>
+      </ClassificationScheme>
+      <ClassificationSchemeItemName>gov.nih.nci.ncia.domain</ClassificationSchemeItemName>
+      <ClassificationSchemeItemType>UML_PACKAGE_NAME</ClassificationSchemeItemType>
+      <CsiPublicId>2812527</CsiPublicId>
+      <CsiVersion>1</CsiVersion>
+    </CLASSIFICATIONSLIST_ITEM>
+    <CLASSIFICATIONSLIST_ITEM>
+      <ClassificationScheme>
+        <PublicId>2183535</PublicId>
+        <ContextName>NCIP</ContextName>
+        <ContextVersion>1</ContextVersion>
+        <PreferredName>Clinical Trial Mgmt Systems</PreferredName>
+        <Version>1</Version>
+      </ClassificationScheme>
+      <ClassificationSchemeItemName>Johns Hopkins</ClassificationSchemeItemName>
+      <ClassificationSchemeItemType>GROUP_TYPE</ClassificationSchemeItemType>
+      <CsiPublicId>2964473</CsiPublicId>
+      <CsiVersion>1</CsiVersion>
+    </CLASSIFICATIONSLIST_ITEM>
+    <CLASSIFICATIONSLIST_ITEM>
+      <ClassificationScheme>
+        <PublicId>2183535</PublicId>
+        <ContextName>NCIP</ContextName>
+        <ContextVersion>1</ContextVersion>
+        <PreferredName>Clinical Trial Mgmt Systems</PreferredName>
+        <Version>1</Version>
+      </ClassificationScheme>
+      <ClassificationSchemeItemName>JH FLT Lung</ClassificationSchemeItemName>
+      <ClassificationSchemeItemType>GROUP_TYPE</ClassificationSchemeItemType>
+      <CsiPublicId>2983392</CsiPublicId>
+      <CsiVersion>1</CsiVersion>
+    </CLASSIFICATIONSLIST_ITEM>
+    <CLASSIFICATIONSLIST_ITEM>
+      <ClassificationScheme>
+        <PublicId>2182125</PublicId>
+        <ContextName>CCR</ContextName>
+        <ContextVersion>1</ContextVersion>
+        <PreferredName>CCR Implementation</PreferredName>
+        <Version>1</Version>
+      </ClassificationScheme>
+      <ClassificationSchemeItemName>C3D</ClassificationSchemeItemName>
+      <ClassificationSchemeItemType>USAGE_TYPE</ClassificationSchemeItemType>
+      <CsiPublicId>2811673</CsiPublicId>
+      <CsiVersion>1</CsiVersion>
+    </CLASSIFICATIONSLIST_ITEM>
+    <CLASSIFICATIONSLIST_ITEM>
+      <ClassificationScheme>
+        <PublicId>2008601</PublicId>
+        <ContextName>CCR</ContextName>
+        <ContextVersion>1</ContextVersion>
+        <PreferredName>C3D Domain</PreferredName>
+        <Version>1</Version>
+      </ClassificationScheme>
+      <ClassificationSchemeItemName>caBIG</ClassificationSchemeItemName>
+      <ClassificationSchemeItemType>USAGE_TYPE</ClassificationSchemeItemType>
+      <CsiPublicId>2812367</CsiPublicId>
+      <CsiVersion>1</CsiVersion>
+    </CLASSIFICATIONSLIST_ITEM>
+  </CLASSIFICATIONSLIST>
+  <ALTERNATENAMELIST>
+    <ALTERNATENAMELIST_ITEM>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <AlternateName>IMAG_XR_CURR_AMP_NUM</AlternateName>
+      <AlternateNameType>C3D Name</AlternateNameType>
+      <Language>ENGLISH</Language>
+    </ALTERNATENAMELIST_ITEM>
+    <ALTERNATENAMELIST_ITEM>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <AlternateName>(0018,1151)</AlternateName>
+      <AlternateNameType>DICOM Attribute Name</AlternateNameType>
+      <Language>ENGLISH</Language>
+    </ALTERNATENAMELIST_ITEM>
+    <ALTERNATENAMELIST_ITEM>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <AlternateName>X-ray Tube Current</AlternateName>
+      <AlternateNameType>DICOM Attribute Name</AlternateNameType>
+      <Language>ENGLISH</Language>
+    </ALTERNATENAMELIST_ITEM>
+    <ALTERNATENAMELIST_ITEM>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <AlternateName>gov.nih.nci.ncia.domain.Image.xrayTubeCurrent</AlternateName>
+      <AlternateNameType>UML Qualified Attr</AlternateNameType>
+      <Language>ENGLISH</Language>
+    </ALTERNATENAMELIST_ITEM>
+    <ALTERNATENAMELIST_ITEM>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <AlternateName>Image:xrayTubeCurrent</AlternateName>
+      <AlternateNameType>UML Class:UML Attr</AlternateNameType>
+      <Language>ENGLISH</Language>
+    </ALTERNATENAMELIST_ITEM>
+  </ALTERNATENAMELIST>
+  <DATAELEMENTDERIVATION>
+    <DerivationType NULL="TRUE"/>
+    <DerivationTypeDescription NULL="TRUE"/>
+    <Methods NULL="TRUE"/>
+    <Rule NULL="TRUE"/>
+    <ConcatenationCharacter NULL="TRUE"/>
+    <ComponentDataElementsList NULL="TRUE"/>
+  </DATAELEMENTDERIVATION>
+</DataElement>

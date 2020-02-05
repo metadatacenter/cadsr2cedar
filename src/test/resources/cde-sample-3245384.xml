@@ -1,0 +1,214 @@
+<DataElement num="42553">
+  <PUBLICID>3245384</PUBLICID>
+  <LONGNAME>Orthodontist Model Use Use Frequency</LONGNAME>
+  <PREFERREDNAME>3245383v1.0:3244807v1.0</PREFERREDNAME>
+  <PREFERREDDEFINITION>A dentist specializing in the prevention, diagnosis, and treatment of malocclusions of the teeth and their surrounding structures._A style or design of an item._Use; put into service; make work or employ (something) for a particular purpose or for its inherent or natural purpose._Use; put into service; make work or employ (something) for a particular purpose or for its inherent or natural purpose._The number of occurrences of something within a given time period. (NCI)</PREFERREDDEFINITION>
+  <VERSION>1</VERSION>
+  <WORKFLOWSTATUS>RELEASED</WORKFLOWSTATUS>
+  <CONTEXTNAME>NIDCR</CONTEXTNAME>
+  <CONTEXTVERSION>1</CONTEXTVERSION>
+  <ORIGIN NULL="TRUE"/>
+  <REGISTRATIONSTATUS NULL="TRUE"/>
+  <DATAELEMENTCONCEPT>
+    <PublicId>3245383</PublicId>
+    <PreferredName>3243774v1.0:3245381v1.0</PreferredName>
+    <PreferredDefinition>A dentist specializing in the prevention, diagnosis, and treatment of malocclusions of the teeth and their surrounding structures._A style or design of an item._Use; put into service; make work or employ (something) for a particular purpose or for its inherent or natural purpose.</PreferredDefinition>
+    <LongName>Orthodontist Model Use</LongName>
+    <Version>1</Version>
+    <WorkflowStatus>RELEASED</WorkflowStatus>
+    <ContextName>NIDCR</ContextName>
+    <ContextVersion>1</ContextVersion>
+    <ConceptualDomain>
+      <PublicId>2008551</PublicId>
+      <ContextName>CTEP</ContextName>
+      <ContextVersion>2.31</ContextVersion>
+      <PreferredName>ASSESS</PreferredName>
+      <Version>1</Version>
+      <LongName>Assessments</LongName>
+    </ConceptualDomain>
+    <ObjectClass>
+      <PublicId>3243774</PublicId>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>C63737</PreferredName>
+      <Version>1</Version>
+      <LongName>Orthodontist</LongName>
+      <ConceptDetails>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C63737</PREFERRED_NAME>
+          <LONG_NAME>Orthodontist</LONG_NAME>
+          <CON_ID>2547885</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>Yes</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>0</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+      </ConceptDetails>
+    </ObjectClass>
+    <Property>
+      <PublicId>3245381</PublicId>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>C43383:C25340</PreferredName>
+      <Version>1</Version>
+      <LongName>Model Use</LongName>
+      <ConceptDetails>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C43383</PREFERRED_NAME>
+          <LONG_NAME>Model</LONG_NAME>
+          <CON_ID>2236572</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>No</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>1</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C25340</PREFERRED_NAME>
+          <LONG_NAME>Use</LONG_NAME>
+          <CON_ID>2203973</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>Yes</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>0</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+      </ConceptDetails>
+    </Property>
+    <ObjectClassQualifier NULL="TRUE"/>
+    <PropertyQualifier NULL="TRUE"/>
+    <Origin NULL="TRUE"/>
+  </DATAELEMENTCONCEPT>
+  <VALUEDOMAIN>
+    <PublicId>3244807</PublicId>
+    <PreferredName>3244807v1.0</PreferredName>
+    <PreferredDefinition>Use; put into service; make work or employ (something) for a particular purpose or for its inherent or natural purpose._The number of occurrences of something within a given time period. (NCI)</PreferredDefinition>
+    <LongName>Dental Therapy Use Frequency</LongName>
+    <Version>1</Version>
+    <WorkflowStatus>RELEASED</WorkflowStatus>
+    <ContextName>NIDCR</ContextName>
+    <ContextVersion>1</ContextVersion>
+    <ConceptualDomain>
+      <PublicId>2008556</PublicId>
+      <ContextName>CTEP</ContextName>
+      <ContextVersion>2.31</ContextVersion>
+      <PreferredName>ASSESS_RESULTS</PreferredName>
+      <Version>1</Version>
+      <LongName>Assessment Results</LongName>
+    </ConceptualDomain>
+    <Datatype>ALPHANUMERIC</Datatype>
+    <ValueDomainType>Enumerated</ValueDomainType>
+    <UnitOfMeasure NULL="TRUE"/>
+    <DisplayFormat NULL="TRUE"/>
+    <MaximumLength NULL="TRUE"/>
+    <MinimumLength NULL="TRUE"/>
+    <DecimalPlace NULL="TRUE"/>
+    <CharacterSetName NULL="TRUE"/>
+    <MaximumValue NULL="TRUE"/>
+    <MinimumValue NULL="TRUE"/>
+    <Origin NULL="TRUE"/>
+    <Representation>
+      <PublicId>3244806</PublicId>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>C25340:C25515</PreferredName>
+      <Version>1</Version>
+      <LongName>Use Frequency</LongName>
+      <ConceptDetails>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C25340</PREFERRED_NAME>
+          <LONG_NAME>Use</LONG_NAME>
+          <CON_ID>2203973</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>No</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>1</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C25515</PREFERRED_NAME>
+          <LONG_NAME>Temporal Frequency</LONG_NAME>
+          <CON_ID>2202418</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>Yes</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>0</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+      </ConceptDetails>
+    </Representation>
+    <PermissibleValues>
+      <PermissibleValues_ITEM>
+        <VALIDVALUE>Never</VALIDVALUE>
+        <VALUEMEANING>Never</VALUEMEANING>
+        <MEANINGDESCRIPTION>Not ever; at no time in the past (or future).</MEANINGDESCRIPTION>
+        <MEANINGCONCEPTS>C70543</MEANINGCONCEPTS>
+        <MEANINGCONCEPTORIGIN>NCI Thesaurus</MEANINGCONCEPTORIGIN>
+        <MEANINGCONCEPTDISPLAYORDER>0</MEANINGCONCEPTDISPLAYORDER>
+        <PVBEGINDATE>2011-06-15</PVBEGINDATE>
+        <PVENDDATE NULL="TRUE"/>
+        <VMPUBLICID>3025032</VMPUBLICID>
+        <VMVERSION>1</VMVERSION>
+      </PermissibleValues_ITEM>
+      <PermissibleValues_ITEM>
+        <VALIDVALUE>Occasionally</VALIDVALUE>
+        <VALUEMEANING>OCCASIONALLY</VALUEMEANING>
+        <MEANINGDESCRIPTION>OCCASIONALLY</MEANINGDESCRIPTION>
+        <MEANINGCONCEPTS NULL="TRUE"/>
+        <MEANINGCONCEPTORIGIN NULL="TRUE"/>
+        <MEANINGCONCEPTDISPLAYORDER NULL="TRUE"/>
+        <PVBEGINDATE>2011-06-15</PVBEGINDATE>
+        <PVENDDATE NULL="TRUE"/>
+        <VMPUBLICID>2561574</VMPUBLICID>
+        <VMVERSION>1</VMVERSION>
+      </PermissibleValues_ITEM>
+      <PermissibleValues_ITEM>
+        <VALIDVALUE>Frequently</VALIDVALUE>
+        <VALUEMEANING>Frequently</VALUEMEANING>
+        <MEANINGDESCRIPTION>Frequently</MEANINGDESCRIPTION>
+        <MEANINGCONCEPTS NULL="TRUE"/>
+        <MEANINGCONCEPTORIGIN NULL="TRUE"/>
+        <MEANINGCONCEPTDISPLAYORDER NULL="TRUE"/>
+        <PVBEGINDATE>2011-06-15</PVBEGINDATE>
+        <PVENDDATE NULL="TRUE"/>
+        <VMPUBLICID>2577923</VMPUBLICID>
+        <VMVERSION>1</VMVERSION>
+      </PermissibleValues_ITEM>
+      <PermissibleValues_ITEM>
+        <VALIDVALUE>Always</VALIDVALUE>
+        <VALUEMEANING>Always</VALUEMEANING>
+        <MEANINGDESCRIPTION>At all times; on every occasion.</MEANINGDESCRIPTION>
+        <MEANINGCONCEPTS>C70670</MEANINGCONCEPTS>
+        <MEANINGCONCEPTORIGIN>NCI Thesaurus</MEANINGCONCEPTORIGIN>
+        <MEANINGCONCEPTDISPLAYORDER>0</MEANINGCONCEPTDISPLAYORDER>
+        <PVBEGINDATE>2011-06-15</PVBEGINDATE>
+        <PVENDDATE NULL="TRUE"/>
+        <VMPUBLICID>2581797</VMPUBLICID>
+        <VMVERSION>1</VMVERSION>
+      </PermissibleValues_ITEM>
+    </PermissibleValues>
+    <ValueDomainConcepts/>
+  </VALUEDOMAIN>
+  <REFERENCEDOCUMENTSLIST>
+    <REFERENCEDOCUMENTSLIST_ITEM>
+      <Name>What diagnosis guidance do yo</Name>
+      <OrganizationName NULL="TRUE"/>
+      <DocumentType>Preferred Question Text</DocumentType>
+      <DocumentText>What diagnosis guidance do you use or request for placement of the miniscrew TAD? Models</DocumentText>
+      <URL NULL="TRUE"/>
+      <Language>ENGLISH</Language>
+      <DisplayOrder NULL="TRUE"/>
+    </REFERENCEDOCUMENTSLIST_ITEM>
+  </REFERENCEDOCUMENTSLIST>
+  <CLASSIFICATIONSLIST/>
+  <ALTERNATENAMELIST/>
+  <DATAELEMENTDERIVATION>
+    <DerivationType NULL="TRUE"/>
+    <DerivationTypeDescription NULL="TRUE"/>
+    <Methods NULL="TRUE"/>
+    <Rule NULL="TRUE"/>
+    <ConcatenationCharacter NULL="TRUE"/>
+    <ComponentDataElementsList NULL="TRUE"/>
+  </DATAELEMENTDERIVATION>
+</DataElement>
