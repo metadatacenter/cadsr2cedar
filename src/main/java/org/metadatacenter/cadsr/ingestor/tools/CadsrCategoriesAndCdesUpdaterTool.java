@@ -81,6 +81,7 @@ public class CadsrCategoriesAndCdesUpdaterTool {
         CategoryUtil.deleteAllNciCadsrCategories(settings.getCedarEnvironment(), settings.getCadsrAdminApikey());
       }
 
+      String categoriesFilePath = null;
       if (settings.getUpdateCategories()) {
         CategoryStats.resetStats();
 
@@ -97,10 +98,12 @@ public class CadsrCategoriesAndCdesUpdaterTool {
 
         if (settings.getCategoriesFilePath() != null) { // Read categories from file
           UnzipUtility.unzip(settings.getCategoriesFilePath(), unzippedCategoriesFolder);
+          categoriesFilePath = settings.getCategoriesFilePath();
         } else { // Download most recent categories from the NCI FTP servers
           logger.info("Downloading most recent categories");
           File categoriesZipFile = FtpUtil.downloadMostRecentFile(settings.getFtpHost(), settings.getFtpUser(),
               settings.getFtpPassword(), settings.getFtpCategoriesFolder(), categoriesOutputFolder);
+          categoriesFilePath = categoriesZipFile.getAbsolutePath();
           UnzipUtility.unzip(categoriesZipFile.getAbsolutePath(), unzippedCategoriesFolder);
         }
 
@@ -116,6 +119,7 @@ public class CadsrCategoriesAndCdesUpdaterTool {
       String ontologyFilePath = null;
       List<DataElement> newDataElements = null;
       Map<String, CdeSummary> existingCdesMap = null;
+      String cdesFilePath = null;
       if (settings.getUpdateCdes()) {
 
         /*** UPDATE CDEs and CDE-Category relations ***/
@@ -130,11 +134,13 @@ public class CadsrCategoriesAndCdesUpdaterTool {
         String unzippedCdesFolder = cdesOutputFolder + "/" + Constants.UNZIPPED_FOLDER;
 
         if (settings.getCdesFilePath() != null) {
+          cdesFilePath = settings.getCdesFilePath();
           UnzipUtility.unzip(settings.getCdesFilePath(), unzippedCdesFolder);
         } else { // read CDEs from file
           logger.info("Downloading most recent CDEs");
           File cdesZipFile = FtpUtil.downloadMostRecentFile(settings.getFtpHost(), settings.getFtpUser(),
               settings.getFtpPassword(), settings.getFtpCdesFolder(), cdesOutputFolder);
+          cdesFilePath = cdesZipFile.getAbsolutePath();
           UnzipUtility.unzip(cdesZipFile.getAbsolutePath(), unzippedCdesFolder);
         }
 
@@ -177,7 +183,7 @@ public class CadsrCategoriesAndCdesUpdaterTool {
       }
 
       printSummary(stopwatch, startTime, settings.getUpdateCategories() || settings.getDeleteCategories(),
-          settings.getUpdateCdes(), ontologyFilePath);
+          settings.getUpdateCdes(), categoriesFilePath, cdesFilePath,  ontologyFilePath);
 
     } catch (IOException | JAXBException e) {
       logger.error("Error: " + e.getMessage());
@@ -328,7 +334,7 @@ public class CadsrCategoriesAndCdesUpdaterTool {
   }
 
   private static void printSummary(Stopwatch stopwatch, LocalDateTime startTime, boolean showCategoriesSummary,
-                                   boolean showCdesSummary, String ontologyFilePath) {
+                                   boolean showCdesSummary, String categoriesFilePath, String cdesFilePath, String ontologyFilePath) {
     final DecimalFormat countFormat = new DecimalFormat("#,###,###,###");
     long elapsedTimeInSeconds = stopwatch.elapsed(TimeUnit.SECONDS);
     long hours = elapsedTimeInSeconds / 3600;
@@ -343,6 +349,7 @@ public class CadsrCategoriesAndCdesUpdaterTool {
 
     if (showCategoriesSummary) {
       logger.info("#  caDSR CATEGORIES SUMMARY:");
+      logger.info("#    - Categories source file path: " + categoriesFilePath);
       logger.info("#    - Number of categories read from the XML file: " + countFormat.format(CategoryStats.getInstance().numberOfInputCategories));
       logger.info("#    - Number of categories in CEDAR: " + countFormat.format(CategoryStats.getInstance().numberOfExistingCategories));
       logger.info("#    - Number of categories to be CREATED: " + countFormat.format(CategoryStats.getInstance().numberOfCategoriesToBeCreated));
@@ -361,6 +368,7 @@ public class CadsrCategoriesAndCdesUpdaterTool {
     }
     if (showCdesSummary) {
       logger.info("#  CDEs SUMMARY:");
+      logger.info("#    - CDEs source file path: " + cdesFilePath);
       logger.info("#    - Number of CDEs read from the XML files: " + countFormat.format(CdeStats.getInstance().numberOfInputCdes));
       logger.info("#    - Number of CDEs in CEDAR: " + countFormat.format(CdeStats.getInstance().numberOfExistingCdes));
       logger.info("#    - Number of CDEs successfully transformed to CEDAR fields: "
