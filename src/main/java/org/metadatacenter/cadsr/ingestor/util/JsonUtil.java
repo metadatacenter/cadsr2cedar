@@ -1,11 +1,14 @@
 package org.metadatacenter.cadsr.ingestor.util;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class JsonUtil {
 
@@ -18,6 +21,12 @@ public class JsonUtil {
     } else {
       throw new RuntimeException("Json field not found in object: " + fieldName);
     }
+  }
+
+  public static Map<String, Object> readJsonAsMap(String json) throws IOException {
+    TypeReference<HashMap<String, Object>> typeRef
+        = new TypeReference<HashMap<String, Object>>() {};
+    return objectMapper.readValue(json, typeRef);
   }
 
   public static JsonNode extractJsonFieldValueAsNode(String json, String fieldName) throws IOException {

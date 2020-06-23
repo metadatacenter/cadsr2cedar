@@ -294,6 +294,19 @@ public class CadsrCategoriesAndCdesUpdaterTool {
             // generated in the caDSR XML. Different XMLs shouldn't contain different CDEs with the same public id
             // and version
             logger.warn("The CDE has changed, but its public Id and Version were not updated in the XML: " + newCdeUniqueId);
+            //--------
+//            String cdeCedarId = existingCdesMap.get(newCdeUniqueId).getCedarId();
+//            Map<String, Object> existingCedarCdeFieldMap = CedarServices.getCdeById(cdeCedarId, cedarEnvironment, apiKey);
+//            for (String existingKey : existingCedarCdeFieldMap.keySet()) {
+//              if (!newCdeFieldMap.containsKey(existingKey)) {
+//                logger.info("Missing field in new CDE: " + existingKey);
+//              }
+//              else {
+//                Object existingValue = existingCedarCdeFieldMap.get(existingKey);
+//                Object newValue = newCdeFieldMap.get(existingKey);
+//              }
+//            }
+            //--------
             CdeStats.getInstance().numberOfCdesChangedButVersionNotUpdated++;
           }
         } else {

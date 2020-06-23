@@ -2,10 +2,18 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
+  <parent>
+    <groupId>org.metadatacenter</groupId>
+    <artifactId>cedar-parent</artifactId>
+    <version>2.4.12-SNAPSHOT</version>
+  </parent>
+
   <groupId>org.metadatacenter</groupId>
   <artifactId>cedar-cadsr-tools</artifactId>
   <version>2.4.12-SNAPSHOT</version>
-  <name>Project that generates CEDAR template fields from caDSR XML-encoded DataElement instances</name>
+  <packaging>jar</packaging>
+
+  <name>CEDAR caDSR Tools</name>
 
   <scm>
     <connection>scm:git:git@github.com:metadatacenter/cedar-cadsr-tools.git</connection>
@@ -17,12 +25,10 @@
     <dependency>
       <groupId>org.metadatacenter</groupId>
       <artifactId>cedar-server-globals</artifactId>
-      <version>2.4.12-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>org.metadatacenter</groupId>
       <artifactId>cedar-server-utils-core</artifactId>
-      <version>2.4.12-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>com.google.guava</groupId>

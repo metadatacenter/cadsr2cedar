@@ -17,6 +17,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.io.OutputStream;
+import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.util.*;
 
@@ -96,9 +97,23 @@ public class CedarServices {
     return cdeSummaries;
   }
 
+  public static Map<String, Object> getCdeById(String fieldId, CedarEnvironment environment, String apiKey) throws IOException {
+    String fieldEndpoint = CedarServerUtil.getTemplateFieldEndPoint(fieldId, environment);
+    HttpURLConnection connection = ConnectionUtil.createAndOpenConnection("GET", fieldEndpoint, apiKey);
+    int responseCode = connection.getResponseCode();
+    if (responseCode == HttpURLConnection.HTTP_OK) {
+      String response = ConnectionUtil.readResponseMessage(connection.getInputStream());
+      connection.disconnect();
+      return JsonUtil.readJsonAsMap(response);
+    } else {
+      logger.error("Error retrieving CDE");
+      throw new InternalError("Error retrieving CDE");
+    }
+  }
+
   public static void deleteField(String fieldId, CedarEnvironment environment, String apiKey) throws IOException {
-    String endpointDelete = CedarServerUtil.getTemplateFieldEndPoint(fieldId, environment);
-    HttpURLConnection connection = ConnectionUtil.createAndOpenConnection("DELETE", endpointDelete, apiKey);
+    String fieldEndpoint = CedarServerUtil.getTemplateFieldEndPoint(fieldId, environment);
+    HttpURLConnection connection = ConnectionUtil.createAndOpenConnection("DELETE", fieldEndpoint, apiKey);
     int responseCode = connection.getResponseCode();
     if (responseCode != HttpURLConnection.HTTP_NO_CONTENT) {
       String message = "Error deleting field: " + ConnectionUtil.readResponseMessage(connection.getInputStream());

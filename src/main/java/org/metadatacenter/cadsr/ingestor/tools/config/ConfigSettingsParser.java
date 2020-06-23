@@ -25,7 +25,7 @@ public class ConfigSettingsParser {
     options.addOption( "x", "cadsr-exec-folder", true, "Path to a local folder with temporal files used during execution. The folder will be removed after execution");
     options.addOption( "t", "update-categories", false, "Update CEDAR categories");
     options.addOption( "c", "update-cdes", false, "Update CEDAR CDEs and attach them to the corresponding CEDAR categories");
-    options.addOption( "d", "delete-categories", false, "Delete existing CEDAR categories");
+    options.addOption( "d", "delete-categories", false, "Delete existing CEDAR caDSR categories (excluding its root)");
     options.addOption( "o", "ontology-folder", true, "Path to the folder the CADSR-VS ontology will be saved in");
 
     options.addOption( "h", "ftp-host", true, "caDSR FTP host");
