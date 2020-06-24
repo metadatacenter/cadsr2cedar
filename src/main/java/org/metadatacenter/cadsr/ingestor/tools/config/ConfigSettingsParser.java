@@ -138,7 +138,7 @@ public class ConfigSettingsParser {
 //      }
       logger.info("Please, follow the instructions below:");
       HelpFormatter formatter = new HelpFormatter();
-      formatter.printHelp( "mvn exec:java@cadsr-updater -Dexec.args=\"[options]\"\nOptions:", options);
+      formatter.printHelp( "mvn exec:java@cedar-cadsr-updater -Dexec.args=\"[options]\"\nOptions:", options);
       System.exit(1);
     }
 

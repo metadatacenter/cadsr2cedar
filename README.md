@@ -1,11 +1,14 @@
-caDSR to CEDAR Converter
-========================
+CEDAR caDSR Tools
+=================
 
-This project contains several command-line tools to:
-- Transform XML-encoded [caDSR](https://wiki.nci.nih.gov/display/caDSR/caDSR+Wiki) [11179-based](http://metadata-standards.org/11179/) common data elements (CDEs) to CEDAR CDE fields.
-- Transform XML-encoded caDSR contexts, classification schemes, and classification scheme items to a tree of CEDAR categories.
-- Upload a CEDAR category tree to the CEDAR system.
-- Upload CEDAR CDE fields to the CEDAR system and, optionally, attach the uploaded CDEs to their corresponding categories in the category tree.
+This project contains command-line tools to perform the following actions:
+- Download XML-encoded [caDSR](https://wiki.nci.nih.gov/display/caDSR/caDSR+Wiki) [11179-based](http://metadata-standards.org/11179/) common data elements (CDEs) from NCI's caDSR FTP servers.
+- Download XML-encoded caDSR contexts, classification schemes, and classification scheme items from NCI's caDSR FTP servers.
+- Transform CDEs to CEDAR CDE fields.
+- Transform caDSR contexts, classification schemes, and classification scheme items to CEDAR categories.
+- Upload CEDAR CDE fields to the CEDAR system.
+- Upload CEDAR categories to the CEDAR system.
+- Attach CEDAR CDE fields to CEDAR caDSR categories.
 
 ### Common Data Elements
 
@@ -49,11 +52,39 @@ Then build it with Maven:
 
     mvn clean install
 
-## 1. Transform XML caDSR classifications to a JSON category tree
+## Usage:
 
-    mvn exec:java@transform-categories -Dexec.args="/path/to/input /path/to/output"
+    mvn exec:java@cedar-cadsr-updater -Dexec.args="[options]"
 
-where:
+where the available options are:
+
+usage: mvn exec:java@cadsr-updater -Dexec.args="[options]"
+Options:
+ -c,--update-cdes                   Update CEDAR CDEs and attach them to
+                                    the corresponding CEDAR categories
+ -d,--delete-categories             Delete existing CEDAR caDSR categories
+                                    (excluding its root)
+ -e,--ftp-cdes-folder <arg>         caDSR FTP CDEs working directory
+ -E,--cdes-file <arg>               caDSR XML CDEs .zip file path
+ -f,--folder <arg>                  [REQUIRED] Identifier of the CEDAR
+                                    folder where the CDEs will be stored
+ -g,--ftp-categories-folder <arg>   caDSR FTP categories working directory
+ -G,--categories-file <arg>         caDSR XML Categories .zip file path
+ -h,--ftp-host <arg>                caDSR FTP host
+ -k,--apikey <arg>                  [REQUIRED] API key of CEDAR's caDSR
+                                    Admin user
+ -o,--ontology-folder <arg>         Path to the folder the CADSR-VS
+                                    ontology will be saved in
+ -p,--ftp-password <arg>            caDSR FTP password
+ -s,--server <arg>                  [REQUIRED] Target CEDAR server.
+                                    Possible values: local, staging,
+                                    production
+ -t,--update-categories             Update CEDAR categories
+ -u,--ftp-user <arg>                caDSR FTP user name
+ -x,--cadsr-exec-folder <arg>       Path to a local folder with temporal
+                                    files used during execution. The
+                                    folder will be removed after execution
+
 - `/path/to/input` is the input caDSR categories file. The categories file used can be found in the folder [src/main/resources/files-used/categories](https://github.com/metadatacenter/cedar-cadsr-tools/tree/develop/src/main/resources/files-used/categories).
 - `/path/to/output` is the directory location to store the category tree generated.
 
