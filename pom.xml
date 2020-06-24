@@ -33,62 +33,50 @@
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
-      <version>23.0-rc1</version>
     </dependency>
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-databind</artifactId>
-      <version>2.9.10.1</version>
     </dependency>
     <dependency>
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-classic</artifactId>
-      <version>1.2.3</version>
     </dependency>
     <dependency>
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-core</artifactId>
-      <version>1.2.3</version>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.12</version>
     </dependency>
     <dependency>
       <groupId>org.hamcrest</groupId>
       <artifactId>hamcrest-all</artifactId>
-      <version>1.3</version>
     </dependency>
     <dependency>
       <groupId>com.google.code.findbugs</groupId>
       <artifactId>jsr305</artifactId>
-      <version>3.0.1</version>
     </dependency>
     <dependency>
       <groupId>net.sourceforge.owlapi</groupId>
       <artifactId>owlapi-distribution</artifactId>
-      <version>5.1.5</version>
     </dependency>
     <dependency>
       <groupId>org.glassfish.jaxb</groupId>
       <artifactId>jaxb-runtime</artifactId>
-      <version>2.3.2</version>
     </dependency>
     <dependency>
       <groupId>com.sun.activation</groupId>
       <artifactId>jakarta.activation</artifactId>
-      <version>1.2.1</version>
     </dependency>
     <dependency>
       <groupId>commons-net</groupId>
       <artifactId>commons-net</artifactId>
-      <version>3.6</version>
     </dependency>
     <dependency>
       <groupId>commons-cli</groupId>
       <artifactId>commons-cli</artifactId>
-      <version>1.4</version>
     </dependency>
   </dependencies>
 
@@ -97,7 +85,6 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.8.0</version>
         <configuration>
           <source>11</source>
           <target>11</target>
@@ -106,7 +93,6 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>exec-maven-plugin</artifactId>
-        <version>1.2.1</version>
         <executions>
           <execution>
             <id>cedar-cadsr-updater</id>
@@ -117,48 +103,11 @@
               <mainClass>org.metadatacenter.cadsr.ingestor.tools.CadsrCategoriesAndCdesUpdaterTool</mainClass>
             </configuration>
           </execution>
-<!--          <execution>-->
-<!--            <id>transform-categories</id>-->
-<!--            <goals>-->
-<!--              <goal>java</goal>-->
-<!--            </goals>-->
-<!--            <configuration>-->
-<!--              <mainClass>org.metadatacenter.cadsr.ingestor.tools.CadsrCategoriesTransformerTool_Deprecated</mainClass>-->
-<!--            </configuration>-->
-<!--          </execution>-->
-<!--          <execution>-->
-<!--            <id>upload-categories</id>-->
-<!--            <goals>-->
-<!--              <goal>java</goal>-->
-<!--            </goals>-->
-<!--            <configuration>-->
-<!--              <mainClass>org.metadatacenter.cadsr.ingestor.tools.CadsrCategoriesUploaderTool_Deprecated</mainClass>-->
-<!--            </configuration>-->
-<!--          </execution>-->
-<!--          <execution>-->
-<!--            <id>transform-cdes</id>-->
-<!--            <goals>-->
-<!--              <goal>java</goal>-->
-<!--            </goals>-->
-<!--            <configuration>-->
-<!--              <mainClass>org.metadatacenter.cadsr.ingestor.tools.CadsrTransformerTool_Deprecated</mainClass>-->
-<!--            </configuration>-->
-<!--          </execution>-->
-<!--          <execution>-->
-<!--            <id>upload-cdes</id>-->
-<!--            <goals>-->
-<!--              <goal>java</goal>-->
-<!--            </goals>-->
-<!--            <configuration>-->
-<!--              <mainClass>org.metadatacenter.cadsr.ingestor.tools.CadsrUploaderTool_Deprecated</mainClass>-->
-<!--            </configuration>-->
-<!--          </execution>-->
         </executions>
       </plugin>
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>jaxb2-maven-plugin</artifactId>
-        <version>2.5.0</version>
         <executions>
           <execution>
             <id>xjc-cde</id>
@@ -202,7 +151,6 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>build-helper-maven-plugin</artifactId>
-        <version>3.0.0</version>
         <executions>
           <execution>
             <id>test</id>
