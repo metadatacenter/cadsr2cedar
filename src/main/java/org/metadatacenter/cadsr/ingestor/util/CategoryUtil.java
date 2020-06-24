@@ -475,30 +475,33 @@ public class CategoryUtil {
                                                  Map<String, CdeSummary> existingCdesMap,
                                                  CedarEnvironment cedarEnvironment, String apiKey) throws IOException {
 
-    // Read the categoryIds from CEDAR to be able to link CDEs to them
-    Map<String, String> categoryUniqueIdsToCedarCategoryIds =
-        CedarServices.getCategoryUniqueIdsToCedarCategoryIdsMap(cedarEnvironment, apiKey);
-    Map<String, Set<String>> categoryCadsrIdsToCedarCategoryIds =
-        CategoryUtil.generateCategoryCadsrIdsToCedarCategoryIdsMap(categoryUniqueIdsToCedarCategoryIds);
+    if (newDataElements.size() > 0 && existingCdesMap.size() > 0) {
 
-    for (DataElement cde : newDataElements) {
-      String cdeId = CdeUtil.generateCdeUniqueId(cde);
-      List<String> expectedCategoryCedarIds = CategoryUtil.extractCategoryCedarIdsFromCdeField(cde,
-          categoryCadsrIdsToCedarCategoryIds);
-      if (existingCdesMap.containsKey(cdeId)) {
-        CdeSummary existingCdeSummary = existingCdesMap.get(cdeId);
-        List<String> existingCategoryCedarIds = existingCdeSummary.getCategoryCedarIds();
-        List<String> missingCdeToCategoryAttachments = new ArrayList<>();
-        for (String expectedCategoryCedarId : expectedCategoryCedarIds) {
-          if (!existingCategoryCedarIds.contains(expectedCategoryCedarId)) {
-            logger.info("Found missing CDE-Category relation. CDE Id: " + cdeId + "; Category CEDAR Id: " + expectedCategoryCedarId);
-            missingCdeToCategoryAttachments.add(expectedCategoryCedarId);
+      // Read the categoryIds from CEDAR to be able to link CDEs to them
+      Map<String, String> categoryUniqueIdsToCedarCategoryIds =
+          CedarServices.getCategoryUniqueIdsToCedarCategoryIdsMap(cedarEnvironment, apiKey);
+      Map<String, Set<String>> categoryCadsrIdsToCedarCategoryIds =
+          CategoryUtil.generateCategoryCadsrIdsToCedarCategoryIdsMap(categoryUniqueIdsToCedarCategoryIds);
+
+      for (DataElement cde : newDataElements) {
+        String cdeId = CdeUtil.generateCdeUniqueId(cde);
+        List<String> expectedCategoryCedarIds = CategoryUtil.extractCategoryCedarIdsFromCdeField(cde,
+            categoryCadsrIdsToCedarCategoryIds);
+        if (existingCdesMap.containsKey(cdeId)) {
+          CdeSummary existingCdeSummary = existingCdesMap.get(cdeId);
+          List<String> existingCategoryCedarIds = existingCdeSummary.getCategoryCedarIds();
+          List<String> missingCdeToCategoryAttachments = new ArrayList<>();
+          for (String expectedCategoryCedarId : expectedCategoryCedarIds) {
+            if (!existingCategoryCedarIds.contains(expectedCategoryCedarId)) {
+              logger.info("Found missing CDE-Category relation. CDE Id: " + cdeId + "; Category CEDAR Id: " + expectedCategoryCedarId);
+              missingCdeToCategoryAttachments.add(expectedCategoryCedarId);
+            }
           }
-        }
-        if (missingCdeToCategoryAttachments.size() > 0) {
-          CdeStats.getInstance().numberOfMissingCdeToCategoryRelations += missingCdeToCategoryAttachments.size();
-          CedarServices.attachCdeToCategories(existingCdeSummary.getCedarId(), missingCdeToCategoryAttachments, true,
-              CedarServerUtil.getAttachCategoriesEndpoint(cedarEnvironment), apiKey);
+          if (missingCdeToCategoryAttachments.size() > 0) {
+            CdeStats.getInstance().numberOfMissingCdeToCategoryRelations += missingCdeToCategoryAttachments.size();
+            CedarServices.attachCdeToCategories(existingCdeSummary.getCedarId(), missingCdeToCategoryAttachments, true,
+                CedarServerUtil.getAttachCategoriesEndpoint(cedarEnvironment), apiKey);
+          }
         }
       }
     }

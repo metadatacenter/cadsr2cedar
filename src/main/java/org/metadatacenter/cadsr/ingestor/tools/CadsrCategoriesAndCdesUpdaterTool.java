@@ -169,13 +169,13 @@ public class CadsrCategoriesAndCdesUpdaterTool {
 
       // When creating a CDE, we also attach it to the corresponding CEDAR categories. However, there are two cases
       // where the CDE-category relations may need to be updated:
-      // 1. A CDE belongs to a category that does not exist when the CDE was created but is created later.
-      // 2. A CDE belongs to a category that is moved to a different location in the category tree that changes its
+      // 1. A CDE belongs to a category that did not exist when the CDE was created but is created later.
+      // 2. A CDE belongs to a category that was moved to a different location in the category tree that changes its
       // category caDSR identifier. In that case, we would delete the old category, destroying any connections with
       // CDEs, and create a new one, so we also need to generate the connection between the CDE and the new category.
       // The following code reviews all the CDE-Category relations and create any missing relation if needed. Note
       // that we also execute this update when the user decided to update both CDEs and categories.
-      if (settings.getUpdateCdes() && settings.getUpdateCategories()) {
+      if (settings.getUpdateCdes() && settings.getUpdateCategories() && existingCdesMap.size() > 0) {
         /*** Review CDE-Category relations ***/
         logger.info("#########################################");
         logger.info("#   Reviewing CDE-Category relations    #");
