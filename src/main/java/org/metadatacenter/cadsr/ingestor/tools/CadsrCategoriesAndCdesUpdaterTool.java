@@ -34,6 +34,8 @@ import java.time.LocalDateTime;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
+import static org.metadatacenter.model.ModelNodeNames.*;
+
 public class CadsrCategoriesAndCdesUpdaterTool {
 
   private static final Logger logger = LoggerFactory.getLogger(CadsrCategoriesAndCdesUpdaterTool.class);
@@ -290,23 +292,30 @@ public class CadsrCategoriesAndCdesUpdaterTool {
           if (existingCdesMap.get(newCdeUniqueId).getHashCode().equals(newCdeHashCode)) {
             // The CDE exists in CEDAR and it didn't change. Do nothing.
           } else {
-            // The CDE exists in CEDAR and it changed. Is this correct? In this case, a new version should have been
+            // The CDE exists in CEDAR and it changed. In this case, a new version should have been
             // generated in the caDSR XML. Different XMLs shouldn't contain different CDEs with the same public id
             // and version
             logger.warn("The CDE has changed, but its public Id and Version were not updated in the XML: " + newCdeUniqueId);
             // Check changes
-            logger.info("****** Change report for CDE: " + newCdeUniqueId);
+            logger.info("  - CDE changes summary: " + newCdeUniqueId);
             String cdeCedarId = existingCdesMap.get(newCdeUniqueId).getCedarId();
-            Map<String, Object> existingCedarCdeFieldMap = CedarServices.getCdeById(cdeCedarId, cedarEnvironment, apiKey);
+            Map<String, Object> existingCedarCdeFieldMap = CedarServices.getCdeById(cdeCedarId, cedarEnvironment,
+                apiKey);
             for (String existingKey : existingCedarCdeFieldMap.keySet()) {
-              if (!newCdeFieldMap.containsKey(existingKey)) {
-                logger.info("Missing field in new CDE: " + existingKey);
-              }
-              else {
-                Object existingValue = existingCedarCdeFieldMap.get(existingKey);
-                Object newValue = newCdeFieldMap.get(existingKey);
-                if (!existingValue.equals(newValue)) {
-                  logger.info("Found different values for CDE JSON key: " + existingKey + "\n  - Value in existing CDE: " + existingValue + "\n  - Value in new CDE: " + newValue);
+              // We don't take into account the fields that are created when creating the CEDAR artifact since, for the
+              // new field, their values will be null
+              if (!existingKey.equals(PAV_CREATED_ON) && !existingKey.equals(PAV_CREATED_BY) &&
+                  !existingKey.equals(OSLC_MODIFIED_BY) && !existingKey.equals(PAV_LAST_UPDATED_ON) &&
+                  !existingKey.equals(JSON_LD_ID)) {
+                if (!newCdeFieldMap.containsKey(existingKey)) {
+                  logger.info("    - Missing field in new CDE: " + existingKey);
+                } else {
+                  Object existingValue = existingCedarCdeFieldMap.get(existingKey);
+                  Object newValue = newCdeFieldMap.get(existingKey);
+                  if (!existingValue.equals(newValue)) {
+                    logger.info("    - Found different values for CDE JSON key: " + existingKey + "\n        - Value in existing " +
+                        "CDE: " + existingValue + "\n        - Value in new CDE: " + newValue);
+                  }
                 }
               }
             }

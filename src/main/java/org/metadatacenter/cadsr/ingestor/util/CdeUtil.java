@@ -94,30 +94,19 @@ public class CdeUtil {
   }
 
   /**
-   * Returns a hash code to determine if the data element has changed. It is based on the CDE public Id, version, plus
-   * three dateModified fields: for the data element, for its value domain, and for each permissible value item.
-   * It also takes into account the categories associated to the CDE.
+   * Returns a hash code to determine if the data element has changed.
    *
    * @param dataElement
    * @return Hash code
    */
   public static String generateCdeHashCode(DataElement dataElement) {
 
-    List<String> categoryIds = CategoryUtil.extractCategoryIdsFromCdeField(dataElement);
-
     String publicId = dataElement.getPUBLICID().getContent();
     String version = dataElement.getVERSION().getContent();
 
     String dataElementDateModified = dataElement.getDateModified().getContent();
-    String valueDomainDateModified = dataElement.getVALUEDOMAIN().getDateModified().getContent();
 
-    List<String> permissibleValuesItemDatesModified = new ArrayList<>();
-    for (PermissibleValuesITEM item : dataElement.getVALUEDOMAIN().getPermissibleValues().getPermissibleValuesITEM()) {
-      permissibleValuesItemDatesModified.add(item.getDateModified().getContent());
-    }
-
-    return GeneralUtil.getSha1(publicId + version + dataElementDateModified + valueDomainDateModified +
-        permissibleValuesItemDatesModified.toString() + categoryIds.toString());
+    return GeneralUtil.getSha1(publicId + version + dataElementDateModified);
   }
 
   public static Map<String, CdeSummary> getExistingCedarCdeSummaries(String cedarFolderId, Constants.CedarEnvironment cedarEnvironment, String apiKey) throws IOException {
