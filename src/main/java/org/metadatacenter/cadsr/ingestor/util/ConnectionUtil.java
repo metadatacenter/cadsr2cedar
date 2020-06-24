@@ -54,7 +54,7 @@ public class ConnectionUtil {
       conn.setRequestMethod(requestMethod);
       conn.setDoOutput(true);
       conn.setRequestProperty("Content-Type", "application/json");
-      conn.setRequestProperty("Authorization", apiKey);
+      conn.setRequestProperty("Authorization", "apiKey " + apiKey);
       return conn;
     } catch (MalformedURLException e) {
       logger.error(e.getMessage());

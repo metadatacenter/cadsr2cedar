@@ -106,8 +106,8 @@ public class CedarServices {
       connection.disconnect();
       return JsonUtil.readJsonAsMap(response);
     } else {
-      logger.error("Error retrieving CDE");
-      throw new InternalError("Error retrieving CDE");
+      logger.error("Error retrieving CDE" + ConnectionUtil.readResponseMessage(connection.getInputStream()));
+      throw new InternalError("Error retrieving CDE. Response");
     }
   }
 

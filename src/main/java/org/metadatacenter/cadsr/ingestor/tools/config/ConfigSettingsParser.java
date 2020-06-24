@@ -80,7 +80,7 @@ public class ConfigSettingsParser {
       }
 
       if (cmd.hasOption("k")) {
-        settings.setCadsrAdminApikey("apiKey " + cmd.getOptionValue("k"));
+        settings.setCadsrAdminApikey(cmd.getOptionValue("k"));
       }
 
       if (cmd.hasOption("f")) {

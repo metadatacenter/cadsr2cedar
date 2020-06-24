@@ -294,19 +294,22 @@ public class CadsrCategoriesAndCdesUpdaterTool {
             // generated in the caDSR XML. Different XMLs shouldn't contain different CDEs with the same public id
             // and version
             logger.warn("The CDE has changed, but its public Id and Version were not updated in the XML: " + newCdeUniqueId);
-            //--------
-//            String cdeCedarId = existingCdesMap.get(newCdeUniqueId).getCedarId();
-//            Map<String, Object> existingCedarCdeFieldMap = CedarServices.getCdeById(cdeCedarId, cedarEnvironment, apiKey);
-//            for (String existingKey : existingCedarCdeFieldMap.keySet()) {
-//              if (!newCdeFieldMap.containsKey(existingKey)) {
-//                logger.info("Missing field in new CDE: " + existingKey);
-//              }
-//              else {
-//                Object existingValue = existingCedarCdeFieldMap.get(existingKey);
-//                Object newValue = newCdeFieldMap.get(existingKey);
-//              }
-//            }
-            //--------
+            // Check changes
+            logger.info("****** Change report for CDE: " + newCdeUniqueId);
+            String cdeCedarId = existingCdesMap.get(newCdeUniqueId).getCedarId();
+            Map<String, Object> existingCedarCdeFieldMap = CedarServices.getCdeById(cdeCedarId, cedarEnvironment, apiKey);
+            for (String existingKey : existingCedarCdeFieldMap.keySet()) {
+              if (!newCdeFieldMap.containsKey(existingKey)) {
+                logger.info("Missing field in new CDE: " + existingKey);
+              }
+              else {
+                Object existingValue = existingCedarCdeFieldMap.get(existingKey);
+                Object newValue = newCdeFieldMap.get(existingKey);
+                if (!existingValue.equals(newValue)) {
+                  logger.info("Found different values for CDE JSON key: " + existingKey + "\n  - Value in existing CDE: " + existingValue + "\n  - Value in new CDE: " + newValue);
+                }
+              }
+            }
             CdeStats.getInstance().numberOfCdesChangedButVersionNotUpdated++;
           }
         } else {
