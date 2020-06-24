@@ -89,7 +89,7 @@ public class CedarServices {
         }
         logger.info(cdeSummaries.size() + "/" + totalCount + " CDEs retrieved.");
       } else {
-        String message = "Error retrieving CDE summaries";
+        String message = "Error retrieving CDE summaries: " + ConnectionUtil.readResponseMessage(connection.getInputStream());
         logger.error(message);
         throw new InternalError(message);
       }
@@ -106,8 +106,8 @@ public class CedarServices {
       connection.disconnect();
       return JsonUtil.readJsonAsMap(response);
     } else {
-      logger.error("Error retrieving CDE" + ConnectionUtil.readResponseMessage(connection.getInputStream()));
-      throw new InternalError("Error retrieving CDE. Response");
+      String message = "Error retrieving CDE: " + ConnectionUtil.readResponseMessage(connection.getInputStream());
+      throw new InternalError(message);
     }
   }
 
