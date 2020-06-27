@@ -5,7 +5,6 @@ import org.metadatacenter.cadsr.cde.schema.DataElement;
 import org.metadatacenter.cadsr.ingestor.cde.CadsrConstants;
 import org.metadatacenter.cadsr.ingestor.exception.UnsupportedDataElementException;
 import org.metadatacenter.model.ModelNodeNames;
-import org.metadatacenter.model.ModelNodeValues;
 
 import java.util.Collections;
 import java.util.Map;
@@ -32,21 +31,21 @@ public class InputTypeHandler implements ModelHandler {
   }
 
   private void handleEnumeratedType() {
-    inputType.put(ModelNodeNames.UI_FIELD_INPUT_TYPE, ModelNodeValues.TEXT_FIELD);
+    inputType.put(ModelNodeNames.UI_FIELD_INPUT_TYPE, ModelNodeNames.FIELD_INPUT_TYPE_TEXTFIELD);
   }
 
   private void handleNonEnumeratedType(DataElement dataElement) throws UnsupportedDataElementException {
     String datatype = dataElement.getVALUEDOMAIN().getDatatype().getContent();
     if (CadsrConstants.ALL_STRING_LIST.contains(datatype)) {
-      inputType.put(ModelNodeNames.UI_FIELD_INPUT_TYPE, ModelNodeValues.TEXT_FIELD);
+      inputType.put(ModelNodeNames.UI_FIELD_INPUT_TYPE, ModelNodeNames.FIELD_INPUT_TYPE_TEXTFIELD);
     } else if (CadsrConstants.ALL_NUMERIC_LIST.contains(datatype)) {
-      inputType.put(ModelNodeNames.UI_FIELD_INPUT_TYPE, ModelNodeValues.NUMERIC);
+      inputType.put(ModelNodeNames.UI_FIELD_INPUT_TYPE, ModelNodeNames.FIELD_INPUT_TYPE_NUMERIC);
     } else if (CadsrConstants.ALL_TEMPORAL_LIST.contains(datatype)) {
       inputType.put(ModelNodeNames.UI_FIELD_INPUT_TYPE, ModelNodeNames.FIELD_INPUT_TYPE_TEMPORAL);
     } else if (CadsrConstants.ALL_BOOLEAN_LIST.contains(datatype)) {
-      inputType.put(ModelNodeNames.UI_FIELD_INPUT_TYPE, ModelNodeValues.RADIO);
+      inputType.put(ModelNodeNames.UI_FIELD_INPUT_TYPE, ModelNodeNames.FIELD_INPUT_TYPE_RADIO);
     } else if (CadsrConstants.ALL_URI_LIST.contains(datatype)) {
-      inputType.put(ModelNodeNames.UI_FIELD_INPUT_TYPE, ModelNodeValues.LINK);
+      inputType.put(ModelNodeNames.UI_FIELD_INPUT_TYPE, ModelNodeNames.FIELD_INPUT_TYPE_LINK);
     } else {
       String reason = String.format("A non-enumerated %s is not supported (Unsupported)", datatype);
       throw new UnsupportedDataElementException(dataElement, reason);

@@ -30,7 +30,7 @@ public class CdeUtilTest {
     assertThat(fieldMap.get(ModelNodeNames.JSON_LD_ID), is(nullValue()));
     assertThat(fieldMap.get(ModelNodeNames.JSON_LD_TYPE), is(TEMPLATE_FIELD_TYPE));
     assertThat(fieldMap.get(ModelNodeNames.JSON_SCHEMA_TYPE), is(ModelNodeValues.OBJECT));
-    assertThat(getInputType(fieldMap), is(ModelNodeValues.TEXT_FIELD));
+    assertThat(getInputType(fieldMap), is(ModelNodeNames.FIELD_INPUT_TYPE_TEXTFIELD));
     assertThat(getValueSetsConstraintMap(fieldMap).size(), is(1));
     assertThat(getValueSetName(fieldMap, 0), is("Yes No Indicator"));
     assertThat(getValueSetNumTerms(fieldMap, 0), is(2));
@@ -151,7 +151,7 @@ public class CdeUtilTest {
     assertThat(fieldMap.get(ModelNodeNames.JSON_LD_ID), is(nullValue()));
     assertThat(fieldMap.get(ModelNodeNames.JSON_LD_TYPE), is(TEMPLATE_FIELD_TYPE));
     assertThat(fieldMap.get(ModelNodeNames.JSON_SCHEMA_TYPE), is(ModelNodeValues.OBJECT));
-    assertThat(getInputType(fieldMap), is(ModelNodeValues.DATE));
+    assertThat(getInputType(fieldMap), is(ModelNodeNames.FIELD_INPUT_TYPE_TEMPORAL));
     assertThat(getProperties(fieldMap).get(ModelNodeNames.JSON_LD_TYPE), is(not(nullValue())));
     assertThat(getProperties(fieldMap).get(ModelNodeNames.JSON_LD_ID), is(nullValue()));
     assertThat(getProperties(fieldMap).get(ModelNodeNames.JSON_LD_VALUE), is(not(nullValue())));
@@ -169,7 +169,7 @@ public class CdeUtilTest {
     assertThat(fieldMap.get(ModelNodeNames.JSON_LD_ID), is(nullValue()));
     assertThat(fieldMap.get(ModelNodeNames.JSON_LD_TYPE), is(TEMPLATE_FIELD_TYPE));
     assertThat(fieldMap.get(ModelNodeNames.JSON_SCHEMA_TYPE), is(ModelNodeValues.OBJECT));
-    assertThat(getInputType(fieldMap), is(ModelNodeValues.TEXT_FIELD));
+    assertThat(getInputType(fieldMap), is(ModelNodeNames.FIELD_INPUT_TYPE_TEXTFIELD));
     assertThat(getValueSetsConstraintMap(fieldMap).size(), is(1));
     assertThat(getValueSetName(fieldMap, 0), is("True False Boolean Value Code"));
     assertThat(getValueSetNumTerms(fieldMap, 0), is(2));
@@ -192,7 +192,7 @@ public class CdeUtilTest {
     assertThat(fieldMap.get(ModelNodeNames.JSON_LD_ID), is(nullValue()));
     assertThat(fieldMap.get(ModelNodeNames.JSON_LD_TYPE), is(TEMPLATE_FIELD_TYPE));
     assertThat(fieldMap.get(ModelNodeNames.JSON_SCHEMA_TYPE), is(ModelNodeValues.OBJECT));
-    assertThat(getInputType(fieldMap), is(ModelNodeValues.RADIO));
+    assertThat(getInputType(fieldMap), is(ModelNodeNames.FIELD_INPUT_TYPE_RADIO));
     assertThat(getProperties(fieldMap).get(ModelNodeNames.JSON_LD_TYPE), is(not(nullValue())));
     assertThat(getProperties(fieldMap).get(ModelNodeNames.JSON_LD_VALUE), is(not(nullValue())));
     assertThat(getProperties(fieldMap).get(ModelNodeNames.RDFS_LABEL), is(nullValue()));
@@ -216,7 +216,7 @@ public class CdeUtilTest {
     assertThat(fieldMap.get(ModelNodeNames.JSON_LD_ID), is(nullValue()));
     assertThat(fieldMap.get(ModelNodeNames.JSON_LD_TYPE), is(TEMPLATE_FIELD_TYPE));
     assertThat(fieldMap.get(ModelNodeNames.JSON_SCHEMA_TYPE), is(ModelNodeValues.OBJECT));
-    assertThat(getInputType(fieldMap), is(ModelNodeValues.TEXT_FIELD));
+    assertThat(getInputType(fieldMap), is(ModelNodeNames.FIELD_INPUT_TYPE_TEXTFIELD));
     assertThat(getProperties(fieldMap).get(ModelNodeNames.JSON_LD_TYPE), is(not(nullValue())));
     assertThat(getProperties(fieldMap).get(ModelNodeNames.JSON_LD_ID), is(nullValue()));
     assertThat(getProperties(fieldMap).get(ModelNodeNames.JSON_LD_VALUE), is(not(nullValue())));
@@ -231,7 +231,7 @@ public class CdeUtilTest {
     assertThat(fieldMap.get(ModelNodeNames.JSON_LD_ID), is(nullValue()));
     assertThat(fieldMap.get(ModelNodeNames.JSON_LD_TYPE), is(TEMPLATE_FIELD_TYPE));
     assertThat(fieldMap.get(ModelNodeNames.JSON_SCHEMA_TYPE), is(ModelNodeValues.OBJECT));
-    assertThat(getInputType(fieldMap), is(ModelNodeValues.NUMERIC));
+    assertThat(getInputType(fieldMap), is(ModelNodeNames.FIELD_INPUT_TYPE_NUMERIC));
     assertThat(getProperties(fieldMap).get(ModelNodeNames.JSON_LD_ID), is(nullValue()));
     assertThat(getProperties(fieldMap).get(ModelNodeNames.JSON_LD_VALUE), is(not(nullValue())));
     assertThat(getProperties(fieldMap).get(ModelNodeNames.RDFS_LABEL), is(nullValue()));

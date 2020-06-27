@@ -4,10 +4,10 @@ import org.metadatacenter.cadsr.cde.schema.DataElement;
 import org.metadatacenter.cadsr.cde.schema.VALUEDOMAIN;
 import org.metadatacenter.cadsr.ingestor.cde.CadsrConstants;
 import org.metadatacenter.cadsr.ingestor.exception.UnsupportedDataElementException;
-import org.metadatacenter.cadsr.ingestor.exception.UnsupportedDataTypeException;
 import org.metadatacenter.model.ModelNodeNames;
 import org.metadatacenter.model.ModelNodeValues;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import static org.metadatacenter.cadsr.ingestor.cde.CadsrConstants.*;
@@ -22,11 +22,7 @@ public class UIHandler implements ModelHandler {
     final VALUEDOMAIN valueDomain = dataElement.getVALUEDOMAIN();
     String valueDomainType = valueDomain.getValueDomainType().getContent();
     if (ENUMERATED.equals(valueDomainType) || NON_ENUMERATED.equals(valueDomainType)) {
-      try {
-        handleValueDomain(valueDomain);
-      } catch (UnsupportedDataTypeException e) {
-        throw new UnsupportedDataElementException(dataElement, e.getMessage());
-      }
+      handleValueDomain(valueDomain);
     } else {
       String reason = String.format("Value domain is neither enumerated nor non-enumerated = %s (Unknown)",
           valueDomainType);
@@ -35,7 +31,7 @@ public class UIHandler implements ModelHandler {
     return this;
   }
 
-  private void handleValueDomain(VALUEDOMAIN valueDomain) throws UnsupportedDataTypeException {
+  private void handleValueDomain(VALUEDOMAIN valueDomain) {
     String datatype = valueDomain.getDatatype().getContent();
     String displayFormat = valueDomain.getDisplayFormat().getContent();
     if (CadsrConstants.DATE_LIST.contains(datatype)) {
@@ -44,8 +40,6 @@ public class UIHandler implements ModelHandler {
       handleTimeUI(displayFormat);
     } else if (CadsrConstants.ALL_TEMPORAL_LIST.contains(datatype)) {
       handleDateTimeUI(displayFormat);
-    } else {
-      throw new UnsupportedDataTypeException(datatype);
     }
   }
 
@@ -117,7 +111,7 @@ public class UIHandler implements ModelHandler {
 
   @Override
   public void apply(Map<String, Object> fieldObject) {
-    Map<String, Object> ui = (Map<String, Object>) fieldObject.get(ModelNodeNames.UI);
+    Map<String, Object> ui = new HashMap((Map<String, Object>) fieldObject.get(ModelNodeNames.UI));
     if (temporalGranularity != null) {
       ui.put(ModelNodeNames.UI_TEMPORAL_GRANULARITY, temporalGranularity);
     }
@@ -127,5 +121,6 @@ public class UIHandler implements ModelHandler {
     if (timezoneEnabled != null) {
       ui.put(ModelNodeNames.UI_TIMEZONE_ENABLED, timezoneEnabled);
     }
+    fieldObject.put(ModelNodeNames.UI, ui);
   }
 }
