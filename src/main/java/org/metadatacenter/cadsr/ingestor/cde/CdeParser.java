@@ -44,6 +44,7 @@ public class CdeParser {
       setInputType(fieldMap, dataElement, new InputTypeHandler());
       setVersion(fieldMap, dataElement, new VersionHandler());
       setValueConstraints(fieldMap, dataElement, new ValueConstraintsHandler());
+      setUI(fieldMap, dataElement, new UIHandler());
       setProperties(fieldMap, dataElement, new PropertiesHandler());
       setPermissibleValues(fieldMap, dataElement, new PermissibleValuesHandler());
       setCategories(fieldMap, dataElement, new CategoriesHandler());
@@ -109,6 +110,10 @@ public class CdeParser {
   private static void setValueConstraints(Map<String, Object> fieldMap, DataElement dataElement, ValueConstraintsHandler
       valueConstraintsHandler) throws UnsupportedDataElementException {
     valueConstraintsHandler.handle(dataElement).apply(fieldMap);
+  }
+
+  private static void setUI(Map<String, Object> fieldMap, DataElement dataElement, UIHandler uiHandler) throws UnsupportedDataElementException {
+    uiHandler.handle(dataElement).apply(fieldMap);
   }
 
   private static void setVersion(Map<String, Object> fieldMap, DataElement dataElement, VersionHandler

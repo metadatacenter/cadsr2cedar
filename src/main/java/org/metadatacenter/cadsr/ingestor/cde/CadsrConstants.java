@@ -2,9 +2,10 @@ package org.metadatacenter.cadsr.ingestor.cde;
 
 import com.google.common.collect.Lists;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class CadsrDatatypes {
+public class CadsrConstants {
 
   // The reasons behind the following caDSR-to-CEDAR datatype mappings are available at https://stanfordmedicine.app
   // .box.com/file/571026362915
@@ -20,7 +21,7 @@ public class CadsrDatatypes {
   public static final String JAVA_LONG = "java.lang.Long";
   public static final String JAVA_STRING = "java.lang.String";
   public static final String NUMBER = "NUMBER";
-  // caDSR datatypes mapped on December 2019 as part of the 2nd iteration (Phase IIb)
+  // caDSR datatypes mapped on December 2019 as part of the 2nd iteration (Phase II)
   public static final String ALPHA_DVG = "Alpha DVG";
   public static final String BOOLEAN = "BOOLEAN";
   public static final String CLOB = "CLOB";
@@ -89,7 +90,7 @@ public class CadsrDatatypes {
   public static final String VARCHAR = "varchar";
   public static final String XSD_BOOLEAN = "xsd:boolean";
   public static final String XSD_STRING = "xsd:string";
-  // Mappings pending to be implemented as part of Phase IIb
+  // Mappings implemented on June 2020 as part of Phase IIb
   public static final String DATE_TIME = "DATE/TIME";
   public static final String DATETIME = "DATETIME";
   public static final String HL7TSV3 = "HL7TSv3";
@@ -135,6 +136,14 @@ public class CadsrDatatypes {
   /* Date */
   public static final List<String> DATE_LIST = Lists.newArrayList(DATE, JAVA_DATE);
 
+  /* Time */
+  public static final List<String> TIME_LIST = Lists.newArrayList(HL7TSV3, ISO21090PQTIMEV1, ISO21090TSV1, TIME);
+
+  /* Datetime */
+  public static final List<String> DATETIME_LIST = Lists.newArrayList(DATE_TIME, DATETIME, ISO21090TSDATFLV1,
+      ISO21090TSDTTIV1, JAVA_TIMESTAMP, XSD_DATETIME);
+
+
   /* Boolean */
   public static final List<String> BOOLEAN_LIST = Lists.newArrayList(BOOLEAN, JAVA_BOOLEAN, ISO21090BLV1, XSD_BOOLEAN);
 
@@ -144,11 +153,9 @@ public class CadsrDatatypes {
   /* Groups */
   public static final List<String> ALL_STRING_LIST = Lists.newArrayList();
   public static final List<String> ALL_NUMERIC_LIST = Lists.newArrayList();
-  public static final List<String> ALL_DATE_LIST = Lists.newArrayList();
+  public static final List<String> ALL_TEMPORAL_LIST = Lists.newArrayList();
   public static final List<String> ALL_BOOLEAN_LIST = Lists.newArrayList();
   public static final List<String> ALL_URI_LIST = Lists.newArrayList();
-
-//  public static final List<String> ALL_DATATYPES_LIST = Lists.newArrayList();
 
   // Populate groups
   static {
@@ -165,16 +172,59 @@ public class CadsrDatatypes {
     ALL_NUMERIC_LIST.addAll(NUMERIC_LONG_INTEGER_LIST);
     ALL_NUMERIC_LIST.addAll(NUMERIC_FLOAT_LIST);
     ALL_NUMERIC_LIST.addAll(NUMERIC_DOUBLE_LIST);
-    // Date
-    ALL_DATE_LIST.addAll(DATE_LIST);
+    // Date, Time, and Datetime
+    ALL_TEMPORAL_LIST.addAll(DATE_LIST);
+    ALL_TEMPORAL_LIST.addAll(TIME_LIST);
+    ALL_TEMPORAL_LIST.addAll(DATETIME_LIST);
     // Boolean
     ALL_BOOLEAN_LIST.addAll(BOOLEAN_LIST);
     // Uri
     ALL_URI_LIST.addAll(URI_LIST);
-    // All datatypes
-//    ALL_DATATYPES_LIST.addAll(ALL_STRING_LIST);
-//    ALL_DATATYPES_LIST.addAll(ALL_NUMERIC_LIST);
-//    ALL_DATATYPES_LIST.addAll(ALL_DATE_LIST);
-//    ALL_DATATYPES_LIST.addAll(ALL_URI_LIST);
   }
+
+  /* ValueDomainType values */
+  public static final String ENUMERATED = "Enumerated";
+  public static final String NON_ENUMERATED = "NonEnumerated";
+
+  /* Temporal granularity according to caDSR display formats */
+  // Date
+  public static final List<String> DATE_GRANULARITY_YEAR_FORMATS = Lists.newArrayList("YYYY");
+  public static final List<String> DATE_GRANULARITY_MONTH_FORMATS = Lists.newArrayList("MM/YYYY", "MMYYYY",
+      "YYYYMM", "mm/dd/yy", "mm/dd/yyyy");
+  public static final List<String> DATE_GRANULARITY_DAY_FORMATS = Lists.newArrayList("DD-MON-YYYY", "DY/MTH/YR",
+      "MM/DD/YYYY", "MMDDYYYY", "MON/DD/YYYY", "YYYY-MM-DD");
+  // Time
+  public static final List<String> TIME_GRANULARITY_HOUR_FORMATS = Lists.newArrayList("hh");
+  public static final List<String> TIME_GRANULARITY_MINUTE_FORMATS = Lists.newArrayList("TIME (HR(24):MN)",
+      "TIME_HH:MM", "TIME_MIN", "hh:mm", "hhmm");
+  public static final List<String> TIME_GRANULARITY_SECOND_FORMATS = Lists.newArrayList("hh:mm:rr", "hh:mm:ss",
+      "hh:mm:ss:rr", "hhmmss");
+  public static final List<String> TIME_GRANULARITY_DECIMALSECOND_FORMATS = Lists.newArrayList();
+
+  // Date time
+  public static final List<String> DATETIME_GRANULARITY_HOUR_FORMATS = Lists.newArrayList();
+  public static final List<String> DATETIME_GRANULARITY_MINUTE_FORMATS = Lists.newArrayList();
+  public static final List<String> DATETIME_GRANULARITY_SECOND_FORMATS = Lists.newArrayList();
+  public static final List<String> DATETIME_GRANULARITY_DECIMALSECOND_FORMATS = Lists.newArrayList();
+
+  /* Display time format according to caDSR display formats */
+  public static final List<String> DISPLAY_TIME_FORMAT_24H_FORMATS = Lists.newArrayList("TIME (HR(24):MN)");
+  public static final List<String> DISPLAY_TIME_FORMAT_AMPM_FORMATS = Lists.newArrayList();
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

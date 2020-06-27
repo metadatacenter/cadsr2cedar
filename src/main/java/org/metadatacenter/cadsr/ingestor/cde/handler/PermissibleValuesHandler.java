@@ -25,14 +25,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import static org.metadatacenter.cadsr.ingestor.cde.CadsrConstants.ENUMERATED;
+import static org.metadatacenter.cadsr.ingestor.cde.CadsrConstants.NON_ENUMERATED;
 import static org.metadatacenter.cadsr.ingestor.util.Constants.*;
 
 public class PermissibleValuesHandler implements ModelHandler {
 
   private static final Logger logger = LoggerFactory.getLogger(PermissibleValuesHandler.class);
-
-  private static final String ENUMERATED = "Enumerated";
-  private static final String NON_ENUMERATED = "NonEnumerated";
 
   private List<Map<String, Object>> ontologies;
   private List<Map<String, Object>> valueSets;
@@ -47,7 +46,7 @@ public class PermissibleValuesHandler implements ModelHandler {
     } else if (NON_ENUMERATED.equals(valueDomainType)) {
       handleNonEnumeratedType(dataElement);
     } else {
-      String reason = String.format("Value domain is not either enumerated or non-enumerated = %s (Unknown)",
+      String reason = String.format("Value domain is neither enumerated nor non-enumerated = %s (Unknown)",
           valueDomainType);
       throw new UnsupportedDataElementException(dataElement, reason);
     }

@@ -4,7 +4,7 @@ import com.google.common.base.Strings;
 import com.google.common.collect.Maps;
 import org.metadatacenter.cadsr.cde.schema.DataElement;
 import org.metadatacenter.cadsr.cde.schema.VALUEDOMAIN;
-import org.metadatacenter.cadsr.ingestor.cde.CadsrDatatypes;
+import org.metadatacenter.cadsr.ingestor.cde.CadsrConstants;
 import org.metadatacenter.cadsr.ingestor.exception.UnsupportedDataElementException;
 import org.metadatacenter.cadsr.ingestor.exception.UnsupportedDataTypeException;
 import org.metadatacenter.model.ModelNodeNames;
@@ -15,10 +15,10 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
-public class ValueConstraintsHandler implements ModelHandler {
+import static org.metadatacenter.cadsr.ingestor.cde.CadsrConstants.ENUMERATED;
+import static org.metadatacenter.cadsr.ingestor.cde.CadsrConstants.NON_ENUMERATED;
 
-  private static final String ENUMERATED = "Enumerated";
-  private static final String NON_ENUMERATED = "NonEnumerated";
+public class ValueConstraintsHandler implements ModelHandler {
 
   private static final String XSD_DECIMAL = "xsd:decimal";
   private static final String XSD_LONG = "xsd:long";
@@ -27,6 +27,9 @@ public class ValueConstraintsHandler implements ModelHandler {
   private static final String XSD_BYTE = "xsd:byte";
   private static final String XSD_SHORT = "xsd:short";
   private static final String XSD_FLOAT = "xsd:float";
+  private static final String XSD_DATE = "xsd:date";
+  private static final String XSD_TIME = "xsd:time";
+  private static final String XSD_DATETIME = "xsd:dateTime";
 
   private Integer minLength;
   private Integer maxLength;
@@ -35,6 +38,7 @@ public class ValueConstraintsHandler implements ModelHandler {
   private Number maxValue;
   private String unitOfMeasure;
   private String numberType;
+  private String temporalType;
   private List<Map<String, String>> literals;
 
   public ValueConstraintsHandler handle(DataElement dataElement) throws UnsupportedDataElementException {
@@ -56,15 +60,15 @@ public class ValueConstraintsHandler implements ModelHandler {
 
   private void handleValueDomain(VALUEDOMAIN valueDomain) throws UnsupportedDataTypeException {
     String datatype = valueDomain.getDatatype().getContent();
-    if (CadsrDatatypes.ALL_STRING_LIST.contains(datatype)) {
+    if (CadsrConstants.ALL_STRING_LIST.contains(datatype)) {
       handleStringValueConstraints(datatype, valueDomain);
-    } else if (CadsrDatatypes.ALL_NUMERIC_LIST.contains(datatype)) {
+    } else if (CadsrConstants.ALL_NUMERIC_LIST.contains(datatype)) {
       handleNumericValueConstraints(datatype, valueDomain);
-    } else if (CadsrDatatypes.ALL_DATE_LIST.contains(datatype)) {
-      // Do nothing. There is no need to set value constraints for date fields
-    } else if (CadsrDatatypes.ALL_BOOLEAN_LIST.contains(datatype)) {
+    } else if (CadsrConstants.ALL_TEMPORAL_LIST.contains(datatype)) {
+      handleTemporalValueConstraints(datatype, valueDomain);
+    } else if (CadsrConstants.ALL_BOOLEAN_LIST.contains(datatype)) {
       handleBooleanValueConstraints();
-    } else if (CadsrDatatypes.ALL_URI_LIST.contains(datatype)) {
+    } else if (CadsrConstants.ALL_URI_LIST.contains(datatype)) {
       // Do nothing. There is no need to set value constraints for URI fields
     } else {
       throw new UnsupportedDataTypeException(datatype);
@@ -72,10 +76,10 @@ public class ValueConstraintsHandler implements ModelHandler {
   }
 
   private void handleStringValueConstraints(String datatype, VALUEDOMAIN valueDomain) throws UnsupportedDataTypeException {
-    if (CadsrDatatypes.STRING_LIST.contains(datatype)) {
+    if (CadsrConstants.STRING_LIST.contains(datatype)) {
       minLength = getMinimumLength(valueDomain);
       maxLength = getMaximumLength(valueDomain);
-    } else if (CadsrDatatypes.STRING_MAX_LENGTH_1_LIST.contains(datatype)) {
+    } else if (CadsrConstants.STRING_MAX_LENGTH_1_LIST.contains(datatype)) {
       maxLength = 1;
     } else {
       throw new UnsupportedDataTypeException(datatype);
@@ -88,6 +92,10 @@ public class ValueConstraintsHandler implements ModelHandler {
     maxValue = getMaximumValue(valueDomain.getMaximumValue().getContent(), datatype, numberType);
     decimalPlace = getDecimalPlace(valueDomain);
     unitOfMeasure = getUnitOfMeasure(valueDomain);
+  }
+
+  private void handleTemporalValueConstraints(String datatype, VALUEDOMAIN valueDomain) throws UnsupportedDataTypeException {
+    temporalType = getTemporalType(datatype);
   }
 
   private void handleBooleanValueConstraints() {
@@ -119,23 +127,23 @@ public class ValueConstraintsHandler implements ModelHandler {
   @Nullable
   private static String getNumberType(String numericDataType) throws UnsupportedDataTypeException {
     if (!Strings.isNullOrEmpty(numericDataType)) {
-      if (CadsrDatatypes.NUMERIC_ANY_LIST.contains(numericDataType)) {
+      if (CadsrConstants.NUMERIC_ANY_LIST.contains(numericDataType)) {
         return XSD_DECIMAL;
-      } else if (CadsrDatatypes.NUMERIC_INTEGER_LIST.contains(numericDataType)) {
+      } else if (CadsrConstants.NUMERIC_INTEGER_LIST.contains(numericDataType)) {
         return XSD_INT;
-      } else if (CadsrDatatypes.NUMERIC_POSITIVE_INTEGER_LIST.contains(numericDataType)) {
+      } else if (CadsrConstants.NUMERIC_POSITIVE_INTEGER_LIST.contains(numericDataType)) {
         return XSD_INT;
-      } else if (CadsrDatatypes.NUMERIC_BYTE_LIST.contains(numericDataType)) {
+      } else if (CadsrConstants.NUMERIC_BYTE_LIST.contains(numericDataType)) {
         return XSD_BYTE;
-      } else if (CadsrDatatypes.NUMERIC_OCTET_LIST.contains(numericDataType)) {
+      } else if (CadsrConstants.NUMERIC_OCTET_LIST.contains(numericDataType)) {
         return XSD_INT;
-      } else if (CadsrDatatypes.NUMERIC_SHORT_INTEGER_LIST.contains(numericDataType)) {
+      } else if (CadsrConstants.NUMERIC_SHORT_INTEGER_LIST.contains(numericDataType)) {
         return XSD_SHORT;
-      } else if (CadsrDatatypes.NUMERIC_LONG_INTEGER_LIST.contains(numericDataType)) {
+      } else if (CadsrConstants.NUMERIC_LONG_INTEGER_LIST.contains(numericDataType)) {
         return XSD_LONG;
-      } else if (CadsrDatatypes.NUMERIC_FLOAT_LIST.contains(numericDataType)) {
+      } else if (CadsrConstants.NUMERIC_FLOAT_LIST.contains(numericDataType)) {
         return XSD_FLOAT;
-      } else if (CadsrDatatypes.NUMERIC_DOUBLE_LIST.contains(numericDataType)) {
+      } else if (CadsrConstants.NUMERIC_DOUBLE_LIST.contains(numericDataType)) {
         return XSD_DOUBLE;
       } else {
         throw new UnsupportedDataTypeException(numericDataType);
@@ -146,14 +154,31 @@ public class ValueConstraintsHandler implements ModelHandler {
   }
 
   @Nullable
+  private static String getTemporalType(String temporalDataType) throws UnsupportedDataTypeException {
+    if (!Strings.isNullOrEmpty(temporalDataType)) {
+      if (CadsrConstants.DATE_LIST.contains(temporalDataType)) {
+        return XSD_DATE;
+      } else if (CadsrConstants.TIME_LIST.contains(temporalDataType)) {
+        return XSD_TIME;
+      } else if (CadsrConstants.DATETIME_LIST.contains(temporalDataType)) {
+        return XSD_DATETIME;
+      } else {
+        throw new UnsupportedDataTypeException(temporalDataType);
+      }
+    } else {
+      return null;
+    }
+  }
+
+  @Nullable
   private static Number getMinimumValue(String minValue, String numericDataType, String numberType)
       throws UnsupportedDataTypeException {
     if (Strings.isNullOrEmpty(minValue)) { // If the XML does not specify a minimum value
-      if (CadsrDatatypes.NUMERIC_POSITIVE_INTEGER_LIST.contains(numericDataType)) {
+      if (CadsrConstants.NUMERIC_POSITIVE_INTEGER_LIST.contains(numericDataType)) {
         minValue = "0";
-      } else if (CadsrDatatypes.NUMERIC_BYTE_LIST.contains(numericDataType)) {
+      } else if (CadsrConstants.NUMERIC_BYTE_LIST.contains(numericDataType)) {
         minValue = "-128";
-      } else if (CadsrDatatypes.NUMERIC_OCTET_LIST.contains(numericDataType)) {
+      } else if (CadsrConstants.NUMERIC_OCTET_LIST.contains(numericDataType)) {
         minValue = "0";
       }
     }
@@ -164,9 +189,9 @@ public class ValueConstraintsHandler implements ModelHandler {
   private static Number getMaximumValue(String maxValue, String numericDataType, String numberType)
       throws UnsupportedDataTypeException {
     if (Strings.isNullOrEmpty(maxValue)) { // If the XML does not specify a maximum value
-      if (CadsrDatatypes.NUMERIC_BYTE_LIST.contains(numericDataType)) {
+      if (CadsrConstants.NUMERIC_BYTE_LIST.contains(numericDataType)) {
         maxValue = "127";
-      } else if (CadsrDatatypes.NUMERIC_OCTET_LIST.contains(numericDataType)) {
+      } else if (CadsrConstants.NUMERIC_OCTET_LIST.contains(numericDataType)) {
         maxValue = "255";
       }
     }
@@ -243,6 +268,9 @@ public class ValueConstraintsHandler implements ModelHandler {
     }
     if (literals != null) {
       valueConstraints.put(ModelNodeNames.VALUE_CONSTRAINTS_LITERALS, literals);
+    }
+    if (temporalType != null) {
+      valueConstraints.put(ModelNodeNames.VALUE_CONSTRAINTS_TEMPORAL_TYPE, temporalType);
     }
 
   }

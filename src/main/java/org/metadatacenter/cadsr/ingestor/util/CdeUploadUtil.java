@@ -1,20 +1,19 @@
 package org.metadatacenter.cadsr.ingestor.util;
 
-import com.google.common.io.Files;
 import org.metadatacenter.cadsr.cde.schema.DataElement;
 import org.metadatacenter.cadsr.cde.schema.DataElementsList;
-import org.metadatacenter.cadsr.ingestor.cde.ValueSetsOntologyManager;
+import org.metadatacenter.cadsr.ingestor.util.Constants.CedarEnvironment;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.metadatacenter.cadsr.ingestor.util.Constants.CedarEnvironment;
 
 import javax.xml.bind.JAXBException;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.*;
-
-import static org.metadatacenter.cadsr.ingestor.util.Constants.CDE_VALUESETS_ONTOLOGY_NAME;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.Set;
 
 public class CdeUploadUtil {
 
@@ -47,17 +46,6 @@ public class CdeUploadUtil {
       }
       CedarServices.createCde(fieldMap, hashCode, cedarFolderId, cedarCategoryIds, cedarEnvironment, apiKey);
     }
-  }
-
-  private static boolean multiplesOfAHundred(int counter) {
-    return counter != 0 && counter % 100 == 0;
-  }
-
-  public static void storeOntologyInTempDir() {
-    File outputTempDir = Files.createTempDir();
-    File outputOntologyFile = new File(outputTempDir, CDE_VALUESETS_ONTOLOGY_NAME);
-    logger.info("Storing the generated value set ontology at " + outputOntologyFile);
-    ValueSetsOntologyManager.saveOntology(outputOntologyFile);
   }
 
 }

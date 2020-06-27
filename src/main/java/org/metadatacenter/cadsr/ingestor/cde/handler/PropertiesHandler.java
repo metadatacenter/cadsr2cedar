@@ -3,7 +3,7 @@ package org.metadatacenter.cadsr.ingestor.cde.handler;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import org.metadatacenter.cadsr.cde.schema.DataElement;
-import org.metadatacenter.cadsr.ingestor.cde.CadsrDatatypes;
+import org.metadatacenter.cadsr.ingestor.cde.CadsrConstants;
 import org.metadatacenter.cadsr.ingestor.exception.UnsupportedDataElementException;
 import org.metadatacenter.model.ModelNodeNames;
 import org.metadatacenter.model.ModelNodeValues;
@@ -47,19 +47,19 @@ public class PropertiesHandler implements ModelHandler {
 
   private void handleNonEnumeratedType(DataElement dataElement) throws UnsupportedDataElementException {
     String datatype = dataElement.getVALUEDOMAIN().getDatatype().getContent();
-    if (CadsrDatatypes.ALL_STRING_LIST.contains(datatype)) {
+    if (CadsrConstants.ALL_STRING_LIST.contains(datatype)) {
       typeProperty.put(ModelNodeNames.JSON_LD_TYPE, setOneOfStringOrArray());
       valueProperty.put(ModelNodeNames.JSON_LD_VALUE, setTypeStringOrNull());
-    } else if (CadsrDatatypes.ALL_NUMERIC_LIST.contains(datatype)) {
+    } else if (CadsrConstants.ALL_NUMERIC_LIST.contains(datatype)) {
       typeProperty.put(ModelNodeNames.JSON_LD_TYPE, setUriString());
       valueProperty.put(ModelNodeNames.JSON_LD_VALUE, setTypeStringOrNull());
-    } else if (CadsrDatatypes.ALL_DATE_LIST.contains(datatype)) {
+    } else if (CadsrConstants.ALL_TEMPORAL_LIST.contains(datatype)) {
       typeProperty.put(ModelNodeNames.JSON_LD_TYPE, setUriString());
       valueProperty.put(ModelNodeNames.JSON_LD_VALUE, setTypeStringOrNull());
-    } else if (CadsrDatatypes.ALL_BOOLEAN_LIST.contains(datatype)) {
+    } else if (CadsrConstants.ALL_BOOLEAN_LIST.contains(datatype)) {
       typeProperty.put(ModelNodeNames.JSON_LD_TYPE, setUriString());
       valueProperty.put(ModelNodeNames.JSON_LD_VALUE, setTypeStringOrNull());
-    } else if (CadsrDatatypes.ALL_URI_LIST.contains(datatype)) {
+    } else if (CadsrConstants.ALL_URI_LIST.contains(datatype)) {
       typeProperty.put(ModelNodeNames.JSON_LD_TYPE, setOneOfStringOrArray());
       idProperty.put(ModelNodeNames.JSON_LD_ID, setUriString());
     } else {
