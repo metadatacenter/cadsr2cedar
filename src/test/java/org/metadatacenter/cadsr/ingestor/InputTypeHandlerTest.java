@@ -24,7 +24,7 @@ public class InputTypeHandlerTest {
   }
 
   @Test
-  public void shouldDefineDateField_DATE() throws Exception {
+  public void shouldDefineTemporalField_DATE() throws Exception {
     DataElement dataElement = FileUtils.readDataElementResource("cde-sample-2001826.xml");
     Map<String, Object> inputType = handler.handle(dataElement).getInputType();
     // Assert
@@ -32,8 +32,32 @@ public class InputTypeHandlerTest {
   }
 
   @Test
-  public void shouldDefineDateField_JAVA_DATE() throws Exception {
+  public void shouldDefineTemporalField_JAVA_DATE() throws Exception {
     DataElement dataElement = FileUtils.readDataElementResource("cde-sample-2513819.xml");
+    Map<String, Object> inputType = handler.handle(dataElement).getInputType();
+    // Assert
+    assertThat(inputType.get(ModelNodeNames.UI_FIELD_INPUT_TYPE).toString(), is(equalTo(ModelNodeNames.FIELD_INPUT_TYPE_TEMPORAL)));
+  }
+
+  @Test
+  public void shouldDefineTemporalField_TIME() throws Exception {
+    DataElement dataElement = FileUtils.readDataElementResource("cde-sample-3631725.xml");
+    Map<String, Object> inputType = handler.handle(dataElement).getInputType();
+    // Assert
+    assertThat(inputType.get(ModelNodeNames.UI_FIELD_INPUT_TYPE).toString(), is(equalTo(ModelNodeNames.FIELD_INPUT_TYPE_TEMPORAL)));
+  }
+
+  @Test
+  public void shouldDefineTemporalField_DATETIME() throws Exception {
+    DataElement dataElement = FileUtils.readDataElementResource("cde-sample-6422999.xml");
+    Map<String, Object> inputType = handler.handle(dataElement).getInputType();
+    // Assert
+    assertThat(inputType.get(ModelNodeNames.UI_FIELD_INPUT_TYPE).toString(), is(equalTo(ModelNodeNames.FIELD_INPUT_TYPE_TEMPORAL)));
+  }
+
+  @Test
+  public void shouldDefineTemporalField_DATE_TIME() throws Exception {
+    DataElement dataElement = FileUtils.readDataElementResource("cde-sample-5254714.xml");
     Map<String, Object> inputType = handler.handle(dataElement).getInputType();
     // Assert
     assertThat(inputType.get(ModelNodeNames.UI_FIELD_INPUT_TYPE).toString(), is(equalTo(ModelNodeNames.FIELD_INPUT_TYPE_TEMPORAL)));

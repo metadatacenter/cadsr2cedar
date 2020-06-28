@@ -7,6 +7,7 @@ import org.metadatacenter.cadsr.ingestor.exception.UnsupportedDataElementExcepti
 import org.metadatacenter.model.ModelNodeNames;
 import org.metadatacenter.model.ModelNodeValues;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -107,6 +108,18 @@ public class UIHandler implements ModelHandler {
 
       timezoneEnabled = false; // default value
     }
+  }
+
+  public String getTemporalGranularity() {
+    return (temporalGranularity != null ? temporalGranularity : null);
+  }
+
+  public Boolean getTimezoneEnabled() {
+    return (timezoneEnabled != null ? timezoneEnabled : null);
+  }
+
+  public String getDisplayTimeFormat() {
+    return (displayTimeFormat != null ? displayTimeFormat : null);
   }
 
   @Override

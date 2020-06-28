@@ -1,0 +1,202 @@
+<DataElement num="14721">
+  <PUBLICID>5254714</PUBLICID>
+  <LONGNAME>Participant Last Known Alive Date/Time</LONGNAME>
+  <PREFERREDNAME>LAST_ALIVE_DATETIME</PREFERREDNAME>
+  <PREFERREDDEFINITION>Most recent timepoint on which it is verifiable that the person was living.</PREFERREDDEFINITION>
+  <VERSION>1</VERSION>
+  <WORKFLOWSTATUS>RELEASED</WORKFLOWSTATUS>
+  <CONTEXTNAME>BBRB</CONTEXTNAME>
+  <CONTEXTVERSION>1</CONTEXTVERSION>
+  <ORIGIN>GTEx: Genotype-Tissue Expression (GTEx) Program</ORIGIN>
+  <REGISTRATIONSTATUS>Qualified</REGISTRATIONSTATUS>
+  <dateModified>2019-05-01</dateModified>
+  <DATAELEMENTCONCEPT>
+    <PublicId>2848656</PublicId>
+    <PreferredName>PRT_LAST_ALIVE_DT</PreferredName>
+    <PreferredDefinition>The most recent date that someone from the study could verify a vital status for the study participant.</PreferredDefinition>
+    <LongName>Participant Last Known Alive Date</LongName>
+    <Version>1</Version>
+    <WorkflowStatus>RELEASED</WorkflowStatus>
+    <ContextName>NCIP</ContextName>
+    <ContextVersion>1</ContextVersion>
+    <ConceptualDomain>
+      <PublicId>2008561</PublicId>
+      <ContextName>CTEP</ContextName>
+      <ContextVersion>2.31</ContextVersion>
+      <PreferredName>OCURS</PreferredName>
+      <Version>1</Version>
+      <LongName>Occurrences</LongName>
+    </ConceptualDomain>
+    <ObjectClass>
+      <PublicId>2407061</PublicId>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>C29867</PreferredName>
+      <Version>1</Version>
+      <LongName>Participant</LongName>
+      <ConceptDetails>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C29867</PREFERRED_NAME>
+          <LONG_NAME>Participant</LONG_NAME>
+          <CON_ID>2202627</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>Yes</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>0</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+      </ConceptDetails>
+    </ObjectClass>
+    <Property>
+      <PublicId>2848654</PublicId>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>C25551:C17177:C25164</PreferredName>
+      <Version>1</Version>
+      <LongName>Last Survival Date</LongName>
+      <ConceptDetails>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C25551</PREFERRED_NAME>
+          <LONG_NAME>Last</LONG_NAME>
+          <CON_ID>2206286</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>No</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>2</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C17177</PREFERRED_NAME>
+          <LONG_NAME>Survival</LONG_NAME>
+          <CON_ID>2202477</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>No</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>1</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C25164</PREFERRED_NAME>
+          <LONG_NAME>Date</LONG_NAME>
+          <CON_ID>2202880</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>Yes</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>0</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+      </ConceptDetails>
+    </Property>
+    <ObjectClassQualifier NULL="TRUE"/>
+    <PropertyQualifier NULL="TRUE"/>
+    <Origin NULL="TRUE"/>
+  </DATAELEMENTCONCEPT>
+  <VALUEDOMAIN>
+    <PublicId>2192519</PublicId>
+    <PreferredName>DT-TM</PreferredName>
+    <PreferredDefinition>a specified date and time.</PreferredDefinition>
+    <LongName>Date/Time</LongName>
+    <Version>1</Version>
+    <WorkflowStatus>RELEASED</WorkflowStatus>
+    <dateModified>2007-02-13</dateModified>
+    <ContextName>CTEP</ContextName>
+    <ContextVersion>2.31</ContextVersion>
+    <ConceptualDomain>
+      <PublicId>2008561</PublicId>
+      <ContextName>CTEP</ContextName>
+      <ContextVersion>2.31</ContextVersion>
+      <PreferredName>OCURS</PreferredName>
+      <Version>1</Version>
+      <LongName>Occurrences</LongName>
+    </ConceptualDomain>
+    <Datatype>DATE/TIME</Datatype>
+    <ValueDomainType>NonEnumerated</ValueDomainType>
+    <UnitOfMeasure NULL="TRUE"/>
+    <DisplayFormat NULL="TRUE"/>
+    <MaximumLength>16</MaximumLength>
+    <MinimumLength>1</MinimumLength>
+    <DecimalPlace NULL="TRUE"/>
+    <CharacterSetName NULL="TRUE"/>
+    <MaximumValue NULL="TRUE"/>
+    <MinimumValue NULL="TRUE"/>
+    <Origin NULL="TRUE"/>
+    <Representation>
+      <PublicId>2423394</PublicId>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>C37939</PreferredName>
+      <Version>1</Version>
+      <LongName>Date/Time</LongName>
+      <ConceptDetails>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C37939</PREFERRED_NAME>
+          <LONG_NAME>Date and Time</LONG_NAME>
+          <CON_ID>2202495</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>Yes</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>0</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+      </ConceptDetails>
+    </Representation>
+    <PermissibleValues/>
+    <ValueDomainConcepts/>
+  </VALUEDOMAIN>
+  <REFERENCEDOCUMENTSLIST>
+    <REFERENCEDOCUMENTSLIST_ITEM>
+      <Name>Date and time last seen alive</Name>
+      <OrganizationName NULL="TRUE"/>
+      <DocumentType>Preferred Question Text</DocumentType>
+      <DocumentText>Date and time last seen alive</DocumentText>
+      <URL NULL="TRUE"/>
+      <Language>ENGLISH</Language>
+      <DisplayOrder NULL="TRUE"/>
+    </REFERENCEDOCUMENTSLIST_ITEM>
+  </REFERENCEDOCUMENTSLIST>
+  <CLASSIFICATIONSLIST>
+    <CLASSIFICATIONSLIST_ITEM>
+      <ClassificationScheme>
+        <PublicId>5188871</PublicId>
+        <ContextName>BBRB</ContextName>
+        <ContextVersion>1</ContextVersion>
+        <PreferredName>GTEx - Postmortem Biospecimen </PreferredName>
+        <Version>1</Version>
+      </ClassificationScheme>
+      <ClassificationSchemeItemName>GTEx - Postmortem Biospecimen Acquisition</ClassificationSchemeItemName>
+      <ClassificationSchemeItemType>Case Report Form</ClassificationSchemeItemType>
+      <CsiPublicId>5405792</CsiPublicId>
+      <CsiVersion>1</CsiVersion>
+    </CLASSIFICATIONSLIST_ITEM>
+    <CLASSIFICATIONSLIST_ITEM>
+      <ClassificationScheme>
+        <PublicId>5188871</PublicId>
+        <ContextName>BBRB</ContextName>
+        <ContextVersion>1</ContextVersion>
+        <PreferredName>GTEx - Postmortem Biospecimen </PreferredName>
+        <Version>1</Version>
+      </ClassificationScheme>
+      <ClassificationSchemeItemName>Clinical Collection Case Report</ClassificationSchemeItemName>
+      <ClassificationSchemeItemType>Case Report Form</ClassificationSchemeItemType>
+      <CsiPublicId>6736402</CsiPublicId>
+      <CsiVersion>1</CsiVersion>
+    </CLASSIFICATIONSLIST_ITEM>
+  </CLASSIFICATIONSLIST>
+  <ALTERNATENAMELIST>
+    <ALTERNATENAMELIST_ITEM>
+      <ContextName>BBRB</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <AlternateName>BBRB</AlternateName>
+      <AlternateNameType>USED_BY</AlternateNameType>
+      <Language>ENGLISH</Language>
+    </ALTERNATENAMELIST_ITEM>
+  </ALTERNATENAMELIST>
+  <DATAELEMENTDERIVATION>
+    <DerivationType NULL="TRUE"/>
+    <DerivationTypeDescription NULL="TRUE"/>
+    <Methods NULL="TRUE"/>
+    <Rule NULL="TRUE"/>
+    <ConcatenationCharacter NULL="TRUE"/>
+    <ComponentDataElementsList NULL="TRUE"/>
+  </DATAELEMENTDERIVATION>
+</DataElement>

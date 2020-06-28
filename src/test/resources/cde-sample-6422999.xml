@@ -1,0 +1,189 @@
+<DataElement num="33693">
+  <PUBLICID>6422999</PUBLICID>
+  <LONGNAME>Performed Encounter Date and Time Range ACT I2B2 CDM Discharge Date and Time</LONGNAME>
+  <PREFERREDNAME>6412825v1.0:6422991v1.0</PREFERREDNAME>
+  <PREFERREDDEFINITION>Executed and carried through to completion._Each individual, unique interaction between two subjects of interest._An expression of both date and time that an event has happened or will happen._The difference between the lowest and highest numerical values; the limits or scale of variation._Date and time of discharge. Length of stay in SHRINE ontology is calculated from this. If times dont exist in the source data, set HH:MM:SS to 00:00:00.</PREFERREDDEFINITION>
+  <VERSION>1</VERSION>
+  <WORKFLOWSTATUS>RELEASED</WORKFLOWSTATUS>
+  <CONTEXTNAME>PCORTF CDM</CONTEXTNAME>
+  <CONTEXTVERSION>1</CONTEXTVERSION>
+  <ORIGIN>ACT CDM:The Accrual to Clinical Trials Network Common Data Model</ORIGIN>
+  <REGISTRATIONSTATUS NULL="TRUE"/>
+  <dateModified>2019-02-20</dateModified>
+  <DATAELEMENTCONCEPT>
+    <PublicId>6412825</PublicId>
+    <PreferredName>6412816v1.0:2867768v1.0</PreferredName>
+    <PreferredDefinition>Executed and carried through to completion._Each individual, unique interaction between two subjects of interest._An expression of both date and time that an event has happened or will happen._The difference between the lowest and highest numerical values; the limits or scale of variation.</PreferredDefinition>
+    <LongName>Performed Encounter Date and Time Range</LongName>
+    <Version>1</Version>
+    <WorkflowStatus>RELEASED</WorkflowStatus>
+    <ContextName>NCIP</ContextName>
+    <ContextVersion>1</ContextVersion>
+    <ConceptualDomain>
+      <PublicId>2222502</PublicId>
+      <ContextName>caCORE</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>UML DEFAULT CD</PreferredName>
+      <Version>1</Version>
+      <LongName>UML DEFAULT CD</LongName>
+    </ConceptualDomain>
+    <ObjectClass>
+      <PublicId>6412816</PublicId>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>C38000:C62143</PreferredName>
+      <Version>1</Version>
+      <LongName>Performed Encounter</LongName>
+      <ConceptDetails>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C38000</PREFERRED_NAME>
+          <LONG_NAME>Performed</LONG_NAME>
+          <CON_ID>2203950</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>No</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>1</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C62143</PREFERRED_NAME>
+          <LONG_NAME>Encounter</LONG_NAME>
+          <CON_ID>2804841</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>Yes</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>0</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+      </ConceptDetails>
+    </ObjectClass>
+    <Property>
+      <PublicId>2867768</PublicId>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>C37939:C38013</PreferredName>
+      <Version>1</Version>
+      <LongName>Date and Time Range</LongName>
+      <ConceptDetails>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C37939</PREFERRED_NAME>
+          <LONG_NAME>Date and Time</LONG_NAME>
+          <CON_ID>2202495</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>No</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>1</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C38013</PREFERRED_NAME>
+          <LONG_NAME>Range</LONG_NAME>
+          <CON_ID>2204649</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>Yes</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>0</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+      </ConceptDetails>
+    </Property>
+    <ObjectClassQualifier NULL="TRUE"/>
+    <PropertyQualifier NULL="TRUE"/>
+    <Origin NULL="TRUE"/>
+  </DATAELEMENTCONCEPT>
+  <VALUEDOMAIN>
+    <PublicId>6422991</PublicId>
+    <PreferredName>6422991v1.0</PreferredName>
+    <PreferredDefinition>Date and time of discharge. Length of stay in SHRINE ontology is calculated from this. If times dont exist in the source data, set HH:MM:SS to 00:00:00.</PreferredDefinition>
+    <LongName>ACT I2B2 CDM Discharge Date and Time</LongName>
+    <Version>1</Version>
+    <WorkflowStatus>RELEASED</WorkflowStatus>
+    <dateModified>2019-02-20</dateModified>
+    <ContextName>PCORTF CDM</ContextName>
+    <ContextVersion>1</ContextVersion>
+    <ConceptualDomain>
+      <PublicId>2008561</PublicId>
+      <ContextName>CTEP</ContextName>
+      <ContextVersion>2.31</ContextVersion>
+      <PreferredName>OCURS</PreferredName>
+      <Version>1</Version>
+      <LongName>Occurrences</LongName>
+    </ConceptualDomain>
+    <Datatype>DATETIME</Datatype>
+    <ValueDomainType>NonEnumerated</ValueDomainType>
+    <UnitOfMeasure NULL="TRUE"/>
+    <DisplayFormat NULL="TRUE"/>
+    <MaximumLength NULL="TRUE"/>
+    <MinimumLength NULL="TRUE"/>
+    <DecimalPlace NULL="TRUE"/>
+    <CharacterSetName NULL="TRUE"/>
+    <MaximumValue NULL="TRUE"/>
+    <MinimumValue NULL="TRUE"/>
+    <Origin>ACT CDM:The Accrual to Clinical Trials Network Common Data Model</Origin>
+    <Representation>
+      <PublicId>2423394</PublicId>
+      <ContextName>NCIP</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <PreferredName>C37939</PreferredName>
+      <Version>1</Version>
+      <LongName>Date/Time</LongName>
+      <ConceptDetails>
+        <ConceptDetails_ITEM>
+          <PREFERRED_NAME>C37939</PREFERRED_NAME>
+          <LONG_NAME>Date and Time</LONG_NAME>
+          <CON_ID>2202495</CON_ID>
+          <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+          <ORIGIN>NCI Thesaurus</ORIGIN>
+          <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+          <PRIMARY_FLAG_IND>Yes</PRIMARY_FLAG_IND>
+          <DISPLAY_ORDER>0</DISPLAY_ORDER>
+        </ConceptDetails_ITEM>
+      </ConceptDetails>
+    </Representation>
+    <PermissibleValues/>
+    <ValueDomainConcepts/>
+  </VALUEDOMAIN>
+  <REFERENCEDOCUMENTSLIST>
+    <REFERENCEDOCUMENTSLIST_ITEM>
+      <Name>Discharge Date and Time</Name>
+      <OrganizationName NULL="TRUE"/>
+      <DocumentType>Preferred Question Text</DocumentType>
+      <DocumentText>Discharge Date and Time</DocumentText>
+      <URL NULL="TRUE"/>
+      <Language>ENGLISH</Language>
+      <DisplayOrder NULL="TRUE"/>
+    </REFERENCEDOCUMENTSLIST_ITEM>
+  </REFERENCEDOCUMENTSLIST>
+  <CLASSIFICATIONSLIST>
+    <CLASSIFICATIONSLIST_ITEM>
+      <ClassificationScheme>
+        <PublicId>6093471</PublicId>
+        <ContextName>PCORTF CDM</ContextName>
+        <ContextVersion>1</ContextVersion>
+        <PreferredName>i2b2 ACT Network CDM 1.4</PreferredName>
+        <Version>1</Version>
+      </ClassificationScheme>
+      <ClassificationSchemeItemName>Visit</ClassificationSchemeItemName>
+      <ClassificationSchemeItemType>GROUP_TYPE</ClassificationSchemeItemType>
+      <CsiPublicId>6093473</CsiPublicId>
+      <CsiVersion>1</CsiVersion>
+    </CLASSIFICATIONSLIST_ITEM>
+  </CLASSIFICATIONSLIST>
+  <ALTERNATENAMELIST>
+    <ALTERNATENAMELIST_ITEM>
+      <ContextName>PCORTF CDM</ContextName>
+      <ContextVersion>1</ContextVersion>
+      <AlternateName>DISCHARGE_DATE</AlternateName>
+      <AlternateNameType>ACT Name</AlternateNameType>
+      <Language>ENGLISH</Language>
+    </ALTERNATENAMELIST_ITEM>
+  </ALTERNATENAMELIST>
+  <DATAELEMENTDERIVATION>
+    <DerivationType NULL="TRUE"/>
+    <DerivationTypeDescription NULL="TRUE"/>
+    <Methods NULL="TRUE"/>
+    <Rule NULL="TRUE"/>
+    <ConcatenationCharacter NULL="TRUE"/>
+    <ComponentDataElementsList NULL="TRUE"/>
+  </DATAELEMENTDERIVATION>
+</DataElement>

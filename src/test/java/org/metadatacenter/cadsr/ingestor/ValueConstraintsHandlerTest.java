@@ -36,6 +36,24 @@ public class ValueConstraintsHandlerTest {
   }
 
   @Test
+  public void shouldNotProduceVCs_NON_ENUMERATED_TIME() throws Exception {
+    DataElement dataElement = FileUtils.readDataElementResource("cde-sample-3631725.xml");
+    assertNonEnumeratedType(dataElement);
+  }
+
+  @Test
+  public void shouldNotProduceVCs_NON_ENUMERATED_DATETIME() throws Exception {
+    DataElement dataElement = FileUtils.readDataElementResource("cde-sample-6422999.xml");
+    assertNonEnumeratedType(dataElement);
+  }
+
+  @Test
+  public void shouldNotProduceVCs_NON_ENUMERATED_DATE_TIME() throws Exception {
+    DataElement dataElement = FileUtils.readDataElementResource("cde-sample-5254714.xml");
+    assertNonEnumeratedType(dataElement);
+  }
+
+  @Test
   public void shouldProduceVCs_ENUMERATED_CHARACTER() throws Exception, UnknownSeparatorException {
     DataElement dataElement = FileUtils.readDataElementResource("cde-sample-5873923.xml");
     PermissibleValuesHandler newHandler = handler.handle(dataElement);
