@@ -101,4 +101,32 @@ public class UIHandlerTest {
     assertThat(timezoneEnabled, anyOf(equalTo(true), equalTo(false)));
   }
 
+  @Test
+  public void shouldNotDefineTemporalGranularityDate_NUMBER() throws Exception {
+    DataElement dataElement = FileUtils.readDataElementResource("cde-sample-2002061.xml");
+    String temporalGranularity = handler.handle(dataElement).getTemporalGranularity();
+    assertThat(temporalGranularity, isEmptyOrNullString());
+  }
+
+  @Test
+  public void shouldNotDefineDisplayTimeFormat_NUMBER() throws Exception {
+    DataElement dataElement = FileUtils.readDataElementResource("cde-sample-2002061.xml");
+    String displayTimeFormat = handler.handle(dataElement).getDisplayTimeFormat();
+    assertThat(displayTimeFormat, isEmptyOrNullString());
+  }
+
+  @Test
+  public void shouldNotDefineTimezoneEnabled_NUMBER() throws Exception {
+    DataElement dataElement = FileUtils.readDataElementResource("cde-sample-2002061.xml");
+    Boolean timezoneEnabled = handler.handle(dataElement).getTimezoneEnabled();
+    assertThat(timezoneEnabled, is(nullValue()));
+  }
+
+  @Test
+  public void shouldNotDefineTimezoneEnabled_CHARACTER() throws Exception {
+    DataElement dataElement = FileUtils.readDataElementResource("cde-sample-2001831.xml");
+    Boolean timezoneEnabled = handler.handle(dataElement).getTimezoneEnabled();
+    assertThat(timezoneEnabled, is(nullValue()));
+  }
+  
 }

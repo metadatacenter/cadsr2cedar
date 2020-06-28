@@ -7,7 +7,6 @@ import org.metadatacenter.cadsr.ingestor.exception.UnsupportedDataElementExcepti
 import org.metadatacenter.model.ModelNodeNames;
 import org.metadatacenter.model.ModelNodeValues;
 
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -35,11 +34,11 @@ public class UIHandler implements ModelHandler {
   private void handleValueDomain(VALUEDOMAIN valueDomain) {
     String datatype = valueDomain.getDatatype().getContent();
     String displayFormat = valueDomain.getDisplayFormat().getContent();
-    if (CadsrConstants.DATE_LIST.contains(datatype)) {
+    if (DATE_LIST.contains(datatype)) {
       handleDateUI(displayFormat);
-    } else if (CadsrConstants.ALL_NUMERIC_LIST.contains(datatype)) {
+    } else if (TIME_LIST.contains(datatype)) {
       handleTimeUI(displayFormat);
-    } else if (CadsrConstants.ALL_TEMPORAL_LIST.contains(datatype)) {
+    } else if (DATETIME_LIST.contains(datatype)) {
       handleDateTimeUI(displayFormat);
     }
   }
