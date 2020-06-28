@@ -1,19 +1,10 @@
 package org.metadatacenter.cadsr.ingestor;
 
-import com.google.common.collect.Maps;
 import org.junit.Before;
 import org.junit.Test;
 import org.metadatacenter.cadsr.cde.schema.DataElement;
-import org.metadatacenter.cadsr.ingestor.cde.CdeParser;
-import org.metadatacenter.cadsr.ingestor.cde.handler.PermissibleValuesHandler;
 import org.metadatacenter.cadsr.ingestor.cde.handler.UIHandler;
-import org.metadatacenter.cadsr.ingestor.exception.UnknownSeparatorException;
-import org.metadatacenter.cadsr.ingestor.exception.UnsupportedDataElementException;
-import org.metadatacenter.model.ModelNodeNames;
 import org.metadatacenter.model.ModelNodeValues;
-
-import java.util.List;
-import java.util.Map;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
@@ -128,5 +119,5 @@ public class UIHandlerTest {
     Boolean timezoneEnabled = handler.handle(dataElement).getTimezoneEnabled();
     assertThat(timezoneEnabled, is(nullValue()));
   }
-  
+
 }
