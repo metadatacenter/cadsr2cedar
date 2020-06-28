@@ -75,7 +75,7 @@ public class UIHandler implements ModelHandler {
       if (DISPLAY_TIME_FORMAT_24H_FORMATS.contains(displayFormat)) {
         displayTimeFormat = ModelNodeValues.TIME_FORMAT_24H;
       } else if (DISPLAY_TIME_FORMAT_AMPM_FORMATS.contains(displayFormat)) {
-        displayTimeFormat = ModelNodeValues.TIME_FORMAT_AMPM;
+        displayTimeFormat = ModelNodeValues.TIME_FORMAT_12H;
       } else {
         displayTimeFormat = ModelNodeValues.TIME_FORMAT_24H; // default value
       }
@@ -101,7 +101,7 @@ public class UIHandler implements ModelHandler {
       if (DISPLAY_TIME_FORMAT_24H_FORMATS.contains(displayFormat)) {
         displayTimeFormat = ModelNodeValues.TIME_FORMAT_24H;
       } else if (DISPLAY_TIME_FORMAT_AMPM_FORMATS.contains(displayFormat)) {
-        displayTimeFormat = ModelNodeValues.TIME_FORMAT_AMPM;
+        displayTimeFormat = ModelNodeValues.TIME_FORMAT_12H;
       } else {
         displayTimeFormat = ModelNodeValues.TIME_FORMAT_24H; // default value
       }

@@ -77,14 +77,14 @@ public class UIHandlerTest {
   public void shouldDefineDisplayTimeFormat_TIME() throws Exception {
     DataElement dataElement = FileUtils.readDataElementResource("cde-sample-3631725.xml");
     String displayTimeFormat = handler.handle(dataElement).getDisplayTimeFormat();
-    assertThat(displayTimeFormat, is(anyOf(is(ModelNodeValues.TIME_FORMAT_24H), is(ModelNodeValues.TIME_FORMAT_AMPM))));
+    assertThat(displayTimeFormat, is(anyOf(is(ModelNodeValues.TIME_FORMAT_24H), is(ModelNodeValues.TIME_FORMAT_12H))));
   }
 
   @Test
   public void shouldDefineDisplayTimeFormatTime_DATETIME() throws Exception {
     DataElement dataElement = FileUtils.readDataElementResource("cde-sample-6422999.xml");
     String displayTimeFormat = handler.handle(dataElement).getDisplayTimeFormat();
-    assertThat(displayTimeFormat, is(anyOf(is(ModelNodeValues.TIME_FORMAT_24H), is(ModelNodeValues.TIME_FORMAT_AMPM))));
+    assertThat(displayTimeFormat, is(anyOf(is(ModelNodeValues.TIME_FORMAT_24H), is(ModelNodeValues.TIME_FORMAT_12H))));
   }
 
   @Test
