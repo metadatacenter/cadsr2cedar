@@ -63,6 +63,8 @@ public class ValueSetsOntologyManager {
         logger.error(e.getMessage());
       }
 
+      logger.info("Adding value set to the ontology. ValueSetId = " + valueSetId + ". Number of values: " + values.size());
+
       ontology = addAnnotationAxiomToClass(IRI.create(DUBLINCORE_IDENTIFIER_IRI), valueDomainId, valueSetClass);
       if (valueDomainVersion != null) {
         ontology = addAnnotationAxiomToClass(IRI.create(DUBLINCORE_VERSION_IRI), valueDomainVersion, valueSetClass);

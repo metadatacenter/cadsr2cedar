@@ -1,6 +1,8 @@
 package org.metadatacenter.cadsr.ingestor.tools;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.base.Stopwatch;
+import com.google.common.collect.Maps;
 import org.apache.commons.io.FileUtils;
 import org.metadatacenter.cadsr.category.schema.Classifications;
 import org.metadatacenter.cadsr.cde.schema.DataElement;
@@ -29,6 +31,7 @@ import javax.xml.bind.JAXBException;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.text.DecimalFormat;
 import java.time.LocalDateTime;
 import java.util.*;
@@ -297,28 +300,10 @@ public class CadsrCategoriesAndCdesUpdaterTool {
             // and version
             logger.warn("The CDE has changed, but its public Id and Version were not updated in the XML: " + newCdeUniqueId);
             // Check changes
-            logger.info("  - CDE changes summary: " + newCdeUniqueId);
+            logger.info("- CDE changes summary: " + newCdeUniqueId + " (Existing CDE = CDE 1; New CDE = CDE 2)");
             String cdeCedarId = existingCdesMap.get(newCdeUniqueId).getCedarId();
-            Map<String, Object> existingCedarCdeFieldMap = CedarServices.getCdeById(cdeCedarId, cedarEnvironment,
-                apiKey);
-            for (String existingKey : existingCedarCdeFieldMap.keySet()) {
-              // We don't take into account the fields that are created when creating the CEDAR artifact since, for the
-              // new field, their values will be null
-              if (!existingKey.equals(PAV_CREATED_ON) && !existingKey.equals(PAV_CREATED_BY) &&
-                  !existingKey.equals(OSLC_MODIFIED_BY) && !existingKey.equals(PAV_LAST_UPDATED_ON) &&
-                  !existingKey.equals(JSON_LD_ID)) {
-                if (!newCdeFieldMap.containsKey(existingKey)) {
-                  logger.info("    - Missing field in new CDE: " + existingKey);
-                } else {
-                  Object existingValue = existingCedarCdeFieldMap.get(existingKey);
-                  Object newValue = newCdeFieldMap.get(existingKey);
-                  if (!existingValue.equals(newValue)) {
-                    logger.info("    - Found different values for CDE JSON key: " + existingKey + "\n        - Value in existing " +
-                        "CDE: " + existingValue + "\n        - Value in new CDE: " + newValue);
-                  }
-                }
-              }
-            }
+            Map<String, Object> existingCedarCdeFieldMap = CedarServices.getCdeById(cdeCedarId, cedarEnvironment, apiKey);
+            CdeUtil.compareCdeFieldMaps(existingCedarCdeFieldMap, newCdeFieldMap);
             CdeStats.getInstance().numberOfCdesChangedButVersionNotUpdated++;
           }
         } else {
@@ -401,18 +386,20 @@ public class CadsrCategoriesAndCdesUpdaterTool {
           + " (" + GeneralUtil.calculatePercentage(CdeStats.getInstance().numberOfCdesProcessedOk,
           CdeStats.getInstance().numberOfInputCdes) + ")");
       logger.info("#      - Number of CEDAR CDEs that were skipped: "
-          + countFormat.format(CdeStats.getInstance().numberOfCdesSkipped)
-          + " (" + GeneralUtil.calculatePercentage(CdeStats.getInstance().numberOfCdesSkipped,
+          + countFormat.format(CdeStats.getInstance().skippedIds.size())
+          + " (" + GeneralUtil.calculatePercentage(CdeStats.getInstance().skippedIds.size(),
           CdeStats.getInstance().numberOfInputCdes) + ")");
       logger.info("#      - Number of CEDAR CDEs that failed to process: "
-          + countFormat.format(CdeStats.getInstance().numberOfCdesFailed)
-          + " (" + GeneralUtil.calculatePercentage(CdeStats.getInstance().numberOfCdesFailed,
+          + countFormat.format(CdeStats.getInstance().failedIds.size())
+          + " (" + GeneralUtil.calculatePercentage(CdeStats.getInstance().failedIds.size(),
           CdeStats.getInstance().numberOfInputCdes) + ")");
-      logger.info("#      - Breakdown of skipped CDEs: ");
-      for (Map.Entry<String, Integer> entry : CdeStats.getInstance().getSkippedReasons().entrySet()) {
-        logger.info("#        - " + entry.getKey() + ": " + entry.getValue());
+      if (CdeStats.getInstance().skippedIds.size() > 0) {
+        logger.info("#      - Breakdown of skipped CDEs: ");
+        for (Map.Entry<String, Integer> entry : CdeStats.getInstance().getSkippedReasons().entrySet()) {
+          logger.info("#        - " + entry.getKey() + ": " + entry.getValue());
+        }
       }
-      if (CdeStats.getInstance().numberOfCdesFailed > 0) {
+      if (CdeStats.getInstance().failedIds.size() > 0) {
         logger.info("#      - Breakdown of failed CDEs: ");
         for (Map.Entry<String, Integer> entry : CdeStats.getInstance().getFailedReasons().entrySet()) {
           logger.info("#        - " + entry.getKey() + ": " + entry.getValue());
