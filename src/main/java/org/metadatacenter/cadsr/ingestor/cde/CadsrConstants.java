@@ -2,13 +2,11 @@ package org.metadatacenter.cadsr.ingestor.cde;
 
 import com.google.common.collect.Lists;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class CadsrConstants {
 
-  // The reasons behind the following caDSR-to-CEDAR datatype mappings are available at https://stanfordmedicine.app
-  // .box.com/file/571026362915
+  // The reasoning behind these mappings are documented at https://stanfordmedicine.app.box.com/file/571026362915
 
   // caDSR datatypes mapped in the 1st iteration
   public static final String ALPHANUMERIC = "ALPHANUMERIC";
@@ -101,6 +99,189 @@ public class CadsrConstants {
   public static final String JAVA_TIMESTAMP = "java.sql.Timestamp";
   public static final String TIME = "TIME";
   public static final String XSD_DATETIME = "xsd:dateTime";
+  // Data types added on July 2020
+  public static final String BINARY_OBJECT = "BINARY OBJECT";
+  public static final String BRIDG_SET_V21 = "BRIDG_SET_v2.1";
+  public static final String HL7ADV3 = "HL7ADv3";
+  public static final String HL7ANYV3 = "HL7ANYv3";
+  public static final String HL7BAGADV3 = "HL7BAGADv3";
+  public static final String HL7BAGTELV3 = "HL7BAGTELv3";
+  public static final String HL7BLV3 = "HL7BLv3";
+  public static final String HL7DSETCDV3 = "HL7DSETCDv3";
+  public static final String HL7DSETCRV3 = "HL7DSETCRv3";
+  public static final String HL7DSETENV3 = "HL7DSETENv3";
+  public static final String HL7DSETIDV3 = "HL7DSETIDv3";
+  public static final String HL7DSETOIDV3 = "HL7DSETOIDv3";
+  public static final String HL7DSETONV3 = "HL7DSETONv3";
+  public static final String HL7DSETSCV3 = "HL7DSETSCv3";
+  public static final String HL7DSETSTV3 = "HL7DSETSTv3";
+  public static final String HL7DSETTELURLV3 = "HL7DSETTELURLv3";
+  public static final String HL7EXPRPQV3 = "HL7EXPRPQv3";
+  public static final String HL7IDV3 = "HL7IDv3";
+  public static final String HL7IIV3 = "HL7IIv3";
+  public static final String HL7INTNONNEGV3 = "HL7INTNONNEGv3";
+  public static final String HL7INTPOSV3 = "HL7INTPOSv3";
+  public static final String HL7IVLEXPRTSDATETIME = "HL7IVLEXPRTSDATETIME";
+  public static final String HL7IVLINTV3 = "HL7IVLINTv3";
+  public static final String HL7IVLPQV3 = "HL7IVLPQv3";
+  public static final String HL7IVLTSDATEFULLV3 = "HL7IVLTSDATEFULLv3";
+  public static final String HL7IVLTSDATETIMEV3 = "HL7IVLTSDATETIMEv3";
+  public static final String HL7IVLTSDATEV3 = "HL7IVLTSDATEv3";
+  public static final String HL7OIDV3 = "HL7OIDv3";
+  public static final String HL7PPDV30 = "HL7PPDv3.0";
+  public static final String HL7PQTIMEV3 = "HL7PQTIMEv3";
+  public static final String HL7PQV3 = "HL7PQv3";
+  public static final String HL7RTOINTNONNEGINTPO = "HL7RTOINTNONNEGINTPO";
+  public static final String HL7RTOINTNONNEGPQTIM = "HL7RTOINTNONNEGPQTIM";
+  public static final String HL7RTOPQPQTIMEV3 = "HL7RTOPQPQTIMEv3";
+  public static final String HL7RTOPQPQV3 = "HL7RTOPQPQv3";
+  public static final String HL7SCV3 = "HL7SCv3";
+  public static final String HL7STSIMPLEV3 = "HL7STSIMPLEv3";
+  public static final String HL7TELURLV3 = "HL7TELURLv3";
+  public static final String HL7TNV3 = "HL7TNv3";
+  public static final String HL7TSDATEFULLV3 = "HL7TSDATEFULLv3";
+  public static final String HL7TSDATETIMEV3 = "HL7TSDATETIMEv3";
+  public static final String HL7URGINTNONNEGvV3 = "HL7URGINTNONNEGv3";
+  public static final String HL7URGINTPOSV3 = "HL7URGINTPOSv3";
+  public static final String HL7URGPQTIMEV3 = "HL7URGPQTIMEv3";
+  public static final String HL7URGPQV3 = "HL7URGPQv3";
+  public static final String ISO21090ADXPBNNV1 = "ISO21090ADXPBNNv1.0";
+  public static final String ISO21090ADXPBNRV1 = "ISO21090ADXPBNRv1.0";
+  public static final String ISO21090ADXPBNSV1 = "ISO21090ADXPBNSv1.0";
+  public static final String ISO21090ADXPBRV1 = "ISO21090ADXPBRv1.0";
+  public static final String ISO21090ADXPCARV1 = "ISO21090ADXPCARv1.0";
+  public static final String ISO21090ADXPCENV1 = "ISO21090ADXPCENv1.0";
+  public static final String ISO21090ADXPCPAV1 = "ISO21090ADXPCPAv1.0";
+  public static final String ISO21090ADXPDIAAV1 = "ISO21090ADXPDIAAv1.0";
+  public static final String ISO21090ADXPDIQV1 = "ISO21090ADXPDIQv1.0";
+  public static final String ISO21090ADXPDIRV1 = "ISO21090ADXPDIRv1.0";
+  public static final String ISO21090ADXPDISTV1 = "ISO21090ADXPDISTv1.0";
+  public static final String ISO21090ADXPDMDV1 = "ISO21090ADXPDMDv1.0";
+  public static final String ISO21090ADXPDMIDV1 = "ISO21090ADXPDMIDv1.0";
+  public static final String ISO21090ADXPINTV1 = "ISO21090ADXPINTv1.0";
+  public static final String ISO21090ADXPPOBV1 = "ISO21090ADXPPOBv1.0";
+  public static final String ISO21090ADXPPREV1 = "ISO21090ADXPPREv1.0";
+  public static final String ISO21090ADXPSALV1 = "ISO21090ADXPSALv1.0";
+  public static final String ISO21090ADXPSTBV1 = "ISO21090ADXPSTBv1.0";
+  public static final String ISO21090ADXPSTRV1 = "ISO21090ADXPSTRv1.0";
+  public static final String ISO21090ADXPSTTPV1 = "ISO21090ADXPSTTPv1.0";
+  public static final String ISO21090ADXPUNIDV1 = "ISO21090ADXPUNIDv1.0";
+  public static final String ISO21090ADXPUNTV1 = "ISO21090ADXPUNTv1.0";
+  public static final String ISO21090BLNTNULV1 = "ISO21090BLNTNULv1.0";
+  public static final String ISO21090CDBASEV1 = "ISO21090CDBasev1.0";
+  public static final String ISO21090CDCVV1 = "ISO21090CDCVv1.0";
+  public static final String ISO21090CDV1 = "ISO21090CDv1.0";
+  public static final String ISO21090COLLV1 = "ISO21090COLLv1.0";
+  public static final String ISO21090COV1 = "ISO21090COv1.0";
+  public static final String ISO21090CSV1 = "ISO21090CSv1.0";
+  public static final String ISO21090EDDCINLINV1 = "ISO21090EDDCINLINv1.";
+  public static final String ISO21090EDDCREFV1 = "ISO21090EDDCREFv1.0";
+  public static final String ISO21090EDIMAGEV1 = "ISO21090EDIMAGEv1.0";
+  public static final String ISO21090EDSIGNAT1 = "ISO21090EDSIGNAT1.0";
+  public static final String ISO21090EDSTRTITV1 = "ISO21090EDSTRTITv1.0";
+  public static final String ISO21090EDSTRTXV1 = "ISO21090EDSTRTXv1.0";
+  public static final String ISO21090EIVLV1 = "ISO21090EIVLv1.0";
+  public static final String ISO21090ENV1 = "ISO21090ENV1.0";
+  public static final String ISO21090GLISTV1 = "ISO21090GLISTv1.0";
+  public static final String ISO21090GTSBPIVLV1 = "ISO21090GTSBPIVLv1.0";
+  public static final String ISO21090HISTV1 = "ISO21090HISTv1.0";
+  public static final String ISO21090HXITV1 = "ISO21090HXITv1.0";
+  public static final String ISO21090IVLHIGHV1 = "ISO21090IVLHIGHv1.0";
+  public static final String ISO21090IVLLOWV1 = "ISO21090IVLLOWv1.0";
+  public static final String ISO21090IVLWIDV1 = "ISO21090IVLWIDv1.0";
+  public static final String ISO21090LISTV1 = "ISO21090LISTv1.0";
+  public static final String ISO21090MOV1 = "ISO21090MOv1.0";
+  public static final String ISO21090NPPDV1 = "ISO21090NPPDv1.0";
+  public static final String ISO21090PIVLV1 = "ISO21090PIVLv1.0";
+  public static final String ISO21090PQRV1 = "ISO21090PQRv1.0";
+  public static final String ISO21090QSCV1 = "ISO21090QSCv1.0";
+  public static final String ISO21090QSDV1 = "ISO21090QSDv1.0";
+  public static final String ISO21090QSETV1 = "ISO21090QSETv1.0";
+  public static final String ISO21090QSIV1 = "ISO21090QSIv1.0";
+  public static final String ISO21090QSPV1 = "ISO21090QSPv1.0";
+  public static final String ISO21090QSSV1 = "ISO21090QSSv1.0";
+  public static final String ISO21090QSUV1 = "ISO21090QSUv1.0";
+  public static final String ISO21090SCNTV1 = "ISO21090SCNTv1.0";
+  public static final String ISO21090SCV1 = "ISO21090SCv1.0";
+  public static final String ISO21090SLISTV1 = "ISO21090SLISTv1.0";
+  public static final String ISO21090STNTV1 = "ISO21090STNTv1.0";
+  public static final String ISO21090STRDCCMCTV1 = "ISO21090StrDcCMCtv1.";
+  public static final String ISO21090STRDCCMFTNTV = "ISO21090StrDcCMFtntv";
+  public static final String ISO21090STRDCCMGV1 = "ISO21090StrDcCMGv1.0";
+  public static final String ISO21090STRDCCMINLV1 = "ISO21090StrDcCMInlv1";
+  public static final String ISO21090STRDCCMTITV1 = "ISO21090StrDcCMTitv1";
+  public static final String ISO21090STRDCCLGPV1 = "ISO21090StrDcClGpv1.";
+  public static final String ISO21090STRDCCONTV1 = "ISO21090StrDcContv1.";
+  public static final String ISO21090STRDCFTNRFV1 = "ISO21090StrDcFtnRfv1";
+  public static final String ISO21090STRDCFTNV1 = "ISO21090StrDcFtnv1.0";
+  public static final String ISO21090STRDCITEMV1 = "ISO21090StrDcItemv1.";
+  public static final String ISO21090STRDCLHTMLV1 = "ISO21090StrDcLHtmlv1";
+  public static final String ISO21090STRDCLENV1 = "ISO21090StrDcLenv1.0";
+  public static final String ISO21090STRDCLISTV1 = "ISO21090StrDcListv1.";
+  public static final String ISO21090STRDCPARGV1 = "ISO21090StrDcPargv1.";
+  public static final String ISO21090STRDCRDMMV1 = "ISO21090StrDcRdMMv1.";
+  public static final String ISO21090STRDCSUBV1 = "ISO21090StrDcSubv1.0";
+  public static final String ISO21090STRDCTCELV1 = "ISO21090StrDcTCelv1.";
+  public static final String ISO21090STRDCTRGRPV1 = "ISO21090StrDcTRGrpv1";
+  public static final String ISO21090STRDCTRPTV1 = "ISO21090StrDcTRPtv1.";
+  public static final String ISO21090STRDCTRV1 = "ISO21090StrDcTRv1.0";
+  public static final String ISO21090STRDCTBLEIT1 = "ISO21090StrDcTbleIt1";
+  public static final String ISO21090STRDCTBLEV1 = "ISO21090StrDcTblev1.";
+  public static final String ISO21090STRDCTCELLV1 = "ISO21090StrDcTcellv1";
+  public static final String ISO21090STRDCTITFTV1 = "ISO21090StrDcTitFtv1";
+  public static final String ISO21090STRDOCBAV1 = "ISO21090StrDocBav1.0";
+  public static final String ISO21090STRDOCBRV1 = "ISO21090StrDocBrv1.0";
+  public static final String ISO21090STRDOCCAPV1 = "ISO21090StrDocCapv1.";
+  public static final String ISO21090STRDOCCLITV1 = "ISO21090StrDocClItv1";
+  public static final String ISO21090STRDOCCOLV1 = "ISO21090StrDocColv1.";
+  public static final String ISO21090STRDOCSUPV1 = "ISO21090StrDocSupv1.";
+  public static final String ISO21090STRDOCTEXTV1 = "ISO21090StrDocTextv1";
+  public static final String ISO21090STRDOCTITV1 = "ISO21090StrDocTitv1.";
+  public static final String ISO21090TELEMAILV1 = "ISO21090TELEMAILv1.0";
+  public static final String ISO21090TELPERSV1 = "ISO21090TELPERSv1.0";
+  public static final String ISO21090TELPHONV1 = "ISO21090TELPHONv1.0";
+  public static final String ISO21090TSBIRTHV1 = "ISO21090TSBIRTHv1.0";
+  public static final String ISO21090TSDATEV1 = "ISO21090TSDATEv1.0";
+  public static final String ISO21090TSDTTIFLV1 = "ISO21090TSDTTIFLv1.0";
+  public static final String ISO21090URGHIGHV1 = "ISO21090URGHIGHv1.0";
+  public static final String ISO21090URGLOWV1 = "ISO21090URGLOWv1.0";
+  public static final String ISO21090UVPV1 = "ISO21090UVPv1.0";
+  public static final String MUTABLETREENOTE = "MutableTreeNote";
+  public static final String SVG = "SVG";
+  public static final String STRING_ARRAY = "String Array";
+  public static final String TABLE = "TABLE";
+  public static final String EVS_DOMAIN_PROPERTY = "evs.domain.Property";
+  public static final String EVS_DOMAIN_ROLE = "evs.domain.Role";
+  public static final String EVS_DOMAIN_SOURCE = "evs.domain.Source";
+  public static final String EVS_DOMAIN_TREENODE = "evs.domain.TreeNode";
+  public static final String JAVA_LANG_STRING = "java.lang.String[][]";
+  public static final String JAVA_LANG_VOID = "java.lang.Void";
+  public static final String JAVA_MATH_BIGDECIMAL = "java.math.BigDecimal";
+  public static final String JAVA_SQL_BLOB = "java.sql.Blob";
+  public static final String JAVA_SQL_CLOB = "java.sql.Clob";
+  public static final String JAVA_UTIL_ARRAYLIST = "java.util.ArrayList";
+  public static final String JAVA_UTIL_HASHSET = "java.util.HashSet";
+  public static final String JAVA_UTIL_HASHTABLE = "java.util.Hashtable";
+  public static final String JAVA_UTIL_SET = "java.util.Set";
+  public static final String JAVA_UTIL_VECTOR = "java.util.Vector";
+  public static final String XSD_ID_THEN_XSD_ID = "xsd:ID' THEN 'xsd:ID'";
+  public static final String XSD_IDREF_THEN_XSD_IDREF = "xsd:IDREF' THEN 'xsd:IDREF'";
+  public static final String XSD_BASE64BINARY = "xsd:base64Binary";
+  public static final String XSD_BOOLEAN_THEN_XSD_BOOLEAN = "xsd:boolean' THEN 'xsd:boolean'";
+  public static final String XSD_BYTE_THEN_XSD_BYTE = "xsd:byte' THEN 'xsd:byte'";
+  public static final String XSD_DATE_THEN_XSD_DATE = "xsd:date' THEN 'xsd:date'";
+  public static final String XSD_DATETIME_THEN_XSD_DATETIME = "xsd:dateTime' THEN 'xsd:dateTime'";
+  public static final String XSD_DECIMAL_THEN_XSD_DECIMAL = "xsd:decimal' THEN 'xsd:decimal'";
+  public static final String XSD_DOUBLE_THEN_XSD_DOUBLE = "xsd:double' THEN 'xsd:double'";
+  public static final String XSD_FLOAT_THEN_XSD_FLOAT = "xsd:float' THEN 'xsd:float'";
+  public static final String XSD_INT_THEN_XSD_INT = "xsd:int' THEN 'xsd:int'";
+  public static final String XSD_INTEGER_THEN_XSD_INTEGER = "xsd:integer' THEN 'xsd:integer'";
+  public static final String XSD_LONG_THEN_XSD_LONG = "xsd:long' THEN 'xsd:long'";
+  public static final String XSD_SHORT_THEN_XSD_SHORT = "xsd:short' THEN 'xsd:short'";
+  public static final String XSD_STRING_THEN_XSD_STRING = "xsd:string' THEN 'xsd:string'";
+  public static final String XSD_TIME_THEN_XSD_TIMEPUBLIC_STATIC_FINAL_STRING_XXX = "xsd:time' THEN 'xsd:time'public " +
+      "static final String XXX = \"";
+
   // Data types that we agreed to skip
   public static final String ANY_CLASS = "anyClass";
   public static final String BINARY = "binary";
@@ -118,6 +299,41 @@ public class CadsrConstants {
       UMLXMLV1, VARCHAR, XSD_STRING, HL7CDV3, ISO21090IVLV1, JAVA_INTEGER_ARRAY, JAVA_STRING_ARRAY
   );
   public static final List<String> STRING_MAX_LENGTH_1_LIST = Lists.newArrayList(JAVA_CHARACTER);
+
+  // Datatypes added on July 2020. NCI suggested to temporarily map them directly to String
+  public static final List<String> ADDITIONAL_STRING_LIST = Lists.newArrayList(
+      BINARY_OBJECT, BRIDG_SET_V21, HL7ADV3, HL7ANYV3, HL7BAGADV3, HL7BAGTELV3, HL7BLV3, HL7DSETCDV3, HL7DSETCRV3,
+      HL7DSETENV3, HL7DSETIDV3, HL7DSETOIDV3, HL7DSETONV3, HL7DSETSCV3, HL7DSETSTV3, HL7DSETTELURLV3, HL7EXPRPQV3,
+      HL7IDV3, HL7IIV3, HL7INTNONNEGV3, HL7INTPOSV3, HL7IVLEXPRTSDATETIME, HL7IVLINTV3, HL7IVLPQV3,
+      HL7IVLTSDATEFULLV3, HL7IVLTSDATETIMEV3, HL7IVLTSDATEV3, HL7OIDV3, HL7PPDV30, HL7PQTIMEV3, HL7PQV3,
+      HL7RTOINTNONNEGINTPO, HL7RTOINTNONNEGPQTIM, HL7RTOPQPQTIMEV3, HL7RTOPQPQV3, HL7SCV3, HL7STSIMPLEV3, HL7TELURLV3
+      , HL7TNV3, HL7TSDATEFULLV3, HL7TSDATETIMEV3, HL7URGINTNONNEGvV3, HL7URGINTPOSV3, HL7URGPQTIMEV3, HL7URGPQV3,
+      ISO21090ADXPBNNV1, ISO21090ADXPBNRV1, ISO21090ADXPBNSV1, ISO21090ADXPBRV1, ISO21090ADXPCARV1, ISO21090ADXPCENV1
+      , ISO21090ADXPCPAV1, ISO21090ADXPDIAAV1, ISO21090ADXPDIQV1, ISO21090ADXPDIRV1, ISO21090ADXPDISTV1,
+      ISO21090ADXPDMDV1, ISO21090ADXPDMIDV1, ISO21090ADXPINTV1, ISO21090ADXPPOBV1, ISO21090ADXPPREV1,
+      ISO21090ADXPSALV1, ISO21090ADXPSTBV1, ISO21090ADXPSTRV1, ISO21090ADXPSTTPV1, ISO21090ADXPUNIDV1,
+      ISO21090ADXPUNTV1, ISO21090BLNTNULV1, ISO21090CDBASEV1, ISO21090CDCVV1, ISO21090CDV1, ISO21090COLLV1,
+      ISO21090COV1, ISO21090CSV1, ISO21090EDDCINLINV1, ISO21090EDDCREFV1, ISO21090EDIMAGEV1, ISO21090EDSIGNAT1,
+      ISO21090EDSTRTITV1, ISO21090EDSTRTXV1, ISO21090EIVLV1, ISO21090ENV1, ISO21090GLISTV1, ISO21090GTSBPIVLV1,
+      ISO21090HISTV1, ISO21090HXITV1, ISO21090IVLHIGHV1, ISO21090IVLLOWV1, ISO21090IVLWIDV1, ISO21090LISTV1,
+      ISO21090MOV1, ISO21090NPPDV1, ISO21090PIVLV1, ISO21090PQRV1, ISO21090QSCV1, ISO21090QSDV1, ISO21090QSETV1,
+      ISO21090QSIV1, ISO21090QSPV1, ISO21090QSSV1, ISO21090QSUV1, ISO21090SCNTV1, ISO21090SCV1, ISO21090SLISTV1,
+      ISO21090STNTV1, ISO21090STRDCCMCTV1, ISO21090STRDCCMFTNTV, ISO21090STRDCCMGV1, ISO21090STRDCCMINLV1,
+      ISO21090STRDCCMTITV1, ISO21090STRDCCLGPV1, ISO21090STRDCCONTV1, ISO21090STRDCFTNRFV1, ISO21090STRDCFTNV1,
+      ISO21090STRDCITEMV1, ISO21090STRDCLHTMLV1, ISO21090STRDCLENV1, ISO21090STRDCLISTV1, ISO21090STRDCPARGV1,
+      ISO21090STRDCRDMMV1, ISO21090STRDCSUBV1, ISO21090STRDCTCELV1, ISO21090STRDCTRGRPV1, ISO21090STRDCTRPTV1,
+      ISO21090STRDCTRV1, ISO21090STRDCTBLEIT1, ISO21090STRDCTBLEV1, ISO21090STRDCTCELLV1, ISO21090STRDCTITFTV1,
+      ISO21090STRDOCBAV1, ISO21090STRDOCBRV1, ISO21090STRDOCCAPV1, ISO21090STRDOCCLITV1, ISO21090STRDOCCOLV1,
+      ISO21090STRDOCSUPV1, ISO21090STRDOCTEXTV1, ISO21090STRDOCTITV1, ISO21090TELEMAILV1, ISO21090TELPERSV1,
+      ISO21090TELPHONV1, ISO21090TSBIRTHV1, ISO21090TSDATEV1, ISO21090TSDTTIFLV1, ISO21090URGHIGHV1, ISO21090URGLOWV1
+      , ISO21090UVPV1, MUTABLETREENOTE, SVG, STRING_ARRAY, TABLE, EVS_DOMAIN_PROPERTY, EVS_DOMAIN_ROLE,
+      EVS_DOMAIN_SOURCE, EVS_DOMAIN_TREENODE, JAVA_LANG_STRING, JAVA_LANG_VOID, JAVA_MATH_BIGDECIMAL, JAVA_SQL_BLOB,
+      JAVA_SQL_CLOB, JAVA_UTIL_ARRAYLIST, JAVA_UTIL_HASHSET, JAVA_UTIL_HASHTABLE, JAVA_UTIL_SET, JAVA_UTIL_VECTOR,
+      XSD_ID_THEN_XSD_ID, XSD_IDREF_THEN_XSD_IDREF, XSD_BASE64BINARY, XSD_BOOLEAN_THEN_XSD_BOOLEAN,
+      XSD_BYTE_THEN_XSD_BYTE, XSD_DATE_THEN_XSD_DATE, XSD_DATETIME_THEN_XSD_DATETIME, XSD_DECIMAL_THEN_XSD_DECIMAL,
+      XSD_DOUBLE_THEN_XSD_DOUBLE, XSD_FLOAT_THEN_XSD_FLOAT, XSD_INT_THEN_XSD_INT, XSD_INTEGER_THEN_XSD_INTEGER,
+      XSD_LONG_THEN_XSD_LONG, XSD_SHORT_THEN_XSD_SHORT, XSD_STRING_THEN_XSD_STRING,
+      XSD_TIME_THEN_XSD_TIMEPUBLIC_STATIC_FINAL_STRING_XXX);
 
   /* Numeric */
   public static final List<String> NUMERIC_ANY_LIST = Lists.newArrayList();
@@ -162,6 +378,7 @@ public class CadsrConstants {
     // String
     ALL_STRING_LIST.addAll(STRING_LIST);
     ALL_STRING_LIST.addAll(STRING_MAX_LENGTH_1_LIST);
+    ALL_STRING_LIST.addAll(ADDITIONAL_STRING_LIST);
     // Numeric
     ALL_NUMERIC_LIST.addAll(NUMERIC_ANY_LIST);
     ALL_NUMERIC_LIST.addAll(NUMERIC_INTEGER_LIST);
