@@ -71,9 +71,9 @@ public class UIHandler implements ModelHandler {
         temporalGranularity = ModelNodeValues.TEMPORAL_GRANULARITY_SECOND;
       }
 
-      if (DISPLAY_TIME_FORMAT_24H_FORMATS.contains(displayFormat)) {
+      if (INPUT_TIME_FORMAT_24H_FORMATS.contains(displayFormat)) {
         inputTimeFormat = ModelNodeValues.TIME_FORMAT_24H;
-      } else if (DISPLAY_TIME_FORMAT_AMPM_FORMATS.contains(displayFormat)) {
+      } else if (INPUT_TIME_FORMAT_AMPM_FORMATS.contains(displayFormat)) {
         inputTimeFormat = ModelNodeValues.TIME_FORMAT_12H;
       } else {
         inputTimeFormat = ModelNodeValues.TIME_FORMAT_24H; // default value
@@ -97,9 +97,9 @@ public class UIHandler implements ModelHandler {
         temporalGranularity = ModelNodeValues.TEMPORAL_GRANULARITY_SECOND;
       }
 
-      if (DISPLAY_TIME_FORMAT_24H_FORMATS.contains(displayFormat)) {
+      if (INPUT_TIME_FORMAT_24H_FORMATS.contains(displayFormat)) {
         inputTimeFormat = ModelNodeValues.TIME_FORMAT_24H;
-      } else if (DISPLAY_TIME_FORMAT_AMPM_FORMATS.contains(displayFormat)) {
+      } else if (INPUT_TIME_FORMAT_AMPM_FORMATS.contains(displayFormat)) {
         inputTimeFormat = ModelNodeValues.TIME_FORMAT_12H;
       } else {
         inputTimeFormat = ModelNodeValues.TIME_FORMAT_24H; // default value
@@ -128,7 +128,7 @@ public class UIHandler implements ModelHandler {
       ui.put(ModelNodeNames.UI_TEMPORAL_GRANULARITY, temporalGranularity);
     }
     if (inputTimeFormat != null) {
-      ui.put(ModelNodeNames.UI_DISPLAY_TIME_FORMAT, inputTimeFormat);
+      ui.put(ModelNodeNames.UI_INPUT_TIME_FORMAT, inputTimeFormat);
     }
     if (timezoneEnabled != null) {
       ui.put(ModelNodeNames.UI_TIMEZONE_ENABLED, timezoneEnabled);

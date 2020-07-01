@@ -208,8 +208,8 @@ public class CadsrConstants {
   public static final List<String> DATETIME_GRANULARITY_DECIMALSECOND_FORMATS = Lists.newArrayList();
 
   /* Display time format according to caDSR display formats */
-  public static final List<String> DISPLAY_TIME_FORMAT_24H_FORMATS = Lists.newArrayList("TIME (HR(24):MN)");
-  public static final List<String> DISPLAY_TIME_FORMAT_AMPM_FORMATS = Lists.newArrayList();
+  public static final List<String> INPUT_TIME_FORMAT_24H_FORMATS = Lists.newArrayList("TIME (HR(24):MN)");
+  public static final List<String> INPUT_TIME_FORMAT_AMPM_FORMATS = Lists.newArrayList();
 
 }
 
