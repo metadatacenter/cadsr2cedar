@@ -15,7 +15,7 @@ import static org.metadatacenter.cadsr.ingestor.cde.CadsrConstants.*;
 public class UIHandler implements ModelHandler {
 
   private String temporalGranularity;
-  private String displayTimeFormat;
+  private String inputTimeFormat;
   private Boolean timezoneEnabled;
 
   public UIHandler handle(DataElement dataElement) throws UnsupportedDataElementException {
@@ -72,11 +72,11 @@ public class UIHandler implements ModelHandler {
       }
 
       if (DISPLAY_TIME_FORMAT_24H_FORMATS.contains(displayFormat)) {
-        displayTimeFormat = ModelNodeValues.TIME_FORMAT_24H;
+        inputTimeFormat = ModelNodeValues.TIME_FORMAT_24H;
       } else if (DISPLAY_TIME_FORMAT_AMPM_FORMATS.contains(displayFormat)) {
-        displayTimeFormat = ModelNodeValues.TIME_FORMAT_12H;
+        inputTimeFormat = ModelNodeValues.TIME_FORMAT_12H;
       } else {
-        displayTimeFormat = ModelNodeValues.TIME_FORMAT_24H; // default value
+        inputTimeFormat = ModelNodeValues.TIME_FORMAT_24H; // default value
       }
 
       timezoneEnabled = false; // default value
@@ -98,11 +98,11 @@ public class UIHandler implements ModelHandler {
       }
 
       if (DISPLAY_TIME_FORMAT_24H_FORMATS.contains(displayFormat)) {
-        displayTimeFormat = ModelNodeValues.TIME_FORMAT_24H;
+        inputTimeFormat = ModelNodeValues.TIME_FORMAT_24H;
       } else if (DISPLAY_TIME_FORMAT_AMPM_FORMATS.contains(displayFormat)) {
-        displayTimeFormat = ModelNodeValues.TIME_FORMAT_12H;
+        inputTimeFormat = ModelNodeValues.TIME_FORMAT_12H;
       } else {
-        displayTimeFormat = ModelNodeValues.TIME_FORMAT_24H; // default value
+        inputTimeFormat = ModelNodeValues.TIME_FORMAT_24H; // default value
       }
 
       timezoneEnabled = false; // default value
@@ -117,8 +117,8 @@ public class UIHandler implements ModelHandler {
     return (timezoneEnabled != null ? timezoneEnabled : null);
   }
 
-  public String getDisplayTimeFormat() {
-    return (displayTimeFormat != null ? displayTimeFormat : null);
+  public String getInputTimeFormat() {
+    return (inputTimeFormat != null ? inputTimeFormat : null);
   }
 
   @Override
@@ -127,8 +127,8 @@ public class UIHandler implements ModelHandler {
     if (temporalGranularity != null) {
       ui.put(ModelNodeNames.UI_TEMPORAL_GRANULARITY, temporalGranularity);
     }
-    if (displayTimeFormat != null) {
-      ui.put(ModelNodeNames.UI_DISPLAY_TIME_FORMAT, displayTimeFormat);
+    if (inputTimeFormat != null) {
+      ui.put(ModelNodeNames.UI_DISPLAY_TIME_FORMAT, inputTimeFormat);
     }
     if (timezoneEnabled != null) {
       ui.put(ModelNodeNames.UI_TIMEZONE_ENABLED, timezoneEnabled);

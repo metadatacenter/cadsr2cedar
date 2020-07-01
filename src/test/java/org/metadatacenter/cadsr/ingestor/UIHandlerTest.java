@@ -29,10 +29,10 @@ public class UIHandlerTest {
   }
 
   @Test
-  public void shouldNotDefineDisplayTimeFormat_DATE() throws Exception {
+  public void shouldNotDefineInputTimeFormat_DATE() throws Exception {
     DataElement dataElement = FileUtils.readDataElementResource("cde-sample-2001826.xml");
-    String displayTimeFormat = handler.handle(dataElement).getDisplayTimeFormat();
-    assertThat(displayTimeFormat, isEmptyOrNullString());
+    String inputTimeFormat = handler.handle(dataElement).getInputTimeFormat();
+    assertThat(inputTimeFormat, isEmptyOrNullString());
   }
 
   @Test
@@ -65,17 +65,17 @@ public class UIHandlerTest {
   }
 
   @Test
-  public void shouldDefineDisplayTimeFormat_TIME() throws Exception {
+  public void shouldDefineInputTimeFormat_TIME() throws Exception {
     DataElement dataElement = FileUtils.readDataElementResource("cde-sample-3631725.xml");
-    String displayTimeFormat = handler.handle(dataElement).getDisplayTimeFormat();
-    assertThat(displayTimeFormat, is(anyOf(is(ModelNodeValues.TIME_FORMAT_24H), is(ModelNodeValues.TIME_FORMAT_12H))));
+    String inputTimeFormat = handler.handle(dataElement).getInputTimeFormat();
+    assertThat(inputTimeFormat, is(anyOf(is(ModelNodeValues.TIME_FORMAT_24H), is(ModelNodeValues.TIME_FORMAT_12H))));
   }
 
   @Test
-  public void shouldDefineDisplayTimeFormatTime_DATETIME() throws Exception {
+  public void shouldDefineInputTimeFormatTime_DATETIME() throws Exception {
     DataElement dataElement = FileUtils.readDataElementResource("cde-sample-6422999.xml");
-    String displayTimeFormat = handler.handle(dataElement).getDisplayTimeFormat();
-    assertThat(displayTimeFormat, is(anyOf(is(ModelNodeValues.TIME_FORMAT_24H), is(ModelNodeValues.TIME_FORMAT_12H))));
+    String inputTimeFormat = handler.handle(dataElement).getInputTimeFormat();
+    assertThat(inputTimeFormat, is(anyOf(is(ModelNodeValues.TIME_FORMAT_24H), is(ModelNodeValues.TIME_FORMAT_12H))));
   }
 
   @Test
@@ -100,10 +100,10 @@ public class UIHandlerTest {
   }
 
   @Test
-  public void shouldNotDefineDisplayTimeFormat_NUMBER() throws Exception {
+  public void shouldNotDefineInputTimeFormat_NUMBER() throws Exception {
     DataElement dataElement = FileUtils.readDataElementResource("cde-sample-2002061.xml");
-    String displayTimeFormat = handler.handle(dataElement).getDisplayTimeFormat();
-    assertThat(displayTimeFormat, isEmptyOrNullString());
+    String inputTimeFormat = handler.handle(dataElement).getInputTimeFormat();
+    assertThat(inputTimeFormat, isEmptyOrNullString());
   }
 
   @Test
