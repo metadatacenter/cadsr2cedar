@@ -25,3 +25,5 @@ logs/
 pom.xml.releaseBackup
 release.properties
 pom.xml.versionsBackup
+
+cadsr-exec-tmp/

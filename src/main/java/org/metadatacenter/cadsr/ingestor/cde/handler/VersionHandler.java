@@ -45,7 +45,7 @@ public class VersionHandler implements ModelHandler {
     this.version = reformatVersioningNumber(version);
   }
 
-  private static String reformatVersioningNumber(String version) {
+  public static String reformatVersioningNumber(String version) {
     String[] originalVersion = version.split("\\.");
     String[] baseVersion = {"0", "0", "0"};
     for (int i = 0; i < originalVersion.length; i++) {

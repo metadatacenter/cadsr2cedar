@@ -1,11 +1,14 @@
-caDSR to CEDAR Converter
-========================
+CEDAR caDSR Tools
+=================
 
-This project contains several command-line tools to:
-- Transform XML-encoded [caDSR](https://wiki.nci.nih.gov/display/caDSR/caDSR+Wiki) [11179-based](http://metadata-standards.org/11179/) common data elements (CDEs) to CEDAR CDE fields.
-- Transform XML-encoded caDSR contexts, classification schemes, and classification scheme items to a tree of CEDAR categories.
-- Upload a CEDAR category tree to the CEDAR system.
-- Upload CEDAR CDE fields to the CEDAR system and, optionally, attach the uploaded CDEs to their corresponding categories in the category tree.
+This project contains command-line tools to perform the following actions:
+- Download XML-encoded [caDSR](https://wiki.nci.nih.gov/display/caDSR/caDSR+Wiki) [11179-based](http://metadata-standards.org/11179/) common data elements (CDEs) from NCI's caDSR FTP servers.
+- Download XML-encoded caDSR contexts, classification schemes, and classification scheme items from NCI's caDSR FTP servers.
+- Transform CDEs to CEDAR CDE fields.
+- Transform caDSR contexts, classification schemes, and classification scheme items to CEDAR categories.
+- Upload CEDAR CDE fields to the CEDAR system.
+- Upload CEDAR categories to the CEDAR system.
+- Attach CEDAR CDE fields to CEDAR caDSR categories.
 
 ### Common Data Elements
 
@@ -49,40 +52,45 @@ Then build it with Maven:
 
     mvn clean install
 
-## 1. Transform XML caDSR classifications to a JSON category tree
+## Usage:
 
-    mvn exec:java@transform-categories -Dexec.args="/path/to/input /path/to/output"
+    mvn exec:java@cedar-cadsr-updater -Dexec.args="[options]"
 
-where:
-- `/path/to/input` is the input caDSR categories file. The categories file used can be found in the folder [src/main/resources/files-used/categories](https://github.com/metadatacenter/cedar-cadsr-tools/tree/develop/src/main/resources/files-used/categories).
-- `/path/to/output` is the directory location to store the category tree generated.
+Options:
+```
+ -c,--update-cdes                   Update CEDAR CDEs and attach them to
+                                    the corresponding CEDAR categories.
+ -d,--delete-categories             Delete existing CEDAR caDSR categories
+                                    (excluding its root).
+ -e,--ftp-cdes-folder <arg>         caDSR FTP CDEs working directory.
+ -E,--cdes-file <arg>               caDSR XML CDEs .zip file path.
+ -f,--folder <arg>                  [REQUIRED] Identifier of the CEDAR
+                                    folder where the CDEs will be stored.
+ -g,--ftp-categories-folder <arg>   caDSR FTP categories working directory.
+ -G,--categories-file <arg>         caDSR XML Categories .zip file path.
+ -h,--ftp-host <arg>                caDSR FTP host.
+ -k,--apikey <arg>                  [REQUIRED] API key of CEDAR's caDSR
+                                    Admin user.
+ -o,--ontology-folder <arg>         Path to the folder the CADSR-VS
+                                    ontology will be saved in.
+ -p,--ftp-password <arg>            caDSR FTP password.
+ -s,--server <arg>                  [REQUIRED] Target CEDAR server.
+                                    Possible values: local, staging,
+                                    production.
+ -t,--update-categories             Update CEDAR categories.
+ -u,--ftp-user <arg>                caDSR FTP user name.
+ -x,--cadsr-exec-folder <arg>       Path to a local folder with temporal
+                                    files used during execution. The
+                                    folder will be removed after execution.
+```
+Example of usage with CEDAR environment variables. In this case, the user wants to retrieve both classifications and CDEs from NCI's FTP servers and upload them to CEDAR.
 
-## 2. Upload JSON category tree to CEDAR
-
-    mvn exec:java@upload-categories -Dexec.args="/path/to/input parent-category-id target-server 'cedar-apikey'"
-
-where:
-- `/path/to/input` is the path to the JSON file with the category tree generated in the previous step.
-- `parent-category-id` is the full CEDAR identifier of the CEDAR category that will be used as the root of the tree that will be uploaded (e.g., `https://repo.staging.metadatacenter.org/categories/ec211045-6881-4094-898e-96b0d2f4329a`).
-- `target-server` is the target CEDAR server. The options are "local", "staging", and "production".
-- `cedar-apikey` is the CEDAR API key that will give the permission to upload files to the server (e.g., `'apiKey 0000111122223333444455556666777788889999aaaabbbbccccddddeeeeffff'`). Note that the user associated to this api key will need to have permissions to create CEDAR categories.
-
-## 3. Transform XML caDSR CDEs to CEDAR fields, upload them to CEDAR, and (optionally) attach them to CEDAR categories 
-
-    mvn exec:java@upload-cdes -Dexec.args="/path/to/input target-server folder-id 'cedar-apikey' [-a]"
-
-where:
-- `/path/to/input` is the input [caDSR XML file](https://wiki.nci.nih.gov/display/caDSR/caDSR+Hosted+Data+Standards%2C+Downloads%2C+and+Transformation+Utilities) location in your local machine, which can be either a directory or a file. A sample caDSR XML file is available in the folder [src/main/resources/files-used/cdes](https://github.com/metadatacenter/cedar-cadsr-tools/blob/develop/src/main/resources/files-used/cdes/xml_cde_20198153730.zip).
-- `target-server` is the CEDAR server types and the options are "local", "staging", "production".
-- `folder-id` is the short identifier of the CEDAR folder where the CDEs will be stored (e.g., `4aabbfc6-f953-4779-b667-e0d6a1234ce8`).
-- `cedar-apikey` is your CEDAR API key that will give the permission to upload files to the server (e.g., `'apiKey 0000111122223333444455556666777788889999aaaabbbbccccddddeeeeffff'`).
-- `-a` is an option to attach the uploaded CDEs to the corresponding CEDAR categories.
-
-## 4. Transform XML caDSR CDEs to CEDAR fields (optional, since it is part of #3) 
-   
-    mvn exec:java@transform-cdes -Dexec.args="/path/to/input /path/to/output"
-
-where:
-- `/path/to/input` is the input [caDSR XML file](https://wiki.nci.nih.gov/display/caDSR/caDSR+Hosted+Data+Standards%2C+Downloads%2C+and+Transformation+Utilities) location in your local machine, which can be either a directory or a file.
-- `/path/to/output` is the directory location to store the output files.
+```
+mvn exec:java@cedar-cadsr-updater -Dexec.args="--update-categories --update-cdes --server local --folder $CEDAR_CDE_FOLDER_ID --apikey $CEDAR_CADSR_ADMIN_USER_API_KEY --ftp-host $CEDAR_NCI_CADSR_FTP_HOST --ftp-user $CEDAR_NCI_CADSR_FTP_USER --ftp-password $CEDAR_NCI_CADSR_FTP_PASSWORD --ftp-categories-folder $CEDAR_NCI_CADSR_FTP_CLASSIFICATIONS_DIRECTORY --ftp-cdes-folder $CEDAR_NCI_CADSR_FTP_CDES_DIRECTORY --ontology-folder $CEDAR_CADSR_ONTOLOGIES_FOLDER"
+```
     
+Example of usage with local classifications and CDE files. Note that the identifiers, paths, and API key used are just examples.
+
+```
+mvn exec:java@cedar-cadsr-updater -Dexec.args="--update-categories --update-cdes --server local --folder 03f2d7f0-a54c-4a37-a0a8-c53159ec4aab --apikey 8d1fdf56f8147054388432716b06e4dac940aa86b326d13e7bfceb17a9ec4b9c --categories-file /var/tmp/xml_cscsi_20205210521.zip --cdes-file /var/tmp/xml_cde_20205210558.zip --ontology-folder /var/tmp/ontology"
+```

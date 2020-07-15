@@ -1,7 +1,8 @@
 package org.metadatacenter.cadsr.ingestor.cde;
 
 import org.metadatacenter.cadsr.cde.schema.DataElement;
-import org.metadatacenter.cadsr.ingestor.Util;
+import org.metadatacenter.cadsr.ingestor.util.GeneralUtil;
+import org.metadatacenter.cadsr.ingestor.util.ValueSetUtil;
 import org.metadatacenter.cadsr.ingestor.exception.DuplicatedAxiomException;
 import org.metadatacenter.cadsr.ingestor.exception.InvalidIdentifierException;
 import org.semanticweb.owlapi.apibinding.OWLManager;
@@ -14,13 +15,17 @@ import org.slf4j.LoggerFactory;
 import java.io.File;
 import java.util.Set;
 
-import static org.metadatacenter.cadsr.ingestor.Constants.*;
+import static org.metadatacenter.cadsr.ingestor.util.Constants.*;
 
 public class ValueSetsOntologyManager {
 
   private static OWLOntologyManager manager;
   private static OWLOntology ontology;
   private static OWLDataFactory owlDataFactory;
+
+  private static int valueSetsCount = 0;
+  private static int valuesCount = 0;
+
   private static final Logger logger = LoggerFactory.getLogger(ValueSetsOntologyManager.class);
 
   static {
@@ -37,15 +42,12 @@ public class ValueSetsOntologyManager {
 
   public static void addValueSetToOntology(DataElement dataElement, Set<Value> values) throws DuplicatedAxiomException {
 
-    String valueDomainId = Util.getValueOrNull(dataElement.getVALUEDOMAIN().getPublicId().getContent());
-    String valueDomainVersion = Util.getValueOrNull(dataElement.getVALUEDOMAIN().getVersion().getContent());
-    String valueDomainPrefName = Util.getValueOrNull(dataElement.getVALUEDOMAIN().getPreferredName().getContent());
-    String valueDomainPrefDefinition = Util.getValueOrNull(dataElement.getVALUEDOMAIN().getPreferredDefinition()
+    String valueDomainId = GeneralUtil.getValueOrNull(dataElement.getVALUEDOMAIN().getPublicId().getContent());
+    String valueDomainVersion = GeneralUtil.getValueOrNull(dataElement.getVALUEDOMAIN().getVersion().getContent());
+    String valueDomainPrefName =
+        GeneralUtil.getValueOrNull(dataElement.getVALUEDOMAIN().getPreferredName().getContent());
+    String valueDomainPrefDefinition = GeneralUtil.getValueOrNull(dataElement.getVALUEDOMAIN().getPreferredDefinition()
         .getContent());
-    //String valueDomainLongName = Util.getValueOrNull(dataElement.getVALUEDOMAIN().getPreferredName().getContent());
-    //String valueSetWorkflowStatus = Util.getValueOrNull(dataElement.getVALUEDOMAIN().getWorkflowStatus().getContent
-    // ());
-
 
     // Create the class that will represent the value set
     OWLClass valueSetClass = dataElementToOWLClass(valueDomainId, valueDomainVersion);
@@ -56,10 +58,12 @@ public class ValueSetsOntologyManager {
       // Add annotation properties to the value set
       String valueSetId = null;
       try {
-        valueSetId = ValueSetsUtil.generateValueSetId(valueDomainId, valueDomainVersion);
+        valueSetId = ValueSetUtil.generateValueSetId(valueDomainId, valueDomainVersion);
       } catch (InvalidIdentifierException e) {
         logger.error(e.getMessage());
       }
+
+      logger.info("Adding value set to the ontology. ValueSetId = " + valueSetId + ". Number of values: " + values.size());
 
       ontology = addAnnotationAxiomToClass(IRI.create(DUBLINCORE_IDENTIFIER_IRI), valueDomainId, valueSetClass);
       if (valueDomainVersion != null) {
@@ -74,27 +78,26 @@ public class ValueSetsOntologyManager {
         ontology = addAnnotationAxiomToClass(OWLRDFVocabulary.RDFS_COMMENT.getIRI(), valueDomainPrefDefinition,
             valueSetClass);
       }
-//      if (valueDomainLongName != null && !valueDomainLongName.equals(valueDomainPrefName)) {
-//        ontology = addAnnotationAxiomToClass(SKOSVocabulary.ALTLABEL.getIRI(), valueDomainLongName, valueSetClass);
-//      }
+
       // Values of the value set
       for (Value value : values) {
         ontology = addPermissibleValuesToOntology(valueSetId, value, valueSetClass);
+        valuesCount++;
       }
+      valueSetsCount++;
     } else {
-//      logger.debug("The value set has not been added to the ontology because it's already there. Class IRI: " +
-//          valueSetClass.getIRI());
+      logger.warn("The value set has not been added to the ontology because it's already there. Class IRI: " + valueSetClass.getIRI());
     }
   }
 
   public static OWLClass dataElementToOWLClass(String valueSetId, String valueSetVersion) {
-    return owlDataFactory.getOWLClass(IRI.create(ValueSetsUtil.generateValueSetIRI(valueSetId, valueSetVersion)));
+    return owlDataFactory.getOWLClass(IRI.create(ValueSetUtil.generateValueSetIRI(valueSetId, valueSetVersion)));
   }
 
   public static OWLOntology addPermissibleValuesToOntology(String valueSetId, Value value, OWLClass valueSetClass)
       throws DuplicatedAxiomException {
     // Create the class that represents the value
-    OWLClass valueClass = owlDataFactory.getOWLClass(ValueSetsUtil.generateValueIRI(valueSetId, value));
+    OWLClass valueClass = owlDataFactory.getOWLClass(ValueSetUtil.generateValueIRI(valueSetId, value));
     // Create subclass axiom
     OWLAxiom axiom = owlDataFactory.getOWLSubClassOfAxiom(valueClass, valueSetClass);
     // Add subclass axiom to the ontology
@@ -150,4 +153,11 @@ public class ValueSetsOntologyManager {
     }
   }
 
+  public static int getValueSetsCount() {
+    return valueSetsCount;
+  }
+
+  public static int getValuesCount() {
+    return valuesCount;
+  }
 }

@@ -24,19 +24,43 @@ public class InputTypeHandlerTest {
   }
 
   @Test
-  public void shouldDefineDateField_DATE() throws Exception {
+  public void shouldDefineTemporalField_DATE() throws Exception {
     DataElement dataElement = FileUtils.readDataElementResource("cde-sample-2001826.xml");
     Map<String, Object> inputType = handler.handle(dataElement).getInputType();
     // Assert
-    assertThat(inputType.get(ModelNodeNames.UI_FIELD_INPUT_TYPE).toString(), is(equalTo("date")));
+    assertThat(inputType.get(ModelNodeNames.UI_FIELD_INPUT_TYPE).toString(), is(equalTo(ModelNodeNames.FIELD_INPUT_TYPE_TEMPORAL)));
   }
 
   @Test
-  public void shouldDefineDateField_JAVA_DATE() throws Exception {
+  public void shouldDefineTemporalField_JAVA_DATE() throws Exception {
     DataElement dataElement = FileUtils.readDataElementResource("cde-sample-2513819.xml");
     Map<String, Object> inputType = handler.handle(dataElement).getInputType();
     // Assert
-    assertThat(inputType.get(ModelNodeNames.UI_FIELD_INPUT_TYPE).toString(), is(equalTo("date")));
+    assertThat(inputType.get(ModelNodeNames.UI_FIELD_INPUT_TYPE).toString(), is(equalTo(ModelNodeNames.FIELD_INPUT_TYPE_TEMPORAL)));
+  }
+
+  @Test
+  public void shouldDefineTemporalField_TIME() throws Exception {
+    DataElement dataElement = FileUtils.readDataElementResource("cde-sample-3631725.xml");
+    Map<String, Object> inputType = handler.handle(dataElement).getInputType();
+    // Assert
+    assertThat(inputType.get(ModelNodeNames.UI_FIELD_INPUT_TYPE).toString(), is(equalTo(ModelNodeNames.FIELD_INPUT_TYPE_TEMPORAL)));
+  }
+
+  @Test
+  public void shouldDefineTemporalField_DATETIME() throws Exception {
+    DataElement dataElement = FileUtils.readDataElementResource("cde-sample-6422999.xml");
+    Map<String, Object> inputType = handler.handle(dataElement).getInputType();
+    // Assert
+    assertThat(inputType.get(ModelNodeNames.UI_FIELD_INPUT_TYPE).toString(), is(equalTo(ModelNodeNames.FIELD_INPUT_TYPE_TEMPORAL)));
+  }
+
+  @Test
+  public void shouldDefineTemporalField_DATE_TIME() throws Exception {
+    DataElement dataElement = FileUtils.readDataElementResource("cde-sample-5254714.xml");
+    Map<String, Object> inputType = handler.handle(dataElement).getInputType();
+    // Assert
+    assertThat(inputType.get(ModelNodeNames.UI_FIELD_INPUT_TYPE).toString(), is(equalTo(ModelNodeNames.FIELD_INPUT_TYPE_TEMPORAL)));
   }
 
   @Test
@@ -44,7 +68,7 @@ public class InputTypeHandlerTest {
     DataElement dataElement = FileUtils.readDataElementResource("cde-sample-2001831.xml");
     Map<String, Object> inputType = handler.handle(dataElement).getInputType();
     // Assert
-    assertThat(inputType.get(ModelNodeNames.UI_FIELD_INPUT_TYPE).toString(), is(equalTo("textfield")));
+    assertThat(inputType.get(ModelNodeNames.UI_FIELD_INPUT_TYPE).toString(), is(equalTo(ModelNodeNames.FIELD_INPUT_TYPE_TEXTFIELD)));
   }
 
   @Test
@@ -52,7 +76,7 @@ public class InputTypeHandlerTest {
     DataElement dataElement = FileUtils.readDataElementResource("cde-sample-2608127.xml");
     Map<String, Object> inputType = handler.handle(dataElement).getInputType();
     // Assert
-    assertThat(inputType.get(ModelNodeNames.UI_FIELD_INPUT_TYPE).toString(), is(equalTo("textfield")));
+    assertThat(inputType.get(ModelNodeNames.UI_FIELD_INPUT_TYPE).toString(), is(equalTo(ModelNodeNames.FIELD_INPUT_TYPE_TEXTFIELD)));
   }
 
   @Test
@@ -60,7 +84,7 @@ public class InputTypeHandlerTest {
     DataElement dataElement = FileUtils.readDataElementResource("cde-sample-3245384.xml");
     Map<String, Object> inputType = handler.handle(dataElement).getInputType();
     // Assert
-    assertThat(inputType.get(ModelNodeNames.UI_FIELD_INPUT_TYPE).toString(), is(equalTo("textfield")));
+    assertThat(inputType.get(ModelNodeNames.UI_FIELD_INPUT_TYPE).toString(), is(equalTo(ModelNodeNames.FIELD_INPUT_TYPE_TEXTFIELD)));
   }
 
   @Test
@@ -68,7 +92,7 @@ public class InputTypeHandlerTest {
     DataElement dataElement = FileUtils.readDataElementResource("cde-sample-3177059.xml");
     Map<String, Object> inputType = handler.handle(dataElement).getInputType();
     // Assert
-    assertThat(inputType.get(ModelNodeNames.UI_FIELD_INPUT_TYPE).toString(), is(equalTo("textfield")));
+    assertThat(inputType.get(ModelNodeNames.UI_FIELD_INPUT_TYPE).toString(), is(equalTo(ModelNodeNames.FIELD_INPUT_TYPE_TEXTFIELD)));
   }
 
   @Test
@@ -76,7 +100,7 @@ public class InputTypeHandlerTest {
     DataElement dataElement = FileUtils.readDataElementResource("cde-sample-2002061.xml");
     Map<String, Object> inputType = handler.handle(dataElement).getInputType();
     // Assert
-    assertThat(inputType.get(ModelNodeNames.UI_FIELD_INPUT_TYPE).toString(), is(equalTo("numeric")));
+    assertThat(inputType.get(ModelNodeNames.UI_FIELD_INPUT_TYPE).toString(), is(equalTo(ModelNodeNames.FIELD_INPUT_TYPE_NUMERIC)));
   }
 
   @Test
@@ -84,7 +108,7 @@ public class InputTypeHandlerTest {
     DataElement dataElement = FileUtils.readDataElementResource("cde-sample-2608393.xml");
     Map<String, Object> inputType = handler.handle(dataElement).getInputType();
     // Assert
-    assertThat(inputType.get(ModelNodeNames.UI_FIELD_INPUT_TYPE).toString(), is(equalTo("numeric")));
+    assertThat(inputType.get(ModelNodeNames.UI_FIELD_INPUT_TYPE).toString(), is(equalTo(ModelNodeNames.FIELD_INPUT_TYPE_NUMERIC)));
   }
 
   @Test
@@ -92,7 +116,7 @@ public class InputTypeHandlerTest {
     DataElement dataElement = FileUtils.readDataElementResource("cde-sample-2513896.xml");
     Map<String, Object> inputType = handler.handle(dataElement).getInputType();
     // Assert
-    assertThat(inputType.get(ModelNodeNames.UI_FIELD_INPUT_TYPE).toString(), is(equalTo("numeric")));
+    assertThat(inputType.get(ModelNodeNames.UI_FIELD_INPUT_TYPE).toString(), is(equalTo(ModelNodeNames.FIELD_INPUT_TYPE_NUMERIC)));
   }
 
   @Test
@@ -100,7 +124,7 @@ public class InputTypeHandlerTest {
     DataElement dataElement = FileUtils.readDataElementResource("cde-sample-2513777.xml");
     Map<String, Object> inputType = handler.handle(dataElement).getInputType();
     // Assert
-    assertThat(inputType.get(ModelNodeNames.UI_FIELD_INPUT_TYPE).toString(), is(equalTo("numeric")));
+    assertThat(inputType.get(ModelNodeNames.UI_FIELD_INPUT_TYPE).toString(), is(equalTo(ModelNodeNames.FIELD_INPUT_TYPE_NUMERIC)));
   }
 
   @Ignore
@@ -109,6 +133,6 @@ public class InputTypeHandlerTest {
     DataElement dataElement = FileUtils.readDataElementResource("cde-sample-2182451.xml");
     Map<String, Object> inputType = handler.handle(dataElement).getInputType();
     // Assert
-    assertThat(inputType.get(ModelNodeNames.UI_FIELD_INPUT_TYPE).toString(), is(equalTo("textarea")));
+    assertThat(inputType.get(ModelNodeNames.UI_FIELD_INPUT_TYPE).toString(), is(equalTo(ModelNodeNames.FIELD_INPUT_TYPE_TEXTAREA)));
   }
 }

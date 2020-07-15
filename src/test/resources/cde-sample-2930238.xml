@@ -4,7 +4,7 @@
   <PREFERREDNAME>2928738v1.0:2862122v1.0</PREFERREDNAME>
   <PREFERREDDEFINITION>Consisting of two (e.g., units, components, elements, terms, possibilities) or based on two._Everything that is included in a collection, container, or communication._A string that is an identifier, and therefore must be either a string representation of an OID, a UUID, or a simple token taken from a lsit of controlled names for the context in which the Uid is used.</PREFERREDDEFINITION>
   <VERSION>1</VERSION>
-  <WORKFLOWSTATUS>DRAFT NEW</WORKFLOWSTATUS>
+  <WORKFLOWSTATUS>RELEASED</WORKFLOWSTATUS>
   <CONTEXTNAME>NCIP</CONTEXTNAME>
   <CONTEXTVERSION>1</CONTEXTVERSION>
   <ORIGIN NULL="TRUE"/>

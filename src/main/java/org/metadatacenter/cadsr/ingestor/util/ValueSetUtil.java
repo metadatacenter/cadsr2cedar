@@ -1,12 +1,12 @@
-package org.metadatacenter.cadsr.ingestor.cde;
+package org.metadatacenter.cadsr.ingestor.util;
 
 import org.metadatacenter.cadsr.cde.schema.DataElement;
-import org.metadatacenter.cadsr.ingestor.Util;
+import org.metadatacenter.cadsr.ingestor.cde.Value;
 import org.metadatacenter.cadsr.ingestor.exception.InvalidIdentifierException;
 
-import static org.metadatacenter.cadsr.ingestor.Constants.CDE_VALUESETS_ONTOLOGY_IRI;
+import static org.metadatacenter.cadsr.ingestor.util.Constants.CDE_VALUESETS_ONTOLOGY_IRI;
 
-public class ValueSetsUtil {
+public class ValueSetUtil {
 
   public static String generateValueSetIRI(DataElement dataElement) {
     String valueSetId = dataElement.getVALUEDOMAIN().getPublicId().getContent();
@@ -42,7 +42,7 @@ public class ValueSetsUtil {
   }
 
   public static String generateValueId(String valueSetId, Value value) {
-    return Util.getSha1(valueSetId + value.toString());
+    return GeneralUtil.getSha1(valueSetId + value.toString());
   }
 
 }

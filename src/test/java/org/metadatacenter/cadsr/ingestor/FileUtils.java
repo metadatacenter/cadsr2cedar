@@ -2,7 +2,7 @@ package org.metadatacenter.cadsr.ingestor;
 
 import com.google.common.io.Resources;
 import org.metadatacenter.cadsr.cde.schema.DataElement;
-import org.metadatacenter.cadsr.ingestor.cde.CadsrUtils;
+import org.metadatacenter.cadsr.ingestor.util.CdeUtil;
 
 import javax.xml.bind.JAXBException;
 import java.io.IOException;
@@ -12,6 +12,6 @@ public class FileUtils {
 
   public static DataElement readDataElementResource(String filename) throws JAXBException, IOException {
     InputStream is = Resources.getResource(filename).openStream();
-    return CadsrUtils.getDataElement(is);
+    return CdeUtil.getDataElement(is);
   }
 }

@@ -4,7 +4,7 @@
   <PREFERREDNAME>2611883v1.0:2178538v1.0</PREFERREDNAME>
   <PREFERREDDEFINITION>A variation of a single nucleotide at a specific location of the genome due to base substitution, present at an appreciable frequency between individuals of a single interbreeding population._No longer in use or valid; old._Generic value domain for a primitive java datatype that is a Boolean value (true or false).</PREFERREDDEFINITION>
   <VERSION>1</VERSION>
-  <WORKFLOWSTATUS>DRAFT NEW</WORKFLOWSTATUS>
+  <WORKFLOWSTATUS>RELEASED</WORKFLOWSTATUS>
   <CONTEXTNAME>NCIP</CONTEXTNAME>
   <CONTEXTVERSION>1</CONTEXTVERSION>
   <ORIGIN NULL="TRUE"/>

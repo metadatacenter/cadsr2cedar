@@ -1,18 +1,24 @@
-package org.metadatacenter.cadsr.ingestor;
+package org.metadatacenter.cadsr.ingestor.util;
 
 import com.google.common.io.Files;
-import org.metadatacenter.cadsr.ingestor.cde.CadsrUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.*;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLDecoder;
+import java.net.URLEncoder;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.Optional;
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
-public class Util {
+public class GeneralUtil {
 
-  private static final Logger logger = LoggerFactory.getLogger(CadsrUtils.class);
+  private static final Logger logger = LoggerFactory.getLogger(CdeUtil.class);
 
   public static String getSha1(String input) {
     MessageDigest mDigest = null;
@@ -92,6 +98,70 @@ public class Util {
     PrintWriter printWriter = new PrintWriter(writer);
     e.printStackTrace(printWriter);
     return writer.toString();
+  }
+
+  public static String encodeIfNeeded(String uri) throws UnsupportedEncodingException {
+    String decodedUri = URLDecoder.decode(uri, "UTF-8");
+    // It is necessary to encode it
+    if (uri.compareTo(decodedUri) == 0) {
+      return URLEncoder.encode(uri, "UTF-8");
+    }
+    // If was already encoded
+    else {
+      return uri;
+    }
+  }
+
+  public static void logErrorMessage(final HttpURLConnection conn) {
+    String response = ConnectionUtil.readResponseMessage(conn.getErrorStream());
+    logger.error(response);
+    throw new RuntimeException(response);
+  }
+
+  public static void logResponseMessage(final HttpURLConnection conn) throws IOException {
+    String response = ConnectionUtil.readResponseMessage(conn.getInputStream());
+    logger.debug(response);
+  }
+
+  public static String calculatePercentage(int amount, int total) {
+    final DecimalFormat percentFormat = new DecimalFormat("###.##%");
+    return percentFormat.format(((float) amount / (float) total));
+  }
+
+  public static List<String> commandLineArgumentsGrouped(String[] args, String passwordShortOption, String passwordLongOption, String apikeyShortOption, String apikeyLongOption) {
+    List<String> argGroups = new ArrayList<>();
+    String group = "";
+    for (int i=0; i<args.length; i++) {
+      String arg = args[i];
+      if (arg.equals(passwordShortOption) || arg.equals(passwordLongOption) || arg.equals(apikeyShortOption) || arg.equals(apikeyLongOption)) {
+        group = group.concat(arg + " ********"); // hide password or apikey
+        i++;
+      }
+      else {
+        if (arg.startsWith("-")) {
+          if (group.length() > 0) {
+            argGroups.add(group);
+            group = "";
+          }
+          group = group.concat(arg);
+        }
+        else {
+          group = group.concat(" " + arg);
+          argGroups.add(group);
+          group = "";
+        }
+      }
+    }
+    return argGroups;
+  }
+
+  public static boolean isURL(String url) {
+    try {
+      new URL(url);
+      return true;
+    } catch (Exception e) {
+      return false;
+    }
   }
 
 }
