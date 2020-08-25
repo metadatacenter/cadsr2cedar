@@ -15,10 +15,9 @@
   <name>CEDAR caDSR Tools</name>
 
   <scm>
-    <connection>scm:git:git@github.com:metadatacenter/cedar-cadsr-tools.git</connection>
-    <developerConnection>scm:git:git@github.com:metadatacenter/cedar-cadsr-tools.git</developerConnection>
+    <connection>scm:git:https://github.com/metadatacenter/cedar-cadsr-tools.git</connection>
+    <developerConnection>scm:git:https://github.com/metadatacenter/cedar-cadsr-tools.git</developerConnection>
     <url>https://github.com/metadatacenter/cedar-cadsr-tools</url>
-    <tag>HEAD</tag>
   </scm>
 
   <dependencies>
