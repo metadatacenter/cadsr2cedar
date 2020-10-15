@@ -4,12 +4,12 @@
   <parent>
     <groupId>org.metadatacenter</groupId>
     <artifactId>cedar-parent</artifactId>
-    <version>2.5.20</version>
+    <version>2.5.21</version>
   </parent>
 
   <groupId>org.metadatacenter</groupId>
   <artifactId>cedar-cadsr-tools</artifactId>
-  <version>2.5.20</version>
+  <version>2.5.21</version>
   <packaging>jar</packaging>
 
   <name>CEDAR caDSR Tools</name>
@@ -18,7 +18,7 @@
     <connection>scm:git:https://github.com/metadatacenter/cedar-cadsr-tools.git</connection>
     <developerConnection>scm:git:https://github.com/metadatacenter/cedar-cadsr-tools.git</developerConnection>
     <url>https://github.com/metadatacenter/cedar-cadsr-tools</url>
-    <tag>release-2.5.20</tag>
+    <tag>release-2.5.21</tag>
   </scm>
 
   <dependencies>
