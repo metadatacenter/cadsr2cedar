@@ -117,10 +117,11 @@ public class CategoryUtil {
 
       // Level 2
       for (ClassificationScheme cs : context.getClassificationScheme()) {
+        String version = cs.getVersion() != null ? cs.getVersion().toString() : "1";
         Category csCategory = generateCategory(cs.getPreferredName(), Optional.of(ctxCategory.getLocalId()),
             Optional.empty(),
-            Optional.of(cs.getPublicId().toString()), Optional.of(cs.getLongName()), Optional.empty(),
-            cs.getVersion().toString(), ctxCategory.getUniqueId());
+            Optional.of(cs.getPublicId().toString()), Optional.ofNullable(cs.getLongName()), Optional.empty(),
+            version, ctxCategory.getUniqueId());
         addCategoryToList(csCategory, categories);
 
         // Levels 3 and beyond

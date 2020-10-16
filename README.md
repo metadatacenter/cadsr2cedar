@@ -86,7 +86,7 @@ Options:
 Example of usage with CEDAR environment variables. In this case, the user wants to retrieve both classifications and CDEs from NCI's FTP servers and upload them to CEDAR.
 
 ```
-mvn exec:java@cedar-cadsr-updater -Dexec.args="--update-categories --update-cdes --server local --folder $CEDAR_CDE_FOLDER_ID --apikey $CEDAR_CADSR_ADMIN_USER_API_KEY --ftp-host $CEDAR_NCI_CADSR_FTP_HOST --ftp-user $CEDAR_NCI_CADSR_FTP_USER --ftp-password $CEDAR_NCI_CADSR_FTP_PASSWORD --ftp-categories-folder $CEDAR_NCI_CADSR_FTP_CLASSIFICATIONS_DIRECTORY --ftp-cdes-folder $CEDAR_NCI_CADSR_FTP_CDES_DIRECTORY --ontology-folder $CEDAR_CADSR_ONTOLOGIES_FOLDER"
+mvn exec:java@cedar-cadsr-updater -Dexec.args="--update-categories --update-cdes --server local --folder ${CEDAR_CDE_FOLDER_ID} --apikey ${CEDAR_CADSR_ADMIN_USER_API_KEY} --ftp-host ${CEDAR_NCI_CADSR_FTP_HOST} --ftp-user ${CEDAR_NCI_CADSR_FTP_USER} --ftp-password ${CEDAR_NCI_CADSR_FTP_PASSWORD} --ftp-categories-folder ${CEDAR_NCI_CADSR_FTP_CLASSIFICATIONS_DIRECTORY} --ftp-cdes-folder ${CEDAR_NCI_CADSR_FTP_CDES_DIRECTORY} --ontology-folder ${CEDAR_CADSR_ONTOLOGIES_FOLDER}"
 ```
     
 Example of usage with local classifications and CDE files. Note that the identifiers, paths, and API key used are just examples.
