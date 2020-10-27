@@ -145,6 +145,26 @@
               <clearOutputDir>false</clearOutputDir>
             </configuration>
           </execution>
+          <execution>
+            <id>xjc-form</id>
+            <goals>
+              <goal>xjc</goal>
+            </goals>
+            <configuration>
+              <packageName>org.metadatacenter.cadsr.form.schema</packageName>
+              <sources>
+                <source>src/main/resources/xsd/form</source>
+              </sources>
+              <xjbSources>
+                <xjbSource>src/main/resources/xjb/bindings-form.xjb</xjbSource>
+              </xjbSources>
+              <!--
+                    Don't clear the output directory before generating the sources.
+                    Clearing the output directory removes the org.metadatacenter.cadsr.cde.schema schema from above.
+                -->
+              <clearOutputDir>false</clearOutputDir>
+            </configuration>
+          </execution>
         </executions>
       </plugin>
       <!-- Tell an IDE to include generated code in its compile phase. jsonschema2pojo uses ${basedir}/target/java-gen -->

@@ -1,8 +1,6 @@
 package org.metadatacenter.cadsr.ingestor.tools;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.base.Stopwatch;
-import com.google.common.collect.Maps;
 import org.apache.commons.io.FileUtils;
 import org.metadatacenter.cadsr.category.schema.Classifications;
 import org.metadatacenter.cadsr.cde.schema.DataElement;
@@ -31,13 +29,10 @@ import javax.xml.bind.JAXBException;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.nio.file.Files;
 import java.text.DecimalFormat;
 import java.time.LocalDateTime;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
-
-import static org.metadatacenter.model.ModelNodeNames.*;
 
 public class CadsrCategoriesAndCdesUpdaterTool {
 
