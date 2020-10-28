@@ -1,4 +1,4 @@
-package org.metadatacenter.cadsr.ingestor.tools.config;
+package org.metadatacenter.cadsr.ingestor.tools.cde.config;
 
 import org.apache.commons.cli.*;
 import org.metadatacenter.cadsr.ingestor.util.CedarServerUtil;

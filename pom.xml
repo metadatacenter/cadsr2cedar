@@ -100,7 +100,22 @@
               <goal>java</goal>
             </goals>
             <configuration>
-              <mainClass>org.metadatacenter.cadsr.ingestor.tools.CadsrCategoriesAndCdesUpdaterTool</mainClass>
+              <mainClass>org.metadatacenter.cadsr.ingestor.tools.cde.CadsrCategoriesAndCdesUpdaterTool</mainClass>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>cedar-cadsr-form-import</id>
+            <goals>
+              <goal>java</goal>
+            </goals>
+            <configuration>
+              <mainClass>org.metadatacenter.cadsr.ingestor.tools.form.CadsrFormImportTool</mainClass>
             </configuration>
           </execution>
         </executions>

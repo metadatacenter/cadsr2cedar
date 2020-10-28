@@ -1,4 +1,4 @@
-package org.metadatacenter.cadsr.ingestor.tools;
+package org.metadatacenter.cadsr.ingestor.tools.cde;
 
 import com.google.common.base.Stopwatch;
 import org.apache.commons.io.FileUtils;
@@ -18,8 +18,8 @@ import org.metadatacenter.cadsr.ingestor.cde.ValueSetsOntologyManager;
 import org.metadatacenter.cadsr.ingestor.cde.action.CdeActionsProcessor;
 import org.metadatacenter.cadsr.ingestor.cde.action.CreateCdeAction;
 import org.metadatacenter.cadsr.ingestor.cde.action.UpdateOrDeleteCdeAction;
-import org.metadatacenter.cadsr.ingestor.tools.config.ConfigSettings;
-import org.metadatacenter.cadsr.ingestor.tools.config.ConfigSettingsParser;
+import org.metadatacenter.cadsr.ingestor.tools.cde.config.ConfigSettings;
+import org.metadatacenter.cadsr.ingestor.tools.cde.config.ConfigSettingsParser;
 import org.metadatacenter.cadsr.ingestor.util.*;
 import org.metadatacenter.cadsr.ingestor.util.Constants.CedarEnvironment;
 import org.slf4j.Logger;
@@ -45,6 +45,8 @@ public class CadsrCategoriesAndCdesUpdaterTool {
     ConfigSettings settings = ConfigSettingsParser.parse(args);
 
     try {
+      logger.info("#####################################################################");
+      logger.info("#            CEDAR - caDSR CDE/Categories Update Tool               #");
       logger.info("#####################################################################");
       logger.info("# Execution started at " + startTime);
       logger.info("# Execution settings:");

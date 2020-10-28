@@ -1,4 +1,4 @@
-package org.metadatacenter.cadsr.ingestor.tools.config;
+package org.metadatacenter.cadsr.ingestor.tools.cde.config;
 
 import org.metadatacenter.cadsr.ingestor.util.Constants.CedarEnvironment;
 import org.slf4j.Logger;
