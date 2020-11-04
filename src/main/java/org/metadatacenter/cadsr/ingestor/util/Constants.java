@@ -2,6 +2,9 @@ package org.metadatacenter.cadsr.ingestor.util;
 
 public final class Constants {
 
+  public static final String TEMPLATE_TYPE = "https://schema.metadatacenter.org/core/Template";
+  public static final String FIELD_TYPE = "https://schema.metadatacenter.org/core/TemplateField";
+
   public static final int MAX_CDES_TO_PROCESS = Integer.MAX_VALUE; // It can be used to limit the number of CDEs to be processed when debugging or testing
 
   public enum CedarEnvironment {LOCAL, STAGING, PRODUCTION}
