@@ -6,6 +6,7 @@ import org.metadatacenter.cadsr.ingestor.form.FormParser;
 import org.metadatacenter.cadsr.ingestor.form.FormUtil;
 import org.metadatacenter.cadsr.ingestor.tools.form.config.ConfigSettings;
 import org.metadatacenter.cadsr.ingestor.tools.form.config.ConfigSettingsParser;
+import org.metadatacenter.cadsr.ingestor.util.GeneralUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -41,7 +42,7 @@ public class CadsrFormImportTool {
 
       Map templateMap = FormUtil.getTemplateMapFromForm(form);
 
-      System.out.println(templateMap);
+      System.out.println(GeneralUtil.convertMapToJson(templateMap));
 
 
       printSummary(stopwatch, startTime);
