@@ -82,6 +82,18 @@ public class CedarServerUtil {
     return serverUrl + "/command/attach-categories";
   }
 
+  public static String getTemplatesEndpoint(String folderId, CedarEnvironment targetEnvironment) throws UnsupportedEncodingException {
+    String resourceServerUrl = CedarServerUtil.getResourceServerUrl(targetEnvironment);
+    String repoServerUrl = CedarServerUtil.getRepoServerUrl(targetEnvironment);
+    if (GeneralUtil.isURL(folderId)) {
+      folderId = GeneralUtil.encodeIfNeeded(folderId);
+    }
+    else { // Short id
+      folderId = GeneralUtil.encodeIfNeeded(repoServerUrl + "/folders/" + folderId);
+    }
+    return resourceServerUrl + "/templates?folder_id=" + folderId;
+  }
+
   public static String getTemplateFieldsEndpoint(String folderId, CedarEnvironment targetEnvironment) throws UnsupportedEncodingException {
     String resourceServerUrl = CedarServerUtil.getResourceServerUrl(targetEnvironment);
     String repoServerUrl = CedarServerUtil.getRepoServerUrl(targetEnvironment);
