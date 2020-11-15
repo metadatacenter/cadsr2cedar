@@ -2,20 +2,17 @@ package org.metadatacenter.cadsr.ingestor.form;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import org.metadatacenter.cadsr.cde.schema.DataElement;
 import org.metadatacenter.cadsr.form.schema.Form;
-
-import org.metadatacenter.cadsr.ingestor.exception.UnknownSeparatorException;
-import org.metadatacenter.cadsr.ingestor.exception.UnsupportedDataElementException;
-import org.metadatacenter.cadsr.ingestor.util.CdeUtil;
 import org.metadatacenter.cadsr.ingestor.util.Constants;
 import org.metadatacenter.model.ModelNodeNames;
 import org.metadatacenter.model.ModelNodeValues;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.lang.reflect.Array;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
 
 import static org.metadatacenter.cadsr.ingestor.util.Constants.TEMPLATE_TYPE;
 
@@ -31,7 +28,7 @@ public class FormParser {
 //      setFieldDescription(fieldMap, dataElement.getPREFERREDDEFINITION().getContent());
 //      setFieldQuestions(fieldMap, dataElement, new UserQuestionsHandler());
 //      setInputType(fieldMap, dataElement, new InputTypeHandler());
-//       setVersion(templateMap, form, new VersionHandler());
+//  setVersion(templateMap, form, new VersionHandler());
 //      setValueConstraints(fieldMap, dataElement, new ValueConstraintsHandler());
 //      setUI(fieldMap, dataElement, new UIHandler());
 //      setProperties(fieldMap, dataElement, new PropertiesHandler());
@@ -121,8 +118,8 @@ public class FormParser {
     templateMap.put(ModelNodeNames.SCHEMA_ORG_SCHEMA_VERSION, Constants.CEDAR_SCHEMA_VERSION);
     templateMap.put(ModelNodeNames.JSON_SCHEMA_ADDITIONAL_PROPERTIES, ModelNodeValues.FALSE);
     templateMap.put(ModelNodeNames.JSON_SCHEMA_REQUIRED, setRequired());
-    templateMap.put(ModelNodeNames.PAV_VERSION, null);
-    templateMap.put(ModelNodeNames.BIBO_STATUS, null);
+    templateMap.put(ModelNodeNames.PAV_VERSION, "0.0.1"); // TODO
+    templateMap.put(ModelNodeNames.BIBO_STATUS, "bibo:draft"); // TODO
   }
 
   // Target: @context
