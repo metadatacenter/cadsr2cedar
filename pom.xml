@@ -100,7 +100,22 @@
               <goal>java</goal>
             </goals>
             <configuration>
-              <mainClass>org.metadatacenter.cadsr.ingestor.tools.CadsrCategoriesAndCdesUpdaterTool</mainClass>
+              <mainClass>org.metadatacenter.cadsr.ingestor.tools.cde.CadsrCategoriesAndCdesUpdaterTool</mainClass>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>cedar-cadsr-form-import</id>
+            <goals>
+              <goal>java</goal>
+            </goals>
+            <configuration>
+              <mainClass>org.metadatacenter.cadsr.ingestor.tools.form.CadsrFormImportTool</mainClass>
             </configuration>
           </execution>
         </executions>
@@ -137,6 +152,26 @@
               </sources>
               <xjbSources>
                 <xjbSource>src/main/resources/xjb/bindings-category.xjb</xjbSource>
+              </xjbSources>
+              <!--
+                    Don't clear the output directory before generating the sources.
+                    Clearing the output directory removes the org.metadatacenter.cadsr.cde.schema schema from above.
+                -->
+              <clearOutputDir>false</clearOutputDir>
+            </configuration>
+          </execution>
+          <execution>
+            <id>xjc-form</id>
+            <goals>
+              <goal>xjc</goal>
+            </goals>
+            <configuration>
+              <packageName>org.metadatacenter.cadsr.form.schema</packageName>
+              <sources>
+                <source>src/main/resources/xsd/form</source>
+              </sources>
+              <xjbSources>
+                <xjbSource>src/main/resources/xjb/bindings-form.xjb</xjbSource>
               </xjbSources>
               <!--
                     Don't clear the output directory before generating the sources.

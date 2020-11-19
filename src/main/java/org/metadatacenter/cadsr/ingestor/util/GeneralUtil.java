@@ -1,5 +1,7 @@
 package org.metadatacenter.cadsr.ingestor.util;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.io.Files;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,6 +17,7 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 public class GeneralUtil {
 
@@ -162,6 +165,17 @@ public class GeneralUtil {
     } catch (Exception e) {
       return false;
     }
+  }
+
+  public static String convertMapToJson(Map map) {
+    ObjectMapper objectMapper = new ObjectMapper();
+    String json = null;
+    try {
+      json = objectMapper.writeValueAsString(map);
+    } catch (JsonProcessingException e) {
+      e.printStackTrace();
+    }
+    return json;
   }
 
 }

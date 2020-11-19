@@ -1,0 +1,825 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 rel. 2 (x64) (http://www.altova.com) by Shan Yang (Leidos Biomedical Research, Inc.) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" elementFormDefault="qualified" version="1.0" vc:minVersion="1.1">
+	<xs:annotation>
+		<xs:documentation>Version 1 
+ see requirements/assumptions caDSR Form Loader 1.0 v2 Scope</xs:documentation>
+		<xs:documentation>
+    Version 2
+    added minOccurs="0" to displayOrder, name and type for referenceDocument
+ </xs:documentation>
+		<xs:documentation>
+    Version 3
+    added TCGA designation name types
+  </xs:documentation>
+		<xs:documentation>
+  Version 4
+    updated definition, designation, context enumerations 
+  </xs:documentation>
+		<xs:documentation>
+  Version 5 
+    updated definition and designation to nill admin elements, and reduce Classification/CSI requirement to publicId/Version -->
+  </xs:documentation>
+		<xs:documentation>
+    Version 6 
+    Fixed designation type TCGA Name TCGA_Name, added NINDS Alt Name, HCT_BRIDG, NICHD Alt Name
+    added "Training" Context, fixed type in PBCT to PBTC
+    added Registration Status ""  
+  added Numeric Alpha DVG datatype -
+   fixed formatName from %  percent to %
+  </xs:documentation>
+		<xs:documentation>
+   Version 7
+    Removed enumerations, 
+    added back fields that might be in the XML due to following
+  the exported caDSR XML and made them optional
+  add collectionName atribute to forms element 
+  Changed PubliID and Version type to xs:string so null value is acceptable 
+    </xs:documentation>
+		<xs:documentation>
+  Version 8 
+    Added Form collectionDescription element
+    and changed collectionName to an element
+    Added annotation/documentation elements 
+  </xs:documentation>
+		<xs:documentation>
+    Version 9 
+    Change complexType from sequence to all
+  </xs:documentation>
+		<xs:documentation>
+    Version 10 
+    Add Min/Max Occurs to elements 
+  </xs:documentation>
+		<xs:documentation>
+    Version 11 
+    Changed date modified to optional
+  </xs:documentation>
+		<xs:documentation>
+    Version 12 
+    Changed referenceDocumentdate modified to optional
+  </xs:documentation>
+		<xs:documentation>
+    Version 13 
+    Change minOccurs to 0 for valueDomain and instructionType
+  </xs:documentation>
+		<xs:documentation>
+    Version 14 
+    Change minOccurs to 0 for module's question, designation's name, definiation's type and contactComminunication's organizationRAI
+  </xs:documentation>
+		<xs:documentation>
+    Version 15 
+    Added cadsrRAI to formType
+  </xs:documentation>
+		<xs:documentation>
+    Version 16 
+    Added classification to formType
+  </xs:documentation>
+  <xs:documentation>
+    Version 17 
+    Added targetModulePublicId
+  </xs:documentation>
+	</xs:annotation>
+	<xs:element name="forms">
+		<xs:annotation>
+			<xs:documentation>A collection of one or more forms for loading into caDSR </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="collectionName" minOccurs="1" maxOccurs="1">
+					<xs:annotation>
+						<xs:documentation>A name for the collection, this name should be unique for the user, it if is not, a _n will be added to the name 
+              when loaded into caDSR</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="collectionDescription" minOccurs="0" maxOccurs="1">
+					<xs:annotation>
+						<xs:documentation>A brief description of the form collection for use by and likely created by the owner of the form collection </xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="form" type="formType" maxOccurs="unbounded"/>
+			</xs:all>
+			<xs:attribute name="collectionName">
+				<xs:annotation>
+					<xs:documentation>A name for the collection, this name should be unique for the user, it if is not, a _n will be added to the name 
+          when loaded into caDSR</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="formType" mixed="true">
+		<xs:all>
+			<!-- context can be added as a default using the Form Loader -->
+			<xs:element ref="context" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>caDSR content is organized by Context, including assignment of user editing privilege.  The Context of the form will determin
+            where it is displayed and used in searching within the caDSR tools, as well as for the system to determin which user groups are permitted 
+            to edit the form. The value for Context will be used to determin if the user attempting to load the form has the correct privileges.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="createdBy" minOccurs="0" maxOccurs="1"/>
+			<xs:element ref="dateCreated" minOccurs="0" maxOccurs="1"/>
+			<xs:element ref="dateModified" minOccurs="0" maxOccurs="1"/>
+			<xs:element ref="modifiedBy" minOccurs="0" maxOccurs="1"/>
+			<xs:element ref="longName" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="changeNote" minOccurs="0" maxOccurs="1"/>
+			<xs:element ref="preferredDefinition" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="cadsrRAI" minOccurs="0" maxOccurs="1"/>
+			<xs:element ref="publicID" minOccurs="0" maxOccurs="1"/>
+			<xs:element ref="version" minOccurs="0" maxOccurs="1"/>
+			<xs:element ref="registrationStatus" minOccurs="0" maxOccurs="1"/>
+			<xs:element ref="workflowStatusName" minOccurs="0" maxOccurs="1"/>
+			<!-- can be a default value in form loader -->
+			<xs:element ref="categoryName" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="disease" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="type" minOccurs="0" maxOccurs="1"/>
+			<!-- default in form loader -->
+			<xs:element ref="designation" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="definition" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="headerInstruction" type="instructionType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A text field that is displayed at the top of a caDSR form</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="footerInstruction" type="instructionType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A text field that is displayed at the bottom of a caDSR form</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="module" minOccurs="1" maxOccurs="unbounded"/>
+			<xs:element ref="protocol" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="referenceDocument" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="contactCommunication" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="classification" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:all>
+		<xs:attribute name="num"/>
+	</xs:complexType>
+	<xs:element name="contactCommunication">
+		<xs:annotation>
+			<xs:documentation>Information about contacts that pertain to this form</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element ref="rank" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="type" minOccurs="1" maxOccurs="1">
+					<xs:annotation>
+						<xs:documentation>the type of contact information in the "value" element</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="PHONE">
+								<xs:annotation>
+									<xs:documentation>Value is a telephone number</xs:documentation>
+								</xs:annotation>
+							</xs:enumeration>
+							<xs:enumeration value="EMAIL">
+								<xs:annotation>
+									<xs:documentation>Value is an email</xs:documentation>
+								</xs:annotation>
+							</xs:enumeration>
+							<xs:enumeration value="FAX">
+								<xs:annotation>
+									<xs:documentation>Value is a fax number</xs:documentation>
+								</xs:annotation>
+							</xs:enumeration>
+							<xs:enumeration value="In Person">
+								<xs:annotation>
+									<xs:documentation>Contact preferrs to be contacted in person</xs:documentation>
+								</xs:annotation>
+							</xs:enumeration>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="value" type="xs:string" minOccurs="0" maxOccurs="1">
+					<xs:annotation>
+						<xs:documentation>a telephone number, email address or fax number</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="organizationName" type="xs:string" minOccurs="0" maxOccurs="1">
+					<xs:annotation>
+						<xs:documentation>The name of an organization that is to be contacted</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="organizationRAI" type="xs:string" minOccurs="0" maxOccurs="1">
+					<xs:annotation>
+						<xs:documentation>a registration authority identifier for the organization that is to be contacted</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="person" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="createdBy" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="dateCreated" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="dateModified" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="modifiedBy" minOccurs="0" maxOccurs="1"/>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="emptyString">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value=""/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="rank" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The relative order</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="person">
+		<xs:annotation>
+			<xs:documentation>Name and address of a person</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="firstName" type="xs:string" minOccurs="0" maxOccurs="1">
+					<xs:annotation>
+						<xs:documentation>First name of the person</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="lastName" type="xs:string" minOccurs="1" maxOccurs="1">
+					<xs:annotation>
+						<xs:documentation>Last name of the person</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="position" type="xs:string" minOccurs="0" maxOccurs="1">
+					<xs:annotation>
+						<xs:documentation>Job title of the person</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="address" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="address">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="addressLine1" type="xs:string" minOccurs="1" maxOccurs="1">
+					<xs:annotation>
+						<xs:documentation>The first line of the exact address where a mail piece is intended to be delivered, including urban-style street address, rural route, and post office box.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="addressLine2" type="xs:string" minOccurs="0" maxOccurs="1">
+					<xs:annotation>
+						<xs:documentation>The second line additional address text to describe where a mail piece is intended to be delivered.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="city" type="xs:string" minOccurs="0" maxOccurs="1">
+					<xs:annotation>
+						<xs:documentation>A large and densely populated urban area; a city specified in an address.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="state" type="xs:string" minOccurs="0" maxOccurs="1">
+					<xs:annotation>
+						<xs:documentation>The second line additional address text to describe where a mail piece is intended to be delivered.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="country" type="xs:string" minOccurs="0" maxOccurs="1">
+					<xs:annotation>
+						<xs:documentation>A component of an address that specifies a location by identification of a governmental administrative subdivision.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="postalCode" type="xs:string" minOccurs="0" maxOccurs="1">
+					<xs:annotation>
+						<xs:documentation>A component of an address that specifies a location by identification of a country.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="rank" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="type" minOccurs="0" maxOccurs="1">
+					<xs:annotation>
+						<xs:documentation>Something distinguishable as an identifiable class based on common qualities that categorize one kind of address from another.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="MAILING">
+								<xs:annotation>
+									<xs:documentation>An address where regular, non-package mail is to be delivered.</xs:documentation>
+								</xs:annotation>
+							</xs:enumeration>
+							<xs:enumeration value="Package Delivery">
+								<xs:annotation>
+									<xs:documentation>An address where packages are to be delivered.</xs:documentation>
+								</xs:annotation>
+							</xs:enumeration>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="categoryName" type="xs:string" nillable="true"/>
+	<xs:element name="disease" type="xs:string" nillable="true"/>
+	<xs:element name="module">
+		<xs:complexType mixed="true">
+			<xs:all>
+				<xs:element ref="displayOrder" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="maximumModuleRepeat" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="createdBy" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="dateCreated" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="dateModified" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="modifiedBy" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="longName" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="instruction" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="preferredDefinition" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="publicID" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="version" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="usageCategory" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="question" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="triggerAction" minOccurs="0" maxOccurs="1"/>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="maximumModuleRepeat" type="xs:integer" nillable="true"/>
+	<xs:element name="usageCategory">
+		<xs:complexType>
+			<xs:all>
+				<xs:element ref="usageType" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="rule" minOccurs="0" maxOccurs="1"/>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="question">
+		<xs:complexType>
+			<xs:all>
+				<xs:element ref="publicID" minOccurs="0" maxOccurs="1"/>
+				<!-- Added V19 -->
+				<xs:element ref="version" minOccurs="0" maxOccurs="1"/>
+				<!-- Added V19 -->
+				<xs:element ref="isDerived" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="displayOrder" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="createdBy" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="dateCreated" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="dateModified" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="modifiedBy" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="questionText" minOccurs="1" maxOccurs="1"/>
+				<xs:element ref="instruction" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="defaultValue" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="isEditable" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="isMandatory" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="multiValue" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="dataElement" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="validValue" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="triggerAction" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="questionRepetitions" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="isDerived">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="true"/>
+				<xs:enumeration value="false"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="defaultValue" type="xs:string" nillable="true"/>
+	<xs:element name="isEditable">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="Yes"/>
+				<xs:enumeration value="No"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="isMandatory">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="Yes"/>
+				<xs:enumeration value="No"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="multiValue">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="Yes"/>
+				<xs:enumeration value="No"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="questionText" type="xs:string"/>
+	<xs:element name="dataElement" type="dataElementType"/>
+	<xs:complexType name="dataElementType">
+		<xs:all>
+			<xs:element ref="longName" minOccurs="0" maxOccurs="1"/>
+			<xs:element ref="shortName" minOccurs="0" maxOccurs="1"/>
+			<xs:element ref="publicID" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="version" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="context" minOccurs="0" maxOccurs="1"/>
+			<xs:element ref="workflowStatusName" minOccurs="0" maxOccurs="1"/>
+			<xs:element ref="registrationStatus" minOccurs="0" maxOccurs="1"/>
+			<xs:element ref="preferredDefinition" minOccurs="0" maxOccurs="1"/>
+			<xs:element ref="designation" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="valueDomain" minOccurs="0" maxOccurs="1"/>
+			<xs:element ref="dataElementDerivation" minOccurs="0" maxOccurs="1"/>
+			<!-- Added in formCartV2 -->
+			<xs:element ref="referenceDocument" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="cdeBrowserLink" type="URLType" minOccurs="0" maxOccurs="1"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:element name="componentDataElement">
+		<xs:complexType>
+			<xs:all>
+				<xs:element ref="usageCategory" minOccurs="1" maxOccurs="1"/>
+				<xs:element ref="displayOrder" minOccurs="1" maxOccurs="1"/>
+				<xs:element ref="dataElement" minOccurs="1" maxOccurs="1"/>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="preferredDefinition" type="xs:string"/>
+	<xs:element name="valueDomain">
+		<xs:complexType>
+			<xs:all>
+				<xs:element ref="longName" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="shortName" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="publicID" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="version" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="type" type="valueDomainType" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="context" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="workflowStatusName" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="datatypeName" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="decimalPlace" type="xs:string" minOccurs="0"/>
+				<xs:element ref="formatName" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="highValueNumber" type="xs:string" minOccurs="0"/>
+				<xs:element name="lowValueNumber" type="xs:string" minOccurs="0"/>
+				<xs:element name="maximumLengthNumber" type="xs:string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="minimumLengthNumber" type="xs:string" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="UOMName" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="valueDomainConcept" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="permissibleValue" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="referenceDocument" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="permissibleValue">
+		<xs:complexType>
+			<xs:all>
+				<xs:element ref="value" minOccurs="1" maxOccurs="1"/>
+				<xs:element ref="valueMeaning" minOccurs="1" maxOccurs="1"/>
+				<xs:element name="beginDate" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="endDate" minOccurs="0" maxOccurs="1"/>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="validValue">
+		<xs:complexType mixed="true">
+			<xs:all>
+				<xs:element ref="displayOrder" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="value" minOccurs="1" maxOccurs="1"/>
+				<xs:element ref="meaningText" minOccurs="1" maxOccurs="1"/>
+				<xs:element ref="description" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="instruction" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="valueMeaning" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="triggerAction" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="createdBy" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="dateCreated" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="dateModified" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="modifiedBy" minOccurs="0" maxOccurs="1"/>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="meaningText" type="xs:string"/>
+	<xs:element name="valueMeaning">
+		<xs:complexType>
+			<xs:all>
+				<xs:element ref="publicID" minOccurs="1" maxOccurs="1"/>
+				<xs:element ref="version" minOccurs="1" maxOccurs="1"/>
+				<xs:element ref="longName" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="designation" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="definition" minOccurs="0" maxOccurs="unbounded"/>
+				<!-- Added v19 -->
+				<xs:element ref="preferredDefinition" minOccurs="0" maxOccurs="1"/>
+				<!-- Added v19 -->
+				<xs:element ref="conceptDerivation" minOccurs="0" maxOccurs="unbounded"/>
+				<!-- Added v18 -->
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="conceptDerivation">
+		<!-- Added v18 -->
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="displayOrder" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="primaryFlag" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="conceptCode" minOccurs="0" maxOccurs="1"/>
+				<!-- preferredName -->
+				<xs:element name="conceptName" minOccurs="0" maxOccurs="1"/>
+				<!-- longName -->
+				<xs:element name="integerValue" minOccurs="0" maxOccurs="1"/>
+				<!-- value -->
+				<xs:element name="origin" minOccurs="0" maxOccurs="1"/>
+				<!-- origin -->
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="valueDomainConcept">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="primaryConceptName" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="primaryConceptCode" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="nciTermBrowserLink" type="xs:anyURI" minOccurs="0" maxOccurs="1"/>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="questionRepetitions">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="repeatSequenceNumber"/>
+				<xs:element name="defaultValidValue" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="isEditable"/>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="valueDomainType">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="Enumerated|NonEnumerated"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="datatypeName"/>
+	<xs:element name="formatName"/>
+	<xs:element name="UOMName"/>
+	<xs:element name="dataElementDerivation">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="type" minOccurs="0"/>
+				<xs:element name="methods" type="xs:string" minOccurs="0"/>
+				<xs:element name="concatenationCharacter" type="xs:string" minOccurs="0"/>
+				<xs:element ref="rule" minOccurs="0"/>
+				<xs:element ref="componentDataElement" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="protocol">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="leadOrganization" type="xs:string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="phase" type="xs:string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="type" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="protocolID" type="xs:string" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="longName" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="context" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="shortName" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="preferredDefinition" type="xs:string" maxOccurs="1"/>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="registrationStatus"/>
+	<xs:element name="designation">
+		<xs:complexType>
+			<xs:all>
+				<xs:element ref="createdBy" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="dateCreated" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="dateModified" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="modifiedBy" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="languageName" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="name" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="type" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="context" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="classification" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="classification">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="classification" type="xs:string" minOccurs="0"/>
+				<xs:element ref="name" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="publicID" minOccurs="1" maxOccurs="1"/>
+				<xs:element ref="version" minOccurs="1" maxOccurs="1"/>
+				<xs:element ref="preferredDefinition" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="classificationSchemeItem" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:all>
+							<xs:element ref="name" minOccurs="0" maxOccurs="1"/>
+							<xs:element ref="publicID" minOccurs="1" maxOccurs="1"/>
+							<xs:element ref="version" minOccurs="1" maxOccurs="1"/>
+							<xs:element name="type" minOccurs="0" maxOccurs="1"/>
+							<xs:element ref="preferredDefinition" minOccurs="0" maxOccurs="1"/>
+						</xs:all>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="version" type="xs:string"/>
+	<xs:element name="id" type="xs:string"/>
+	<xs:element name="publicID" type="xs:string"/>
+	<xs:element name="createdBy" type="xs:string"/>
+	<xs:element name="dateCreated" type="xs:dateTime"/>
+	<xs:element name="dateModified" type="xs:dateTime"/>
+	<xs:element name="modifiedBy" type="xs:string"/>
+	<xs:element name="shortName" type="xs:string"/>
+	<xs:element name="longName">
+		<xs:annotation>
+			<xs:documentation>The primary name of the form. It is limited to 2000 characters in the caDSR 4.0 database.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:maxLength value="2000"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="instruction" type="instructionType"/>
+	<xs:complexType name="instructionType">
+		<xs:all>
+			<xs:element ref="text" minOccurs="0" maxOccurs="1"/>
+			<xs:element ref="createdBy" minOccurs="0" maxOccurs="1"/>
+			<xs:element ref="dateCreated" minOccurs="0" maxOccurs="1"/>
+			<xs:element ref="dateModified" minOccurs="0" maxOccurs="1"/>
+			<xs:element ref="modifiedBy" minOccurs="0" maxOccurs="1"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:element name="origin" type="xs:string"/>
+	<xs:element name="preferredName">
+		<xs:annotation>
+			<xs:documentation>This field is a short name fo the form. It is mandatory, but limited to 30 characters in the caDSR 4.0 database. therefore, this field is not usually the 'preferred name' the item is know by.
+      longName is used instead. </xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:maxLength value="30"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="workflowStatusName" type="xs:string"/>
+	<xs:element name="context" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The name of the caDSR Context. This must be a valid current caDSR Context name. Validation is performed when the form is loaded.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="referenceDocument">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="displayOrder" minOccurs="0">
+					<xs:simpleType>
+						<xs:union memberTypes="xs:integer emptyString"/>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element ref="name" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="type" minOccurs="0" maxOccurs="1">
+					<xs:annotation>
+						<xs:documentation>The kind of document. This must be a valid current caDSR document type. Validation is performed when the form is loaded.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="context" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="doctext" type="xs:string" minOccurs="0" maxOccurs="1">
+					<xs:annotation>
+						<xs:documentation>The text of the document if not an attachement or URL.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="languageName" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="URL" type="URLType" minOccurs="0"/>
+				<xs:element ref="attachments" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="createdBy" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="dateCreated" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="dateModified" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="modifiedBy" minOccurs="0" maxOccurs="1"/>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="URLType">
+		<xs:restriction base="xs:anyURI"/>
+	</xs:simpleType>
+	<xs:element name="attachments">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+				<xs:element name="mimeType" type="xs:string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="size" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="value" type="xs:string" nillable="true"/>
+	<xs:element name="definition" nillable="true">
+		<xs:complexType>
+			<xs:all minOccurs="0">
+				<xs:element ref="createdBy" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="dateCreated" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="dateModified" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="modifiedBy" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="languageName" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="text" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="type" minOccurs="0" maxOccurs="1">
+					<xs:annotation>
+						<xs:documentation>The kind of definition represetned by the text.  A validation of the type is preformed against current valid definitions types in caDSR when the form is loaded.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="classification" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="context" minOccurs="0" maxOccurs="1"/>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="text" type="xs:string"/>
+	<xs:element name="triggerAction" nillable="true">
+		<xs:complexType>
+			<xs:all minOccurs="0">
+				<xs:element name="targetModuleDisplayOrder" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>The explicit number of the next module in this form to be executed as a result of this operation.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="targetModuleName" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>The name of the next module in this form to be executed as a result of this operation.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="targetModulePublicId" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>The public id of the next module in this form to be executed as a result of this operation.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				
+				<xs:element ref="instruction" minOccurs="0"/>
+				<xs:element name="targetQuestionDisplayOrder" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>The explicit number of the next question within the module specified by "targetModuleDisplayOrder" to be executed as a result of this operation.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="targetDataElementPublicID">
+					<xs:annotation>
+						<xs:documentation>The public id of the data element associated with the targetQuestion to be executed as a result of this operation.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="targetDataElementVersion">
+					<xs:annotation>
+						<xs:documentation>The version of the data element associated with the targetQuestion to be executed as a result of this operation.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="protocol" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="createdBy" minOccurs="0"/>
+				<xs:element ref="dateCreated" minOccurs="0"/>
+				<xs:element ref="dateModified" minOccurs="0"/>
+				<xs:element ref="modifiedBy" minOccurs="0"/>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="changeNote" type="xs:string"/>
+	<xs:element name="sourceFormElement" type="xs:string"/>
+	<xs:element name="displayOrder" nillable="true">
+		<xs:simpleType>
+			<xs:union memberTypes="xs:integer emptyString"/>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="description" type="xs:string"/>
+	<xs:element name="languageName" default="ENGLISH">
+		<xs:annotation>
+			<xs:documentation>The name of the language in which the item is represented.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="ENGLISH"/>
+				<xs:enumeration value="Icelandic"/>
+				<xs:enumeration value="-">
+					<xs:annotation>
+						<xs:documentation>The name of the language is not specified.</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="name" type="xs:string"/>
+	<xs:element name="type">
+		<xs:annotation>
+			<xs:documentation>The kind or category of the form.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="CRF">
+					<xs:annotation>
+						<xs:documentation>A printed, optical, or electronic document designed to record all of the clinical study-required information stipulated in the protocol to be reported to the sponsor on each clinical trial subject. 
+          </xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="TEMPLATE">
+					<xs:annotation>
+						<xs:documentation>The description of the modules and questions comprising a particular kind of Case Report forms. This type of form can be used
+            to begin the definition of a form for a clinical trial. Usually the owner of the template will provide guidance on how to use the template to construct a new form.</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="usageType">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="Mandatory">
+					<xs:annotation>
+						<xs:documentation>The items in this component must be included.</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="Optional">
+					<xs:annotation>
+						<xs:documentation>The items in this component must may or may not be included.</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="Conditional">
+					<xs:annotation>
+						<xs:documentation>There are special circumstances defining whether or not the items in this component should be included.</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="None">
+					<xs:annotation>
+						<xs:documentation>There are no documented restrictions or compliance rules for this item.</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="rule" type="xs:string" nillable="true"/>
+</xs:schema>

@@ -396,4 +396,39 @@ public class CedarServices {
     }
   }
 
+  /*** Template Services ***/
+
+  public static String createTemplate(Map<String, Object> templateMap, String cedarFolderId,
+                                      CedarEnvironment cedarEnvironment, String apiKey) {
+
+    HttpURLConnection conn = null;
+    String cedarTemplateId = null;
+    try {
+
+      String templatesEndpoint = CedarServerUtil.getTemplatesEndpoint(cedarFolderId, cedarEnvironment);
+      String payload = objectMapper.writeValueAsString(templateMap);
+      conn = ConnectionUtil.createAndOpenConnection("POST", templatesEndpoint, apiKey);
+      OutputStream os = conn.getOutputStream();
+      os.write(payload.getBytes());
+      os.flush();
+      int responseCode = conn.getResponseCode();
+      if (responseCode >= HttpURLConnection.HTTP_BAD_REQUEST) {
+        ConnectionUtil.logErrorMessageAndThrowException("Error creating template", conn);
+      } else {
+        // Read the template @id
+        String response = ConnectionUtil.readResponseMessage(conn.getInputStream());
+        cedarTemplateId = JsonUtil.extractJsonFieldValueAsText(response, JSON_LD_ID);
+
+        logger.info("Template created successfully. CEDAR Id: " + cedarTemplateId);
+      }
+    } catch (Exception e) {
+      logger.error(e.toString());
+    } finally {
+      if (conn != null) {
+        conn.disconnect();
+      }
+    }
+    return cedarTemplateId;
+  }
+
 }
