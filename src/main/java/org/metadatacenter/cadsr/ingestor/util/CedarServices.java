@@ -11,6 +11,7 @@ import org.metadatacenter.cadsr.ingestor.category.CedarCategory;
 import org.metadatacenter.cadsr.ingestor.cde.CdeStats;
 import org.metadatacenter.cadsr.ingestor.cde.CdeSummary;
 import org.metadatacenter.cadsr.ingestor.util.Constants.CedarEnvironment;
+import org.metadatacenter.model.CedarResourceType;
 import org.metadatacenter.server.neo4j.cypher.NodeProperty;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -110,6 +111,19 @@ public class CedarServices {
       throw new InternalError(message);
     }
   }
+
+  // Search CDE by public identifier (e.g., 6421467)
+//  public static Map<String, Object> searchCdeByPublicIdAndVersion(String publicId, String version, CedarResourceType cedarResourceType, CedarEnvironment environment, String apiKey) {
+//
+//
+//
+//    CedarResourceType.FIELD.getValue()
+//
+//
+//
+//
+//
+//  }
 
   public static void deleteField(String fieldId, CedarEnvironment environment, String apiKey) throws IOException {
     String fieldEndpoint = CedarServerUtil.getTemplateFieldEndPoint(fieldId, environment);

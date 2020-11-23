@@ -1,5 +1,6 @@
 package org.metadatacenter.cadsr.ingestor.util;
 
+import org.metadatacenter.model.CedarResourceType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -8,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.metadatacenter.cadsr.ingestor.util.Constants.*;
+import static org.metadatacenter.constant.CedarQueryParameters.QP_RESOURCE_TYPES;
 
 public class CedarServerUtil {
 
@@ -123,6 +125,19 @@ public class CedarServerUtil {
     }
     return resourceServerUrl + "/folders/" + folderId + "/contents";
   }
+
+//  public static String getSearchEndPoint(String q, List<CedarResourceType> resourceTypes, CedarEnvironment targetEnvironment) throws UnsupportedEncodingException {
+//    String url = getResourceServerUrl(targetEnvironment) + "?";
+//    if (q != null && q.length() > 0) {
+//      url += "q=" + q;
+//    }
+//    if (resourceTypes != null && resourceTypes.size() > 0) {
+//
+//
+//      url += QP_RESOURCE_TYPES + "="
+//    }
+//    return serverUrl + "/search?q" + fieldId;
+//  }
 
   public static String getCdesInFolderExtractEndPoint(String cedarFolderId, List<String> fieldNames,
                                                       boolean includeCategoryIds, CedarEnvironment targetEnvironment) throws UnsupportedEncodingException {
