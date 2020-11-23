@@ -1,8 +1,6 @@
-package org.metadatacenter.cadsr.ingestor.tools;
+package org.metadatacenter.cadsr.ingestor.tools.cde;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.base.Stopwatch;
-import com.google.common.collect.Maps;
 import org.apache.commons.io.FileUtils;
 import org.metadatacenter.cadsr.category.schema.Classifications;
 import org.metadatacenter.cadsr.cde.schema.DataElement;
@@ -20,8 +18,8 @@ import org.metadatacenter.cadsr.ingestor.cde.ValueSetsOntologyManager;
 import org.metadatacenter.cadsr.ingestor.cde.action.CdeActionsProcessor;
 import org.metadatacenter.cadsr.ingestor.cde.action.CreateCdeAction;
 import org.metadatacenter.cadsr.ingestor.cde.action.UpdateOrDeleteCdeAction;
-import org.metadatacenter.cadsr.ingestor.tools.config.ConfigSettings;
-import org.metadatacenter.cadsr.ingestor.tools.config.ConfigSettingsParser;
+import org.metadatacenter.cadsr.ingestor.tools.cde.config.ConfigSettings;
+import org.metadatacenter.cadsr.ingestor.tools.cde.config.ConfigSettingsParser;
 import org.metadatacenter.cadsr.ingestor.util.*;
 import org.metadatacenter.cadsr.ingestor.util.Constants.CedarEnvironment;
 import org.slf4j.Logger;
@@ -31,13 +29,10 @@ import javax.xml.bind.JAXBException;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.nio.file.Files;
 import java.text.DecimalFormat;
 import java.time.LocalDateTime;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
-
-import static org.metadatacenter.model.ModelNodeNames.*;
 
 public class CadsrCategoriesAndCdesUpdaterTool {
 
@@ -50,6 +45,8 @@ public class CadsrCategoriesAndCdesUpdaterTool {
     ConfigSettings settings = ConfigSettingsParser.parse(args);
 
     try {
+      logger.info("#####################################################################");
+      logger.info("#            CEDAR - caDSR CDE/Categories Update Tool               #");
       logger.info("#####################################################################");
       logger.info("# Execution started at " + startTime);
       logger.info("# Execution settings:");
