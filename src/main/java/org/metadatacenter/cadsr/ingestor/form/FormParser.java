@@ -13,6 +13,8 @@ import org.metadatacenter.config.environment.CedarEnvironmentVariableProvider;
 import org.metadatacenter.model.ModelNodeNames;
 import org.metadatacenter.model.ModelNodeValues;
 import org.metadatacenter.model.SystemComponent;
+import org.metadatacenter.server.logging.AppLogger;
+import org.metadatacenter.server.logging.AppLoggerQueueService;
 import org.metadatacenter.server.security.model.user.CedarUser;
 import org.metadatacenter.server.service.UserService;
 import org.slf4j.Logger;
@@ -34,8 +36,13 @@ public class FormParser {
   private static String apiKey;
 
   static {
-    Map<String, String> environment = CedarEnvironmentVariableProvider.getFor(SystemComponent.ADMIN_TOOL);
+    SystemComponent systemComponent = SystemComponent.CADSR_TOOL;
+    Map<String, String> environment = CedarEnvironmentVariableProvider.getFor(systemComponent);
     cedarConfig = CedarConfig.getInstance(environment);
+
+    AppLoggerQueueService appLoggerQueueService = new AppLoggerQueueService(cedarConfig.getCacheConfig().getPersistent());
+    AppLogger.initLoggerQueueService(appLoggerQueueService, systemComponent);
+
     cedarServer = CedarServerUtil.toCedarServerFromHostName(cedarConfig.getHost());
     //cedarServer = CedarServer.PRODUCTION; // TODO: used for debugging purposes, comment this line
     // An alternative to using the apiKey of the caDSR user, which has more privileges than needed for template
@@ -47,6 +54,7 @@ public class FormParser {
     try {
       user = userService.findUserByApiKey(apiKey);
     } catch (Exception e) {
+      e.printStackTrace();
     }
   }
 
@@ -127,7 +135,6 @@ public class FormParser {
   private static String getOptionalValue(String content) {
     return content != null ? content : "";
   }
-
 
 
 //  private static void setFieldQuestions(final Map<String, Object> fieldMap, DataElement dataElement,
