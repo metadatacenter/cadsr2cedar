@@ -2,13 +2,23 @@ package org.metadatacenter.cadsr.ingestor.form;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import org.metadatacenter.bridge.CedarDataServices;
 import org.metadatacenter.cadsr.form.schema.Form;
+import org.metadatacenter.cadsr.ingestor.form.handler.TemplateFieldsHandler;
+import org.metadatacenter.cadsr.ingestor.util.CedarServerUtil;
 import org.metadatacenter.cadsr.ingestor.util.Constants;
+import org.metadatacenter.cadsr.ingestor.util.Constants.CedarServer;
+import org.metadatacenter.config.CedarConfig;
+import org.metadatacenter.config.environment.CedarEnvironmentVariableProvider;
 import org.metadatacenter.model.ModelNodeNames;
 import org.metadatacenter.model.ModelNodeValues;
+import org.metadatacenter.model.SystemComponent;
+import org.metadatacenter.server.security.model.user.CedarUser;
+import org.metadatacenter.server.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -19,18 +29,63 @@ import static org.metadatacenter.cadsr.ingestor.util.Constants.TEMPLATE_TYPE;
 public class FormParser {
 
   private static final Logger logger = LoggerFactory.getLogger(FormParser.class);
+  private static CedarConfig cedarConfig;
+  private static CedarServer cedarServer;
+  private static String apiKey;
 
-  public static void parseForm(Form form, final Map<String, Object> templateMap) {
+  static {
+    Map<String, String> environment = CedarEnvironmentVariableProvider.getFor(SystemComponent.ADMIN_TOOL);
+    cedarConfig = CedarConfig.getInstance(environment);
+    cedarServer = CedarServerUtil.toCedarServerFromHostName(cedarConfig.getHost());
+    //cedarServer = CedarServer.PRODUCTION; // TODO: used for debugging purposes, comment this line
+    // An alternative to using the apiKey of the caDSR user, which has more privileges than needed for template
+    // ingestion, would be to read the user's api from the request and use a constructor new FormParser(String apiKey).
+    apiKey = cedarConfig.getCaDSRAdminUserConfig().getApiKey();
+    CedarDataServices.initializeNeo4jServices(cedarConfig);
+    UserService userService = CedarDataServices.getNeoUserService();
+    CedarUser user = null;
+    try {
+      user = userService.findUserByApiKey(apiKey);
+    } catch (Exception e) {
+    }
+  }
+
+  public static void parseForm(Form form, final Map<String, Object> templateMap) throws IOException {
 
     createEmptyTemplate(templateMap);
     setTemplateIdentifier(templateMap, form.getPublicID());
     setTemplateName(templateMap, form.getLongName(), form.getPublicID());
     setTemplateDescription(templateMap, form.getPreferredDefinition());
+    //setUI(fieldMap, dataElement, new UIHandler());
+    setTemplateFields(templateMap, form, new TemplateFieldsHandler(cedarServer, apiKey));
 //  setFieldQuestions(fieldMap, dataElement, new UserQuestionsHandler());
 //  setVersion(templateMap, form, new VersionHandler());
-//  setUI(fieldMap, dataElement, new UIHandler());
+
 //  setProperties(fieldMap, dataElement, new PropertiesHandler());
 //  setCategories(fieldMap, dataElement, new CategoriesHandler());
+  }
+
+  private static void createEmptyTemplate(final Map<String, Object> templateMap) {
+    templateMap.put(ModelNodeNames.JSON_SCHEMA_SCHEMA, ModelNodeValues.JSON_SCHEMA_IRI);
+    templateMap.put(ModelNodeNames.JSON_LD_ID, null);
+    templateMap.put(ModelNodeNames.JSON_LD_TYPE, TEMPLATE_TYPE);
+    templateMap.put(ModelNodeNames.JSON_LD_CONTEXT, setDefaultContext());
+    templateMap.put(ModelNodeNames.JSON_SCHEMA_TYPE, ModelNodeValues.OBJECT);
+    templateMap.put(ModelNodeNames.JSON_SCHEMA_TITLE, "");
+    templateMap.put(ModelNodeNames.JSON_SCHEMA_DESCRIPTION, "");
+    templateMap.put(ModelNodeNames.UI, setDefaultUi());
+    templateMap.put(ModelNodeNames.JSON_SCHEMA_PROPERTIES, setDefaultProperties());
+    templateMap.put(ModelNodeNames.SCHEMA_ORG_NAME, "");
+    templateMap.put(ModelNodeNames.SCHEMA_ORG_DESCRIPTION, "");
+    templateMap.put(ModelNodeNames.PAV_CREATED_ON, null);
+    templateMap.put(ModelNodeNames.PAV_CREATED_BY, null);
+    templateMap.put(ModelNodeNames.PAV_LAST_UPDATED_ON, null);
+    templateMap.put(ModelNodeNames.OSLC_MODIFIED_BY, null);
+    templateMap.put(ModelNodeNames.SCHEMA_ORG_SCHEMA_VERSION, Constants.CEDAR_SCHEMA_VERSION);
+    templateMap.put(ModelNodeNames.JSON_SCHEMA_ADDITIONAL_PROPERTIES, ModelNodeValues.FALSE);
+    templateMap.put(ModelNodeNames.JSON_SCHEMA_REQUIRED, setRequired());
+    templateMap.put(ModelNodeNames.PAV_VERSION, "0.0.1"); // TODO
+    templateMap.put(ModelNodeNames.BIBO_STATUS, "bibo:draft"); // TODO
   }
 
   private static void setTemplateIdentifier(final Map<String, Object> templateMap, String content) {
@@ -46,6 +101,15 @@ public class FormParser {
   private static void setTemplateDescription(final Map<String, Object> templateMap, String content) {
     templateMap.put(ModelNodeNames.SCHEMA_ORG_DESCRIPTION, getOptionalValue(content));
   }
+
+
+  private static void setTemplateFields(Map<String, Object> templateMap, Form form, TemplateFieldsHandler templateFieldsHandler) throws IOException {
+    templateFieldsHandler.handle(form).apply(templateMap);
+  }
+
+  /**
+   * Utility methods
+   */
 
   private static Object asJsonSchemaName(String nameContent, String idContent) {
     String idContentValue = getOptionalValue(idContent);
@@ -102,29 +166,6 @@ public class FormParser {
 //      versionHandler) throws UnsupportedDataElementException {
 //    versionHandler.handle(form).apply(templateMap);
 //  }
-
-  private static void createEmptyTemplate(final Map<String, Object> templateMap) {
-    templateMap.put(ModelNodeNames.JSON_SCHEMA_SCHEMA, ModelNodeValues.JSON_SCHEMA_IRI);
-    templateMap.put(ModelNodeNames.JSON_LD_ID, null);
-    templateMap.put(ModelNodeNames.JSON_LD_TYPE, TEMPLATE_TYPE);
-    templateMap.put(ModelNodeNames.JSON_LD_CONTEXT, setDefaultContext());
-    templateMap.put(ModelNodeNames.JSON_SCHEMA_TYPE, ModelNodeValues.OBJECT);
-    templateMap.put(ModelNodeNames.JSON_SCHEMA_TITLE, "");
-    templateMap.put(ModelNodeNames.JSON_SCHEMA_DESCRIPTION, "");
-    templateMap.put(ModelNodeNames.UI, setDefaultUi());
-    templateMap.put(ModelNodeNames.JSON_SCHEMA_PROPERTIES, setDefaultProperties());
-    templateMap.put(ModelNodeNames.SCHEMA_ORG_NAME, "");
-    templateMap.put(ModelNodeNames.SCHEMA_ORG_DESCRIPTION, "");
-    templateMap.put(ModelNodeNames.PAV_CREATED_ON, null);
-    templateMap.put(ModelNodeNames.PAV_CREATED_BY, null);
-    templateMap.put(ModelNodeNames.PAV_LAST_UPDATED_ON, null);
-    templateMap.put(ModelNodeNames.OSLC_MODIFIED_BY, null);
-    templateMap.put(ModelNodeNames.SCHEMA_ORG_SCHEMA_VERSION, Constants.CEDAR_SCHEMA_VERSION);
-    templateMap.put(ModelNodeNames.JSON_SCHEMA_ADDITIONAL_PROPERTIES, ModelNodeValues.FALSE);
-    templateMap.put(ModelNodeNames.JSON_SCHEMA_REQUIRED, setRequired());
-    templateMap.put(ModelNodeNames.PAV_VERSION, "0.0.1"); // TODO
-    templateMap.put(ModelNodeNames.BIBO_STATUS, "bibo:draft"); // TODO
-  }
 
   // Target: @context
   private static Map<String, Object> setDefaultContext() {
@@ -350,12 +391,5 @@ public class FormParser {
     uriString.put(ModelNodeNames.JSON_SCHEMA_FORMAT, ModelNodeValues.DATE_TIME);
     return uriString;
   }
-
-
-
-
-
-
-
 
 }

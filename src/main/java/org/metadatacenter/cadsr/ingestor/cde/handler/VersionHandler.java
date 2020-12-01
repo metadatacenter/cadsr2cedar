@@ -4,6 +4,7 @@ import com.google.common.base.Strings;
 import org.metadatacenter.cadsr.cde.schema.DataElement;
 import org.metadatacenter.cadsr.ingestor.cde.CadsrStatus;
 import org.metadatacenter.cadsr.ingestor.exception.UnsupportedDataElementException;
+import org.metadatacenter.cadsr.ingestor.util.CdeUtil;
 import org.metadatacenter.model.BiboStatus;
 import org.metadatacenter.model.ModelNodeNames;
 
@@ -42,16 +43,7 @@ public class VersionHandler implements ModelHandler {
       String reason = String.format("Data element version is empty (Unknown)");
       throw new UnsupportedDataElementException(dataElement, reason);
     }
-    this.version = reformatVersioningNumber(version);
-  }
-
-  public static String reformatVersioningNumber(String version) {
-    String[] originalVersion = version.split("\\.");
-    String[] baseVersion = {"0", "0", "0"};
-    for (int i = 0; i < originalVersion.length; i++) {
-      baseVersion[i] = originalVersion[i];
-    }
-    return String.join(".", baseVersion);
+    this.version = CdeUtil.reformatVersioningNumber(version);
   }
 
   @Nullable

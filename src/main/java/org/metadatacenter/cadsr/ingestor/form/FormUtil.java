@@ -34,7 +34,7 @@ public class FormUtil {
     return (Form) jaxbUnmarshaller.unmarshal(new InputStreamReader(cleanIs, Constants.CHARSET));
   }
 
-  public static Map<String, Object> getTemplateMapFromForm(Form form) {
+  public static Map<String, Object> getTemplateMapFromForm(Form form) throws IOException {
     final Map<String, Object> templateMap = Maps.newHashMap();
 //    try {
       FormParser.parseForm(form, templateMap);

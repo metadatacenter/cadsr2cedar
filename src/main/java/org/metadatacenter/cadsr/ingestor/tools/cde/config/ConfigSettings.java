@@ -1,6 +1,6 @@
 package org.metadatacenter.cadsr.ingestor.tools.cde.config;
 
-import org.metadatacenter.cadsr.ingestor.util.Constants.CedarEnvironment;
+import org.metadatacenter.cadsr.ingestor.util.Constants.CedarServer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -12,7 +12,7 @@ public class ConfigSettings {
   private boolean deleteCategories;
   private boolean updateCdes;
   private String cedarCdeFolderId;
-  private CedarEnvironment cedarEnvironment;
+  private CedarServer cedarEnvironment;
   private String cadsrAdminApikey;
   private String executionFolder;
   private String ftpHost;
@@ -63,11 +63,11 @@ public class ConfigSettings {
     this.cedarCdeFolderId = cedarCdeFolderId;
   }
 
-  public CedarEnvironment getCedarEnvironment() {
+  public CedarServer getCedarServer() {
     return cedarEnvironment;
   }
 
-  public void setCedarEnvironment(CedarEnvironment cedarEnvironment) {
+  public void setCedarServer(CedarServer cedarEnvironment) {
     this.cedarEnvironment = cedarEnvironment;
   }
 

@@ -21,7 +21,7 @@ import org.metadatacenter.cadsr.ingestor.cde.action.UpdateOrDeleteCdeAction;
 import org.metadatacenter.cadsr.ingestor.tools.cde.config.ConfigSettings;
 import org.metadatacenter.cadsr.ingestor.tools.cde.config.ConfigSettingsParser;
 import org.metadatacenter.cadsr.ingestor.util.*;
-import org.metadatacenter.cadsr.ingestor.util.Constants.CedarEnvironment;
+import org.metadatacenter.cadsr.ingestor.util.Constants.CedarServer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -59,7 +59,7 @@ public class CadsrCategoriesAndCdesUpdaterTool {
           "Yes" : "No"));
       logger.info("#   - Update CDEs? " + (settings.getUpdateCdes() ? "Yes" : "No"));
       logger.info("#   - CEDAR folder Id: " + settings.getCedarCdeFolderId());
-      logger.info("#   - CEDAR environment: " + settings.getCedarEnvironment().name());
+      logger.info("#   - CEDAR server: " + settings.getCedarServer().name());
       logger.info("#   - CEDAR caDSR Admin api key: " + "******");
       logger.info("#   - Local execution folder: " + settings.getExecutionFolder());
       logger.info("#   - Local categories file: " + (settings.getCategoriesFilePath() != null ?
@@ -80,7 +80,7 @@ public class CadsrCategoriesAndCdesUpdaterTool {
         logger.info("#########################################");
         logger.info("#      Deleting caDSR Categories...     #");
         logger.info("#########################################");
-        CategoryUtil.deleteAllNciCadsrCategories(settings.getCedarEnvironment(), settings.getCadsrAdminApikey());
+        CategoryUtil.deleteAllNciCadsrCategories(settings.getCedarServer(), settings.getCadsrAdminApikey());
       }
 
       String categoriesFilePath = null;
@@ -114,7 +114,7 @@ public class CadsrCategoriesAndCdesUpdaterTool {
         List<Category> newCategories = CategoryUtil.classificationsToCategoriesList(newClassifications);
         logger.info("Finished downloading categories. " + newCategories.size() + " categories found.");
 
-        updateCategories(newCategories, settings.getCedarEnvironment(), settings.getCadsrAdminApikey());
+        updateCategories(newCategories, settings.getCedarServer(), settings.getCadsrAdminApikey());
 
       }
 
@@ -156,11 +156,11 @@ public class CadsrCategoriesAndCdesUpdaterTool {
         ontologyFilePath = settings.getOntologyOutputFolderPath() + "/" + Constants.ONTOLOGY_FILE;
 
         existingCdesMap =
-            CdeUtil.getExistingCedarCdeSummaries(settings.getCedarCdeFolderId(), settings.getCedarEnvironment(),
+            CdeUtil.getExistingCedarCdeSummaries(settings.getCedarCdeFolderId(), settings.getCedarServer(),
                 settings.getCadsrAdminApikey());
 
         updateCDEs(newDataElements, existingCdesMap, settings.getCedarCdeFolderId(), ontologyFilePath,
-            settings.getCedarEnvironment(), settings.getCadsrAdminApikey());
+            settings.getCedarServer(), settings.getCadsrAdminApikey());
 
         // Remove temporal files
         logger.info("Deleting temporal execution folder: " + new File(settings.getExecutionFolder()).getAbsolutePath());
@@ -180,7 +180,7 @@ public class CadsrCategoriesAndCdesUpdaterTool {
         logger.info("#########################################");
         logger.info("#   Reviewing CDE-Category relations    #");
         logger.info("#########################################");
-        CategoryUtil.reviewCdeCategoryRelations(newDataElements, existingCdesMap, settings.getCedarEnvironment(),
+        CategoryUtil.reviewCdeCategoryRelations(newDataElements, existingCdesMap, settings.getCedarServer(),
             settings.getCadsrAdminApikey());
       }
 
@@ -199,7 +199,7 @@ public class CadsrCategoriesAndCdesUpdaterTool {
     }
   }
 
-  private static void updateCategories(List<Category> newCategories, CedarEnvironment cedarEnvironment,
+  private static void updateCategories(List<Category> newCategories, CedarServer cedarEnvironment,
                                        String apiKey) throws IOException {
 
     // Generate map with existing Categories based on the current Category Tree in CEDAR
@@ -261,11 +261,11 @@ public class CadsrCategoriesAndCdesUpdaterTool {
   private static Map<String, CdeSummary> updateCDEs(List<DataElement> newDataElements,
                                                     Map<String, CdeSummary> existingCdesMap,
                                                     String cedarFolderId, String ontologyFilePath,
-                                                    CedarEnvironment cedarEnvironment, String apiKey) throws IOException {
+                                                    CedarServer cedarServer, String apiKey) throws IOException {
 
     // Read the categoryIds from CEDAR to be able to link CDEs to them
     Map<String, String> categoryUniqueIdsToCedarCategoryIds =
-        CedarServices.getCategoryUniqueIdsToCedarCategoryIdsMap(cedarEnvironment, apiKey);
+        CedarServices.getCategoryUniqueIdsToCedarCategoryIdsMap(cedarServer, apiKey);
     Map<String, Set<String>> categoryCadsrIdsToCedarCategoryIds =
         CategoryUtil.generateCategoryCadsrIdsToCedarCategoryIdsMap(categoryUniqueIdsToCedarCategoryIds);
 
@@ -299,7 +299,7 @@ public class CadsrCategoriesAndCdesUpdaterTool {
             // Check changes
             logger.info("- CDE changes summary: " + newCdeUniqueId + " (Existing CDE = CDE 1; New CDE = CDE 2)");
             String cdeCedarId = existingCdesMap.get(newCdeUniqueId).getCedarId();
-            Map<String, Object> existingCedarCdeFieldMap = CedarServices.getCdeById(cdeCedarId, cedarEnvironment, apiKey);
+            Map<String, Object> existingCedarCdeFieldMap = CedarServices.getFieldById(cdeCedarId, cedarServer, apiKey);
             CdeUtil.compareCdeFieldMaps(existingCedarCdeFieldMap, newCdeFieldMap);
             CdeStats.getInstance().numberOfCdesChangedButVersionNotUpdated++;
           }
@@ -330,7 +330,7 @@ public class CadsrCategoriesAndCdesUpdaterTool {
     // Process CDE actions
     CdeActionsProcessor cdeActionsProcessor =
         new CdeActionsProcessor(createCdeActions, updateOrDeleteCdeActions,
-            new HashMap<>(existingCdesMap), cedarEnvironment, apiKey);
+            new HashMap<>(existingCdesMap), cedarServer, apiKey);
     cdeActionsProcessor.logActionsSummary();
     cdeActionsProcessor.executeCdeActions();
 

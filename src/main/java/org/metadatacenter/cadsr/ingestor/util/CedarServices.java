@@ -1,6 +1,7 @@
 package org.metadatacenter.cadsr.ingestor.util;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
@@ -10,7 +11,7 @@ import org.metadatacenter.cadsr.ingestor.category.CategoryTreeNode;
 import org.metadatacenter.cadsr.ingestor.category.CedarCategory;
 import org.metadatacenter.cadsr.ingestor.cde.CdeStats;
 import org.metadatacenter.cadsr.ingestor.cde.CdeSummary;
-import org.metadatacenter.cadsr.ingestor.util.Constants.CedarEnvironment;
+import org.metadatacenter.cadsr.ingestor.util.Constants.CedarServer;
 import org.metadatacenter.model.CedarResourceType;
 import org.metadatacenter.server.neo4j.cypher.NodeProperty;
 import org.slf4j.Logger;
@@ -20,6 +21,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
+import java.security.InvalidParameterException;
 import java.util.*;
 
 import static org.metadatacenter.cadsr.ingestor.util.Constants.*;
@@ -32,16 +34,16 @@ public class CedarServices {
 
   /*** Field services ***/
 
-  public static void deleteAllFieldsInFolder(String folderId, CedarEnvironment environment, String apiKey) throws IOException {
-    List<String> fieldIds = findFieldsInFolder(folderId, environment, apiKey);
+  public static void deleteAllFieldsInFolder(String folderId, CedarServer server, String apiKey) throws IOException {
+    List<String> fieldIds = findFieldsInFolder(folderId, server, apiKey);
     for (String fieldId : fieldIds) {
-      deleteField(fieldId, environment, apiKey);
+      deleteField(fieldId, server, apiKey);
     }
   }
 
   // Returns the @ids of all the CEDAR fields in the given folder
-  public static List<String> findFieldsInFolder(String folderId, CedarEnvironment environment, String apiKey) throws IOException {
-    String endpoint = CedarServerUtil.getFolderContentsEndPoint(folderId, environment);
+  public static List<String> findFieldsInFolder(String folderId, CedarServer server, String apiKey) throws IOException {
+    String endpoint = CedarServerUtil.getFolderContentsEndPoint(folderId, server);
     HttpURLConnection connection = ConnectionUtil.createAndOpenConnection("GET", endpoint, apiKey);
     int responseCode = connection.getResponseCode();
     if (responseCode == HttpURLConnection.HTTP_OK) {
@@ -62,7 +64,7 @@ public class CedarServices {
   }
 
   public static List<CdeSummary> findCdeSummariesInFolder(String cedarFolderId, List<String> fieldNames,
-                                                          boolean includeCategoryIds, CedarEnvironment environment, String apiKey) throws IOException {
+                                                          boolean includeCategoryIds, CedarServer server, String apiKey) throws IOException {
 
     List<CdeSummary> cdeSummaries = new ArrayList<>();
 
@@ -70,7 +72,7 @@ public class CedarServices {
     int offset = 0;
     int limit = 100;
     while (!finished) {
-      String endpoint = CedarServerUtil.getCdesInFolderExtractEndPoint(cedarFolderId, fieldNames, includeCategoryIds,  environment);
+      String endpoint = CedarServerUtil.getCdesInFolderExtractEndPoint(cedarFolderId, fieldNames, includeCategoryIds,  server);
       endpoint = endpoint + "&offset=" + offset + "&limit=" + limit;
       HttpURLConnection connection = ConnectionUtil.createAndOpenConnection("GET", endpoint, apiKey);
       int responseCode = connection.getResponseCode();
@@ -98,8 +100,8 @@ public class CedarServices {
     return cdeSummaries;
   }
 
-  public static Map<String, Object> getCdeById(String fieldId, CedarEnvironment environment, String apiKey) throws IOException {
-    String fieldEndpoint = CedarServerUtil.getTemplateFieldEndPoint(fieldId, environment);
+  public static Map<String, Object> getFieldById(String fieldId, CedarServer server, String apiKey) throws IOException {
+    String fieldEndpoint = CedarServerUtil.getTemplateFieldEndPoint(fieldId, server);
     HttpURLConnection connection = ConnectionUtil.createAndOpenConnection("GET", fieldEndpoint, apiKey);
     int responseCode = connection.getResponseCode();
     if (responseCode == HttpURLConnection.HTTP_OK) {
@@ -107,26 +109,83 @@ public class CedarServices {
       connection.disconnect();
       return JsonUtil.readJsonAsMap(response);
     } else {
+      String message = "Error retrieving field: " + ConnectionUtil.readResponseMessage(connection.getInputStream());
+      throw new InternalError(message);
+    }
+  }
+
+  public static Map<String, Object> getFieldReport(String fieldId, CedarServer server, String apiKey) throws IOException {
+    String fieldReportEndpoint = CedarServerUtil.getTemplateFieldReportEndPoint(fieldId, server);
+    HttpURLConnection connection = ConnectionUtil.createAndOpenConnection("GET", fieldReportEndpoint, apiKey);
+    int responseCode = connection.getResponseCode();
+    if (responseCode == HttpURLConnection.HTTP_OK) {
+      String response = ConnectionUtil.readResponseMessage(connection.getInputStream());
+      connection.disconnect();
+      return JsonUtil.readJsonAsMap(response);
+    } else {
+      String message = "Error retrieving field report: " + ConnectionUtil.readResponseMessage(connection.getInputStream());
+      throw new InternalError(message);
+    }
+  }
+
+  public static boolean isFieldInPath(String fieldId, String folderPath, CedarServer cedarServer, String apiKey) throws IOException {
+    Map<String, Object> fieldReport = getFieldReport(fieldId, cedarServer, apiKey);
+    if (fieldReport.containsKey("parentPath")) {
+      if (fieldReport.get("parentPath").equals(folderPath)) {
+        return true;
+      }
+      else {
+        return false;
+      }
+    }
+    throw new IllegalArgumentException("Couldn't find parent path");
+  }
+
+  /**
+   * Search CDE by public identifier (e.g., 6421467) and version (e.g. 1.0.0). This method assumes that the CDEs are
+   * stored in the folder Constants.CEDAR_CDES_FOLDER_PATH. Given that we still don't have a way to search by
+   * schema:identifier, the method makes, first, a general search call to find all the fields that contain the publicId
+   * in their title, because that's the convention that we are using to name CDEs (e.g., Discontinue Participation Date
+   * (7514951)). Then, it checks that the version of the fields found matches the version passed as a parameter.
+   * Finally, makes an additional call to the '/report' endpoint to check that the field is stored into the
+   * Constants.CEDAR_CDES_FOLDER_PATH folder. If all the previous conditions are met, we consider that the CDE is the
+   * right one, make a final call to retrieve its content in JSON-LD, and return it as a Map.
+   */
+  public static Optional<Map<String, Object>> searchCdeByPublicIdAndVersion(String publicId, String version,
+                                                                            CedarServer cedarServer, String apiKey) throws IOException {
+    String reformattedVersion = CdeUtil.reformatVersioningNumber(version);
+    List<CedarResourceType> resourceTypes = Arrays.asList(new CedarResourceType[]{CedarResourceType.FIELD});
+    String searchEndpoint = CedarServerUtil.getSearchEndPoint(publicId, resourceTypes, cedarServer);
+    HttpURLConnection connection = ConnectionUtil.createAndOpenConnection("GET", searchEndpoint, apiKey);
+    int responseCode = connection.getResponseCode();
+    if (responseCode == HttpURLConnection.HTTP_OK) {
+      String response = ConnectionUtil.readResponseMessage(connection.getInputStream());
+      connection.disconnect();
+      int totalCount = JsonUtil.extractJsonFieldValueAsInt(response, "totalCount");
+      if (totalCount > 0) {
+        List<JsonNode> resources = JsonUtil.extractJsonFieldAsList(response, "resources");
+        for (JsonNode resource : resources) {
+          String publicIdFound = resource.get(SCHEMA_ORG_IDENTIFIER).asText();
+          String versionFound = resource.get(PAV_VERSION).asText();
+          if (publicIdFound.equals(publicId) && versionFound.equals(reformattedVersion)) {
+            String fieldId = resource.get(JSON_LD_ID).asText();
+            // Check if the field is in the CDE folder
+            if (isFieldInPath(fieldId, CEDAR_CDES_FOLDER_PATH, cedarServer, apiKey)) {
+              // Retrieve the field's content
+              return Optional.of(getFieldById(fieldId, cedarServer, apiKey));
+            }
+          }
+        }
+      }
+      return Optional.empty();
+    } else {
       String message = "Error retrieving CDE: " + ConnectionUtil.readResponseMessage(connection.getInputStream());
       throw new InternalError(message);
     }
   }
 
-  // Search CDE by public identifier (e.g., 6421467)
-//  public static Map<String, Object> searchCdeByPublicIdAndVersion(String publicId, String version, CedarResourceType cedarResourceType, CedarEnvironment environment, String apiKey) {
-//
-//
-//
-//    CedarResourceType.FIELD.getValue()
-//
-//
-//
-//
-//
-//  }
-
-  public static void deleteField(String fieldId, CedarEnvironment environment, String apiKey) throws IOException {
-    String fieldEndpoint = CedarServerUtil.getTemplateFieldEndPoint(fieldId, environment);
+  public static void deleteField(String fieldId, CedarServer server, String apiKey) throws IOException {
+    String fieldEndpoint = CedarServerUtil.getTemplateFieldEndPoint(fieldId, server);
     HttpURLConnection connection = ConnectionUtil.createAndOpenConnection("DELETE", fieldEndpoint, apiKey);
     int responseCode = connection.getResponseCode();
     if (responseCode != HttpURLConnection.HTTP_NO_CONTENT) {
@@ -138,7 +197,7 @@ public class CedarServices {
   }
 
   public static String createCde(Map<String, Object> cdeFieldMap, String cdeHashCode, String cedarFolderId,
-                                 Optional<List<String>> cedarCategoryIds, CedarEnvironment cedarEnvironment,
+                                 Optional<List<String>> cedarCategoryIds, CedarServer cedarEnvironment,
                                  String apiKey) {
 
     HttpURLConnection conn = null;
@@ -190,7 +249,7 @@ public class CedarServices {
 
   /*** Category Services ***/
 
-  public static String getRootCategoryId(CedarEnvironment targetEnvironment, String apiKey) throws IOException {
+  public static String getRootCategoryId(CedarServer targetEnvironment, String apiKey) throws IOException {
     String endpoint = CedarServerUtil.getRootCategoryRestEndpoint(targetEnvironment);
     HttpURLConnection connection = ConnectionUtil.createAndOpenConnection("GET", endpoint, apiKey);
     int responseCode = connection.getResponseCode();
@@ -204,7 +263,7 @@ public class CedarServices {
     }
   }
 
-  public static void deleteCategory(String categoryCedarId, CedarEnvironment targetEnvironment, String apiKey) throws IOException {
+  public static void deleteCategory(String categoryCedarId, CedarServer targetEnvironment, String apiKey) throws IOException {
     String endpoint = CedarServerUtil.getCategoryRestEndpoint(categoryCedarId, targetEnvironment);
     HttpURLConnection connection = ConnectionUtil.createAndOpenConnection("DELETE", endpoint, apiKey);
     int responseCode = connection.getResponseCode();
@@ -225,7 +284,7 @@ public class CedarServices {
    * Uploads a category to CEDAR, including its children
    */
   public static String createCategory(CategoryTreeNode category, String cedarParentCategoryId,
-                                    CedarEnvironment environment, String apiKey) {
+                                    CedarServer server, String apiKey) {
 
     Map<String, String> categoryFieldsMap = new HashMap<>();
     categoryFieldsMap.put(SCHEMA_ORG_IDENTIFIER, category.getUniqueId());
@@ -239,7 +298,7 @@ public class CedarServices {
       Thread.sleep(50);
       logger.info("Creating category with unique id: " + category.getUniqueId());
       String payload = objectMapper.writeValueAsString(categoryFieldsMap);
-      String url = CedarServerUtil.getCategoriesRestEndpoint(environment);
+      String url = CedarServerUtil.getCategoriesRestEndpoint(server);
       conn = ConnectionUtil.createAndOpenConnection("POST", url, apiKey);
       OutputStream os = conn.getOutputStream();
       os.write(payload.getBytes());
@@ -254,7 +313,7 @@ public class CedarServices {
         logger.info("Category created successfully: " + category.getUniqueId() + "; CEDAR Category Id: " + cedarCategoryId);
         CategoryStats.getInstance().numberOfCategoriesCreated++;
         for (CategoryTreeNode categoryTreeNode : category.getChildren()) {
-          createCategory(categoryTreeNode, cedarCategoryId, environment, apiKey);
+          createCategory(categoryTreeNode, cedarCategoryId, server, apiKey);
         }
       }
     } catch (JsonProcessingException e) {
@@ -271,7 +330,7 @@ public class CedarServices {
     return cedarCategoryId;
   }
 
-  public static Map<String, String> getCategoryUniqueIdsToCedarCategoryIdsMap(Constants.CedarEnvironment targetEnvironment, String apiKey) throws IOException {
+  public static Map<String, String> getCategoryUniqueIdsToCedarCategoryIdsMap(Constants.CedarServer targetEnvironment, String apiKey) throws IOException {
     String endpoint = CedarServerUtil.getCategoryTreeEndpoint(targetEnvironment);
     Map<String, String> categoryUniqueIdsMap = null;
     HttpURLConnection conn = null;
@@ -294,7 +353,7 @@ public class CedarServices {
     return categoryUniqueIdsMap;
   }
 
-  public static CedarCategory getCedarCategoryTree(Constants.CedarEnvironment targetEnvironment, String apiKey) throws IOException {
+  public static CedarCategory getCedarCategoryTree(Constants.CedarServer targetEnvironment, String apiKey) throws IOException {
     String endpoint = CedarServerUtil.getCategoryTreeEndpoint(targetEnvironment);
     HttpURLConnection conn = null;
     CedarCategory categoryTree = null;
@@ -315,7 +374,7 @@ public class CedarServices {
     return categoryTree;
   }
 
-  public static void updateCategory(String categoryCedarId, CategoryTreeNode category, CedarEnvironment environment,
+  public static void updateCategory(String categoryCedarId, CategoryTreeNode category, CedarServer server,
                                     String apiKey) {
 
     Map<String, String> categoryFieldsMap = new HashMap<>();
@@ -326,7 +385,7 @@ public class CedarServices {
     HttpURLConnection conn = null;
     try {
       String payload = objectMapper.writeValueAsString(categoryFieldsMap);
-      String url = CedarServerUtil.getCategoryRestEndpoint(categoryCedarId, environment);
+      String url = CedarServerUtil.getCategoryRestEndpoint(categoryCedarId, server);
       conn = ConnectionUtil.createAndOpenConnection("PUT", url, apiKey);
       OutputStream os = conn.getOutputStream();
       os.write(payload.getBytes());
@@ -413,7 +472,7 @@ public class CedarServices {
   /*** Template Services ***/
 
   public static String createTemplate(Map<String, Object> templateMap, String cedarFolderId,
-                                      CedarEnvironment cedarEnvironment, String apiKey) {
+                                      CedarServer cedarEnvironment, String apiKey) {
 
     HttpURLConnection conn = null;
     String cedarTemplateId = null;

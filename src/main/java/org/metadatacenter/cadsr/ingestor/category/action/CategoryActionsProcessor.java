@@ -2,7 +2,7 @@ package org.metadatacenter.cadsr.ingestor.category.action;
 
 import org.metadatacenter.cadsr.ingestor.category.CategoryStats;
 import org.metadatacenter.cadsr.ingestor.category.CategoryTreeNode;
-import org.metadatacenter.cadsr.ingestor.util.Constants.CedarEnvironment;
+import org.metadatacenter.cadsr.ingestor.util.Constants.CedarServer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -22,14 +22,14 @@ public class CategoryActionsProcessor {
   private List<UpdateCategoryAction> updateCategoryActions;
   private List<DeleteCategoryAction> deleteCategoryActions;
   private String rootCadsrCategoryCedarId;
-  private CedarEnvironment cedarEnvironment;
+  private CedarServer cedarEnvironment;
   private String apiKey;
 
   public CategoryActionsProcessor(List<CreateCategoryAction> createCategoryActions,
                                   List<UpdateCategoryAction> updateCategoryActions,
                                   List<DeleteCategoryAction> deleteCategoryActions,
                                   String rootCadsrCategoryCedarId,
-                                  CedarEnvironment cedarEnvironment, String apiKey) {
+                                  CedarServer cedarEnvironment, String apiKey) {
     this.createCategoryActions = createCategoryActions;
     this.updateCategoryActions = updateCategoryActions;
     this.deleteCategoryActions = deleteCategoryActions;

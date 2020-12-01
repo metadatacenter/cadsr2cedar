@@ -7,7 +7,7 @@ public final class Constants {
 
   public static final int MAX_CDES_TO_PROCESS = Integer.MAX_VALUE; // It can be used to limit the number of CDEs to be processed when debugging or testing
 
-  public enum CedarEnvironment {LOCAL, STAGING, PRODUCTION}
+  public enum CedarServer {LOCAL, STAGING, PRODUCTION}
 
   public static final String LOCAL_RESOURCE_SERVER_URL = "https://resource.metadatacenter.orgx";
   public static final String STAGING_RESOURCE_SERVER_URL = "https://resource.staging.metadatacenter.org";
@@ -16,6 +16,10 @@ public final class Constants {
   public static final String LOCAL_REPO_SERVER_URL = "https://repo.metadatacenter.orgx";
   public static final String STAGING_REPO_SERVER_URL = "https://repo.staging.metadatacenter.org";
   public static final String PRODUCTION_REPO_SERVER_URL = "https://repo.metadatacenter.org";
+
+  public static final String LOCAL_CEDAR_HOST = "metadatacenter.orgx";
+  public static final String STAGING_CEDAR_HOST = "staging.metadatacenter.org";
+  public static final String PRODUCTION_CEDAR_HOST = "metadatacenter.org";
 
   // Version of generated CEDAR CDEs
   public static final String CEDAR_SCHEMA_VERSION = "1.6.0";
@@ -55,5 +59,8 @@ public final class Constants {
   public static final String UNZIPPED_FOLDER = "unzipped";
   public static final String ONTOLOGY_FOLDER = "ontology";
   public static final String ONTOLOGY_FILE = CDE_VALUESETS_ONTOLOGY_ID + ".owl";
+
+  // CEDAR CDE folder. Used to check that the CDEs retrieved when searching for them by id are the right ones
+  public static final String CEDAR_CDES_FOLDER_PATH = "/Shared/CDE";
 
 }

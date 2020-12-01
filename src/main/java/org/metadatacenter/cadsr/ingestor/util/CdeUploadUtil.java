@@ -2,7 +2,7 @@ package org.metadatacenter.cadsr.ingestor.util;
 
 import org.metadatacenter.cadsr.cde.schema.DataElement;
 import org.metadatacenter.cadsr.cde.schema.DataElementsList;
-import org.metadatacenter.cadsr.ingestor.util.Constants.CedarEnvironment;
+import org.metadatacenter.cadsr.ingestor.util.Constants.CedarServer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -21,7 +21,7 @@ public class CdeUploadUtil {
 
   public static void uploadCdeFromDirectory(File inputDir, String cedarFolderId,
                                             boolean attachCategories, Map<String, Set<String>> categoryCadsrIdsToCedarCategoryIds,
-                                            CedarEnvironment cedarEnvironment, String apiKey)
+                                            CedarServer cedarEnvironment, String apiKey)
       throws IOException, JAXBException {
 
     for (final File inputFile : inputDir.listFiles()) {
@@ -31,7 +31,7 @@ public class CdeUploadUtil {
 
   public static void uploadCdeFromFile(File inputFile, String cedarFolderId,
                                        boolean attachCategories, Map<String, Set<String>> categoryCadsrIdsToCedarCategoryIds,
-                                       CedarEnvironment cedarEnvironment, String apiKey) throws IOException, JAXBException {
+                                       CedarServer cedarEnvironment, String apiKey) throws IOException, JAXBException {
 
     logger.info("Processing input file at " + inputFile.getAbsolutePath());
 

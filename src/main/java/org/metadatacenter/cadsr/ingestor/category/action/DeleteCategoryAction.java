@@ -1,7 +1,7 @@
 package org.metadatacenter.cadsr.ingestor.category.action;
 
 import org.metadatacenter.cadsr.ingestor.util.CedarServices;
-import org.metadatacenter.cadsr.ingestor.util.Constants.CedarEnvironment;
+import org.metadatacenter.cadsr.ingestor.util.Constants.CedarServer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -22,7 +22,7 @@ public class DeleteCategoryAction implements CategoryAction {
   }
 
   @Override
-  public void execute(CedarEnvironment cedarEnvironment, String apiKey) throws IOException {
+  public void execute(CedarServer cedarEnvironment, String apiKey) throws IOException {
     CedarServices.deleteCategory(categoryCedarId, cedarEnvironment, apiKey);
   }
 }
