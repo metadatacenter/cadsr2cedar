@@ -9,7 +9,6 @@
 
   <groupId>org.metadatacenter</groupId>
   <artifactId>cedar-cadsr-tools</artifactId>
-  <version>2.5.36-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>CEDAR caDSR Tools</name>
