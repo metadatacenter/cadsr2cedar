@@ -35,14 +35,13 @@ public class CedarFieldUtil {
     defaultSectionBreak.put(ModelNodeNames.JSON_SCHEMA_TYPE, ModelNodeValues.OBJECT);
     defaultSectionBreak.put(ModelNodeNames.JSON_SCHEMA_TITLE, asJsonSchemaTitle(sectionName));
     defaultSectionBreak.put(ModelNodeNames.JSON_SCHEMA_DESCRIPTION, asJsonSchemaDescription(sectionName));
-
     defaultSectionBreak.put(ModelNodeNames.UI, generateSectionBreakDefaultUi());
     defaultSectionBreak.put(ModelNodeNames.SCHEMA_ORG_NAME, sectionName);
     defaultSectionBreak.put(ModelNodeNames.SCHEMA_ORG_DESCRIPTION, description);
-    defaultSectionBreak.put(ModelNodeNames.PAV_CREATED_ON, CedarConstants.xsdDateTimeFormatter.format(now));
-    defaultSectionBreak.put(ModelNodeNames.PAV_CREATED_BY, null); // TODO
-    defaultSectionBreak.put(ModelNodeNames.PAV_LAST_UPDATED_ON, CedarConstants.xsdDateTimeFormatter.format(now));
-    defaultSectionBreak.put(ModelNodeNames.OSLC_MODIFIED_BY, null); // TODO
+    defaultSectionBreak.put(ModelNodeNames.PAV_CREATED_ON, null); // Will be automatically generated when posting it
+    defaultSectionBreak.put(ModelNodeNames.PAV_CREATED_BY, null); // Will be automatically generated when posting it
+    defaultSectionBreak.put(ModelNodeNames.PAV_LAST_UPDATED_ON, null); // Will be automatically generated when posting it
+    defaultSectionBreak.put(ModelNodeNames.OSLC_MODIFIED_BY, null); // Will be automatically generated when posting it
     defaultSectionBreak.put(ModelNodeNames.SCHEMA_ORG_SCHEMA_VERSION, Constants.CEDAR_SCHEMA_VERSION);
     defaultSectionBreak.put(ModelNodeNames.JSON_SCHEMA_ADDITIONAL_PROPERTIES, ModelNodeValues.FALSE);
     return defaultSectionBreak;

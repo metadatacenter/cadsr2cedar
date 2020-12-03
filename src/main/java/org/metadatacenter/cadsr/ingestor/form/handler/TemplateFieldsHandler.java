@@ -3,6 +3,7 @@ package org.metadatacenter.cadsr.ingestor.form.handler;
 import org.metadatacenter.cadsr.form.schema.Form;
 import org.metadatacenter.cadsr.form.schema.Module;
 import org.metadatacenter.cadsr.form.schema.Question;
+import org.metadatacenter.cadsr.ingestor.util.CedarFieldUtil;
 import org.metadatacenter.cadsr.ingestor.util.CedarServices;
 import org.metadatacenter.cadsr.ingestor.util.Constants.CedarServer;
 import org.metadatacenter.model.ModelNodeNames;
@@ -45,26 +46,29 @@ public class TemplateFieldsHandler implements ModelHandler {
   }
 
   private void handleModuleInfo(Module module) throws IOException {
-//    if (module.getLongName() != null && module.getLongName().length() > 0) {
-//      String moduleLongName = module.getLongName();
-//    }
-//    Optional<Map<String, Object>> result =
-//        CedarServices.searchCdeByPublicIdAndVersion
-//            (question.getDataElement().getPublicID(), question.getDataElement().getVersion(), cedarServer, apiKey);
-//
-//    if(result.isPresent()) {
-//      fields.add(result.get());
-//    }
+    if (module.getLongName() != null && module.getLongName().length() > 0) {
+      String moduleLongName = module.getLongName();
+      Map<String, Object> sectionBreak = CedarFieldUtil.generateDefaultSectionBreak(moduleLongName, "", cedarServer);
+      fields.add(sectionBreak);
+    }
   }
 
   private void handleQuestion(Question question) throws IOException {
-    Optional<Map<String, Object>> result =
-        CedarServices.searchCdeByPublicIdAndVersion
-            (question.getDataElement().getPublicID(), question.getDataElement().getVersion(), cedarServer, apiKey);
-
-    if(result.isPresent()) {
-      fields.add(result.get());
+    if (question.getDataElement() != null) {
+      Optional<Map<String, Object>> result =
+          CedarServices.searchCdeByPublicIdAndVersion(question.getDataElement().getPublicID(),
+              question.getDataElement().getVersion(), cedarServer, apiKey);
+      if(result.isPresent()) {
+        fields.add(result.get());
+      }
+      else {
+        logger.warn("CDE not found: PublicId: " + question.getDataElement().getPublicID() + " ; Version: " + question.getDataElement().getVersion());
+      }
     }
+    else {
+      logger.info("The question does not have an associated data element. Question publicId: " + question.getPublicID());
+    }
+
   }
 
   @Override

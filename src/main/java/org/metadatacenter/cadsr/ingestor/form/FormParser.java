@@ -5,6 +5,7 @@ import com.google.common.collect.Maps;
 import org.metadatacenter.bridge.CedarDataServices;
 import org.metadatacenter.cadsr.form.schema.Form;
 import org.metadatacenter.cadsr.ingestor.form.handler.TemplateFieldsHandler;
+import org.metadatacenter.cadsr.ingestor.form.handler.TemplateHeaderAndFooterHandler;
 import org.metadatacenter.cadsr.ingestor.util.CedarServerUtil;
 import org.metadatacenter.cadsr.ingestor.util.Constants;
 import org.metadatacenter.cadsr.ingestor.util.Constants.CedarServer;
@@ -40,22 +41,25 @@ public class FormParser {
     Map<String, String> environment = CedarEnvironmentVariableProvider.getFor(systemComponent);
     cedarConfig = CedarConfig.getInstance(environment);
 
-    AppLoggerQueueService appLoggerQueueService = new AppLoggerQueueService(cedarConfig.getCacheConfig().getPersistent());
-    AppLogger.initLoggerQueueService(appLoggerQueueService, systemComponent);
+//    AppLoggerQueueService appLoggerQueueService = new AppLoggerQueueService(cedarConfig.getCacheConfig().getPersistent());
+//    AppLogger.initLoggerQueueService(appLoggerQueueService, systemComponent);
 
     cedarServer = CedarServerUtil.toCedarServerFromHostName(cedarConfig.getHost());
     //cedarServer = CedarServer.PRODUCTION; // TODO: used for debugging purposes, comment this line
     // An alternative to using the apiKey of the caDSR user, which has more privileges than needed for template
     // ingestion, would be to read the user's api from the request and use a constructor new FormParser(String apiKey).
     apiKey = cedarConfig.getCaDSRAdminUserConfig().getApiKey();
-    CedarDataServices.initializeNeo4jServices(cedarConfig);
-    UserService userService = CedarDataServices.getNeoUserService();
-    CedarUser user = null;
-    try {
-      user = userService.findUserByApiKey(apiKey);
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
+
+    //apiKey = "<...>"; // TODO: delete
+
+//    CedarDataServices.initializeNeo4jServices(cedarConfig);
+//    UserService userService = CedarDataServices.getNeoUserService();
+//    CedarUser user = null;
+//    try {
+//      user = userService.findUserByApiKey(apiKey);
+//    } catch (Exception e) {
+//      e.printStackTrace();
+//    }
   }
 
   public static void parseForm(Form form, final Map<String, Object> templateMap) throws IOException {
@@ -64,7 +68,7 @@ public class FormParser {
     setTemplateIdentifier(templateMap, form.getPublicID());
     setTemplateName(templateMap, form.getLongName(), form.getPublicID());
     setTemplateDescription(templateMap, form.getPreferredDefinition());
-    //setUI(fieldMap, dataElement, new UIHandler());
+    setTemplateHeaderAndFooter(templateMap, form, new TemplateHeaderAndFooterHandler());
     setTemplateFields(templateMap, form, new TemplateFieldsHandler(cedarServer, apiKey));
 //  setFieldQuestions(fieldMap, dataElement, new UserQuestionsHandler());
 //  setVersion(templateMap, form, new VersionHandler());
@@ -110,6 +114,9 @@ public class FormParser {
     templateMap.put(ModelNodeNames.SCHEMA_ORG_DESCRIPTION, getOptionalValue(content));
   }
 
+  private static void setTemplateHeaderAndFooter(final Map<String, Object> templateMap, Form form, TemplateHeaderAndFooterHandler templateHeaderAndFooterHandler) {
+    templateHeaderAndFooterHandler.handle(form).apply(templateMap);
+  }
 
   private static void setTemplateFields(Map<String, Object> templateMap, Form form, TemplateFieldsHandler templateFieldsHandler) throws IOException {
     templateFieldsHandler.handle(form).apply(templateMap);
