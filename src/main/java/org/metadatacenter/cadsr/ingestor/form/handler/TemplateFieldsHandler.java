@@ -6,6 +6,7 @@ import org.metadatacenter.cadsr.form.schema.Question;
 import org.metadatacenter.cadsr.ingestor.util.CedarFieldUtil;
 import org.metadatacenter.cadsr.ingestor.util.CedarServices;
 import org.metadatacenter.cadsr.ingestor.util.Constants.CedarServer;
+import org.metadatacenter.cadsr.ingestor.util.GeneralUtil;
 import org.metadatacenter.model.ModelNodeNames;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -39,16 +40,15 @@ public class TemplateFieldsHandler implements ModelHandler {
   }
 
   private void handleModule(Module module) throws IOException {
-    handleModuleInfo(module); // module name, instructions, etc.
+    handleModuleInfo(module);
     for (Question question : module.getQuestion()) {
       handleQuestion(question);
     }
   }
 
-  private void handleModuleInfo(Module module) throws IOException {
-    if (module.getLongName() != null && module.getLongName().length() > 0) {
-      String moduleLongName = module.getLongName();
-      Map<String, Object> sectionBreak = CedarFieldUtil.generateDefaultSectionBreak(moduleLongName, "", cedarServer);
+  private void handleModuleInfo(Module module) {
+    if (!GeneralUtil.isNullOrEmpty(module.getLongName())) {
+      Map<String, Object> sectionBreak = CedarFieldUtil.generateDefaultSectionBreak(module.getLongName(), "", cedarServer);
       fields.add(sectionBreak);
     }
   }
@@ -59,7 +59,9 @@ public class TemplateFieldsHandler implements ModelHandler {
           CedarServices.searchCdeByPublicIdAndVersion(question.getDataElement().getPublicID(),
               question.getDataElement().getVersion(), cedarServer, apiKey);
       if(result.isPresent()) {
-        fields.add(result.get());
+        Map<String, Object> cde = result.get();
+        cde = customizeCde(cde, question);
+        fields.add(cde);
       }
       else {
         logger.warn("CDE not found: PublicId: " + question.getDataElement().getPublicID() + " ; Version: " + question.getDataElement().getVersion());
@@ -68,28 +70,22 @@ public class TemplateFieldsHandler implements ModelHandler {
     else {
       logger.info("The question does not have an associated data element. Question publicId: " + question.getPublicID());
     }
-
   }
 
-  @Override
-  public void apply(Map<String, Object> templateMap) { // Add all fields to the template
-    for (Map<String, Object> field : fields) {
-      String fieldName = (String) field.get(ModelNodeNames.SCHEMA_ORG_NAME);
-      String fieldDescription = (String) field.get(ModelNodeNames.SCHEMA_ORG_DESCRIPTION);
-      // Update _ui
-      templateMap.replace(ModelNodeNames.UI, getUpdatedUi(fieldName, fieldDescription, templateMap));
-      // Update properties.@context.properties
-      ((Map<String, Object>)((Map<String, Object>) templateMap.get(JSON_SCHEMA_PROPERTIES)).get(JSON_LD_CONTEXT)).
-          replace(JSON_SCHEMA_PROPERTIES, getUpdatedPropertiesContextProperties(fieldName, templateMap));
-      // Update properties.@context.required
-      ((Map<String, Object>)((Map<String, Object>) templateMap.get(JSON_SCHEMA_PROPERTIES)).get(JSON_LD_CONTEXT)).
-          replace(JSON_SCHEMA_REQUIRED, getUpdatedPropertiesContextRequired(fieldName, templateMap));
-      // Update properties
-      ((Map<String, Object>) templateMap.get(JSON_SCHEMA_PROPERTIES)).put(fieldName, field);
-      // Update required
-      templateMap.replace(JSON_SCHEMA_REQUIRED, getUpdatedRequired(fieldName, templateMap));
-    }
+  private Map<String, Object> customizeCde(Map<String, Object> cde, Question question) {
+    cde = customizeCdePrefLabel(cde, question.getQuestionText());
+    // TODO: Complete CDE customization
+    // values, etc.
+    return cde;
+  }
 
+  private Map<String, Object> customizeCdePrefLabel(Map<String, Object> cde, String prefLabel) {
+    String originalPrefLabel = (String) cde.get(SKOS_PREFLABEL);
+    if (!GeneralUtil.isNullOrEmpty(prefLabel) && !prefLabel.equals(originalPrefLabel)) {
+      logger.info("Replacing prefLabel: " + originalPrefLabel + " -> " + prefLabel);
+      cde.replace(SKOS_PREFLABEL, prefLabel);
+    }
+    return cde;
   }
 
   private Map<String, Object> getUpdatedUi(String fieldName, String fieldDescription, Map<String, Object> templateMap) {
@@ -129,6 +125,26 @@ public class TemplateFieldsHandler implements ModelHandler {
       required.add(fieldName);
     }
     return required;
+  }
+
+  @Override
+  public void apply(Map<String, Object> templateMap) { // Add all fields to the template
+    for (Map<String, Object> field : fields) {
+      String fieldName = (String) field.get(ModelNodeNames.SCHEMA_ORG_NAME);
+      String fieldDescription = (String) field.get(ModelNodeNames.SCHEMA_ORG_DESCRIPTION);
+      // Update _ui
+      templateMap.replace(ModelNodeNames.UI, getUpdatedUi(fieldName, fieldDescription, templateMap));
+      // Update properties.@context.properties
+      ((Map<String, Object>)((Map<String, Object>) templateMap.get(JSON_SCHEMA_PROPERTIES)).get(JSON_LD_CONTEXT)).
+          replace(JSON_SCHEMA_PROPERTIES, getUpdatedPropertiesContextProperties(fieldName, templateMap));
+      // Update properties.@context.required
+      ((Map<String, Object>)((Map<String, Object>) templateMap.get(JSON_SCHEMA_PROPERTIES)).get(JSON_LD_CONTEXT)).
+          replace(JSON_SCHEMA_REQUIRED, getUpdatedPropertiesContextRequired(fieldName, templateMap));
+      // Update properties
+      ((Map<String, Object>) templateMap.get(JSON_SCHEMA_PROPERTIES)).put(fieldName, field);
+      // Update required
+      templateMap.replace(JSON_SCHEMA_REQUIRED, getUpdatedRequired(fieldName, templateMap));
+    }
   }
 
 
