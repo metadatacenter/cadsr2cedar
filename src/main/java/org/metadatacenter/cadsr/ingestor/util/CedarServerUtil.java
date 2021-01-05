@@ -69,6 +69,17 @@ public class CedarServerUtil {
     throw new RuntimeException("Invalid target environment");
   }
 
+  public static String getTerminologyServerUrl(CedarServer cedarServer) {
+    if (Constants.CedarServer.LOCAL.equals(cedarServer)) {
+      return LOCAL_TERMINOLOGY_SERVER_URL;
+    } else if (Constants.CedarServer.STAGING.equals(cedarServer)) {
+      return STAGING_TERMINOLOGY_SERVER_URL;
+    } else if (Constants.CedarServer.PRODUCTION.equals(cedarServer)) {
+      return PRODUCTION_TERMINOLOGY_SERVER_URL;
+    }
+    throw new RuntimeException("Invalid target environment");
+  }
+
   public static String getCategoriesRestEndpoint(CedarServer cedarServer) {
     String serverUrl = getResourceServerUrl(cedarServer);
     return serverUrl + "/categories";
@@ -98,6 +109,11 @@ public class CedarServerUtil {
   public static String getAttachCategoriesEndpoint(CedarServer cedarServer) {
     String serverUrl = getResourceServerUrl(cedarServer);
     return serverUrl + "/command/attach-categories";
+  }
+
+  public static String getIntegratedSearchEndpoint(CedarServer cedarServer) {
+    String serverUrl = getTerminologyServerUrl(cedarServer);
+    return serverUrl + "/bioportal/integrated-search";
   }
 
   public static String getTemplatesEndpoint(String folderId, CedarServer cedarServer) throws UnsupportedEncodingException {

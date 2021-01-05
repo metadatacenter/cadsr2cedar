@@ -504,4 +504,37 @@ public class CedarServices {
     return cedarTemplateId;
   }
 
+  /*** Terminology Services ***/
+  public static Map<String, Object> integratedSearch(Map<String, Object> valueConstraints,
+                                                     CedarServer cedarEnvironment, String apiKey) {
+    HttpURLConnection conn = null;
+    try {
+      String integratedSearchEndpoint = CedarServerUtil.getIntegratedSearchEndpoint(cedarEnvironment);
+      Map<String, Object> vcMap = new HashMap<>();
+      vcMap.put("valueConstraints", valueConstraints);
+      Map<String, Object> payloadMap = new HashMap<>();
+      payloadMap.put("parameterObject", vcMap);
+      String payload = objectMapper.writeValueAsString(payloadMap);
+      conn = ConnectionUtil.createAndOpenConnection("POST", integratedSearchEndpoint, apiKey);
+      OutputStream os = conn.getOutputStream();
+      os.write(payload.getBytes());
+      os.flush();
+      int responseCode = conn.getResponseCode();
+      if (responseCode >= HttpURLConnection.HTTP_BAD_REQUEST) {
+        ConnectionUtil.logErrorMessageAndThrowException("Error creating template", conn);
+      } else {
+        String response = ConnectionUtil.readResponseMessage(conn.getInputStream());
+        //cedarTemplateId = JsonUtil.extractJsonFieldValueAsText(response, JSON_LD_ID);
+        logger.info("Search successfully completed");
+      }
+    } catch (Exception e) {
+      logger.error(e.toString());
+    } finally {
+      if (conn != null) {
+        conn.disconnect();
+      }
+    }
+    return null;
+  }
+
 }

@@ -4,6 +4,7 @@ import org.metadatacenter.cadsr.form.schema.Form;
 import org.metadatacenter.cadsr.form.schema.Module;
 import org.metadatacenter.cadsr.form.schema.Question;
 import org.metadatacenter.cadsr.ingestor.util.CedarFieldUtil;
+import org.metadatacenter.cadsr.ingestor.util.CedarServerUtil;
 import org.metadatacenter.cadsr.ingestor.util.CedarServices;
 import org.metadatacenter.cadsr.ingestor.util.Constants.CedarServer;
 import org.metadatacenter.cadsr.ingestor.util.GeneralUtil;
@@ -75,6 +76,7 @@ public class TemplateFieldsHandler implements ModelHandler {
   private Map<String, Object> customizeCde(Map<String, Object> cde, Question question) {
     cde = customizeCdePrefLabel(cde, question.getQuestionText());
     // TODO: Complete CDE customization
+    cde = customizeCdeValues(cde);
     // values, etc.
     return cde;
   }
@@ -87,6 +89,17 @@ public class TemplateFieldsHandler implements ModelHandler {
     }
     return cde;
   }
+
+  private Map<String, Object> customizeCdeValues(Map<String, Object> cde) {
+    // 1. Retrieve CDE values from BioPortal
+    if (cde.containsKey("_valueConstraints")
+        && ((Map<String, Object>)cde.get("_valueConstraints")).containsKey("valueSets")
+        && ((List)((Map<String, Object>)cde.get("_valueConstraints")).get("valueSets")).size() > 0) {
+      CedarServices.integratedSearch((Map<String, Object>)cde.get("_valueConstraints"), cedarServer, apiKey);
+    }
+    return cde;
+  }
+
 
   private Map<String, Object> getUpdatedUi(String fieldName, String fieldDescription, Map<String, Object> templateMap) {
     Map<String, Object> ui = (Map<String, Object>) templateMap.get(ModelNodeNames.UI);

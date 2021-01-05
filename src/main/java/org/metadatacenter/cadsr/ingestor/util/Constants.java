@@ -9,17 +9,21 @@ public final class Constants {
 
   public enum CedarServer {LOCAL, STAGING, PRODUCTION}
 
-  public static final String LOCAL_RESOURCE_SERVER_URL = "https://resource.metadatacenter.orgx";
-  public static final String STAGING_RESOURCE_SERVER_URL = "https://resource.staging.metadatacenter.org";
-  public static final String PRODUCTION_RESOURCE_SERVER_URL = "https://resource.metadatacenter.org";
-
-  public static final String LOCAL_REPO_SERVER_URL = "https://repo.metadatacenter.orgx";
-  public static final String STAGING_REPO_SERVER_URL = "https://repo.staging.metadatacenter.org";
-  public static final String PRODUCTION_REPO_SERVER_URL = "https://repo.metadatacenter.org";
-
   public static final String LOCAL_CEDAR_HOST = "metadatacenter.orgx";
   public static final String STAGING_CEDAR_HOST = "staging.metadatacenter.org";
   public static final String PRODUCTION_CEDAR_HOST = "metadatacenter.org";
+
+  public static final String LOCAL_RESOURCE_SERVER_URL = "https://resource." + LOCAL_CEDAR_HOST;
+  public static final String STAGING_RESOURCE_SERVER_URL = "https://resource." + STAGING_CEDAR_HOST;
+  public static final String PRODUCTION_RESOURCE_SERVER_URL = "https://resource." + PRODUCTION_CEDAR_HOST;
+
+  public static final String LOCAL_REPO_SERVER_URL = "https://repo." + LOCAL_CEDAR_HOST;
+  public static final String STAGING_REPO_SERVER_URL = "https://repo." + STAGING_CEDAR_HOST;
+  public static final String PRODUCTION_REPO_SERVER_URL = "https://repo." + PRODUCTION_CEDAR_HOST;
+
+  public static final String LOCAL_TERMINOLOGY_SERVER_URL = "https://terminology." + LOCAL_CEDAR_HOST;
+  public static final String STAGING_TERMINOLOGY_SERVER_URL = "https://terminology." + STAGING_CEDAR_HOST;
+  public static final String PRODUCTION_TERMINOLOGY_SERVER_URL = "https://terminology." + PRODUCTION_CEDAR_HOST;
 
   // Version of generated CEDAR CDEs
   public static final String CEDAR_SCHEMA_VERSION = "1.6.0";
