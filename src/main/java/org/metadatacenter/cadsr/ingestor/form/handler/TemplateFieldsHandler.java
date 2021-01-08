@@ -3,11 +3,13 @@ package org.metadatacenter.cadsr.ingestor.form.handler;
 import org.metadatacenter.cadsr.form.schema.Form;
 import org.metadatacenter.cadsr.form.schema.Module;
 import org.metadatacenter.cadsr.form.schema.Question;
+import org.metadatacenter.cadsr.form.schema.ValidValue;
 import org.metadatacenter.cadsr.ingestor.util.CedarFieldUtil;
 import org.metadatacenter.cadsr.ingestor.util.CedarServerUtil;
 import org.metadatacenter.cadsr.ingestor.util.CedarServices;
 import org.metadatacenter.cadsr.ingestor.util.Constants.CedarServer;
 import org.metadatacenter.cadsr.ingestor.util.GeneralUtil;
+import org.metadatacenter.config.PaginationConfig;
 import org.metadatacenter.model.ModelNodeNames;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,6 +17,7 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.util.*;
 
+import static org.metadatacenter.cadsr.ingestor.util.Constants.PAGE_SIZE;
 import static org.metadatacenter.model.ModelNodeNames.*;
 
 public class TemplateFieldsHandler implements ModelHandler {
@@ -75,9 +78,11 @@ public class TemplateFieldsHandler implements ModelHandler {
 
   private Map<String, Object> customizeCde(Map<String, Object> cde, Question question) {
     cde = customizeCdePrefLabel(cde, question.getQuestionText());
-    // TODO: Complete CDE customization
-    cde = customizeCdeValues(cde);
-    // values, etc.
+
+    if (question.getValidValue().size() > 0) {
+      cde = customizeCdeValues(cde, question.getValidValue());
+    }
+
     return cde;
   }
 
@@ -90,16 +95,73 @@ public class TemplateFieldsHandler implements ModelHandler {
     return cde;
   }
 
-  private Map<String, Object> customizeCdeValues(Map<String, Object> cde) {
-    // 1. Retrieve CDE values from BioPortal
+  // If the CDE is constrained to values from a BioPortal value set, customize those values using the information from the form's xml
+  private Map<String, Object> customizeCdeValues(Map<String, Object> cde, List<ValidValue> validValues) {
+
     if (cde.containsKey("_valueConstraints")
         && ((Map<String, Object>)cde.get("_valueConstraints")).containsKey("valueSets")
         && ((List)((Map<String, Object>)cde.get("_valueConstraints")).get("valueSets")).size() > 0) {
-      CedarServices.integratedSearch((Map<String, Object>)cde.get("_valueConstraints"), cedarServer, apiKey);
+
+      // 1. Retrieve all the values from BioPortal
+      List<Map<String, String>> cdeValues = new ArrayList<>();
+      List<Map<String, String>> values;
+      int page = 1;
+      do {
+        Map<String, Object> result =
+            CedarServices.integratedSearch((Map<String, Object>)cde.get("_valueConstraints"), page, PAGE_SIZE, cedarServer, apiKey);
+        values = result.containsKey("collection") ? (List<Map<String, String>>) result.get("collection") : new ArrayList<>();
+        if (values.size() > 0) {
+          cdeValues.addAll(values);
+          page++;
+        }
+      } while (values.size() > 0);
+
+      // Create Map with the values indexed by prefLabel to access them quickly
+      Map<String, Map<String, String>> cdeValuesMap = new HashMap<>();
+
+      for (Map<String, String> cdeValue : cdeValues) {
+        if (cdeValue.containsKey("notation") && cdeValue.get("notation").length() > 0) {
+          cdeValuesMap.put(cdeValue.get("notation").toLowerCase(), cdeValue);
+        }
+      }
+
+      // 2. Compare (ignoring case) the retrieved values to the values in the form's XML to identify exclusions
+      // Correspondences between CEDAR's CDE model and the form's xml validValue model:
+      //  - notation <-> value
+      for (ValidValue validValue : validValues) {
+        String valueKey = validValue.getValue().toLowerCase();
+        if (cdeValuesMap.containsKey(valueKey)) {
+          cdeValuesMap.remove(valueKey);
+          logger.info("Removing value: " + valueKey);
+        }
+      }
+
+      // The remaining values are the ones that we need to create exclusions for
+      Map<String, String> valueSetConstraint = ((List<Map<String, String>>)((Map<String, Object>)cde.get("_valueConstraints")).get("valueSets")).get(0);
+      String valueDomainUri = valueSetConstraint.get("uri");
+      // We extracted the valueDomainUri from the original valueSet constraints definition because it's not returned
+      // by the integrated search endpoint and we'll need it to generate the delete actions. This approach won't work if
+      // the valueSets array contains more than one value set. However, we shouldn't run into any issues since we only
+      // associate CDEs to one value set at maximum.
+      List<Map<String, String>> deleteActions = generateDeleteActions(new ArrayList(cdeValuesMap.values()), valueDomainUri);
+      ((Map<String, Object>)cde.get("_valueConstraints")).put("actions", deleteActions);
     }
     return cde;
   }
 
+  private List<Map<String, String>> generateDeleteActions(List<Map<String, String>> values, String valueDomainUri) {
+    List<Map<String, String>> deleteActions = new ArrayList<>();
+    for (Map<String, String> value : values) {
+      Map<String, String> deleteAction = new HashMap<>();
+      deleteAction.put("termUri", value.get("@id"));
+      deleteAction.put("sourceUri", valueDomainUri);
+      deleteAction.put("source", value.get("source").substring(value.get("source").lastIndexOf("/") + 1));
+      deleteAction.put("type", "Value");
+      deleteAction.put("action", "delete");
+      deleteActions.add(deleteAction);
+    }
+    return deleteActions;
+  }
 
   private Map<String, Object> getUpdatedUi(String fieldName, String fieldDescription, Map<String, Object> templateMap) {
     Map<String, Object> ui = (Map<String, Object>) templateMap.get(ModelNodeNames.UI);

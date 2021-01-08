@@ -26,6 +26,7 @@ import java.util.*;
 
 import static org.metadatacenter.cadsr.ingestor.util.Constants.*;
 import static org.metadatacenter.model.ModelNodeNames.*;
+import static org.metadatacenter.util.json.JsonMapper.MAPPER;
 
 public class CedarServices {
 
@@ -472,13 +473,13 @@ public class CedarServices {
   /*** Template Services ***/
 
   public static String createTemplate(Map<String, Object> templateMap, String cedarFolderId,
-                                      CedarServer cedarEnvironment, String apiKey) {
+                                      CedarServer cedarServer, String apiKey) {
 
     HttpURLConnection conn = null;
     String cedarTemplateId = null;
     try {
 
-      String templatesEndpoint = CedarServerUtil.getTemplatesEndpoint(cedarFolderId, cedarEnvironment);
+      String templatesEndpoint = CedarServerUtil.getTemplatesEndpoint(cedarFolderId, cedarServer);
       String payload = objectMapper.writeValueAsString(templateMap);
       conn = ConnectionUtil.createAndOpenConnection("POST", templatesEndpoint, apiKey);
       OutputStream os = conn.getOutputStream();
@@ -505,15 +506,18 @@ public class CedarServices {
   }
 
   /*** Terminology Services ***/
-  public static Map<String, Object> integratedSearch(Map<String, Object> valueConstraints,
+  public static Map<String, Object> integratedSearch(Map<String, Object> valueConstraints, Integer page, Integer pageSize,
                                                      CedarServer cedarEnvironment, String apiKey) {
     HttpURLConnection conn = null;
+    Map<String, Object> resultsMap = new HashMap<>();
     try {
       String integratedSearchEndpoint = CedarServerUtil.getIntegratedSearchEndpoint(cedarEnvironment);
       Map<String, Object> vcMap = new HashMap<>();
       vcMap.put("valueConstraints", valueConstraints);
       Map<String, Object> payloadMap = new HashMap<>();
       payloadMap.put("parameterObject", vcMap);
+      payloadMap.put("page", page);
+      payloadMap.put("pageSize", pageSize);
       String payload = objectMapper.writeValueAsString(payloadMap);
       conn = ConnectionUtil.createAndOpenConnection("POST", integratedSearchEndpoint, apiKey);
       OutputStream os = conn.getOutputStream();
@@ -524,8 +528,7 @@ public class CedarServices {
         ConnectionUtil.logErrorMessageAndThrowException("Error creating template", conn);
       } else {
         String response = ConnectionUtil.readResponseMessage(conn.getInputStream());
-        //cedarTemplateId = JsonUtil.extractJsonFieldValueAsText(response, JSON_LD_ID);
-        logger.info("Search successfully completed");
+        resultsMap = objectMapper.readValue(response, HashMap.class);
       }
     } catch (Exception e) {
       logger.error(e.toString());
@@ -534,7 +537,7 @@ public class CedarServices {
         conn.disconnect();
       }
     }
-    return null;
+    return resultsMap;
   }
 
 }

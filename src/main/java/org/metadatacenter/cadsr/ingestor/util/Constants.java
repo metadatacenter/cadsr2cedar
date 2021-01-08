@@ -67,4 +67,7 @@ public final class Constants {
   // CEDAR CDE folder. Used to check that the CDEs retrieved when searching for them by id are the right ones
   public static final String CEDAR_CDES_FOLDER_PATH = "/Shared/CDE";
 
+  // Pagination
+  public static final int PAGE_SIZE = 50;
+
 }
