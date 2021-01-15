@@ -46,9 +46,7 @@ public class FormParser {
     // An alternative to using the apiKey of the caDSR user, which has more privileges than needed for template
     // ingestion, would be to read the user's api from the request and use a constructor new FormParser(String apiKey).
     apiKey = cedarConfig.getCaDSRAdminUserConfig().getApiKey();
-
-    //cedarServer = CedarServer.PRODUCTION; // TODO: used for debugging purposes, comment this line
-    //apiKey = ""; // TODO: delete
+    
   }
 
   public static void parseForm(Form form, final Map<String, Object> templateMap) throws IOException {

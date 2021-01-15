@@ -108,7 +108,7 @@
             </configuration>
           </execution>
           <execution>
-            <id>cedar-cadsr-form-import</id>
+            <id>cedar-cadsr-form-translate</id>
             <goals>
               <goal>java</goal>
             </goals>
