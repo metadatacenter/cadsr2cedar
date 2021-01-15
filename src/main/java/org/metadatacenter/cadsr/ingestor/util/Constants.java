@@ -1,5 +1,7 @@
 package org.metadatacenter.cadsr.ingestor.util;
 
+import org.metadatacenter.model.BiboStatus;
+
 public final class Constants {
 
   public static final String TEMPLATE_TYPE = "https://schema.metadatacenter.org/core/Template";
@@ -30,6 +32,7 @@ public final class Constants {
 
   // Default forms import version (used if the form's xml doesn't have a version)
   public static final String DEFAULT_TEMPLATE_VERSION = "0.0.1";
+  public static final String DEFAULT_TEMPLATE_STATUS = BiboStatus.DRAFT.getValue();
 
   // Schema.org URIs
   public static final String SCHEMAORG_IRI = "https://schema.org/";

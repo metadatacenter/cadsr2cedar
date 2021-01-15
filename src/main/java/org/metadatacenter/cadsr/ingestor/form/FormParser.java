@@ -4,6 +4,8 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import org.metadatacenter.bridge.CedarDataServices;
 import org.metadatacenter.cadsr.form.schema.Form;
+import org.metadatacenter.cadsr.ingestor.cde.CadsrStatus;
+import org.metadatacenter.cadsr.ingestor.exception.UnsupportedDataElementException;
 import org.metadatacenter.cadsr.ingestor.form.handler.TemplateFieldsHandler;
 import org.metadatacenter.cadsr.ingestor.form.handler.TemplateHeaderAndFooterHandler;
 import org.metadatacenter.cadsr.ingestor.util.CdeUtil;
@@ -13,6 +15,7 @@ import org.metadatacenter.cadsr.ingestor.util.Constants.CedarServer;
 import org.metadatacenter.cadsr.ingestor.util.GeneralUtil;
 import org.metadatacenter.config.CedarConfig;
 import org.metadatacenter.config.environment.CedarEnvironmentVariableProvider;
+import org.metadatacenter.model.BiboStatus;
 import org.metadatacenter.model.ModelNodeNames;
 import org.metadatacenter.model.ModelNodeValues;
 import org.metadatacenter.model.SystemComponent;
@@ -29,8 +32,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
-import static org.metadatacenter.cadsr.ingestor.util.Constants.DEFAULT_TEMPLATE_VERSION;
-import static org.metadatacenter.cadsr.ingestor.util.Constants.TEMPLATE_TYPE;
+import static org.metadatacenter.cadsr.ingestor.util.Constants.*;
 
 public class FormParser {
 
@@ -57,10 +59,12 @@ public class FormParser {
     setTemplateDescription(templateMap, form.getPreferredDefinition());
     setTemplateHeaderAndFooter(templateMap, form, new TemplateHeaderAndFooterHandler());
     setTemplateFields(templateMap, form, new TemplateFieldsHandler(cedarServer, apiKey));
-//  setFieldQuestions(fieldMap, dataElement, new UserQuestionsHandler());
     setTemplateVersion(templateMap, form.getVersion());
-//  setProperties(fieldMap, dataElement, new PropertiesHandler());
-//  setCategories(fieldMap, dataElement, new CategoriesHandler());
+
+    // The following line is commented out because, for the moment, we don't want to set the template status. We want to
+    // avoid that RELEASED forms are set to bibo:published and therefore 'locked' by CEDAR. By default, all imported
+    // forms will be set to bibo:draft.
+    //setTemplateStatus(templateMap, form.getWorkflowStatusName());
   }
 
   private static void createEmptyTemplate(final Map<String, Object> templateMap) {
@@ -83,7 +87,7 @@ public class FormParser {
     templateMap.put(ModelNodeNames.JSON_SCHEMA_ADDITIONAL_PROPERTIES, ModelNodeValues.FALSE);
     templateMap.put(ModelNodeNames.JSON_SCHEMA_REQUIRED, setRequired());
     templateMap.put(ModelNodeNames.PAV_VERSION, DEFAULT_TEMPLATE_VERSION);
-    templateMap.put(ModelNodeNames.BIBO_STATUS, "bibo:draft"); // TODO
+    templateMap.put(ModelNodeNames.BIBO_STATUS, DEFAULT_TEMPLATE_STATUS);
   }
 
   private static void setTemplateIdentifier(final Map<String, Object> templateMap, String content) {
@@ -108,9 +112,15 @@ public class FormParser {
     templateFieldsHandler.handle(form).apply(templateMap);
   }
 
-  private static void setTemplateVersion(final Map<String, Object> templateMap, String content) {
-    if (content != null) {
-      templateMap.put(ModelNodeNames.PAV_VERSION, CdeUtil.reformatVersioningNumber(content));
+  private static void setTemplateVersion(final Map<String, Object> templateMap, String versionContent) {
+    if (versionContent != null) {
+      templateMap.put(ModelNodeNames.PAV_VERSION, CdeUtil.reformatVersioningNumber(versionContent));
+    }
+  }
+
+  private static void setTemplateStatus(final Map<String, Object> templateMap, String statusContent) {
+    if (statusContent != null && statusContent.equals(CadsrStatus.RELEASED)) {
+      templateMap.put(ModelNodeNames.BIBO_STATUS, BiboStatus.PUBLISHED);
     }
   }
 
