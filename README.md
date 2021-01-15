@@ -2,13 +2,17 @@ CEDAR caDSR Tools
 =================
 
 This project contains command-line tools to perform the following actions:
-- Download XML-encoded [caDSR](https://wiki.nci.nih.gov/display/caDSR/caDSR+Wiki) [11179-based](http://metadata-standards.org/11179/) common data elements (CDEs) from NCI's caDSR FTP servers.
-- Download XML-encoded caDSR contexts, classification schemes, and classification scheme items from NCI's caDSR FTP servers.
-- Transform CDEs to CEDAR CDE fields.
-- Transform caDSR contexts, classification schemes, and classification scheme items to CEDAR categories.
-- Upload CEDAR CDE fields to the CEDAR system.
-- Upload CEDAR categories to the CEDAR system.
-- Attach CEDAR CDE fields to CEDAR caDSR categories.
+
+- caDSR CDEs:
+    - Download XML-encoded [caDSR](https://wiki.nci.nih.gov/display/caDSR/caDSR+Wiki) [11179-based](http://metadata-standards.org/11179/) common data elements (CDEs) from NCI's caDSR FTP servers.
+    - Download XML-encoded caDSR contexts, classification schemes, and classification scheme items from NCI's caDSR FTP servers.
+    - Transform CDEs to CEDAR CDE fields.
+    - Transform caDSR contexts, classification schemes, and classification scheme items to CEDAR categories.
+    - Upload CEDAR CDE fields to the CEDAR system.
+    - Upload CEDAR categories to the CEDAR system.
+    - Attach CEDAR CDE fields to CEDAR caDSR categories.
+-caDSR Forms:
+    - Translate XML-encoded caDSR forms into CEDAR templates.
 
 ### Common Data Elements
 
@@ -52,7 +56,7 @@ Then build it with Maven:
 
     mvn clean install
 
-## Usage:
+## Usage (CDEs updater):
 
     mvn exec:java@cedar-cadsr-updater -Dexec.args="[options]"
 
@@ -93,4 +97,19 @@ Example of usage with local classifications and CDE files. Note that the identif
 
 ```
 mvn exec:java@cedar-cadsr-updater -Dexec.args="--update-categories --update-cdes --server local --folder 03f2d7f0-a54c-4a37-a0a8-c53159ec4aab --apikey 8d1fdf56f8147054388432716b06e4dac940aa86b326d13e7bfceb17a9ec4b9c --categories-file /var/tmp/xml_cscsi_20205210521.zip --cdes-file /var/tmp/xml_cde_20205210558.zip --ontology-folder /var/tmp/ontology"
+```
+
+## Usage (Forms translation):
+
+    mvn exec:java@cedar-cadsr-form-translate -Dexec.args="[options]"
+
+Options:
+```
+ -f,--form <arg>   [REQUIRED] Path of the .xml file with the caDSR Form to
+                   be imported into CEDAR.
+```
+
+Example of usage.
+```
+mvn exec:java@cedar-cadsr-form-translate -Dexec.args="--f /var/tmp/caDSRforms/form2.xml"
 ```
