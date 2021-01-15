@@ -70,4 +70,6 @@ public final class Constants {
   // Pagination
   public static final int PAGE_SIZE = 50;
 
+  public static final int MOVE_ACTIONS_THRESHOLD = 20;
+
 }

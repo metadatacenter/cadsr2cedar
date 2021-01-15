@@ -17,6 +17,7 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.util.*;
 
+import static org.metadatacenter.cadsr.ingestor.util.Constants.MOVE_ACTIONS_THRESHOLD;
 import static org.metadatacenter.cadsr.ingestor.util.Constants.PAGE_SIZE;
 import static org.metadatacenter.model.ModelNodeNames.*;
 
@@ -128,10 +129,12 @@ public class TemplateFieldsHandler implements ModelHandler {
       // 2. Compare (ignoring case) the retrieved values to the values in the form's XML to identify exclusions
       // Correspondences between CEDAR's CDE model and the form's xml validValue model:
       //  - notation <-> value
+      Map<String, Map<String, String>> excludedCdeValuesMap = new HashMap<>();
+      excludedCdeValuesMap.putAll(cdeValuesMap);
       for (ValidValue validValue : validValues) {
         String valueKey = validValue.getValue().toLowerCase();
-        if (cdeValuesMap.containsKey(valueKey)) {
-          cdeValuesMap.remove(valueKey);
+        if (excludedCdeValuesMap.containsKey(valueKey)) {
+          excludedCdeValuesMap.remove(valueKey);
           logger.info("Removing value: " + valueKey);
         }
       }
@@ -140,11 +143,17 @@ public class TemplateFieldsHandler implements ModelHandler {
       Map<String, String> valueSetConstraint = ((List<Map<String, String>>)((Map<String, Object>)cde.get("_valueConstraints")).get("valueSets")).get(0);
       String valueDomainUri = valueSetConstraint.get("uri");
       // We extracted the valueDomainUri from the original valueSet constraints definition because it's not returned
-      // by the integrated search endpoint and we'll need it to generate the delete actions. This approach won't work if
+      // by the integrated search endpoint and we'll need it to generate the actions. This approach won't work if
       // the valueSets array contains more than one value set. However, we shouldn't run into any issues since we only
-      // associate CDEs to one value set at maximum.
-      List<Map<String, String>> deleteActions = generateDeleteActions(new ArrayList(cdeValuesMap.values()), valueDomainUri);
-      ((Map<String, Object>)cde.get("_valueConstraints")).put("actions", deleteActions);
+      // associate CDEs to one value set at maximum (i.e., only one element in the _valueConstraints.valueSets array).
+      List<Map<String, Object>> deleteActions = generateDeleteActions(new ArrayList(excludedCdeValuesMap.values()), valueDomainUri);
+      List<Map<String, Object>> moveActions = generateMoveActions(validValues, cdeValuesMap, valueDomainUri, MOVE_ACTIONS_THRESHOLD);
+
+      List<Map<String, Object>> actions = new ArrayList<>();
+      actions.addAll(deleteActions);
+      actions.addAll(moveActions);
+
+      ((Map<String, Object>)cde.get("_valueConstraints")).put("actions", actions);
     }
     return cde;
   }
@@ -162,6 +171,33 @@ public class TemplateFieldsHandler implements ModelHandler {
     }
     return deleteActions;
   }
+
+  private List<Map<String, Object>> generateMoveActions(List<ValidValue> validValues,
+                                                        Map<String, Map<String, String>> cdeValuesMap,
+                                                        String valueDomainUri, int generationThreshold) {
+    List<Map<String, Object>> moveActions = new ArrayList<>();
+    if (validValues.size() <= generationThreshold) { // We use this threshold to avoid generating move actions for large value sets
+      for (ValidValue validValue : validValues) {
+        if (validValue.getDisplayOrder() != null) {
+          String valueKey = validValue.getValue().toLowerCase();
+          if (cdeValuesMap.containsKey(valueKey)) {
+            Map<String, String> cdeValue = cdeValuesMap.get(valueKey);
+            Map<String, Object> moveAction = new HashMap<>();
+            moveAction.put("to", Integer.parseInt(validValue.getDisplayOrder()) + 1); // The order of our actions is 1-based
+            moveAction.put("termUri", cdeValue.get("@id"));
+            moveAction.put("sourceUri", valueDomainUri);
+            moveAction.put("source", cdeValue.get("source").substring(cdeValue.get("source").lastIndexOf("/") + 1));
+            moveAction.put("type", "Value");
+            moveAction.put("action", "move");
+            moveActions.add(moveAction);
+          }
+        }
+      }
+    }
+    return moveActions;
+  }
+
+
 
   private Map<String, Object> getUpdatedUi(String fieldName, String fieldDescription, Map<String, Object> templateMap) {
     Map<String, Object> ui = (Map<String, Object>) templateMap.get(ModelNodeNames.UI);
