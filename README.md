@@ -11,7 +11,8 @@ This project contains command-line tools to perform the following actions:
     - Upload CEDAR CDE fields to the CEDAR system.
     - Upload CEDAR categories to the CEDAR system.
     - Attach CEDAR CDE fields to CEDAR caDSR categories.
--caDSR Forms:
+
+- caDSR Forms:
     - Translate XML-encoded caDSR forms into CEDAR templates.
 
 ### Common Data Elements
