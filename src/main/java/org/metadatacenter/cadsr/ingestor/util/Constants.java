@@ -28,6 +28,9 @@ public final class Constants {
   // Version of generated CEDAR CDEs
   public static final String CEDAR_SCHEMA_VERSION = "1.6.0";
 
+  // Default forms import version (used if the form's xml doesn't have a version)
+  public static final String DEFAULT_TEMPLATE_VERSION = "0.0.1";
+
   // Schema.org URIs
   public static final String SCHEMAORG_IRI = "https://schema.org/";
   public static final String SCHEMAORG_STARTTIME_IRI = SCHEMAORG_IRI + "startTime";

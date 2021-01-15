@@ -29,6 +29,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
+import static org.metadatacenter.cadsr.ingestor.util.Constants.DEFAULT_TEMPLATE_VERSION;
 import static org.metadatacenter.cadsr.ingestor.util.Constants.TEMPLATE_TYPE;
 
 public class FormParser {
@@ -46,7 +47,6 @@ public class FormParser {
     // An alternative to using the apiKey of the caDSR user, which has more privileges than needed for template
     // ingestion, would be to read the user's api from the request and use a constructor new FormParser(String apiKey).
     apiKey = cedarConfig.getCaDSRAdminUserConfig().getApiKey();
-
   }
 
   public static void parseForm(Form form, final Map<String, Object> templateMap) throws IOException {
@@ -58,7 +58,7 @@ public class FormParser {
     setTemplateHeaderAndFooter(templateMap, form, new TemplateHeaderAndFooterHandler());
     setTemplateFields(templateMap, form, new TemplateFieldsHandler(cedarServer, apiKey));
 //  setFieldQuestions(fieldMap, dataElement, new UserQuestionsHandler());
-//  setVersion(templateMap, form, new VersionHandler());
+    setTemplateVersion(templateMap, form.getVersion());
 //  setProperties(fieldMap, dataElement, new PropertiesHandler());
 //  setCategories(fieldMap, dataElement, new CategoriesHandler());
   }
@@ -82,7 +82,7 @@ public class FormParser {
     templateMap.put(ModelNodeNames.SCHEMA_ORG_SCHEMA_VERSION, Constants.CEDAR_SCHEMA_VERSION);
     templateMap.put(ModelNodeNames.JSON_SCHEMA_ADDITIONAL_PROPERTIES, ModelNodeValues.FALSE);
     templateMap.put(ModelNodeNames.JSON_SCHEMA_REQUIRED, setRequired());
-    templateMap.put(ModelNodeNames.PAV_VERSION, "0.0.1"); // TODO
+    templateMap.put(ModelNodeNames.PAV_VERSION, DEFAULT_TEMPLATE_VERSION);
     templateMap.put(ModelNodeNames.BIBO_STATUS, "bibo:draft"); // TODO
   }
 
@@ -106,6 +106,12 @@ public class FormParser {
 
   private static void setTemplateFields(Map<String, Object> templateMap, Form form, TemplateFieldsHandler templateFieldsHandler) throws IOException {
     templateFieldsHandler.handle(form).apply(templateMap);
+  }
+
+  private static void setTemplateVersion(final Map<String, Object> templateMap, String content) {
+    if (content != null) {
+      templateMap.put(ModelNodeNames.PAV_VERSION, CdeUtil.reformatVersioningNumber(content));
+    }
   }
 
   /**
