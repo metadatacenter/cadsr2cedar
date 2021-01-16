@@ -5,11 +5,9 @@ import org.metadatacenter.cadsr.form.schema.Module;
 import org.metadatacenter.cadsr.form.schema.Question;
 import org.metadatacenter.cadsr.form.schema.ValidValue;
 import org.metadatacenter.cadsr.ingestor.util.CedarFieldUtil;
-import org.metadatacenter.cadsr.ingestor.util.CedarServerUtil;
 import org.metadatacenter.cadsr.ingestor.util.CedarServices;
 import org.metadatacenter.cadsr.ingestor.util.Constants.CedarServer;
 import org.metadatacenter.cadsr.ingestor.util.GeneralUtil;
-import org.metadatacenter.config.PaginationConfig;
 import org.metadatacenter.model.ModelNodeNames;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,19 +32,19 @@ public class TemplateFieldsHandler implements ModelHandler {
   }
 
   public TemplateFieldsHandler handle(Form form) throws IOException {
-
     List<Module> modules = form.getModule();
-
+    sortModules(modules);
     for (Module module : modules) {
       handleModule(module);
     }
-
     return this;
   }
 
   private void handleModule(Module module) throws IOException {
     handleModuleInfo(module);
-    for (Question question : module.getQuestion()) {
+    List<Question> questions = module.getQuestion();
+    sortQuestions(questions);
+    for (Question question : questions) {
       handleQuestion(question);
     }
   }
@@ -236,6 +234,44 @@ public class TemplateFieldsHandler implements ModelHandler {
       required.add(fieldName);
     }
     return required;
+  }
+
+  /**
+   * Sort modules based on their displayOrder. We consider that null is greater than non-null (nullsLast policy)
+   * @param modules
+   */
+  private void sortModules(List<Module> modules) {
+    Collections.sort(modules, new Comparator<>() {
+      public int compare(Module m1, Module m2) {
+        if (m1.getDisplayOrder() == null && m2.getDisplayOrder() == null) {
+          return 0;
+        } else if (m1.getDisplayOrder() == null) {
+          return 1;
+        } else if (m2.getDisplayOrder() == null) {
+          return -1;
+        }
+        return Integer.compare(Integer.parseInt(m1.getDisplayOrder()), Integer.parseInt(m2.getDisplayOrder()));
+      }
+    });
+  }
+
+  /**
+   * Sort questions based on their displayOrder. We consider that null is greater than non-null (nullsLast policy)
+   * @param questions
+   */
+  private void sortQuestions(List<Question> questions) {
+    Collections.sort(questions, new Comparator<>() {
+      public int compare(Question q1, Question q2) {
+        if (q1.getDisplayOrder() == null && q1.getDisplayOrder() == null) {
+          return 0;
+        } else if (q1.getDisplayOrder() == null) {
+          return 1;
+        } else if (q2.getDisplayOrder() == null) {
+          return -1;
+        }
+        return Integer.compare(Integer.parseInt(q1.getDisplayOrder()), Integer.parseInt(q2.getDisplayOrder()));
+      }
+    });
   }
 
   @Override
