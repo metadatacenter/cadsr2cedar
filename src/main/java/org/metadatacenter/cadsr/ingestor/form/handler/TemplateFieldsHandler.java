@@ -119,7 +119,7 @@ public class TemplateFieldsHandler implements ModelHandler {
       Map<String, Map<String, String>> cdeValuesMap = new HashMap<>();
 
       for (Map<String, String> cdeValue : cdeValues) {
-        if (cdeValue.containsKey("notation") && cdeValue.get("notation").length() > 0) {
+        if (cdeValue.get("notation") != null && cdeValue.get("notation").length() > 0) {
           cdeValuesMap.put(cdeValue.get("notation").toLowerCase(), cdeValue);
         }
       }
