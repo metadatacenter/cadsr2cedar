@@ -44,7 +44,7 @@ public class CadsrFormImportTool {
 
       Form form = FormUtil.getForm(new FileInputStream(settings.getFormFilePath()));
 
-      Map templateMap = FormUtil.getTemplateMapFromForm(form);
+      Map templateMap = FormUtil.getTemplateMapFromForm(form).getTemplateMap();
 
       System.out.println(GeneralUtil.convertMapToJson(templateMap));
 

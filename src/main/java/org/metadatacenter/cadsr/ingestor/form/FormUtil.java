@@ -34,17 +34,10 @@ public class FormUtil {
     return (Form) jaxbUnmarshaller.unmarshal(new InputStreamReader(cleanIs, Constants.CHARSET));
   }
 
-  public static Map<String, Object> getTemplateMapFromForm(Form form) throws IOException {
-    final Map<String, Object> templateMap = Maps.newHashMap();
-//    try {
-      FormParser.parseForm(form, templateMap);
-      return templateMap;
-//    } catch (UnsupportedDataElementException e) {
-//      logger.warn(e.getMessage());
-//    } catch (UnknownSeparatorException e) {
-//      logger.error(e.getMessage());
-//    }
-
+  public static FormParseResult getTemplateMapFromForm(Form form) throws IOException {
+    Map<String, Object> templateMap = Maps.newHashMap();
+    FormParser.parseForm(form, templateMap);
+    return new FormParseResult(templateMap, FormParseReporter.getInstance().getMessages());
   }
 
 }

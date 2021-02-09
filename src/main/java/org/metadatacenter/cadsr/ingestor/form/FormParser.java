@@ -2,16 +2,14 @@ package org.metadatacenter.cadsr.ingestor.form;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import org.metadatacenter.bridge.CedarDataServices;
 import org.metadatacenter.cadsr.form.schema.Form;
 import org.metadatacenter.cadsr.ingestor.cde.CadsrStatus;
-import org.metadatacenter.cadsr.ingestor.exception.UnsupportedDataElementException;
 import org.metadatacenter.cadsr.ingestor.form.handler.TemplateFieldsHandler;
 import org.metadatacenter.cadsr.ingestor.form.handler.TemplateHeaderAndFooterHandler;
 import org.metadatacenter.cadsr.ingestor.util.CdeUtil;
 import org.metadatacenter.cadsr.ingestor.util.CedarServerUtil;
 import org.metadatacenter.cadsr.ingestor.util.Constants;
-import org.metadatacenter.cadsr.ingestor.util.Constants.CedarServer;
+import org.metadatacenter.cadsr.ingestor.util.Constants.*;
 import org.metadatacenter.cadsr.ingestor.util.GeneralUtil;
 import org.metadatacenter.config.CedarConfig;
 import org.metadatacenter.config.environment.CedarEnvironmentVariableProvider;
@@ -19,10 +17,6 @@ import org.metadatacenter.model.BiboStatus;
 import org.metadatacenter.model.ModelNodeNames;
 import org.metadatacenter.model.ModelNodeValues;
 import org.metadatacenter.model.SystemComponent;
-import org.metadatacenter.server.logging.AppLogger;
-import org.metadatacenter.server.logging.AppLoggerQueueService;
-import org.metadatacenter.server.security.model.user.CedarUser;
-import org.metadatacenter.server.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -50,9 +44,16 @@ public class FormParser {
     // ingestion, would be to read the user's api from the request and use a constructor new FormParser(String apiKey).
     apiKey = cedarConfig.getCaDSRAdminUserConfig().getApiKey();
 
+    
   }
 
   public static void parseForm(Form form, final Map<String, Object> templateMap) throws IOException {
+
+    FormParseReporter.getInstance().addMessage("Starting form translation");
+    FormParseReporter.getInstance().addMessage("Public ID: " + form.getPublicID());
+    FormParseReporter.getInstance().addMessage("Name: " + form.getLongName());
+    FormParseReporter.getInstance().addMessage("Version: " + form.getVersion());
+    FormParseReporter.getInstance().addMessage("Status: " + form.getWorkflowStatusName());
 
     createEmptyTemplate(templateMap);
     setTemplateIdentifier(templateMap, form.getPublicID());
@@ -61,11 +62,9 @@ public class FormParser {
     setTemplateHeaderAndFooter(templateMap, form, new TemplateHeaderAndFooterHandler());
     setTemplateFields(templateMap, form, new TemplateFieldsHandler(cedarServer, apiKey));
     setTemplateVersion(templateMap, form.getVersion());
+    setTemplateStatus(templateMap, form.getWorkflowStatusName());
 
-    // The following line is commented out because, for the moment, we don't want to set the template status. We want to
-    // avoid that RELEASED forms are set to bibo:published and therefore 'locked' by CEDAR. By default, all imported
-    // forms will be set to bibo:draft.
-    //setTemplateStatus(templateMap, form.getWorkflowStatusName());
+    FormParseReporter.getInstance().addMessage("Finished form translation");
   }
 
   private static void createEmptyTemplate(final Map<String, Object> templateMap) {
