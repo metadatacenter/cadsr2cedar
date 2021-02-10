@@ -44,27 +44,26 @@ public class FormParser {
     // ingestion, would be to read the user's api from the request and use a constructor new FormParser(String apiKey).
     apiKey = cedarConfig.getCaDSRAdminUserConfig().getApiKey();
 
-    
+
   }
 
-  public static void parseForm(Form form, final Map<String, Object> templateMap) throws IOException {
+  public static void parseForm(Form form, final Map<String, Object> templateMap, String reportId) throws IOException {
 
-    FormParseReporter.getInstance().addMessage("Starting form translation");
-    FormParseReporter.getInstance().addMessage("Public ID: " + form.getPublicID());
-    FormParseReporter.getInstance().addMessage("Name: " + form.getLongName());
-    FormParseReporter.getInstance().addMessage("Version: " + form.getVersion());
-    FormParseReporter.getInstance().addMessage("Status: " + form.getWorkflowStatusName());
+    FormParseReporter.getInstance().addMessage(reportId,"Form publicId: " + form.getPublicID());
+    FormParseReporter.getInstance().addMessage(reportId,"Form name: " + form.getLongName());
+    FormParseReporter.getInstance().addMessage(reportId,"Form version: " + form.getVersion());
+    FormParseReporter.getInstance().addMessage(reportId,"Form status: " + form.getWorkflowStatusName());
 
     createEmptyTemplate(templateMap);
     setTemplateIdentifier(templateMap, form.getPublicID());
     setTemplateName(templateMap, form.getLongName(), form.getPublicID());
     setTemplateDescription(templateMap, form.getPreferredDefinition());
     setTemplateHeaderAndFooter(templateMap, form, new TemplateHeaderAndFooterHandler());
-    setTemplateFields(templateMap, form, new TemplateFieldsHandler(cedarServer, apiKey));
+    setTemplateFields(templateMap, form, new TemplateFieldsHandler(cedarServer, apiKey, reportId));
     setTemplateVersion(templateMap, form.getVersion());
     setTemplateStatus(templateMap, form.getWorkflowStatusName());
 
-    FormParseReporter.getInstance().addMessage("Finished form translation");
+    FormParseReporter.getInstance().addMessage(reportId,"Form translation complete");
   }
 
   private static void createEmptyTemplate(final Map<String, Object> templateMap) {

@@ -4,6 +4,7 @@ import org.metadatacenter.cadsr.form.schema.Form;
 import org.metadatacenter.cadsr.form.schema.Module;
 import org.metadatacenter.cadsr.form.schema.Question;
 import org.metadatacenter.cadsr.form.schema.ValidValue;
+import org.metadatacenter.cadsr.ingestor.form.FormParseReporter;
 import org.metadatacenter.cadsr.ingestor.util.CedarFieldUtil;
 import org.metadatacenter.cadsr.ingestor.util.CedarServices;
 import org.metadatacenter.cadsr.ingestor.util.Constants.CedarServer;
@@ -25,10 +26,12 @@ public class TemplateFieldsHandler implements ModelHandler {
   private CedarServer cedarServer;
   private String apiKey;
   private List<Map<String, Object>> fields = new ArrayList<>();
+  private String reportId;
 
-  public TemplateFieldsHandler(CedarServer cedarServer, String apiKey) {
+  public TemplateFieldsHandler(CedarServer cedarServer, String apiKey, String reportId) {
     this.cedarServer = cedarServer;
     this.apiKey = apiKey;
+    this.reportId = reportId;
   }
 
   public TemplateFieldsHandler handle(Form form) throws IOException {
@@ -51,6 +54,7 @@ public class TemplateFieldsHandler implements ModelHandler {
 
   private void handleModuleInfo(Module module) {
     if (!GeneralUtil.isNullOrEmpty(module.getLongName())) {
+      FormParseReporter.getInstance().addMessage(reportId,"Added section: " + module.getLongName());
       Map<String, Object> sectionBreak = CedarFieldUtil.generateDefaultSectionBreak(module.getLongName(), "", cedarServer);
       fields.add(sectionBreak);
     }
@@ -65,17 +69,23 @@ public class TemplateFieldsHandler implements ModelHandler {
         Map<String, Object> cde = result.get();
         cde = customizeCde(cde, question);
         fields.add(cde);
+        FormParseReporter.getInstance().addMessage(reportId,"Added CDE-based field. (PublicId: "
+            + question.getDataElement().getPublicID() + "; Version: " + question.getDataElement().getVersion() + ")");
       }
       else {
+        FormParseReporter.getInstance().addMessage(reportId,"CDE-based field not found in CEDAR. Ignored. (PublicId: "
+            + question.getDataElement().getPublicID() + "; Version: " + question.getDataElement().getVersion() + ")");
         logger.warn("CDE not found: PublicId: " + question.getDataElement().getPublicID() + " ; Version: " + question.getDataElement().getVersion());
       }
     }
     else {
+      FormParseReporter.getInstance().addMessage(reportId,"Field does not have an associated CDE. Ignored. (PublicId: "
+          + question.getPublicID() + ")");
       logger.info("The question does not have an associated data element. Question publicId: " + question.getPublicID());
     }
   }
 
-  private Map<String, Object> customizeCde(Map<String, Object> cde, Question question) {
+  private Map<String, Object> customizeCde(Map<String, Object> cde, Question question) throws IOException {
     cde = customizeCdePrefLabel(cde, question.getQuestionText());
 
     if (question.getValidValue().size() > 0) {
@@ -95,7 +105,7 @@ public class TemplateFieldsHandler implements ModelHandler {
   }
 
   // If the CDE is constrained to values from a BioPortal value set, customize those values using the information from the form's xml
-  private Map<String, Object> customizeCdeValues(Map<String, Object> cde, List<ValidValue> validValues) {
+  private Map<String, Object> customizeCdeValues(Map<String, Object> cde, List<ValidValue> validValues) throws IOException {
 
     if (cde.containsKey("_valueConstraints")
         && ((Map<String, Object>)cde.get("_valueConstraints")).containsKey("valueSets")
@@ -133,7 +143,7 @@ public class TemplateFieldsHandler implements ModelHandler {
         String valueKey = validValue.getValue().toLowerCase();
         if (excludedCdeValuesMap.containsKey(valueKey)) {
           excludedCdeValuesMap.remove(valueKey);
-          logger.info("Removing value: " + valueKey);
+          logger.info("Including value: " + valueKey);
         }
       }
 
@@ -262,7 +272,7 @@ public class TemplateFieldsHandler implements ModelHandler {
   private void sortQuestions(List<Question> questions) {
     Collections.sort(questions, new Comparator<>() {
       public int compare(Question q1, Question q2) {
-        if (q1.getDisplayOrder() == null && q1.getDisplayOrder() == null) {
+        if (q1.getDisplayOrder() == null && q2.getDisplayOrder() == null) {
           return 0;
         } else if (q1.getDisplayOrder() == null) {
           return 1;
@@ -279,18 +289,22 @@ public class TemplateFieldsHandler implements ModelHandler {
     for (Map<String, Object> field : fields) {
       String fieldName = (String) field.get(ModelNodeNames.SCHEMA_ORG_NAME);
       String fieldDescription = (String) field.get(ModelNodeNames.SCHEMA_ORG_DESCRIPTION);
+      String fieldInputType = ((Map<String, String>) field.get(UI)).get(UI_FIELD_INPUT_TYPE);
       // Update _ui
       templateMap.replace(ModelNodeNames.UI, getUpdatedUi(fieldName, fieldDescription, templateMap));
-      // Update properties.@context.properties
-      ((Map<String, Object>)((Map<String, Object>) templateMap.get(JSON_SCHEMA_PROPERTIES)).get(JSON_LD_CONTEXT)).
-          replace(JSON_SCHEMA_PROPERTIES, getUpdatedPropertiesContextProperties(fieldName, templateMap));
-      // Update properties.@context.required
-      ((Map<String, Object>)((Map<String, Object>) templateMap.get(JSON_SCHEMA_PROPERTIES)).get(JSON_LD_CONTEXT)).
-          replace(JSON_SCHEMA_REQUIRED, getUpdatedPropertiesContextRequired(fieldName, templateMap));
       // Update properties
       ((Map<String, Object>) templateMap.get(JSON_SCHEMA_PROPERTIES)).put(fieldName, field);
-      // Update required
-      templateMap.replace(JSON_SCHEMA_REQUIRED, getUpdatedRequired(fieldName, templateMap));
+
+      if (!fieldInputType.equals(FIELD_INPUT_TYPE_SECTION_BREAK)) { // If the field is not a section break
+        // Update properties.@context.properties
+        ((Map<String, Object>)((Map<String, Object>) templateMap.get(JSON_SCHEMA_PROPERTIES)).get(JSON_LD_CONTEXT)).
+            replace(JSON_SCHEMA_PROPERTIES, getUpdatedPropertiesContextProperties(fieldName, templateMap));
+        // Update properties.@context.required
+        ((Map<String, Object>)((Map<String, Object>) templateMap.get(JSON_SCHEMA_PROPERTIES)).get(JSON_LD_CONTEXT)).
+            replace(JSON_SCHEMA_REQUIRED, getUpdatedPropertiesContextRequired(fieldName, templateMap));
+        // Update required
+        templateMap.replace(JSON_SCHEMA_REQUIRED, getUpdatedRequired(fieldName, templateMap));
+      }
     }
   }
 

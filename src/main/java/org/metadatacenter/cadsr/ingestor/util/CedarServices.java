@@ -30,7 +30,7 @@ import static org.metadatacenter.util.json.JsonMapper.MAPPER;
 
 public class CedarServices {
 
-  private static final Logger logger = LoggerFactory.getLogger(CdeUploadUtil.class);
+  private static final Logger logger = LoggerFactory.getLogger(CedarServices.class);
   private static ObjectMapper objectMapper = new ObjectMapper();
 
   /*** Field services ***/
@@ -473,7 +473,7 @@ public class CedarServices {
   /*** Template Services ***/
 
   public static String createTemplate(Map<String, Object> templateMap, String cedarFolderId,
-                                      CedarServer cedarServer, String apiKey) {
+                                      CedarServer cedarServer, String apiKey) throws RuntimeException, IOException {
 
     HttpURLConnection conn = null;
     String cedarTemplateId = null;
@@ -492,11 +492,8 @@ public class CedarServices {
         // Read the template @id
         String response = ConnectionUtil.readResponseMessage(conn.getInputStream());
         cedarTemplateId = JsonUtil.extractJsonFieldValueAsText(response, JSON_LD_ID);
-
         logger.info("Template created successfully. CEDAR Id: " + cedarTemplateId);
       }
-    } catch (Exception e) {
-      logger.error(e.toString());
     } finally {
       if (conn != null) {
         conn.disconnect();
@@ -507,7 +504,7 @@ public class CedarServices {
 
   /*** Terminology Services ***/
   public static Map<String, Object> integratedSearch(Map<String, Object> valueConstraints, Integer page, Integer pageSize,
-                                                     CedarServer cedarEnvironment, String apiKey) {
+                                                     CedarServer cedarEnvironment, String apiKey) throws IOException {
     HttpURLConnection conn = null;
     Map<String, Object> resultsMap = new HashMap<>();
     try {
@@ -530,8 +527,6 @@ public class CedarServices {
         String response = ConnectionUtil.readResponseMessage(conn.getInputStream());
         resultsMap = objectMapper.readValue(response, HashMap.class);
       }
-    } catch (Exception e) {
-      logger.error(e.toString());
     } finally {
       if (conn != null) {
         conn.disconnect();

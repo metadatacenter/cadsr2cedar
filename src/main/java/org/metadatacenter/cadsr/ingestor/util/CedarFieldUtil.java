@@ -27,7 +27,6 @@ public class CedarFieldUtil {
 
   public static Map<String, Object> generateDefaultSectionBreak(String sectionName, String description, Constants.CedarServer cedarServer) {
     Map<String, Object> defaultSectionBreak = new HashMap<>();
-    Instant now = Instant.now();
     defaultSectionBreak.put(ModelNodeNames.JSON_SCHEMA_SCHEMA, ModelNodeValues.JSON_SCHEMA_IRI);
     defaultSectionBreak.put(ModelNodeNames.JSON_LD_ID, generateFieldId(cedarServer));
     defaultSectionBreak.put(ModelNodeNames.JSON_LD_TYPE, "https://schema.metadatacenter.org/core/StaticTemplateField");
