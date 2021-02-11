@@ -504,7 +504,7 @@ public class CedarServices {
 
   /*** Terminology Services ***/
   public static Map<String, Object> integratedSearch(Map<String, Object> valueConstraints, Integer page, Integer pageSize,
-                                                     CedarServer cedarEnvironment, String apiKey) throws IOException {
+                                                     CedarServer cedarEnvironment, String apiKey) throws IOException, RuntimeException {
     HttpURLConnection conn = null;
     Map<String, Object> resultsMap = new HashMap<>();
     try {
@@ -522,7 +522,9 @@ public class CedarServices {
       os.flush();
       int responseCode = conn.getResponseCode();
       if (responseCode >= HttpURLConnection.HTTP_BAD_REQUEST) {
-        ConnectionUtil.logErrorMessageAndThrowException("Error creating template", conn);
+        String message = "Error running integrated search. Payload: " + payload;
+        logger.error(message);
+        throw new RuntimeException(message);
       } else {
         String response = ConnectionUtil.readResponseMessage(conn.getInputStream());
         resultsMap = objectMapper.readValue(response, HashMap.class);

@@ -5,6 +5,7 @@ import org.metadatacenter.cadsr.form.schema.Module;
 import org.metadatacenter.cadsr.form.schema.Question;
 import org.metadatacenter.cadsr.form.schema.ValidValue;
 import org.metadatacenter.cadsr.ingestor.form.FormParseReporter;
+import org.metadatacenter.cadsr.ingestor.form.FormUtil;
 import org.metadatacenter.cadsr.ingestor.util.CedarFieldUtil;
 import org.metadatacenter.cadsr.ingestor.util.CedarServices;
 import org.metadatacenter.cadsr.ingestor.util.Constants.CedarServer;
@@ -85,11 +86,16 @@ public class TemplateFieldsHandler implements ModelHandler {
     }
   }
 
-  private Map<String, Object> customizeCde(Map<String, Object> cde, Question question) throws IOException {
+  private Map<String, Object> customizeCde(Map<String, Object> cde, Question question) {
     cde = customizeCdePrefLabel(cde, question.getQuestionText());
 
     if (question.getValidValue().size() > 0) {
-      cde = customizeCdeValues(cde, question.getValidValue());
+      try {
+        cde = customizeCdeValues(cde, question.getValidValue());
+      } catch (IOException | RuntimeException e) {
+        FormParseReporter.getInstance().addMessage(reportId, "Error customizing values: " + e.getMessage());
+        logger.error(e.getMessage());
+      }
     }
 
     return cde;
@@ -105,7 +111,7 @@ public class TemplateFieldsHandler implements ModelHandler {
   }
 
   // If the CDE is constrained to values from a BioPortal value set, customize those values using the information from the form's xml
-  private Map<String, Object> customizeCdeValues(Map<String, Object> cde, List<ValidValue> validValues) throws IOException {
+  private Map<String, Object> customizeCdeValues(Map<String, Object> cde, List<ValidValue> validValues) throws IOException, RuntimeException {
 
     if (cde.containsKey("_valueConstraints")
         && ((Map<String, Object>)cde.get("_valueConstraints")).containsKey("valueSets")
@@ -287,7 +293,7 @@ public class TemplateFieldsHandler implements ModelHandler {
   @Override
   public void apply(Map<String, Object> templateMap) { // Add all fields to the template
     for (Map<String, Object> field : fields) {
-      String fieldName = (String) field.get(ModelNodeNames.SCHEMA_ORG_NAME);
+      String fieldName = FormUtil.preprocessFieldName((String) field.get(ModelNodeNames.SCHEMA_ORG_NAME));
       String fieldDescription = (String) field.get(ModelNodeNames.SCHEMA_ORG_DESCRIPTION);
       String fieldInputType = ((Map<String, String>) field.get(UI)).get(UI_FIELD_INPUT_TYPE);
       // Update _ui

@@ -20,7 +20,6 @@ import java.util.Map;
 public class FormUtil {
 
   private static final Logger logger = LoggerFactory.getLogger(FormUtil.class);
-  private static ObjectMapper objectMapper = new ObjectMapper();
 
   public static Form getForm(InputStream is) throws JAXBException, IOException {
     JAXBContext jaxbContext = JAXBContext.newInstance(Form.class);
@@ -36,6 +35,16 @@ public class FormUtil {
     // Once the messages have been retrieved we don't need them anymore in the map
     FormParseReporter.getInstance().remove(reportId);
     return new FormParseResult(templateMap, messages);
+  }
+
+  /**
+   * Preprocess the field name to ensure it's valid according to the CEDAR validator
+   * @param fieldName
+   * @return
+   */
+  public static String preprocessFieldName(String fieldName) {
+    fieldName = fieldName.replace(".", "_");
+    return fieldName;
   }
 
 }
