@@ -9,6 +9,8 @@ branches:
   - master
 notifications:
   slack:
+    on_success: change
+    on_failure: always
     secure: Ql4WqiRERG5DBr0HWweD8LalToOsP8O4lNxsOLv88xE6z6HYLtILkBeJi6/5hk+7OHoX+IU/FRcGr3JMu37aBGHWGT10l1VgxtESD6VU+SObLBAxWJux9UV/qsT9xiq59NJwFhyvjkHGha42jTDKO/GX3z5ZsdD+JtLvtCNp0Wp3S5ys4KBpyPXINpGbKH899UkE6Dx416rtVmQpF/YS7mfgoIFmCn1CoMBpxk0vqzmkn+5Nvm/HRlPLixQRE/n+QKKPUJmn+eNym02qPhETj1Rx6FJML9KxQJV8kysNWJYMxIOH/O9/zp7Rv1ki16OdFAXBbwG/w1Z4W6JXgnOkIMAMnMqSxKBq1DdbNvN0y5WJ87VwjeG2tMyAdI0ZYt6jq2INJ80oCJetcxsH8YY2l65u+onMFxW9u9eROa2901NHFs8ce5GzXAi36tHxmJUTJyfzxgCbcWz5dbxpRz3txQ7l4FvORp5rDo04L8uu5adhxLpOBMC+NbqmrlejsZHJNrYVZ9A5UV9tJpm8aw0LwVxzLKej7kFkEHoH5WNkcZpZB6LzFaY9WgypgmAFiWbHkenLDRUIoQ8q8VdsfiXXrz7Gb0r7al7O+c8C550lbrPX4UXO6gjPD/kGOIFstSSYTghl/tRMEYZOkM7kPV4k7L2jAwmBPLekvESVSOJo3Ng=
 install: "[ ${TRAVIS_PULL_REQUEST} = 'false' ] && mvn -DskipTests=false clean deploy
   --settings .m2/travis-settings.xml"
