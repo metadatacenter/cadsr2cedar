@@ -11,7 +11,7 @@ import org.metadatacenter.cadsr.cde.schema.DataElement;
 import org.metadatacenter.cadsr.ingestor.category.*;
 import org.metadatacenter.cadsr.ingestor.cde.CdeStats;
 import org.metadatacenter.cadsr.ingestor.cde.CdeSummary;
-import org.metadatacenter.cadsr.ingestor.util.Constants.CedarEnvironment;
+import org.metadatacenter.cadsr.ingestor.util.Constants.CedarServer;
 import org.metadatacenter.model.ModelNodeNames;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -62,19 +62,19 @@ public class CategoryUtil {
   }
 
   public static void uploadCategoriesFromDirectory(File inputDir, String cedarRootCategoryId,
-                                                   CedarEnvironment environment,
+                                                   CedarServer server,
                                                    String apiKey) throws IOException {
     for (final File inputFile : inputDir.listFiles()) {
-      uploadCategoriesFromFile(inputFile, cedarRootCategoryId, environment, apiKey);
+      uploadCategoriesFromFile(inputFile, cedarRootCategoryId, server, apiKey);
     }
   }
 
-  public static void uploadCategoriesFromFile(File inputFile, String cedarRootCategoryId, CedarEnvironment environment,
+  public static void uploadCategoriesFromFile(File inputFile, String cedarRootCategoryId, CedarServer server,
                                               String apiKey) throws IOException {
 
     List<CategoryTreeNode> categoryTreeNodes = readCategoriesFromFile(inputFile);
     for (CategoryTreeNode categoryTreeNode : categoryTreeNodes) {
-      CedarServices.createCategory(categoryTreeNode, cedarRootCategoryId, environment, apiKey);
+      CedarServices.createCategory(categoryTreeNode, cedarRootCategoryId, server, apiKey);
     }
   }
 
@@ -295,10 +295,10 @@ public class CategoryUtil {
     return GeneralUtil.getSha1(cedarCategory.getId() + cedarCategory.getName() + cedarCategory.getDescription());
   }
 
-  public static Map<String, CategorySummary> generateExistingCategoriesMap(CedarEnvironment environment,
+  public static Map<String, CategorySummary> generateExistingCategoriesMap(CedarServer server,
                                                                            String apiKey) throws IOException {
     Map<String, CategorySummary> existingCategoriesMap = new HashMap<>();
-    CedarCategory currentCedarCategoryTree = CedarServices.getCedarCategoryTree(environment, apiKey);
+    CedarCategory currentCedarCategoryTree = CedarServices.getCedarCategoryTree(server, apiKey);
     return addCdeCategoriesToMap(currentCedarCategoryTree.getChildren(), existingCategoriesMap);
   }
 
@@ -459,7 +459,7 @@ public class CategoryUtil {
   /**
    * Deletes all NCI caDSR categories. It does not remove neither the root category nor the NCI Cadsr root category.
    */
-  public static void deleteAllNciCadsrCategories(CedarEnvironment cedarEnvironment, String apiKey) throws IOException {
+  public static void deleteAllNciCadsrCategories(CedarServer cedarEnvironment, String apiKey) throws IOException {
     Map<String, CategorySummary> allCategoriesMap =
         Collections.unmodifiableMap(CategoryUtil.generateExistingCategoriesMap(cedarEnvironment, apiKey));
     // Keep only the CDE categories (ignoring the top-level CDE category)
@@ -474,7 +474,7 @@ public class CategoryUtil {
    */
   public static void reviewCdeCategoryRelations(List<DataElement> newDataElements,
                                                  Map<String, CdeSummary> existingCdesMap,
-                                                 CedarEnvironment cedarEnvironment, String apiKey) throws IOException {
+                                                 CedarServer cedarEnvironment, String apiKey) throws IOException {
 
     if (newDataElements.size() > 0 && existingCdesMap.size() > 0) {
 

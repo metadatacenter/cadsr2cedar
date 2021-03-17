@@ -2,7 +2,7 @@ package org.metadatacenter.cadsr.ingestor.category.action;
 
 import org.metadatacenter.cadsr.ingestor.category.CategoryTreeNode;
 import org.metadatacenter.cadsr.ingestor.util.CedarServices;
-import org.metadatacenter.cadsr.ingestor.util.Constants.CedarEnvironment;
+import org.metadatacenter.cadsr.ingestor.util.Constants.CedarServer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -27,7 +27,7 @@ public class UpdateCategoryAction implements CategoryAction {
   }
 
   @Override
-  public void execute(CedarEnvironment cedarEnvironment, String apiKey) {
+  public void execute(CedarServer cedarEnvironment, String apiKey) {
     CedarServices.updateCategory(categoryCedarId, category, cedarEnvironment, apiKey);
   }
 }

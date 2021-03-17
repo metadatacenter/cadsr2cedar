@@ -2,7 +2,7 @@ package org.metadatacenter.cadsr.ingestor.cde.action;
 
 import org.metadatacenter.cadsr.ingestor.util.CdeUtil;
 import org.metadatacenter.cadsr.ingestor.util.CedarServices;
-import org.metadatacenter.cadsr.ingestor.util.Constants.CedarEnvironment;
+import org.metadatacenter.cadsr.ingestor.util.Constants.CedarServer;
 import org.metadatacenter.model.ModelNodeNames;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -55,7 +55,7 @@ public class CreateCdeAction implements CdeAction {
   }
 
   @Override
-  public String execute(CedarEnvironment cedarEnvironment, String apiKey) {
+  public String execute(CedarServer cedarEnvironment, String apiKey) {
     logger.info("-----------------------------------------");
     logger.info("Creating CDE: " + CdeUtil.generateCdeUniqueId(cdeFieldMap) + " (" + cdeFieldMap.get(ModelNodeNames.SCHEMA_ORG_NAME).toString() + ")");
     Optional<List<String>> cedarCatIds = Optional.empty();

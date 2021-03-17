@@ -90,7 +90,7 @@ public class ConfigSettingsParser {
       if (cmd.hasOption("s")) {
         String cedarEnvironmentStr = cmd.getOptionValue("s");
         try {
-          settings.setCedarEnvironment(CedarServerUtil.toCedarEnvironment(cedarEnvironmentStr));
+          settings.setCedarServer(CedarServerUtil.toCedarServerFromServerName(cedarEnvironmentStr));
         } catch(IllegalArgumentException e) {
           throw new ParseException(e.getMessage());
         }

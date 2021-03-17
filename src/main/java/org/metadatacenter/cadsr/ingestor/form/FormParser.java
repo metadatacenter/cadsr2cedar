@@ -3,101 +3,66 @@ package org.metadatacenter.cadsr.ingestor.form;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import org.metadatacenter.cadsr.form.schema.Form;
+import org.metadatacenter.cadsr.ingestor.cde.CadsrStatus;
+import org.metadatacenter.cadsr.ingestor.form.handler.TemplateFieldsHandler;
+import org.metadatacenter.cadsr.ingestor.form.handler.TemplateHeaderAndFooterHandler;
+import org.metadatacenter.cadsr.ingestor.util.CdeUtil;
+import org.metadatacenter.cadsr.ingestor.util.CedarServerUtil;
 import org.metadatacenter.cadsr.ingestor.util.Constants;
+import org.metadatacenter.cadsr.ingestor.util.Constants.*;
+import org.metadatacenter.cadsr.ingestor.util.GeneralUtil;
+import org.metadatacenter.config.CedarConfig;
+import org.metadatacenter.config.environment.CedarEnvironmentVariableProvider;
+import org.metadatacenter.model.BiboStatus;
 import org.metadatacenter.model.ModelNodeNames;
 import org.metadatacenter.model.ModelNodeValues;
+import org.metadatacenter.model.SystemComponent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
-import static org.metadatacenter.cadsr.ingestor.util.Constants.TEMPLATE_TYPE;
+import static org.metadatacenter.cadsr.ingestor.util.Constants.*;
 
 public class FormParser {
 
   private static final Logger logger = LoggerFactory.getLogger(FormParser.class);
+  private static CedarConfig cedarConfig;
+  private static CedarServer cedarServer;
+  private static String apiKey;
 
-  public static void parseForm(Form form, final Map<String, Object> templateMap) {
+  static {
+    SystemComponent systemComponent = SystemComponent.CADSR_TOOL;
+    Map<String, String> environment = CedarEnvironmentVariableProvider.getFor(systemComponent);
+    cedarConfig = CedarConfig.getInstance(environment);
+    cedarServer = CedarServerUtil.toCedarServerFromHostName(cedarConfig.getHost());
+    // An alternative to using the apiKey of the caDSR user, which has more privileges than needed for template
+    // ingestion, would be to read the user's api from the request and use a constructor new FormParser(String apiKey).
+    apiKey = cedarConfig.getCaDSRAdminUserConfig().getApiKey();
+  }
+
+  public static void parseForm(Form form, final Map<String, Object> templateMap, String reportId) throws IOException {
+
+    FormParseReporter.getInstance().addMessage(reportId,"Form publicId: " + form.getPublicID());
+    FormParseReporter.getInstance().addMessage(reportId,"Form name: " + form.getLongName());
+    FormParseReporter.getInstance().addMessage(reportId,"Form version: " + form.getVersion());
+    FormParseReporter.getInstance().addMessage(reportId,"Form status: " + form.getWorkflowStatusName());
 
     createEmptyTemplate(templateMap);
     setTemplateIdentifier(templateMap, form.getPublicID());
     setTemplateName(templateMap, form.getLongName(), form.getPublicID());
-//      setFieldDescription(fieldMap, dataElement.getPREFERREDDEFINITION().getContent());
-//      setFieldQuestions(fieldMap, dataElement, new UserQuestionsHandler());
-//      setInputType(fieldMap, dataElement, new InputTypeHandler());
-//  setVersion(templateMap, form, new VersionHandler());
-//      setValueConstraints(fieldMap, dataElement, new ValueConstraintsHandler());
-//      setUI(fieldMap, dataElement, new UIHandler());
-//      setProperties(fieldMap, dataElement, new PropertiesHandler());
-//      setPermissibleValues(fieldMap, dataElement, new PermissibleValuesHandler());
-//      setCategories(fieldMap, dataElement, new CategoriesHandler());
-  }
+    setTemplateDescription(templateMap, form.getPreferredDefinition());
+    setTemplateHeaderAndFooter(templateMap, form, new TemplateHeaderAndFooterHandler());
+    setTemplateFields(templateMap, form, new TemplateFieldsHandler(cedarServer, apiKey, reportId));
+    setTemplateVersion(templateMap, form.getVersion());
+    setTemplateStatus(templateMap, form.getWorkflowStatusName());
 
-  private static void setTemplateIdentifier(final Map<String, Object> fieldMap, String content) {
-    fieldMap.put(ModelNodeNames.SCHEMA_ORG_IDENTIFIER, content);
+    FormParseReporter.getInstance().addMessage(reportId,"Form translation complete");
   }
-
-  private static void setTemplateName(final Map<String, Object> fieldMap, String nameContent, String idContent) {
-    fieldMap.put(ModelNodeNames.SCHEMA_ORG_NAME, asJsonSchemaName(nameContent, idContent));
-    fieldMap.put(ModelNodeNames.JSON_SCHEMA_TITLE, asJsonSchemaTitle(nameContent));
-    fieldMap.put(ModelNodeNames.JSON_SCHEMA_DESCRIPTION, asJsonSchemaDescription(nameContent));
-  }
-
-  private static Object asJsonSchemaName(String nameContent, String idContent) {
-    return String.format("%s (%s)", nameContent, idContent);
-  }
-
-  private static Object asJsonSchemaTitle(String content) {
-    return String.format("'%s' template schema", content);
-  }
-
-  private static Object asJsonSchemaDescription(String content) {
-    return String.format("'%s' template schema auto-generated by CEDAR", content);
-  }
-
-  private static void setFieldDescription(final Map<String, Object> fieldMap, String content) {
-    fieldMap.put(ModelNodeNames.SCHEMA_ORG_DESCRIPTION, content);
-  }
-
-//  private static void setFieldQuestions(final Map<String, Object> fieldMap, DataElement dataElement,
-//                                        UserQuestionsHandler
-//                                            userQuestionsHandler) throws UnsupportedDataElementException {
-//    userQuestionsHandler.handle(dataElement).apply(fieldMap);
-//  }
-//
-//  private static void setInputType(final Map<String, Object> fieldMap, DataElement dataElement, InputTypeHandler
-//      inputTypeHandler) throws UnsupportedDataElementException {
-//    inputTypeHandler.handle(dataElement).apply(fieldMap);
-//  }
-//
-//  private static void setProperties(Map<String, Object> fieldMap, DataElement dataElement, PropertiesHandler
-//      propertiesHandler) throws UnsupportedDataElementException {
-//    propertiesHandler.handle(dataElement).apply(fieldMap);
-//  }
-//
-//  private static void setPermissibleValues(Map<String, Object> fieldMap, DataElement dataElement,
-//                                           PermissibleValuesHandler
-//                                               permissibleValuesHandler) throws UnsupportedDataElementException,
-//      UnknownSeparatorException {
-//    permissibleValuesHandler.handle(dataElement).apply(fieldMap);
-//  }
-//
-//  private static void setValueConstraints(Map<String, Object> fieldMap, DataElement dataElement, ValueConstraintsHandler
-//      valueConstraintsHandler) throws UnsupportedDataElementException {
-//    valueConstraintsHandler.handle(dataElement).apply(fieldMap);
-//  }
-//
-//  private static void setUI(Map<String, Object> fieldMap, DataElement dataElement, UIHandler uiHandler) throws UnsupportedDataElementException {
-//    uiHandler.handle(dataElement).apply(fieldMap);
-//  }
-//
-//  private static void setVersion(Map<String, Object> templateMap, Form form, VersionHandler
-//      versionHandler) throws UnsupportedDataElementException {
-//    versionHandler.handle(form).apply(templateMap);
-//  }
 
   private static void createEmptyTemplate(final Map<String, Object> templateMap) {
     templateMap.put(ModelNodeNames.JSON_SCHEMA_SCHEMA, ModelNodeValues.JSON_SCHEMA_IRI);
@@ -118,8 +83,59 @@ public class FormParser {
     templateMap.put(ModelNodeNames.SCHEMA_ORG_SCHEMA_VERSION, Constants.CEDAR_SCHEMA_VERSION);
     templateMap.put(ModelNodeNames.JSON_SCHEMA_ADDITIONAL_PROPERTIES, ModelNodeValues.FALSE);
     templateMap.put(ModelNodeNames.JSON_SCHEMA_REQUIRED, setRequired());
-    templateMap.put(ModelNodeNames.PAV_VERSION, "0.0.1"); // TODO
-    templateMap.put(ModelNodeNames.BIBO_STATUS, "bibo:draft"); // TODO
+    templateMap.put(ModelNodeNames.PAV_VERSION, DEFAULT_TEMPLATE_VERSION);
+    templateMap.put(ModelNodeNames.BIBO_STATUS, DEFAULT_TEMPLATE_STATUS);
+  }
+
+  private static void setTemplateIdentifier(final Map<String, Object> templateMap, String content) {
+    templateMap.put(ModelNodeNames.SCHEMA_ORG_IDENTIFIER, GeneralUtil.getOptionalValue(content));
+  }
+
+  private static void setTemplateName(final Map<String, Object> templateMap, String nameContent, String idContent) {
+    templateMap.put(ModelNodeNames.SCHEMA_ORG_NAME, asJsonSchemaName(nameContent, idContent));
+    templateMap.put(ModelNodeNames.JSON_SCHEMA_TITLE, asJsonSchemaTitle(nameContent));
+    templateMap.put(ModelNodeNames.JSON_SCHEMA_DESCRIPTION, asJsonSchemaDescription(nameContent));
+  }
+
+  private static void setTemplateDescription(final Map<String, Object> templateMap, String content) {
+    templateMap.put(ModelNodeNames.SCHEMA_ORG_DESCRIPTION, GeneralUtil.getOptionalValue(content));
+  }
+
+  private static void setTemplateHeaderAndFooter(final Map<String, Object> templateMap, Form form, TemplateHeaderAndFooterHandler templateHeaderAndFooterHandler) {
+    templateHeaderAndFooterHandler.handle(form).apply(templateMap);
+  }
+
+  private static void setTemplateFields(Map<String, Object> templateMap, Form form, TemplateFieldsHandler templateFieldsHandler) throws IOException {
+    templateFieldsHandler.handle(form).apply(templateMap);
+  }
+
+  private static void setTemplateVersion(final Map<String, Object> templateMap, String versionContent) {
+    if (versionContent != null) {
+      templateMap.put(ModelNodeNames.PAV_VERSION, CdeUtil.reformatVersioningNumber(versionContent));
+    }
+  }
+
+  private static void setTemplateStatus(final Map<String, Object> templateMap, String statusContent) {
+    if (statusContent != null && statusContent.equals(CadsrStatus.RELEASED)) {
+      templateMap.put(ModelNodeNames.BIBO_STATUS, BiboStatus.PUBLISHED);
+    }
+  }
+
+  /**
+   * Utility methods
+   */
+
+  private static Object asJsonSchemaName(String nameContent, String idContent) {
+    String idContentValue = GeneralUtil.getOptionalValue(idContent);
+    return idContentValue.length() > 0 ? nameContent + " (" + idContentValue + ")" : nameContent;
+  }
+
+  private static Object asJsonSchemaTitle(String content) {
+    return String.format("'%s' template schema", content);
+  }
+
+  private static Object asJsonSchemaDescription(String content) {
+    return String.format("'%s' template schema auto-generated by CEDAR", content);
   }
 
   // Target: @context
@@ -346,12 +362,5 @@ public class FormParser {
     uriString.put(ModelNodeNames.JSON_SCHEMA_FORMAT, ModelNodeValues.DATE_TIME);
     return uriString;
   }
-
-
-
-
-
-
-
 
 }

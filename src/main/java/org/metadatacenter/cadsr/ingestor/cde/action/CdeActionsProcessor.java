@@ -3,7 +3,7 @@ package org.metadatacenter.cadsr.ingestor.cde.action;
 import org.metadatacenter.cadsr.ingestor.cde.CdeStats;
 import org.metadatacenter.cadsr.ingestor.cde.CdeSummary;
 import org.metadatacenter.cadsr.ingestor.util.CdeUtil;
-import org.metadatacenter.cadsr.ingestor.util.Constants.CedarEnvironment;
+import org.metadatacenter.cadsr.ingestor.util.Constants.CedarServer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -19,11 +19,11 @@ public class CdeActionsProcessor {
   private List<CreateCdeAction> createCdeActions;
   private List<UpdateOrDeleteCdeAction> updateOrDeleteCdeActions;
   private Map<String, CdeSummary> cdesMap; // To store the final CDEs so that they can saved to a file
-  private CedarEnvironment cedarEnvironment;
+  private CedarServer cedarEnvironment;
   private String apiKey;
 
   public CdeActionsProcessor(List<CreateCdeAction> createCdeActions, List<UpdateOrDeleteCdeAction> updateOrDeleteCdeActions,
-                             Map<String, CdeSummary> cdesMap, CedarEnvironment cedarEnvironment, String apiKey) {
+                             Map<String, CdeSummary> cdesMap, CedarServer cedarEnvironment, String apiKey) {
     this.createCdeActions = createCdeActions;
     this.updateOrDeleteCdeActions = updateOrDeleteCdeActions;
     this.cdesMap = cdesMap;

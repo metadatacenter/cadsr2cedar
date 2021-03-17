@@ -178,4 +178,15 @@ public class GeneralUtil {
     return json;
   }
 
+  public static boolean isNullOrEmpty(String value) {
+    if (value == null || value.trim().length() == 0) {
+      return true;
+    }
+    return false;
+  }
+
+  public static String getOptionalValue(String content) {
+    return content != null ? content : "";
+  }
+
 }

@@ -86,7 +86,7 @@ public class CdeUtil {
 
   public static String generateCdeUniqueId(DataElement cde) {
     return generateCdeUniqueId(cde.getPUBLICID().getContent(),
-        VersionHandler.reformatVersioningNumber(cde.getVERSION().getContent()));
+        reformatVersioningNumber(cde.getVERSION().getContent()));
   }
 
   public static String generateCdeUniqueId(Map<String, Object> cdeMap) {
@@ -125,7 +125,7 @@ public class CdeUtil {
     return GeneralUtil.getSha1(fieldMapJson);
   }
 
-  public static Map<String, CdeSummary> getExistingCedarCdeSummaries(String cedarFolderId, Constants.CedarEnvironment cedarEnvironment, String apiKey) throws IOException {
+  public static Map<String, CdeSummary> getExistingCedarCdeSummaries(String cedarFolderId, Constants.CedarServer cedarEnvironment, String apiKey) throws IOException {
     // Retrieve existing CDEs from CEDAR
     logger.info("Retrieving current CDEs from CEDAR (folder id: " + cedarFolderId + ").");
     List fieldNamesToInclude = new ArrayList(Arrays.asList(new String[]{"schema:identifier", "pav:version",
@@ -180,6 +180,15 @@ public class CdeUtil {
     cdeFieldMap.remove(JSON_LD_ID);
     cdeFieldMap.remove(CDE_CATEGORY_IDS_FIELD);
     return cdeFieldMap;
+  }
+
+  public static String reformatVersioningNumber(String version) {
+    String[] originalVersion = version.split("\\.");
+    String[] baseVersion = {"0", "0", "0"};
+    for (int i = 0; i < originalVersion.length; i++) {
+      baseVersion[i] = originalVersion[i];
+    }
+    return String.join(".", baseVersion);
   }
 
 }

@@ -1,6 +1,6 @@
 package org.metadatacenter.cadsr.ingestor.cde.action;
 
-import org.metadatacenter.cadsr.ingestor.util.Constants.CedarEnvironment;
+import org.metadatacenter.cadsr.ingestor.util.Constants.CedarServer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -41,7 +41,7 @@ public class UpdateOrDeleteCdeAction implements CdeAction {
   }
 
   @Override
-  public String execute(CedarEnvironment cedarEnvironment, String apiKey) {
+  public String execute(CedarServer cedarEnvironment, String apiKey) {
     logger.warn("No execution defined for update/delete action. Doing nothing.");
     return cedarId;
   }
